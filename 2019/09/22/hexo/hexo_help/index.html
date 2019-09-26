@@ -4,8 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, suifeng&#39;s blog">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="hexo踩坑记录, suifeng&#39;s blog">
+    <meta name="description" content="hexo踩坑记录本地预览图片丢失当新建了博客编写完后执行hexo g和hexo s预览文章发现所有的图片都丢失了，无法正常加载。chrome中按F12查看发现hexo-asset-image插件没有正确地转换图片地址
+
+而且生成的资源下也不">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | suifeng&#39;s blog</title>
+    <title>hexo踩坑记录 | suifeng&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -41,7 +43,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="../../../../index.html" class="waves-effect waves-light">
+                <a href="../../../../../index.html" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -246,13 +248,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        hexo踩坑记录
                     </div>
                 </div>
             </div>
@@ -361,12 +363,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="../../../../../tags/hexo/" target="_blank">
+                                <span class="chip bg-color">hexo</span>
+                            </a>
+                        
+                            <a href="../../../../../tags/help/" target="_blank">
+                                <span class="chip bg-color">help</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="../../../../../categories/hexo/" class="post-category" target="_blank">
+                                hexo
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -374,21 +393,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-06
+                    2019-09-22
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        75
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        9 分
                     </div>
                     
                 
@@ -404,15 +423,226 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="hexo踩坑记录"><a href="#hexo踩坑记录" class="headerlink" title="hexo踩坑记录"></a>hexo踩坑记录</h1><h2 id="本地预览图片丢失"><a href="#本地预览图片丢失" class="headerlink" title="本地预览图片丢失"></a>本地预览图片丢失</h2><p>当新建了博客编写完后执行<code>hexo g</code>和<code>hexo s</code>预览文章发现所有的图片都丢失了，无法正常加载。chrome中按<code>F12</code>查看发现<code>hexo-asset-image</code>插件没有正确地转换图片地址</p>
+<p><img src="/2019/09/22/hexo/hexo_help/error_src.png" alt="错误图片地址"></p>
+<p>而且生成的资源下也不包含任何图片信息。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/no_src.png" alt="无图片资源"></p>
+<p>一开始在这个<a href="https://blog.csdn.net/xjm850552586/article/details/84101345" target="_blank" rel="noopener">博客</a>下找到了解决方案。</p>
+<p>找到博客根目录下的<code>/node_modules/hexo-asset-image/index.js</code>文件，将其中的代码修改正博客中的代码，贴上代码如下：</p>
+<pre><code class="js">&#39;use strict&#39;;
+var cheerio = require(&#39;cheerio&#39;);
+
+// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string--123456794563543543543545435
+function getPosition(str, m, i) {
+  return str.split(m, i).join(m).length;
+}
+
+var version = String(hexo.version).split(&#39;.&#39;);
+hexo.extend.filter.register(&#39;after_post_render&#39;, function(data){
+  var config = hexo.config;
+  if(config.post_asset_folder){
+        var link = data.permalink;
+    if(version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)
+       var beginPos = getPosition(link, &#39;/&#39;, 1) + 1;
+    else
+       var beginPos = getPosition(link, &#39;/&#39;, 3) + 1;
+    // In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.
+    var endPos = link.lastIndexOf(&#39;/&#39;) + 1;
+    link = link.substring(beginPos, endPos);
+
+    var toprocess = [&#39;excerpt&#39;, &#39;more&#39;, &#39;content&#39;];
+    for(var i = 0; i &lt; toprocess.length; i++){
+      var key = toprocess[i];
+
+      var $ = cheerio.load(data[key], {
+        ignoreWhitespace: false,
+        xmlMode: false,
+        lowerCaseTags: false,
+        decodeEntities: false
+      });
+
+      $(&#39;img&#39;).each(function(){
+        if ($(this).attr(&#39;src&#39;)){
+            // For windows style path, we replace &#39;\&#39; to &#39;/&#39;.
+            var src = $(this).attr(&#39;src&#39;).replace(&#39;\\&#39;, &#39;/&#39;);
+            if(!/http[s]*.*|\/\/.*/.test(src) &amp;&amp;
+               !/^\s*\//.test(src)) {
+              // For &quot;about&quot; page, the first part of &quot;src&quot; can&#39;t be removed.
+              // In addition, to support multi-level local directory.
+              var linkArray = link.split(&#39;/&#39;).filter(function(elem){
+                return elem != &#39;&#39;;
+              });
+              var srcArray = src.split(&#39;/&#39;).filter(function(elem){
+                return elem != &#39;&#39; &amp;&amp; elem != &#39;.&#39;;
+              });
+              if(srcArray.length &gt; 1)
+                srcArray.shift();
+              src = srcArray.join(&#39;/&#39;);
+              $(this).attr(&#39;src&#39;, config.root + link + src);
+              console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);
+            }
+        }else{
+            console.info&amp;&amp;console.info(&quot;no src attr, skipped...&quot;);
+            console.info&amp;&amp;console.info($(this));
+        }
+      });
+      data[key] = $.html();
+    }
+  }
+});</code></pre>
+<p>但是这个解决方案其实是有问题</p>
+<p><img src="/2019/09/22/hexo/hexo_help/error_src_1.png" alt="方案1"></p>
+<p>可以看到这里的<code>src</code>资源路径还是错误的。原因是这里的方案只支持Hexo的标签方式(Hexo的标签引用<a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="noopener">看这里</a>)的引用，对于markdown的引用方式还是不支持。如果把这里的图片引入方式修改为Hexo的标签方式<code></code>就可以正常显示了。</p>
+<p>但是这有一个问题就是使用标签方式在markdown中无法直接预览效果。</p>
+<p>所以我就基于这个解决方案做了修改。代码如下：</p>
+<pre><code class="javascript">&#39;use strict&#39;;
+var cheerio = require(&#39;cheerio&#39;);
+
+// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string
+function getPosition(str, m, i) {
+    return str.split(m, i).join(m).length;
+}
+
+var version = String(hexo.version).split(&#39;.&#39;);
+hexo.extend.filter.register(&#39;after_post_render&#39;, function (data) {
+    var config = hexo.config;
+    if (config.post_asset_folder) {
+        var link = data.permalink;
+        if (version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)
+            var beginPos = getPosition(link, &#39;/&#39;, 1) + 1;
+        else
+            var beginPos = getPosition(link, &#39;/&#39;, 3) + 1;
+        // In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.
+        var endPos = link.lastIndexOf(&#39;/&#39;) + 1;
+        link = link.substring(beginPos, endPos);
+        var beginDir = getPosition(link, &quot;/&quot;, 2)
+        var endDir = link.length
+        var srcDir = link.substring(beginDir, endDir)
+
+        var toprocess = [&#39;excerpt&#39;, &#39;more&#39;, &#39;content&#39;];
+        for (var i = 0; i &lt; toprocess.length; i++) {
+            var key = toprocess[i];
+
+            var $ = cheerio.load(data[key], {
+                ignoreWhitespace: false,
+                xmlMode: false,
+                lowerCaseTags: false,
+                decodeEntities: false
+            });
+
+            $(&#39;img&#39;).each(function () {
+                if ($(this).attr(&#39;src&#39;)) {
+                    // For windows style path, we replace &#39;\&#39; to &#39;/&#39;.
+                    var src = $(this).attr(&#39;src&#39;)
+                    src = src.replace(&#39;\\&#39;, &#39;/&#39;);
+                    var b1 = !/http[s]*.*|\/\/.*/.test(src)
+                    if (b1) {
+                        // For &quot;about&quot; page, the first part of &quot;src&quot; can&#39;t be removed.
+                        // In addition, to support multi-level local directory.
+                        var linkArray = link.split(&#39;/&#39;).filter(function (elem) {
+                            return elem != &#39;&#39;;
+                        });
+                        var srcArray = src.split(&#39;/&#39;).filter(function (elem) {
+                            return elem != &#39;&#39; &amp;&amp; elem != &#39;.&#39;;
+                        });
+                        if (srcArray.length &gt; 1)
+                            srcArray.shift();
+                        var mSrc = srcArray.join(&#39;/&#39;);
+                        var realLink = srcDir + mSrc
+                        $(this).attr(&#39;src&#39;, realLink);
+                        console.info &amp;&amp; console.info(&quot;update link as:--&gt;&quot; + realLink);
+                    }
+                } else {
+                    console.info &amp;&amp; console.info(&quot;no src attr, skipped...&quot;);
+                    console.info &amp;&amp; console.info($(this));
+                }
+            });
+            data[key] = $.html();
+        }
+    }
+});    </code></pre>
+<p>这样就可以支持markdown的图片引入了</p>
+<p>效果如下：</p>
+<p><img src="/2019/09/22/hexo/hexo_help/good_src.png" alt="正常显示"></p>
+<h2 id="代码行号丢失"><a href="#代码行号丢失" class="headerlink" title="代码行号丢失"></a>代码行号丢失</h2><p>按照官网文档的推荐使用<a href="https://github.com/ele828/hexo-prism-plugin" target="_blank" rel="noopener">hexo-prism-plugin</a>作为代码高亮插件，但是按照官网的配置发现预览网页中没有行号。</p>
+<p>需要做如下修改，打开主题的<code>themes\hexo-theme-matery\source\css\matery.css</code>文件，修改第95~111行如下</p>
+<pre><code class="css">pre {
+    padding: 1.5rem 1.5rem 1.5rem 3.3rem !important;
+    margin: 1rem 0 !important;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.35rem;
+    tab-size: 4;
+}
+
+code {
+    padding: 1px 5px;
+    font-family: Inconsolata, Monaco, Consolas, &#39;Courier New&#39;, Courier, monospace;
+    /* font-size: 0.91rem;*/
+    color: #e96900;
+    background-color: #f8f8f8;
+    border-radius: 2px;
+}</code></pre>
+<p>重新生成预览页面就正常了</p>
+<h2 id="代码行号错位"><a href="#代码行号错位" class="headerlink" title="代码行号错位"></a>代码行号错位</h2><p>当代码中存在较长代码自动换行时会导致代码行号与代码不对应。</p>
+<p>使用<code>code-prettify</code>代替</p>
+<h2 id="更换代码高亮插件"><a href="#更换代码高亮插件" class="headerlink" title="更换代码高亮插件"></a>更换代码高亮插件</h2><p>因为<code>hexo-prism-plugin</code>在行号显示和复制代码丢失缩进和换行的问题，所以决定更换代码高亮插件为<a href="https://github.com/google/code-prettify" target="_blank" rel="noopener">code-prettify</a>。</p>
+<p>从<a href="https://github.com/google/code-prettify" target="_blank" rel="noopener">code-prettify</a>clone下来最新代码，复制<code>code-prettify\src\prettify.js</code>文件到博客主题的<code>source\js</code>下</p>
+<p><img src="/2019/09/22/hexo/hexo_help/copy_prettifyjs.png" alt="复制prettify.js"></p>
+<p>然后复制<code>code-prettify\styles\sons-of-obsidian.css</code>文件到博客的<code>source\css</code>下（这里是使用了<code>sons-of-obsidian</code>代码高亮主题，如果要使用默认主题的话就复制<code>code-prettify\src\prettify.css</code>到这个目录下）。</p>
+<p>然后打开<code>themes\hexo-theme-matery\layout\_partial\head.ejs</code>文件，增加引用新css的代码</p>
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;%- config.root %&gt;css/sons-of-obsidian.css&quot; media=&quot;screen&quot; type=&quot;text/css&quot;&gt;</code></pre>
+<p> 如果用的是默认的css，这里就设置为对应的css就好了。</p>
+<p>另外很重要的一点是这里还需要添加一段style代码：</p>
+<pre><code class="html">&lt;style&gt; 
+    li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+    { list-style-type: decimal !important }
+&lt;/style&gt;</code></pre>
+<p>这其实是为了解决<code>code-prettify</code>的行号bug，不然会出现在代码块中只有一个点但没有代码行号的情况。</p>
+<p>接着打开<code>themes\hexo-theme-matery\layout\_partial\footer.ejs</code>文件，增加加载<code>prettify.js</code>的代码：</p>
+<pre><code class="html">&lt;script src=&quot;&lt;%- config.root %&gt;js/prettify.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>再给<code>pre</code>标签增加<code>prettyprint</code>和<code>linenums</code>这两个css的class</p>
+<pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function(){
+        $(&#39;pre&#39;).addClass(&#39;prettyprint linenums&#39;);
+            prettyPrint();
+    })
+&lt;/script&gt;</code></pre>
+<p>最后要记得把博客根目录下的<code>_config.yml</code>中highlight相关的配置都修改为false</p>
+<p>做完这些后就可以执行<code>hexo g</code>和<code>hexo s</code>预览一下效果了，代码块应该是能正常工作了</p>
+<p>参考自：</p>
+<ol>
+<li><p>[<a href="http://masikkk.com/article/hexo-12-google-code-prettify/" target="_blank" rel="noopener">Hexo博客(12)使用google-code-prettify代码高亮</a>]</p>
+</li>
+<li><p><a href="https://www.v2ex.com/t/32260" target="_blank" rel="noopener">https://www.v2ex.com/t/32260</a></p>
+</li>
+</ol>
+<p>下面是我自己对主题的一些修改:</p>
+<ul>
+<li><p>去除代码的隔行不同背景色，把<code>sons-of-obsidian.css</code>里的69~71行代码注释掉。</p>
+<pre><code class="css">li.L1, li.L3, li.L5, li.L7, li.L9 {
+    background: #111;
+}</code></pre>
+</li>
+<li><p>去除每行代码的背景色，通过查看style发现是在<code>mateay.css</code>里的<code>pre code</code>里的<code>background-color</code>控制的，所以这里把<code>background-color</code>的alpha值设为0就好了</p>
+<p><img src="/2019/09/22/hexo/hexo_help/code_bg.png" alt="代码背景色"></p>
+<p><img src="/2019/09/22/hexo/hexo_help/code_bg_1.png" alt="代码取消背景色"></p>
+</li>
+<li><p>修复代码块复制后丢失缩进的问题</p>
+<p><code>matery</code>还有这样一个bug，当复制的代码数量大于主题的<code>_config.yml</code>下的<code>copyright</code>中配置的<code>minCharNumber</code>阈值时会导致粘贴时代码丢失缩进，排查后解决方案如下：在<code>themes\hexo-theme-matery\layout\_partial\post-detail.ejs</code>修改如下代码。</p>
+<pre><code class="javascript">// create a div outside of the visible area and fill it with the selected text.
+var bodyElement = document.getElementsByTagName(&#39;body&#39;)[0];
+var newdiv = document.createElement(&#39;div&#39;);
+newdiv.style.position = &#39;absolute&#39;;
+newdiv.style.left = &#39;-99999px&#39;;
+newdiv.style.whiteSpace = &#39;pre&#39;; //增加这个属性，以防止空格缩进被去除
+bodyElement.appendChild(newdiv);
+var cloneContents = selection.getRangeAt(0).cloneContents()
+newdiv.appendChild(cloneContents);</code></pre>
+</li>
+</ul>
+<h2 id="线上博客异常"><a href="#线上博客异常" class="headerlink" title="线上博客异常"></a>线上博客异常</h2><p>本地博客push到线上后发现界面排版错误，所有图片无法加载，其实是因为GitHub上的仓库名称命名错误。</p>
+<p>仓库名称应该命名为[GitHub name].github.io</p>
 
             </div>
             <hr/>
@@ -571,7 +801,7 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Hello World》
+                    《hexo踩坑记录》
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="" property="cc:attributionName"
                rel="cc:attributionURL">
@@ -613,39 +843,37 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="../../07/hexo/build_hexo/">
+                <a href="">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Github+Hexo搭建博客">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="hexo踩坑记录">
                         
-                        <span class="card-title">Github+Hexo搭建博客</span>
+                        <span class="card-title">hexo踩坑记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Github+Hexo搭建博客本文介绍了如何使用hexo在GitHub上搭建个人博客
-1. 环境准备
-git
-Node.js
-Github账号
-Hexo1.1. git安装从git for windows下载git安装.安装完成后在控制台输
+                            hexo踩坑记录本地预览图片丢失当新建了博客编写完后执行hexo g和hexo s预览文章发现所有的图片都丢失了，无法正常加载。chrome中按F12查看发现hexo-asset-image插件没有正确地转换图片地址
+
+而且生成的资源下也不
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="../../../../categories/hexo/" class="post-category" target="_blank">
+                            <a href="../../../../../categories/hexo/" class="post-category" target="_blank">
                                     hexo
                                 </a>
                             
@@ -653,11 +881,16 @@ Hexo1.1. git安装从git for windows下载git安装.安装完成后在控制台�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="../../../../tags/hexo/" target="_blank">
+                    <a href="../../../../../tags/hexo/" target="_blank">
                         <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="../../../../../tags/help/" target="_blank">
+                        <span class="chip bg-color">help</span>
                     </a>
                     
                 </div>
@@ -668,37 +901,57 @@ Hexo1.1. git安装从git for windows下载git安装.安装完成后在控制台�
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="">
+                <a href="../../../20/hexo/start_hexo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="开始hexo之旅">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">开始hexo之旅</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            hexo常用命令这篇博客主要记录hexo使用中的命令
+
+生成静态页面
+  hexo g 或 hexo generate
+
+启动本地服务，预览效果
+  hexo s 或 hexo server
+
+上传博客到GitHub并部署
+  hexo d
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-20
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            suifeng
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../../../../../categories/hexo/" class="post-category" target="_blank">
+                                    hexo
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../../../../../tags/hexo/" target="_blank">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

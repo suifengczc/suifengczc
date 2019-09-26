@@ -98,6 +98,8 @@ pre {
     background: #272822;
     overflow: auto;
     border-radius: 0.35rem;
+	word-break: break-all;
+	word-wrap: break-word;
     tab-size: 4;
 }
 
@@ -113,7 +115,7 @@ code {
 pre code {
     padding: 0;
     color: #e8eaf6;
-    background-color: #272822;
+    background-color: #00272822;
 }
 
 pre[class*="language-"] {
