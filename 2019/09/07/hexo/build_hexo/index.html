@@ -6,11 +6,13 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Github+Hexo搭建博客, suifeng&#39;s blog">
     <meta name="description" content="Github+Hexo搭建博客本文介绍了如何使用hexo在GitHub上搭建个人博客
-1. 环境准备
+1.环境准备
 git
 Node.js
 Github账号
-Hexo1.1. git安装从git for windows下载git安装.安装完成后在控制台输">
+Hexo
+
+1.1Git安装从git for windows下载git安装.安装完成后在控制台输入">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -423,32 +425,35 @@ Hexo1.1. git安装从git for windows下载git安装.安装完成后在控制台�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Github-Hexo搭建博客"><a href="#Github-Hexo搭建博客" class="headerlink" title="Github+Hexo搭建博客"></a>Github+Hexo搭建博客</h1><p>本文介绍了如何使用hexo在GitHub上搭建个人博客</p>
-<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h2><ul>
+<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h2><ul>
 <li>git</li>
 <li>Node.js</li>
 <li>Github账号</li>
-<li>Hexo<h3 id="1-1-git安装"><a href="#1-1-git安装" class="headerlink" title="1.1. git安装"></a>1.1. git安装</h3>从<a href="https://git-scm.com/" target="_blank" rel="noopener">git for windows</a>下载git安装.<br>安装完成后在控制台输入<code>git --version</code>验证是否安装成功<h3 id="1-2-Node-js"><a href="#1-2-Node-js" class="headerlink" title="1.2. Node.js"></a>1.2. Node.js</h3>从<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Node.js</a>下载对应的版本安装即可。<br>安装完成后在控制台输入<code>node -v</code>来验证是否安装成功，并且环境设置正确。<h3 id="1-3-Github账号"><a href="#1-3-Github账号" class="headerlink" title="1.3. Github账号"></a>1.3. Github账号</h3>Github账号自行注册</li>
+<li>Hexo</li>
 </ul>
-<h3 id="1-4-安装Hexo"><a href="#1-4-安装Hexo" class="headerlink" title="1.4. 安装Hexo"></a>1.4. 安装Hexo</h3><p>Node.js安装成功后在控制台执行<code>npm install -g hexo-cli</code>，npm会自动帮我们完成hexo的安装。<br>安装结束后可以输入<code>hexo version</code>验证是否安装成功<br><img src="/2019/09/07/hexo/build_hexo/hexo_version.png" alt="hexo version"></p>
-<h2 id="2-创建本地博客目录"><a href="#2-创建本地博客目录" class="headerlink" title="2. 创建本地博客目录"></a>2. 创建本地博客目录</h2><p>首先在本地目录创建一个自己的博客文件夹，例如我这里的本地目录是<code>D:\My_Blogs</code>，接下来开始初始化hexo目录。</p>
+<h3 id="1-1Git安装"><a href="#1-1Git安装" class="headerlink" title="1.1Git安装"></a>1.1Git安装</h3><p>从<a href="https://git-scm.com/" target="_blank" rel="noopener">git for windows</a>下载git安装.<br>安装完成后在控制台输入<code>git --version</code>验证是否安装成功</p>
+<h3 id="1-2Node-js"><a href="#1-2Node-js" class="headerlink" title="1.2Node.js"></a>1.2Node.js</h3><p>从<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Node.js</a>下载对应的版本安装即可。<br>安装完成后在控制台输入<code>node -v</code>来验证是否安装成功，并且环境设置正确。</p>
+<h3 id="1-3Github账号"><a href="#1-3Github账号" class="headerlink" title="1.3Github账号"></a>1.3Github账号</h3><p>Github账号自行注册</p>
+<h3 id="1-4安装Hexo"><a href="#1-4安装Hexo" class="headerlink" title="1.4安装Hexo"></a>1.4安装Hexo</h3><p>Node.js安装成功后在控制台执行<code>npm install -g hexo-cli</code>，npm会自动帮我们完成hexo的安装。<br>安装结束后可以输入<code>hexo version</code>验证是否安装成功<br><img src="/2019/09/07/hexo/build_hexo/hexo_version.png" alt="hexo version"></p>
+<h2 id="2-创建本地博客目录"><a href="#2-创建本地博客目录" class="headerlink" title="2.创建本地博客目录"></a>2.创建本地博客目录</h2><p>首先在本地目录创建一个自己的博客文件夹，例如我这里的本地目录是<code>D:\My_Blogs</code>，接下来开始初始化hexo目录。</p>
 <p>然后打开控制台cd到博客目录下，执行<code>hexo init</code>命令（或者执行<code>hexo init &lt;folder&gt;</code>指定生成博客的目录，没有指定folder时，hexo会在当前目录下初始化），hexo会自动帮我们生成博客。因为我这里已经创建了<code>D:\My_Blogs</code>目录，所有后续的操作都在<code>D:\test</code>下执行。执行完init命令后会在博客文件夹下生成如下的文件。</p>
 <p><code>scaffolds</code>文件夹是hexo的模板文件夹。<br><code>source</code>文件夹顾名思义是存放博客资源的地方，当我们使用hexo命令创建博客时会在这个目录下生成相应的md文件和同名文件夹用来存放资源。<br><code>themes</code>是hexo的主题文件夹，hexo支持多种自定义博客主题，需要切换主题时可以从GitHub上clone主题资源到这个目录下。</p>
 <p><img src="/2019/09/07/hexo/build_hexo/hexo_init.png" alt="hexo init"></p>
 <p>到这里其实本地博客已经搭建完成了，接下来执行<code>hexo g</code>命令(<code>hexo generate</code>的简写形式，两者作用相同)，会生成本地的静态页面。<br><img src="/2019/09/07/hexo/build_hexo/hexo_g.png" alt="hexo g"></p>
 <p>可以看到hexo生成了28个文件，用时827ms。不知道为什么这里的<code>Generated:</code>打印都没有具体文件名<br>这里去看本地的博客目录会发现hexo创建了一个public文件夹，下面是hexo生成的博客静态文件</p>
 <p>再执行<code>hexo s</code>命令（<code>hexo server</code>的简写形式）会启动hexo服务。<br><img src="/2019/09/07/hexo/build_hexo/hexo_s.png" alt="hexo s"><br>如图，表示服务启动成功了。<br>这时候可以在浏览器访问<code>http://localhost:4000</code>查看博客了，默认情况下本地访问都是这个地址。<br>如图，本地的hexo博客已经搭建完成。<br><img src="/2019/09/07/hexo/build_hexo/hexo_hello.png" alt="hexo hello"></p>
-<h2 id="3-Github创建博客仓库"><a href="#3-Github创建博客仓库" class="headerlink" title="3. Github创建博客仓库"></a>3. Github创建博客仓库</h2><p>打开GitHub主页，点击+号下的<code>New repository</code>创建一个新的仓库<br><img src="/2019/09/07/hexo/build_hexo/github_newrep.png" alt="新建仓库"> </p>
+<h2 id="3-Github创建博客仓库"><a href="#3-Github创建博客仓库" class="headerlink" title="3.Github创建博客仓库"></a>3.Github创建博客仓库</h2><p>打开GitHub主页，点击+号下的<code>New repository</code>创建一个新的仓库<br><img src="/2019/09/07/hexo/build_hexo/github_newrep.png" alt="新建仓库"> </p>
 <p>然后在仓库界面填写相关仓库信息<br><img src="/2019/09/07/hexo/build_hexo/new_rep_name.png" alt="填写仓库名称"><br><img src="/2019/09/07/hexo/build_hexo/warn.png" width="20" height="20">踩坑提醒：这里一定要保证填写的repository name是你的GitHub名称+github.io的格式，不要写错。<br>（这里因为我已经创建了suifengczc.github.io的仓库所以提示仓库已存在）<br>否则写错了仓库名称会导致后面访问正式线上博客时出现找不到资源或者布局出错的问题。<br>填写完仓库名称和描述（可选）后直接<code>Create repository</code>就行了。</p>
 <p>GitHub仓库创建完成后复制仓库的地址，如下<br><img src="/2019/09/07/hexo/build_hexo/clone_url.png" alt="clone url"><br>粘贴到博客目录下的<code>_config.yml</code>文件末尾，如下图所示<br><img src="/2019/09/07/hexo/build_hexo/hexo_dep.png" alt="设置hexo deploy config"><br><code>type</code> 填git<br><code>repository</code> 值填复制来的仓库地址<br><code>branch</code> 默认填master就行<br><img src="/2019/09/07/hexo/build_hexo/warn.png" width="20" height="20"> 这里一定要注意，hexo的配置文件中所有的value值和<code>:</code>之间必须要有空格，否则会报错</p>
 <p>然后点击仓库界面的<code>Settings</code>进入仓库的设置界面，拉到最下面有<code>GitHub Pages</code><br>这里的<code>Your site is published at xxxxxxxxxx</code>就是可访问的线上博客地址。<br>把这里的url复制到刚刚打开的<code>_config.yml</code>的开头。如下图所示<br><img src="/2019/09/07/hexo/build_hexo/rep_setting.png" alt></p>
 <p><img src="/2019/09/07/hexo/build_hexo/blog_url.png" alt></p>
 <p><img src="/2019/09/07/hexo/build_hexo/blog_url_config.png" alt></p>
 <p>这里配置好后可以准备把本地的博客push到GitHub了</p>
-<h2 id="4-push本地博客到GitHub"><a href="#4-push本地博客到GitHub" class="headerlink" title="4. push本地博客到GitHub"></a>4. push本地博客到GitHub</h2><p>首先使用<code>npm i hexo-deployer-git</code>安装一个hexo的git扩展功能。<br><img src="/2019/09/07/hexo/build_hexo/npm_git.png" alt="npm install deployer"><br>如图表示安装成功。<br>然后依次执行下面三条命令</p>
+<h2 id="4-push本地博客到GitHub"><a href="#4-push本地博客到GitHub" class="headerlink" title="4.push本地博客到GitHub"></a>4.push本地博客到GitHub</h2><p>首先使用<code>npm i hexo-deployer-git</code>安装一个hexo的git扩展功能。<br><img src="/2019/09/07/hexo/build_hexo/npm_git.png" alt="npm install deployer"><br>如图表示安装成功。<br>然后依次执行下面三条命令</p>
 <pre><code>hexo clean  //清除缓存
 hexo g  //重新生成博客文件
 hexo d  //push到GitHub</code></pre><p>执行<code>hexo d</code>的时候会要求输入GitHub账号和密码，输入完成后就push成功了。<br>接下来就可以打开我们的线上博客地址查看最新博客了。</p>
-<h2 id="5-参考"><a href="#5-参考" class="headerlink" title="5. 参考"></a>5. 参考</h2><ul>
+<h2 id="5-参考"><a href="#5-参考" class="headerlink" title="5.参考"></a>5.参考</h2><ul>
 <li><a href="https://www.simon96.online/2018/10/12/hexo-tutorial/" target="_blank" rel="noopener">https://www.simon96.online/2018/10/12/hexo-tutorial/</a></li>
 <li><a href="https://godweiyang.com/2018/04/13/hexo-blog/" target="_blank" rel="noopener">https://godweiyang.com/2018/04/13/hexo-blog/</a></li>
 <li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">官方文档</a></li>

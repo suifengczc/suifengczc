@@ -629,7 +629,7 @@ code {
 <p><img src="/2019/09/22/hexo/hexo_help/code_bg_1.png" alt="代码取消背景色"></p>
 </li>
 <li><p>修复代码块复制后丢失缩进的问题</p>
-<p><code>matery</code>还有这样一个bug，当复制的代码数量大于主题的<code>_config.yml</code>下的<code>copyright</code>中配置的<code>minCharNumber</code>阈值时会导致粘贴时代码丢失缩进，排查后解决方案如下：在<code>themes\hexo-theme-matery\layout\_partial\post-detail.ejs</code>修改如下代码。</p>
+<p><code>matery</code>还有这样一个bug，当复制的代码数量大于主题的<code>_config.yml</code>下的<code>copyright</code>中配置的<code>minCharNumber</code>阈值时会导致粘贴时代码丢失缩进，排查后解决方案如下：在<code>themes\hexo-theme-matery\layout\_partial\post-detail.ejs</code>代码中为<code>newdiv</code>增加<code>newdiv.style.whiteSpace = &#39;pre&#39;</code>属性。</p>
 <pre><code class="javascript">// create a div outside of the visible area and fill it with the selected text.
 var bodyElement = document.getElementsByTagName(&#39;body&#39;)[0];
 var newdiv = document.createElement(&#39;div&#39;);
