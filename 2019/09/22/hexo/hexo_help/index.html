@@ -439,14 +439,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-14
+                    2019-11-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    2.9k
                 </div>
                 
 
@@ -744,6 +744,11 @@ $(function () {
 <p><img src="/2019/09/22/hexo/hexo_help/upgrade_wordcount_2.png" alt>所以这里为它添加一个<code>wordCount</code>属性。</p>
 <p><img src="/2019/09/22/hexo/hexo_help/upgrade_wordcount_3.png" alt></p>
 <p>这样就解决了站点总字数统计丢失的问题</p>
+<h3 id="关于页面的图标位置"><a href="#关于页面的图标位置" class="headerlink" title="关于页面的图标位置"></a>关于页面的图标位置</h3><p>更新后1.2.0后关于界面上里的文章统计图标出现上移导致文字部分被遮挡的问题。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/upgrade_about_1.png" alt></p>
+<p>通过搜索<code>文章发布统计图</code>发现是在<code>themes\hexo-theme-matery\languages\zh-CN.yml</code>中定义的<code>postPublishChart</code>的中文名。再继续搜索<code>postPublishChart</code>发现是在<code>themes\hexo-theme-matery\layout\_widget\post-charts.ejs</code>。在<code>post-charts.ejs</code>中搜索<code>postPublishChart</code>，<code>categoriesChart</code>，<code>top10TagsChart</code>在统计的属性内修改<code>top</code>属性。</p>
+<p>修改后如下：</p>
+<p><img src="/2019/09/22/hexo/hexo_help/upgrade_about_2.png" alt></p>
 
             </div>
             <hr/>
@@ -1266,7 +1271,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.2k</span>&nbsp;
+                class="white-color">10.3k</span>&nbsp;
             
             
             
