@@ -4,10 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo踩坑记录, suifeng&#39;s blog">
-    <meta name="description" content="hexo踩坑记录本地预览图片丢失当新建了博客编写完后执行hexo g和hexo s预览文章发现所有的图片都丢失了，无法正常加载。chrome中按F12查看发现hexo-asset-image插件没有正确地转换图片地址
+    <meta name="keywords" content="hexo踩坑记录和优化, Suifeng Blog">
+    <meta name="description" content="hexo踩坑记录和优化本地预览图片丢失当新建了博客编写完后执行hexo g和hexo s预览文章发现所有的图片都丢失了，无法正常加载。chrome中按F12查看发现hexo-asset-image插件没有正确地转换图片地址
 
-而且生成的资源下也不">
+而且生成的资源">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,10 +15,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>hexo踩坑记录 | suifeng&#39;s blog</title>
+    <title>hexo踩坑记录和优化 | Suifeng Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
@@ -29,82 +29,99 @@
 		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
 		{ list-style-type: decimal !important }
 	</style>
-    <style type="text/css">
-        
-    </style>
 
-    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="/libs/jquery/jquery.min.js"></script>
 </head>
 
 
 <body>
-
-<header class="navbar-fixed">
+    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
+        <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
                 <a href="../../../../../index.html" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">suifeng's blog</span>
+                    <span class="logo-span">Suifeng Blog</span>
                 </a>
             </div>
             
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
-<ul class="right">
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li class="hide-on-med-and-down">
-        <a href="/" class="waves-effect waves-light">
-            
-            <i class="fa fa-home"></i>
-            
-            <span>首页</span>
-        </a>
-    </li>
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
     
-    <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
-            
-            <i class="fa fa-tags"></i>
-            
-            <span>标签</span>
-        </a>
-    </li>
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li class="hide-on-med-and-down">
-        <a href="/categories" class="waves-effect waves-light">
-            
-            <i class="fa fa-bookmark"></i>
-            
-            <span>分类</span>
-        </a>
-    </li>
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
     
-    <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
-            
-            <i class="fa fa-archive"></i>
-            
-            <span>归档</span>
-        </a>
-    </li>
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
-            
-            <i class="fa fa-user-circle-o"></i>
-            
-            <span>关于</span>
-        </a>
-    </li>
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
     
-    <li>
-        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
-        </a>
-    </li>
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
 </ul>
 
 <div id="mobile-nav" class="side-nav sidenav">
@@ -113,10 +130,10 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">suifeng's blog</div>
+        <div class="logo-name">Suifeng Blog</div>
         <div class="logo-desc">
             
-            咸鱼脱水记
+            Never really desperate, only the lost of the soul.
             
         </div>
     </div>
@@ -125,56 +142,77 @@
 
     <ul class="menu-list mobile-menu-list">
         
-        <li>
-            <a href="/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-home"></i>
-                
-                首页
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
         </li>
         
-        <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                标签
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
         </li>
         
-        <li>
-            <a href="/categories" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-bookmark"></i>
-                
-                分类
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
         </li>
         
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-archive"></i>
-                
-                归档
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
         </li>
         
-        <li>
-            <a href="/about" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-user-circle-o"></i>
-                
-                关于
-            </a>
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
         </li>
         
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
-                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            <a href="https://github.com/suifengczc" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
         
@@ -229,7 +267,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/suifengczc" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -244,17 +282,17 @@
 
 </header>
 
-
+    
 
 
 
 <div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
-    <div class="container">
+    <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        hexo踩坑记录
+                        hexo踩坑记录和优化
                     </div>
                 </div>
             </div>
@@ -337,7 +375,7 @@
 
     #floating-toc-btn {
         position: fixed;
-        right: 20px;
+        right: 15px;
         bottom: 76px;
         padding-top: 15px;
         margin-bottom: 0;
@@ -365,11 +403,11 @@
                     
                     <div class="article-tag">
                         
-                            <a href="../../../../../tags/hexo/" target="_blank">
+                            <a href="../../../../../tags/hexo/">
                                 <span class="chip bg-color">hexo</span>
                             </a>
                         
-                            <a href="../../../../../tags/help/" target="_blank">
+                            <a href="../../../../../tags/help/">
                                 <span class="chip bg-color">help</span>
                             </a>
                         
@@ -379,9 +417,9 @@
                 <div class="col s5 right-align">
                     
                     <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="../../../../../categories/hexo/" class="post-category" target="_blank">
+                            <a href="../../../../../categories/hexo/" class="post-category">
                                 hexo
                             </a>
                         
@@ -391,39 +429,47 @@
             </div>
 
             <div class="post-info">
+                
                 <div class="post-date info-break-policy">
-                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2019-09-22
                 </div>
+                
 
                 
-                    
-                    <div class="info-break-policy">
-                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.9k
-                    </div>
-                    
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-11-14
+                </div>
+                
 
-                    
-                    <div class="info-break-policy">
-                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
-                    </div>
-                    
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
                 
 				
-				
+                
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
             </div>
+            
         </div>
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="hexo踩坑记录"><a href="#hexo踩坑记录" class="headerlink" title="hexo踩坑记录"></a>hexo踩坑记录</h1><h2 id="本地预览图片丢失"><a href="#本地预览图片丢失" class="headerlink" title="本地预览图片丢失"></a>本地预览图片丢失</h2><p>当新建了博客编写完后执行<code>hexo g</code>和<code>hexo s</code>预览文章发现所有的图片都丢失了，无法正常加载。chrome中按<code>F12</code>查看发现<code>hexo-asset-image</code>插件没有正确地转换图片地址</p>
+                <h1 id="hexo踩坑记录和优化"><a href="#hexo踩坑记录和优化" class="headerlink" title="hexo踩坑记录和优化"></a>hexo踩坑记录和优化</h1><h2 id="本地预览图片丢失"><a href="#本地预览图片丢失" class="headerlink" title="本地预览图片丢失"></a>本地预览图片丢失</h2><p>当新建了博客编写完后执行<code>hexo g</code>和<code>hexo s</code>预览文章发现所有的图片都丢失了，无法正常加载。chrome中按<code>F12</code>查看发现<code>hexo-asset-image</code>插件没有正确地转换图片地址</p>
 <p><img src="/2019/09/22/hexo/hexo_help/error_src.png" alt="错误图片地址"></p>
 <p>而且生成的资源下也不包含任何图片信息。</p>
 <p><img src="/2019/09/22/hexo/hexo_help/no_src.png" alt="无图片资源"></p>
@@ -618,18 +664,15 @@ code {
 </li>
 </ol>
 <p>下面是我自己对主题的一些修改:</p>
-<ul>
-<li><p>去除代码的隔行不同背景色，把<code>sons-of-obsidian.css</code>里的69~71行代码注释掉。</p>
+<h3 id="去除代码隔行背景色"><a href="#去除代码隔行背景色" class="headerlink" title="去除代码隔行背景色"></a>去除代码隔行背景色</h3><p>去除代码的隔行不同背景色，把<code>sons-of-obsidian.css</code>里的69~71行代码注释掉。被注释代码如下</p>
 <pre><code class="css">li.L1, li.L3, li.L5, li.L7, li.L9 {
     background: #111;
 }</code></pre>
-</li>
-<li><p>去除每行代码的背景色，通过查看style发现是在<code>mateay.css</code>里的<code>pre code</code>里的<code>background-color</code>控制的，所以这里把<code>background-color</code>的alpha值设为0就好了</p>
+<h3 id="去除代码下背景色"><a href="#去除代码下背景色" class="headerlink" title="去除代码下背景色"></a>去除代码下背景色</h3><p>去除每行代码的背景色，通过查看style发现是在<code>matery.css</code>里的<code>pre code</code>里的<code>background-color</code>控制的，所以这里把<code>background-color</code>的alpha值设为0就好了</p>
+<p>更正：这里的<code>background-color</code>值应该修改为#00000000，否则在其他背景色下还是能看到。</p>
 <p><img src="/2019/09/22/hexo/hexo_help/code_bg.png" alt="代码背景色"></p>
 <p><img src="/2019/09/22/hexo/hexo_help/code_bg_1.png" alt="代码取消背景色"></p>
-</li>
-<li><p>修复代码块复制后丢失缩进的问题</p>
-<p><code>matery</code>还有这样一个bug，当复制的代码数量大于主题的<code>_config.yml</code>下的<code>copyright</code>中配置的<code>minCharNumber</code>阈值时会导致粘贴时代码丢失缩进，排查后解决方案如下：在<code>themes\hexo-theme-matery\layout\_partial\post-detail.ejs</code>代码中为<code>newdiv</code>增加<code>newdiv.style.whiteSpace = &#39;pre&#39;</code>属性。</p>
+<h3 id="修复代码块复制后丢失缩进的问题"><a href="#修复代码块复制后丢失缩进的问题" class="headerlink" title="修复代码块复制后丢失缩进的问题"></a>修复代码块复制后丢失缩进的问题</h3><p><code>matery</code>还有这样一个bug，当复制的代码数量大于主题的<code>_config.yml</code>下的<code>copyright</code>中配置的<code>minCharNumber</code>阈值时会导致粘贴时代码丢失缩进，排查后解决方案如下：在<code>themes\hexo-theme-matery\layout\_partial\post-detail.ejs</code>代码中为<code>newdiv</code>增加<code>newdiv.style.whiteSpace = &#39;pre&#39;</code>属性。</p>
 <pre><code class="javascript">// create a div outside of the visible area and fill it with the selected text.
 var bodyElement = document.getElementsByTagName(&#39;body&#39;)[0];
 var newdiv = document.createElement(&#39;div&#39;);
@@ -639,23 +682,168 @@ newdiv.style.whiteSpace = &#39;pre&#39;; //增加这个属性，以防止空格�
 bodyElement.appendChild(newdiv);
 var cloneContents = selection.getRangeAt(0).cloneContents()
 newdiv.appendChild(cloneContents);</code></pre>
-</li>
-</ul>
+<h3 id="修改代码块背景色"><a href="#修改代码块背景色" class="headerlink" title="修改代码块背景色"></a>修改代码块背景色</h3><p>默认的代码背景色是黑色的，看着眼睛不舒服，所以修改为idea的默认背景色<code>#2B2B2B</code>。对代码块检查发现代码块背景色在<code>sons-of-obsidian.css</code>的61行的<code>.prettyprint</code>里的<code>background</code>属性。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/code_block_bg_1.png" alt="black_bg"></p>
+<p>所以打开博客根目录下的<code>themes\hexo-theme-matery\source\css\sons-of-obsidian.css</code>，修改 <code>.prettyprint</code>的<code>background</code>属性为<code>#2B2B2B</code>。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/code_block_bg_2.png" alt="black_bg"></p>
+<p>修改完成后直接刷新界面就能看到修改后的效果了。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/code_block_bg_3.png" alt="black_bg"> </p>
+<p>这样看着就舒服多了。</p>
 <h2 id="线上博客异常"><a href="#线上博客异常" class="headerlink" title="线上博客异常"></a>线上博客异常</h2><p>本地博客push到线上后发现界面排版错误，所有图片无法加载，其实是因为GitHub上的仓库名称命名错误。</p>
 <p>仓库名称应该命名为[GitHub name].github.io</p>
+<h2 id="更新matery1-2-0导致Bug"><a href="#更新matery1-2-0导致Bug" class="headerlink" title="更新matery1.2.0导致Bug"></a>更新matery1.2.0导致Bug</h2><p>刚刚更新了matery的1.2.0版本，导致博客中出现了一些预期之外的bug，下面记录一下具体的Bug和修复记录。</p>
+<h3 id="代码块缩放异常"><a href="#代码块缩放异常" class="headerlink" title="代码块缩放异常"></a>代码块缩放异常</h3><p>matery1.2.0在代码块中增加了代码块的缩放和复制功能，但是这个功能和<code>code-prettify</code>有冲突，导致缩放代码块时代码消失，但代码行号仍然保留的bug。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/upgrade_codeblock_error.png" alt="codeblock error"></p>
+<p>通过搜索<code>fas fa-angle-up code-expand</code>发现这个关键字只在<code>themes\hexo-theme-matery\source\libs\codeBlock\codeShrink.js</code>被使用，这里设置了代码缩放按钮的点击事件。</p>
+<pre><code class="js">// 代码块收缩
+
+$(function () {
+  var $code_expand = $(&#39;&lt;i class=&quot;fas fa-angle-up code-expand&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&#39;);
+
+  $(&#39;.code-area&#39;).prepend($code_expand);
+  $(&#39;.code-expand&#39;).on(&#39;click&#39;, function () {
+    if ($(this).parent().hasClass(&#39;code-closed&#39;)) {
+      $(this).siblings(&#39;pre&#39;).find(&#39;code&#39;).show();
+      $(this).parent().removeClass(&#39;code-closed&#39;);
+    } else {
+      $(this).siblings(&#39;pre&#39;).find(&#39;code&#39;).hide();
+      $(this).parent().addClass(&#39;code-closed&#39;);
+    }
+  });
+});
+</code></pre>
+<p>这里可以看到，在点击事件里在<code>pre</code>标签下查找<code>code</code>标签然后对其做显示和隐藏以实现代码的缩放功能。但是使用了<code>code-prettify</code>后，pre下不是直接包裹<code>code</code>标签，所以原来的代码直接对code标签做处理导致了这个bug。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/upgrade_codeblock_error_1.png" alt></p>
+<p>所以修改这个bug只需要将原来的代码中的<code>find(&#39;code&#39;)</code>修改为<code>find(&#39;ol&#39;)</code>就可以了。修改后代码如下：</p>
+<pre><code class="javascript">// 代码块收缩
+
+$(function () {
+  var $code_expand = $(&#39;&lt;i class=&quot;fas fa-angle-up code-expand&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&#39;);
+
+  $(&#39;.code-area&#39;).prepend($code_expand);
+  $(&#39;.code-expand&#39;).on(&#39;click&#39;, function () {
+    if ($(this).parent().hasClass(&#39;code-closed&#39;)) {
+      $(this).siblings(&#39;pre&#39;).find(&#39;ol&#39;).show();
+      $(this).parent().removeClass(&#39;code-closed&#39;);
+    } else {
+      $(this).siblings(&#39;pre&#39;).find(&#39;ol&#39;).hide();
+      $(this).parent().addClass(&#39;code-closed&#39;);
+    }
+  });
+});</code></pre>
+<h3 id="代码块复制Bug"><a href="#代码块复制Bug" class="headerlink" title="代码块复制Bug"></a>代码块复制Bug</h3><p>1.2.0新增的代码复制功能和<code>code-prettify</code>也存在兼容问题。使用<code>code-prettify</code>后导致复制按钮只能复制第一行代码。</p>
+<p>通过搜索<code>fas fa-copy code_copy</code>找到复制按钮的逻辑在<code>themes\hexo-theme-matery\source\libs\codeBlock\codeCopy.js</code>文件中。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/upgrade_codeblock_copy_1.png" alt></p>
+<p><img src="/2019/09/22/hexo/hexo_help/upgrade_codeblock_copy_2.png" alt></p>
+<p>从这里的第50行可以看出，复制功能bug和代码块缩放bug原因是差不多的。</p>
+<p>所以将这里的<code>find(&#39;code&#39;)</code>修改为<code>find(&#39;ol&#39;)</code>就可以了。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/upgrade_codeblock_copy_3.png" alt></p>
+<h3 id="网页末尾的站点总字数丢失"><a href="#网页末尾的站点总字数丢失" class="headerlink" title="网页末尾的站点总字数丢失"></a>网页末尾的站点总字数丢失</h3><p>更新1.2.0后网页末尾的站点总字数丢失，在<code>hexo-theme-matery</code>目录下搜索发现源码中是存在对应功能的，在博客根目录的<code>themes\hexo-theme-matery\layout\_partial\footer.ejs</code>下。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/upgrade_wordcount_1.png" alt></p>
+<p>这里对<code>theme.wordCount.totalCount</code>的值做了判断，于是到<code>themes\hexo-theme-matery\_config.yml</code>查找<code>wordCount</code>相关配置，发现在<code>wordCount</code>下只有一个`enabled属性。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/upgrade_wordcount_2.png" alt>所以这里为它添加一个<code>wordCount</code>属性。</p>
+<p><img src="/2019/09/22/hexo/hexo_help/upgrade_wordcount_3.png" alt></p>
+<p>这样就解决了站点总字数统计丢失的问题</p>
 
             </div>
             <hr/>
 
             
-            <style>
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io">https://suifengczc.github.io</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="../../../../../tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
+                                </a>
+                            
+                                <a href="../../../../../tags/help/">
+                                    <span class="chip bg-color">help</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
     #reward {
         margin: 40px 0;
         text-align: center;
     }
 
     #reward .reward-link {
-        font-size: 1.88rem;
+        font-size: 1.4rem;
+        line-height: 38px;
     }
 
     #reward .btn-floating:hover {
@@ -741,12 +929,12 @@ newdiv.appendChild(cloneContents);</code></pre>
 </style>
 
 <div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
 
     <!-- Modal Structure -->
     <div id="rewardModal" class="modal">
         <div class="modal-content">
-            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
             <h4 class="reward-title">你的赏识是我前进的动力</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
@@ -772,59 +960,6 @@ newdiv.appendChild(cloneContents);</code></pre>
     });
 </script>
             
-
-            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
-<div id="article-share">
-    
-    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
-    
-</div>
-
-<script src="/libs/share/js/social-share.min.js"></script>
-
-            
-
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt=""
-                         style="border-width:0"
-                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
-                </a>
-            </div>
-            <br/>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-                  property="dct:title" rel="dct:type">
-                    《hexo踩坑记录》
-                </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="" property="cc:attributionName"
-               rel="cc:attributionURL">
-                suifeng
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
         </div>
     </div>
 
@@ -843,54 +978,50 @@ newdiv.appendChild(cloneContents);</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="">
+                <a href="../../../28/java/classloader_detail/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="hexo踩坑记录">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="ClassLoader详解">
                         
-                        <span class="card-title">hexo踩坑记录</span>
+                        <span class="card-title">ClassLoader详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            hexo踩坑记录本地预览图片丢失当新建了博客编写完后执行hexo g和hexo s预览文章发现所有的图片都丢失了，无法正常加载。chrome中按F12查看发现hexo-asset-image插件没有正确地转换图片地址
-
-而且生成的资源下也不
+                            ClassLoader的加载机制
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-09-28
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="../../../../../categories/hexo/" class="post-category" target="_blank">
-                                    hexo
+                            <a href="../../../../../categories/java/" class="post-category">
+                                    java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="../../../../../tags/hexo/" target="_blank">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="../../../../../tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
-                    <a href="../../../../../tags/help/" target="_blank">
-                        <span class="chip bg-color">help</span>
+                    <a href="../../../../../tags/ClassLoader/">
+                        <span class="chip bg-color">ClassLoader</span>
                     </a>
                     
                 </div>
@@ -899,9 +1030,9 @@ newdiv.appendChild(cloneContents);</code></pre>
         </div>
         
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="../../../20/hexo/start_hexo/">
@@ -930,13 +1061,13 @@ newdiv.appendChild(cloneContents);</code></pre>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-20
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="../../../../../categories/hexo/" class="post-category" target="_blank">
+                            <a href="../../../../../categories/hexo/" class="post-category">
                                     hexo
                                 </a>
                             
@@ -947,7 +1078,7 @@ newdiv.appendChild(cloneContents);</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="../../../../../tags/hexo/" target="_blank">
+                    <a href="../../../../../tags/hexo/">
                         <span class="chip bg-color">hexo</span>
                     </a>
                     
@@ -958,6 +1089,7 @@ newdiv.appendChild(cloneContents);</code></pre>
         
     </div>
 </article>
+
 </div>
 
 
@@ -977,10 +1109,9 @@ newdiv.appendChild(cloneContents);</code></pre>
         var newdiv = document.createElement('div');
         newdiv.style.position = 'absolute';
         newdiv.style.left = '-99999px';
-        newdiv.style.whiteSpace = 'pre';
+        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
         bodyElement.appendChild(newdiv);
-        var cloneContents = selection.getRangeAt(0).cloneContents()
-        newdiv.appendChild(cloneContents);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
 
         // we need a <pre> tag workaround.
         // otherwise the text inside "pre" loses all the line breaks!
@@ -990,21 +1121,45 @@ newdiv.appendChild(cloneContents);</code></pre>
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: suifeng's blog<br />'
-            + '作者: suifeng<br />'
-            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '来源: Suifeng Blog<br />'
+            + '文章作者: suifeng<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
         selection.selectAllChildren(newdiv);
-        // window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
     });
 </script>
 
 
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1014,7 +1169,7 @@ newdiv.appendChild(cloneContents);</code></pre>
 
 <div id="floating-toc-btn" class="hide-on-med-and-down">
     <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
+        <i class="fas fa-list-ul"></i>
     </a>
 </div>
 
@@ -1027,7 +1182,7 @@ newdiv.appendChild(cloneContents);</code></pre>
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1039,7 +1194,7 @@ newdiv.appendChild(cloneContents);</code></pre>
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1083,10 +1238,10 @@ newdiv.appendChild(cloneContents);</code></pre>
         let $mainContent = $('#main-content');
         $('#floating-toc-btn .btn-floating').click(function () {
             if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
+                $tocAside.removeClass(expandedClass).hide();
                 $mainContent.removeClass('l9');
             } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
+                $tocAside.addClass(expandedClass).show();
                 $mainContent.addClass('l9');
             }
             fixPostCardWidth('artDetail', 'prenext-posts');
@@ -1099,45 +1254,115 @@ newdiv.appendChild(cloneContents);</code></pre>
 </main>
 
 
-<footer class="page-footer bg-color">
+
+    <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy; 2019 suifeng. All Rights Reserved.
-
-            
-            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">3.7k</span>
-            
-
-            <br>
-            <span id="sitetime"></span>
-
-            
-            
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                <i class="fa fa-heart-o"></i>
-                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">10.2k</span>&nbsp;
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
             </span>
             
             
-            <span id="busuanzi_container_site_uv" style='display:none'>
-                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
             </span>
             
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script src="/js/prettify.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('pre').addClass('prettyprint linenums');
+                    prettyPrint();
+                })
+            </script>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "3";
+                    var startDate = "3";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/suifengczc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fa fa-github"></i>
+        <i class="fab fa-github"></i>
     </a>
 
 
 
     <a href="mailto:ssuifengczc@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fa fa-envelope-open"></i>
+        <i class="fas fa-envelope-open"></i>
     </a>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
     </div>
@@ -1145,76 +1370,12 @@ newdiv.appendChild(cloneContents);</code></pre>
 
 <div class="progress-bar"></div>
 
-<script src="/js/prettify.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('pre').addClass('prettyprint linenums');
-			prettyPrint();
-	})
-</script>
 
-<!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 0;
-        var uvcountOffset = 0;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
-
-<script language=javascript>
-    function siteTime() {
-        window.setTimeout("siteTime()", 1000);
-        var seconds = 1000;
-        var minutes = seconds * 60;
-        var hours = minutes * 60;
-        var days = hours * 24;
-        var years = days * 365;
-        var today = new Date();
-        var todayYear = today.getFullYear();
-        var todayMonth = today.getMonth() + 1;
-        var todayDate = today.getDate();
-        var todayHour = today.getHours();
-        var todayMinute = today.getMinutes();
-        var todaySecond = today.getSeconds();
-        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-        year - 作为date对象的年份，为4位年份值
-        month - 0-11之间的整数，做为date对象的月份
-        day - 1-31之间的整数，做为date对象的天数
-        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-        minutes - 0-59之间的整数，做为date对象的分钟数
-        seconds - 0-59之间的整数，做为date对象的秒数
-        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2019, 03, 03, 00, 00, 00);
-        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-        var diff = t2 - t1;
-        var diffYears = Math.floor(diff / years);
-        var diffDays = Math.floor((diff / days) - diffYears * 365);
-        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
-        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
-        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-    }
-    siteTime();
-</script>
-
-<!-- 搜索遮罩框 -->
+    <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
             <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
@@ -1228,28 +1389,63 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-<!-- 回到顶部按钮 -->
+    <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fa fa-angle-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </a>
 </div>
 
 
-<script src="/libs/materialize/materialize.min.js"></script>
-<script src="/libs/masonry/masonry.pkgd.min.js"></script>
-<script src="/libs/aos/aos.js"></script>
-<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-<script src="/js/matery.js"></script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
-
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
 
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
 
 </body>
+
 </html>
