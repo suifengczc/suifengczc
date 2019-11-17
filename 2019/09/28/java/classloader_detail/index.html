@@ -4,8 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ClassLoader详解, Suifeng Blog">
-    <meta name="description" content="ClassLoader的加载机制">
+    <meta name="keywords" content="Java ClassLoader的简单介绍, Suifeng Blog">
+    <meta name="description" content="Java ClassLoader的简单介绍本文是阅读《深入理解Java虚拟机》第七章类加载器相关部分过程中生成的阅读笔记。简单介绍了ClassLoader的是什么，主要的类型和双亲委派模型。
+ClassLoader是什么
+虚拟机设计团队把类">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ClassLoader详解 | Suifeng Blog</title>
+    <title>Java ClassLoader的简单介绍 | Suifeng Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -284,13 +286,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ClassLoader详解
+                        Java ClassLoader的简单介绍
                     </div>
                 </div>
             </div>
@@ -437,21 +439,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-10-03
+                    2019-11-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6
+                    566
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 				
@@ -467,7 +469,54 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="ClassLoader的加载机制"><a href="#ClassLoader的加载机制" class="headerlink" title="ClassLoader的加载机制"></a>ClassLoader的加载机制</h1>
+                <h1 id="Java-ClassLoader的简单介绍"><a href="#Java-ClassLoader的简单介绍" class="headerlink" title="Java ClassLoader的简单介绍"></a>Java ClassLoader的简单介绍</h1><p>本文是阅读《深入理解Java虚拟机》第七章类加载器相关部分过程中生成的阅读笔记。简单介绍了ClassLoader的是什么，主要的类型和双亲委派模型。</p>
+<h2 id="ClassLoader是什么"><a href="#ClassLoader是什么" class="headerlink" title="ClassLoader是什么"></a>ClassLoader是什么</h2><blockquote>
+<p>虚拟机设计团队把类加载阶段中的“通过一个类的全限定名来获取描述此类的二进制字节流”这个动作放到Java虚拟机外部去实现，以便让应用程序自己决定如何去获取所需要的类。实现这个动作的代码模块称为“类加载器”。</p>
+<p>​                                                                                                                    –《深入理解Java虚拟机》（周志明）</p>
+</blockquote>
+<p>ClassLoader就是这里提到的类加载器。类加载器的作用就是根据类的全限定名获取类的二进制字节流。这个动作在Java虚拟机的外部实现。</p>
+<h2 id="类与类加载器的关系"><a href="#类与类加载器的关系" class="headerlink" title="类与类加载器的关系"></a>类与类加载器的关系</h2><p>类加载器除了加载类的作用外，还和被加载的类本身共同确保类的唯一性。对于两个相同的Class文件，当使用不同的类加载器加载时他们就i是不同的。</p>
+<p>例如当使用了不同ClassLoader加载同一个类时，会导致instanceof的结果为false。</p>
+<pre><code class="java">package com.suifeng.loader;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class ClassLoaderTest {
+
+    public static void main(String[] args) throws Exception{
+        ClassLoader myClassLoader = new ClassLoader() {
+            @Override
+            public Class&lt;?&gt; loadClass(String name) throws ClassNotFoundException {
+                try {
+                    String fileName = name.substring(name.lastIndexOf(&quot;.&quot;) + 1) + &quot;.class&quot;;
+                    InputStream is = getClass().getResourceAsStream(fileName);
+                    if (is == null) {
+                        return super.loadClass(name);
+                    }
+
+                    byte[] b = new byte[is.available()];
+                    is.read(b);
+                    return defineClass(name, b, 0, b.length);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    throw new ClassNotFoundException(name);
+                }
+            }
+        };
+        Class&lt;?&gt; aClass = myClassLoader.loadClass(&quot;com.suifeng.loader.TestClass&quot;);
+        Object obj = aClass.newInstance();
+
+        System.out.println(obj.getClass());
+        System.out.println(obj instanceof com.suifeng.loader.TestClass);
+    }
+}
+</code></pre>
+<p>输出结果为</p>
+<pre><code>&gt; class com.suifeng.loader.TestClass
+&gt; false</code></pre><p>可以看到这里的obj是TestClass的对象，但使用instanceof关键字判断时仍然返回false。这是因为使用了不同类加载器jvm将他们识别为两个不同的类。obj是自定义类加载的，而另一个是由系统应用程序类加载器加载的。</p>
+<h2 id="类加载器类型"><a href="#类加载器类型" class="headerlink" title="类加载器类型"></a>类加载器类型</h2><p>Java提供了三种类加载器。分别是<code>启动类加载器</code>，<code>扩展类加载器</code>，<code>应用程序类加载器</code>。</p>
+
             </div>
             <hr/>
 
@@ -970,7 +1019,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.3k</span>&nbsp;
+                class="white-color">11.7k</span>&nbsp;
             
             
             
