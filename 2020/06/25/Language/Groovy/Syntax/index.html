@@ -1,0 +1,2205 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Groovy 基础语法, Suifeng Blog">
+    <meta name="description" content="Groovy 基础语法翻译自官方文档:Syntax部分内容为了方便表述做了修改。
+1.注释1.1.单行注释单行注释以//开头，可以放在行中的任意位置。从//开始知道行尾的内容都算作是注释的部分。
+// 独立的单行注释
+println &amp;qu">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Groovy 基础语法 | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<style> 
+		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+		{ list-style-type: decimal !important }
+	</style>
+
+    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="../../../../../../index.html" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Suifeng Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Suifeng Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/suifengczc" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/suifengczc" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Groovy 基础语法
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="../../../../../../tags/Language/">
+                                <span class="chip bg-color">Language</span>
+                            </a>
+                        
+                            <a href="../../../../../../tags/Groovy/">
+                                <span class="chip bg-color">Groovy</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="../../../../../../categories/Language/" class="post-category">
+                                Language
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-25
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-07-10
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    35 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Groovy-基础语法"><a href="#Groovy-基础语法" class="headerlink" title="Groovy 基础语法"></a>Groovy 基础语法</h1><p>翻译自官方文档:<a href="http://www.groovy-lang.org/syntax.html" target="_blank" rel="noopener">Syntax</a><br>部分内容为了方便表述做了修改。</p>
+<h2 id="1-注释"><a href="#1-注释" class="headerlink" title="1.注释"></a>1.注释</h2><h3 id="1-1-单行注释"><a href="#1-1-单行注释" class="headerlink" title="1.1.单行注释"></a>1.1.单行注释</h3><p>单行注释以<code>//</code>开头，可以放在行中的任意位置。从<code>//</code>开始知道行尾的内容都算作是注释的部分。</p>
+<pre><code class="Groovy">// 独立的单行注释
+println &quot;hello&quot; //直到行尾的注释</code></pre>
+<h3 id="1-2-多行注释"><a href="#1-2-多行注释" class="headerlink" title="1.2.多行注释"></a>1.2.多行注释</h3><p>多行注释以<code>/*</code>开头，可以放在该行的任何位置。 <code>/*</code>后面的字符将被视为注释的一部分，包括换行符，直到第一个<code>*/</code>为止结束注释。 因此，多行注释可以放在语句的末尾，甚至可以放在语句的内部。</p>
+<pre><code class="Groovy">/* 一个独立的多行注释
+    可以跨越两行*/
+println &quot;hello&quot; /* 一个多行注释
+                    从语句的结尾开始*/
+println 1 /* one */ + 2 /* two */</code></pre>
+<h3 id="1-3-GroovyDoc注释"><a href="#1-3-GroovyDoc注释" class="headerlink" title="1.3.GroovyDoc注释"></a>1.3.GroovyDoc注释</h3><p>与多行注释类似，GroovyDoc注释也是多行注释，但以<code>/**</code>开头，以<code>*/</code>结尾。第一行之后的注释行可以选择以<code>*</code>开头，，这些注释与以下内容相关:<br>    - 类型定义（类，接口，枚举，注解）<br>    - 变量和属性定义<br>    - 方法定义</p>
+<pre><code class="Groovy">/**
+* 类描述
+*/
+class Person{
+    /** 名称*/
+    String name
+
+    /**
+     * 创建一个greet方法
+     * @param otherPerson the person to greet
+     * @return a greeting message
+     */
+    String greet(String otherPerson){
+        &quot;Hello ${otherPerson}&quot;
+    }
+}</code></pre>
+<p>Groovydoc遵循与Java的Javadoc相同的规约。因此，可以使用与Javadoc相同的标签。</p>
+<p>另外，Groovy自3.0.0起就支持运行时Groovydoc，即GroovyDoc可以在运行时保留。默认情况下，GroovyDoc是禁用的，需要打开可以使用JVM选项设置<code>-Dgroovy.attach.runtime.groovydoc=true</code>来启用。</p>
+<p>运行时GroovyDoc以<code>/**@</code>开头，以*/结尾，例如:</p>
+<pre><code class="Groovy">/**@
+ * Foo类描述
+ */
+class Foo{
+
+    /**@
+     * bar方法描述
+     */
+    void bar(){
+        println &quot;Hello&quot;
+    }
+}
+println Foo.class.groovydoc.content.contains(&#39;Some class groovydoc for Foo&#39;) //获取类的运行时GroovyDoc
+println Foo.class.getMethod(&#39;bar&#39;, new Class[0]).groovydoc.content.contains(&#39;Some method groovydoc for bar&#39;) // 获取方法的运行时GroovyDoc</code></pre>
+<h3 id="1-4-Shebang-line"><a href="#1-4-Shebang-line" class="headerlink" title="1.4.Shebang line"></a>1.4.Shebang line</h3><p>除了单行注释，还有一个特殊行注释，通常在Unix系统下被称为<em>shebang</em>，它允许直接运行脚本只要已经安装了Groovy发行版并且在当前路径下可以使用Groovy命令。</p>
+<pre><code class="Groovy">#!/usr/bin/env groovy
+println &quot;Hello from the shebang line&quot;</code></pre>
+<p><code>#</code>字符必须是文件的第一个字符，并且任何缩进都可能导致编译的失败</p>
+<h2 id="2-关键字"><a href="#2-关键字" class="headerlink" title="2.关键字"></a>2.关键字</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>as</td>
+<td>assert</td>
+<td>break</td>
+<td>case</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>class</td>
+<td>const</td>
+<td>continue</td>
+</tr>
+<tr>
+<td>def</td>
+<td>default</td>
+<td>do</td>
+<td>else</td>
+</tr>
+<tr>
+<td>enum</td>
+<td>extends</td>
+<td>false</td>
+<td>Finally</td>
+</tr>
+<tr>
+<td>for</td>
+<td>goto</td>
+<td>if</td>
+<td>implements</td>
+</tr>
+<tr>
+<td>import</td>
+<td>in</td>
+<td>instanceof</td>
+<td>interface</td>
+</tr>
+<tr>
+<td>new</td>
+<td>pull</td>
+<td>package</td>
+<td>return</td>
+</tr>
+<tr>
+<td>super</td>
+<td>switch</td>
+<td>this</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>throws</td>
+<td>trait</td>
+<td>true</td>
+<td>try</td>
+</tr>
+<tr>
+<td>while</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="3-标识符"><a href="#3-标识符" class="headerlink" title="3. 标识符"></a>3. 标识符</h2><h3 id="3-1-普通标识符"><a href="#3-1-普通标识符" class="headerlink" title="3.1.普通标识符"></a>3.1.普通标识符</h3><p>标识符以字母，<strong>$</strong>或者下划线开头，不能以数字开头。<br>字母的可用范围是:</p>
+<ul>
+<li><p>‘a’-‘z’(小写ASCII字母)</p>
+</li>
+<li><p>‘A’-‘Z’(大写ASCII字母)</p>
+</li>
+<li><p>‘\u00D8’ 到”\u00F6”</p>
+</li>
+<li><p>‘\u00F8’ 到”\u00FF”</p>
+</li>
+<li><p>‘\u0100’ 到”\uFFFE”</p>
+</li>
+</ul>
+<p>后续的字符可以包含字母和数字</p>
+<p>下面是几个有效标识符的示例（此处是变量名称）:</p>
+<pre><code class="Groovy">def name
+def item3
+def with_underscore
+def $dollarStart</code></pre>
+<p>以下是无效的标识符:</p>
+<pre><code class="Groovy">def 3tier
+def a+b
+def a#b</code></pre>
+<p>所有的关键字也可以是有效的标识符，只要在<code>.</code>之后:</p>
+<pre><code class="Groovy">foo.as
+foo.assert
+foo.break
+foo.case
+foo.catch</code></pre>
+<h3 id="3-2-引用标识符"><a href="#3-2-引用标识符" class="headerlink" title="3.2.引用标识符"></a>3.2.引用标识符</h3><p>引用标识符在在<code>.</code>符号之后，例如<code>person.name</code>表达式的<strong>name</strong>部分可以用<code>person.&quot;name&quot;</code>或者<code>person.&#39;name&#39;</code>来引用。这就使得可能会出现某些标识符包含了Java规范中禁止的非法字符，但在Groovy中确实允许使用的。例如破折号，空格，感叹号等字符。</p>
+<pre><code class="Groovy">def map = [:]
+map.&quot;an identifier with a space and double quotes&quot; = &quot;ALLOWED&quot;
+map.&#39;with-dash-signs-and-single-quotes&#39; = &quot;ALLOWED&quot;
+
+assert map.&quot;an identifier with a space and double quotes&quot; == &quot;ALLOWED&quot;
+assert map.&#39;with-dash-signs-and-single-quotes&#39; == &quot;ALLOWED&quot;
+
+println map.&quot;an identifier with a space and double quotes&quot;
+println map.&#39;with-dash-signs-and-single-quotes&#39;</code></pre>
+<p>正如在后续的<a href="#Strings">字符串章节</a>看到的，Groovy提供了不同的字符串文本，所有类型的字符串都允许在<code>.</code>之后调用:</p>
+<pre><code class="Groovy">map.&#39;single quote&#39;
+map.&quot;double quote&quot;
+map.&#39;&#39;&#39;triple single quote&#39;&#39;&#39;
+map.&quot;&quot;&quot;triple double quote&quot;&quot;&quot;
+map./slashy string/
+map.$/dollar slashy string/$</code></pre>
+<p>纯字符字符串和Groovy的GStrings（内插字符串）是有区别的，因为在后者的情况下，内插值被插入得到最后的完整标识符。</p>
+<pre><code class="Groovy">def firstname = &quot;Homer&quot;
+map.&quot;Simpson-${firstname}&quot; = &quot;Homer Simpson&quot;
+
+assert map.&#39;Simpson-Homer&#39; == &quot;Homer Simpson&quot;</code></pre>
+<h2 id="4-Strings"><a href="#4-Strings" class="headerlink" title="4.Strings"></a>4.Strings<span id="Strings"></span></h2><p>字符串以字符链的形式表示。Groovy允许示例化<code>java.lang.String</code>对象，和GStrings(groovy.lang.GString),GStrings在其他变成语言中也被称为插值字符串。</p>
+<h3 id="4-1-单引号字符串"><a href="#4-1-单引号字符串" class="headerlink" title="4.1.单引号字符串"></a>4.1.单引号字符串</h3><p>单引号字符串是一系列字符由单引号包裹:</p>
+<pre><code class="Groovy">def s = &#39;a single-quoted string&#39;</code></pre>
+<p>单引号字符串是普通的<code>java.lang.String</code>，不支持插值</p>
+<h3 id="4-2-字符串连接"><a href="#4-2-字符串连接" class="headerlink" title="4.2.字符串连接"></a>4.2.字符串连接</h3><p>所有的Groovy字符串都可以用<code>+</code>操作符连接</p>
+<pre><code class="Groovy">assert &#39;ab&#39; == &#39;a&#39; + &#39;b&#39;</code></pre>
+<h3 id="4-3-三单引号字符串"><a href="#4-3-三单引号字符串" class="headerlink" title="4.3.三单引号字符串"></a>4.3.三单引号字符串</h3><p>三单引号字符串是一系列字符由三重单引号包裹:</p>
+<pre><code class="Groovy">&#39;&#39;&#39;a triple-single-quoted string&#39;&#39;&#39;</code></pre>
+<p>三单引号字符串是普通的<code>java.lang.String</code>，也不支持插值。</p>
+<p>三单引号字符串可以跨越多行，字符串内容可以跨越行界而不需要把字符串分割成几段也不需要使用连接符或换行符</p>
+<pre><code class="Groovy">def aMultilineString = &#39;&#39;&#39;line one
+line two
+line three&#39;&#39;&#39;</code></pre>
+<p>如果你的代码是缩进的，例如在一个类的方法的主体中，你的字符串将包含缩进的空格。Groovy开发包中提供了<code>String#stripIndent()</code>方法和<code>String#stripMargin()</code>方法来剥离缩进的方法，该方法需要一个标识符来确定要从字符串的开头删除的文本。</p>
+<p>当如下创建一个字符串时:</p>
+<pre><code class="Groovy">def startingAndEndingWithANewline = &#39;&#39;&#39;
+line one
+line two
+line three
+&#39;&#39;&#39;
+
+println startingAndEndingWithANewline</code></pre>
+<p>运行这段代码输出如下:</p>
+<blockquote>
+<p>(这里有一个空行)<br>line one<br>line two<br>line three</p>
+</blockquote>
+<p>可以发现生成的字符串包含一个换行符作为第一个字符，打印字符串的ASCII码如下:</p>
+<blockquote>
+<p>[10, 108, 105, 110, 101, 32, 111, 110, 101, 10, 108, 105, 110, 101, 32, 116, 119, 111, 10, 108, 105, 110, 101, 32, 116, 104, 114, 101, 101, 10]</p>
+</blockquote>
+<p>可以看到第一个字符是<strong>10</strong>，也就是换行符<br>使用反斜杠<code>\</code>转义可以去除该字符</p>
+<pre><code class="Groovy">def strippedFirstNewline = &#39;&#39;&#39;\
+line one
+line two
+line three
+&#39;&#39;&#39;
+println strippedFirstNewline
+assert !strippedFirstNewline.startsWith(&#39;\n&#39;)</code></pre>
+<p>输出为:</p>
+<blockquote>
+<p>line one<br>line two<br>line three</p>
+</blockquote>
+<p>打印字符串ascii码为:</p>
+<blockquote>
+<p>[108, 105, 110, 101, 32, 111, 110, 101, 10, 108, 105, 110, 101, 32, 116, 119, 111, 10, 108, 105, 110, 101, 32, 116, 104, 114, 101, 101, 10]</p>
+</blockquote>
+<p>assert的结果通过</p>
+<h4 id="4-3-1转义特殊字符"><a href="#4-3-1转义特殊字符" class="headerlink" title="4.3.1转义特殊字符"></a>4.3.1转义特殊字符</h4><p>你可以使用反斜杠<code>\</code>转义单个引号，以避免终止字符串文本:<br><code>&#39;an escaped single quote: \&#39; needs a backslash&#39;</code></p>
+<p>使用双反斜杠<code>\\</code>来转义转义字符本身<br><code>&#39;an escaped escape character: \\ needs a double backslash&#39;</code></p>
+<p>一些特殊字符还使用反斜杠作为转义字符:</p>
+<table>
+<thead>
+<tr>
+<th align="left">转义序列</th>
+<th align="left">字符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>\b</code></td>
+<td align="left">退格</td>
+</tr>
+<tr>
+<td align="left"><code>\f</code></td>
+<td align="left">进纸符</td>
+</tr>
+<tr>
+<td align="left"><code>\n</code></td>
+<td align="left">换行</td>
+</tr>
+<tr>
+<td align="left"><code>\r</code></td>
+<td align="left">回车</td>
+</tr>
+<tr>
+<td align="left"><code>\s</code></td>
+<td align="left">空格</td>
+</tr>
+<tr>
+<td align="left"><code>\t</code></td>
+<td align="left">制表</td>
+</tr>
+<tr>
+<td align="left"><code>\\</code></td>
+<td align="left">反斜杠</td>
+</tr>
+<tr>
+<td align="left"><code>\&#39;</code></td>
+<td align="left">单引号字符串中的单引号（三单引号和双引号字符串可选）</td>
+</tr>
+<tr>
+<td align="left"><code>\&quot;</code></td>
+<td align="left">双引号字符串中的双引号（三双引号和单引号字符串可选）</td>
+</tr>
+</tbody></table>
+<p>这里在自己测试时在IDEA(2020.1.3), Groovy(3.0.4)环境下会出现编辑器报错的情况:<br><img src="/2020/06/25/Language/Groovy/Syntax/escape_s.png" alt="s"><br>但是能正常运行输出结果。</p>
+<h4 id="4-3-2Unicode转义序列"><a href="#4-3-2Unicode转义序列" class="headerlink" title="4.3.2Unicode转义序列"></a>4.3.2Unicode转义序列</h4><p>对于不存在与键盘的字符，可以使用Unicode转义:反斜杠<code>\</code>，后面跟上<code>u</code>，然后是4个16进制数字。<br>例如，欧元货币符号可以使用以下方式表示:<br><code>&#39;The Euro currency symbol: \u20AC&#39;</code></p>
+<h3 id="4-4双引号字符串"><a href="#4-4双引号字符串" class="headerlink" title="4.4双引号字符串"></a>4.4双引号字符串</h3><p>双引号字符串是一系列字符由双引号包裹:<br><code>&quot;a double-quoted string&quot;</code></p>
+<p>如果没有插值表达式，双引号字符串即为普通<code>java.lang.String</code>，如果存在插值则为<code>groovy.lang.GString</code>实例<br>如果要转义双引号，可以使用反斜杠字符:<code>&quot;A double quote:\&quot;&quot;</code></p>
+<h4 id="4-4-1字符串插值"><a href="#4-4-1字符串插值" class="headerlink" title="4.4.1字符串插值"></a>4.4.1字符串插值</h4><p>除了单引号和三引号字符串外，任何Groovy表达式都可以在所有字符串字面值之中进行插值。插值是指在字符串求值时用真实值替换字符串中占位符的行为。<br>占位符表达式由<code>${}</code>包裹。对于点式调用，可以省略大括号只是用<code>$</code>符。如果一个<strong>GString</strong>被传递给一个接收字符串的方法，那么占位符中的表达式将被计算为字符串表达式（通过调用该表达式的<code>toString()</code>方法），并将最终字符串传递给该方法。</p>
+<p>def name = ‘’</p>
+<pre><code class="Groovy">def name = &#39;Guillaume&#39; // 一个显示的字符串
+def greeting = &quot;Hello ${name}&quot;
+
+assert greeting.toString() == &#39;Hello Guillaume&#39;
+
+//使用算术表达式
+def sum = &quot;The sum of 2 and 3 equals ${2 + 3}&quot;
+assert sum.toString() == &#39;The sum of 2 and 3 equals 5&#39;
+
+
+//在点式调用前使用$
+def person = [name: &#39;Guillaume&#39;, age: 36]
+assert &quot;$person.name is $person.age years old&quot; == &#39;Guillaume is 36 years old&#39;</code></pre>
+<p><code>${}</code>之间允许使用表达式也允许使用语句。但是一个语句的值是<code>null</code>的，因此，如果在占位符中插入了几个语句的话，最后一个语句应该要以某种方式返回要插入的有意义的值。例如:<br><code>&quot;The sum of 1 and 2 is equal to ${def a = 1; def b = 2; a + b}&quot;</code><br>也是允许的，并且可以按照预期返回值。<br>不过更好的做法是在占位符中插入一个更简单的表达式。</p>
+<p>要注意的是只有<code>a.b</code>，<code>a.b.c</code>等形式的点式表达式才有效，包含括号之类的表达式是无效的，例如方法调用，用于闭包的大括号，不属于属性表达式或算数表达式的点式调用。</p>
+<pre><code class="Groovy">def number = 3.14
+println &quot;$number.toString()&quot;</code></pre>
+<p>上面的例子将会引发一个<code>groovy.lang.MissingPropertyException</code>异常，因为Groovy认为你正在尝试访问该数字的一个不存在的<code>toString</code>属性。<br>你可以把插值中的<code>$number.toString()</code>看作是<code>${number.toString}()</code>。<br>相似的，如果一个表达式的含义是模糊的，就需要用大括号包裹:</p>
+<pre><code class="Groovy">String thing = &#39;treasure&#39;
+assert &#39;The x-coordinate of the treasure is represented by treasure.x&#39; ==
+        &quot;The x-coordinate of the $thing is represented by $thing.x&quot;   // &lt;= Not allowed: ambiguous!!
+assert &#39;The x-coordinate of the treasure is represented by treasure.x&#39; ==
+        &quot;The x-coordinate of the $thing is represented by ${thing}.x&quot;  // &lt;= Curly braces required</code></pre>
+<p>如果需要转义一个GString对象中的<code>$</code>或<code>${}</code>符号，只需要使用反斜杠<code>\</code>完成转义。</p>
+<pre><code class="Groovy">assert &#39;$5&#39; == &quot;\$5&quot;
+assert &#39;${name}&#39; == &quot;\${name}&quot;</code></pre>
+<h4 id="4-4-2插值闭合表达式的特殊情况"><a href="#4-4-2插值闭合表达式的特殊情况" class="headerlink" title="4.4.2插值闭合表达式的特殊情况"></a>4.4.2插值闭合表达式的特殊情况</h4><p>目前为止，可以看到占位符中可以插入任意表达式，但是闭包表达式有一个特殊情况和表示法。当占位符中包含一个箭头，<code>${-&gt;}</code>，这个表达式实际上是一个闭包表达式，你可以将其视为一个闭包，并在其前面加上一个<code>$</code>。</p>
+<pre><code class="Groovy">def sParameterLessClosure = &quot;1 + 2 == ${-&gt; 3}&quot; //无参闭包
+assert sParameterLessClosure == &#39;1 + 2 == 3&#39;
+
+def sOneParamClosure = &quot;1 + 2 == ${ w -&gt; w &lt;&lt; 3}&quot; //传递了一个 java.io.StringWriter类型参数，并用&lt;&lt;方式添加内容
+assert sOneParamClosure == &#39;1 + 2 == 3&#39;
+
+//以上两种方式都是嵌入式闭包</code></pre>
+<p>正如上面所看到的，这好像是更啰嗦的方式去定义一个表达式，但闭包比单纯的表达式有一个优势:惰性求值<br>让我们考虑以下的示例:</p>
+<pre><code class="Groovy">def number = 1 //我们定义一个包含1的数字变量，然后在两个GString中插值，作为eagerGString中的表达式和lazyGString中的闭包。
+def eagerGString = &quot;value == ${number}&quot;
+def lazyGString = &quot;value == ${ -&gt; number }&quot;
+
+assert eagerGString == &quot;value == 1&quot;
+assert lazyGString ==  &quot;value == 1&quot;
+//eagerGString和lazyGString中都得到了期望的值
+
+number = 2 //然后修改number的值
+assert eagerGString == &quot;value == 1&quot; //使用普通的内插表达式，该值实际上是在创建GString时绑定的。
+assert lazyGString ==  &quot;value == 2&quot; //但是使用闭包表达式时，每次将GString强制转换为String时都会调用闭包，从而生成包含新数字值的新字符串。</code></pre>
+<p>另外要注意的是有多个参数的闭包会在运行时抛出异常。插值只允许零个或一个参数的闭包。</p>
+<h4 id="4-4-3与JAVA的互操作性"><a href="#4-4-3与JAVA的互操作性" class="headerlink" title="4.4.3与JAVA的互操作性"></a>4.4.3与JAVA的互操作性</h4><p>当一个方法（无论是否实现了JAVA或者Groovy）需要一个<code>java.lang.String</code>对象是，但是传递了一个<code>groovy.lang.GString</code>对象，那么GString的<code>toString()</code>方法会被自动隐式地调用。</p>
+<pre><code class="Groovy">String takeString(String message) { //方法签名明确表示其唯一参数是字符串
+    assert message instanceof String //并验证字符串类型为java.lang.String
+    return message
+}
+
+def message = &quot;The message is ${&#39;hello&#39;}&quot; //创建一个字符串，类型为groovy.lang.GString
+assert message instanceof GString         //验证字符串类型为groovy.lang.GString
+def result = takeString(message)          //将GString传递给takeString方法
+assert result instanceof String
+assert result == &#39;The message is hello&#39;</code></pre>
+<p>代码运行通过，可见groovy确实会自动地把GString转换为String。</p>
+<h4 id="4-4-4-GString和String的哈希值"><a href="#4-4-4-GString和String的哈希值" class="headerlink" title="4.4.4.GString和String的哈希值"></a>4.4.4.GString和String的哈希值</h4><p>尽管插值字符串可以替代普通的Java字符串，但是他们与字符串在哈希代码上是不同的。Java字符串是不可改变的，而GString的结果会因为内插值的不同而变化。其实是相同的字符串，GString和String的哈希值也可能不同。</p>
+<pre><code class="Groovy">assert &quot;one: ${1}&quot;.hashCode() != &quot;one: 1&quot;.hashCode()</code></pre>
+<p>GString和String具有不同的哈希值，因此应该避免使用GString作为Map的key值，特别是尝试用Stirng而不是GString来检索关键值时。</p>
+<pre><code class="Groovy">def key = &quot;a&quot;
+def m = [&quot;${key}&quot;: &quot;letter ${key}&quot;] //这里的Map用GString作为key
+
+assert m[&quot;a&quot;] == null  //当以普通的String作为key获取对应的value值时，由于GString和String有不用的哈希值，导致找不到对应的value</code></pre>
+<h3 id="4-5-三双引号字符串"><a href="#4-5-三双引号字符串" class="headerlink" title="4.5.三双引号字符串"></a>4.5.三双引号字符串</h3><p>三双引号字符串和双引号字符串相似，只是他们是多行的。</p>
+<pre><code class="Groovy">def name = &#39;Groovy&#39;
+def template = &quot;&quot;&quot;
+    Dear Mr ${name},
+
+    You&#39;re the winner of the lottery!
+
+    Yours sincerly,
+
+    Dave
+&quot;&quot;&quot;</code></pre>
+<p>无论是双引号还是单引号都不需要在三双引号字符串中转义。</p>
+<h3 id="4-6-斜杠字符串"><a href="#4-6-斜杠字符串" class="headerlink" title="4.6.斜杠字符串"></a>4.6.斜杠字符串</h3><p>除了普通的引号字符串外，Groovy还提供了斜杠字符串。斜杠字符串使用<code>/</code>作为字符串的开头和结束标记。斜杠字符串对于定义正则表达式和Patterns是有利工具，而且也不需要转义反斜杠<code>\</code>。<br>斜杠字符串的示例如下:</p>
+<pre><code class="Groovy">def fooPattern = /.*foo.*/
+assert fooPattern == &#39;.*foo.*&#39;</code></pre>
+<p>只有斜杠<code>/</code>本身需要被反斜杠<code>\</code>转义，因为斜杠字符串是以斜杠为开始和结束的标记的。</p>
+<pre><code class="Groovy">def escapeSlash = /The character \/ is a forward slash/
+assert escapeSlash == &#39;The character / is a forward slash&#39;</code></pre>
+<p>斜杠字符串也可以是多行的:</p>
+<pre><code class="Groovy">def multilineSlashy = /one
+    two
+    three/
+
+assert multilineSlashy.contains(&#39;\n&#39;)</code></pre>
+<p>另外斜杠字符串可以看作是GString的另一种形式，所以也是可以被插值的，只是他们的转移规则不同。</p>
+<pre><code class="Groovy">def color = &#39;blue&#39;
+def interpolatedSlashy = /a ${color} car/
+
+assert interpolatedSlashy == &#39;a blue car&#39;</code></pre>
+<h4 id="4-6-1特殊情况"><a href="#4-6-1特殊情况" class="headerlink" title="4.6.1特殊情况"></a>4.6.1特殊情况</h4><p>一个空的斜杠字符串不允许以两个斜杠(<code>//</code>)的形式出现，因为这会被Groovy解析为行注释。所以下面这个断言语句不会被编译，因为它看起来是一个未结束的语句。</p>
+<pre><code class="Groovy">assert &#39;&#39; == //</code></pre>
+<p>由于斜杠字符串主要是为了简化正则表达式使用而设计，所以在GString中不允许的错误写法例如<code>$()</code>或<code>$5</code>可以在斜杠字符串中使用。</p>
+<p>要记住，在斜杠字符串中使不需要转义反斜杠的。换个思路是实际上不支持转义。一个斜杠字符串<code>/\t/</code>实际上不会包含一个制表符，而是<code>\t</code>字面值。转义只对斜杠<code>/</code>本身有效。例如:<code>/\/folder/</code>会被处理成<code>/folder</code>。斜杠字符串的转义结果不能使斜杠字符串以反斜杠结尾。否则，将转义斜杠字符串的结束符。可以使用一个替代方案:<code>/ends with slash ${&#39;\&#39;}/</code>，但是最好的还是避免在这种情况下使用斜杠字符串。</p>
+<blockquote>
+<p>这一段有点绕，反正意思就是使用斜杠字符串时，最后一个字符不要是反斜杠。</p>
+</blockquote>
+<h3 id="4-7-Dollar斜杠字符串"><a href="#4-7-Dollar斜杠字符串" class="headerlink" title="4.7.Dollar斜杠字符串"></a>4.7.Dollar斜杠字符串</h3><p>Dollar斜杠字符串是一个多行的GString，以<code>$/</code>开头，以<code>/$</code>结尾。转义字符是<code>$</code>，它可以转义另一个<code>$</code>符号，或者斜杠<code>/</code>。但是Dollar斜杠字符串并不需要转义<code>$</code>或者<code>/</code>。除非是GString占位符子序列开头中的<code>$</code>或者是Dollar斜杠字符串的结束符<code>/$</code>。</p>
+<pre><code class="Groovy">def name = &quot;Guillaume&quot;
+def date = &quot;April, 1st&quot;
+
+def dollarSlashy = $/
+    Hello $name,
+    today we&#39;re ${date}.
+
+    $ dollar sign
+    $$ escaped dollar sign
+    \ backslash
+    / forward slash
+    $/ escaped forward slash
+    $$$/ escaped opening dollar slashy
+    $/$$ escaped closing dollar slashy
+/$
+
+assert [
+        &#39;Guillaume&#39;,
+        &#39;April, 1st&#39;,
+        &#39;$ dollar sign&#39;,
+        &#39;$ escaped dollar sign&#39;,
+        &#39;\\ backslash&#39;,
+        &#39;/ forward slash&#39;,
+        &#39;/ escaped forward slash&#39;,
+        &#39;$/ escaped opening dollar slashy&#39;,
+        &#39;/$ escaped closing dollar slashy&#39;
+].every { dollarSlashy.contains(it) }
+println dollarSlashy</code></pre>
+<p>Dollar斜杠字符串是为了克服斜杆字符串的转移规则而产生的，当你的字符串内容适合Dollar斜杠字符串转义规则时才使用Dollar斜杠字符串。例如:有一些不想要转义的斜杠时。</p>
+<h3 id="4-8-字符串小结表"><a href="#4-8-字符串小结表" class="headerlink" title="4.8.字符串小结表"></a>4.8.字符串小结表</h3><table>
+<thead>
+<tr>
+<th align="center">String name</th>
+<th align="center">String syntax</th>
+<th align="center">Interpolated</th>
+<th align="center">Multiline</th>
+<th align="center">Escape character</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Single-quoted</td>
+<td align="center"><code>&#39;…&#39;</code></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><code>\</code></td>
+</tr>
+<tr>
+<td align="center">Triple-single-quoted</td>
+<td align="center"><code>&#39;&#39;&#39;…&#39;&#39;&#39;</code></td>
+<td align="center"></td>
+<td align="center">✔</td>
+<td align="center"><code>\</code></td>
+</tr>
+<tr>
+<td align="center">Double-quoted</td>
+<td align="center"><code>&quot;…&quot;</code></td>
+<td align="center">✔</td>
+<td align="center"></td>
+<td align="center"><code>\</code></td>
+</tr>
+<tr>
+<td align="center">Triple-double-quoted</td>
+<td align="center"><code>&quot;&quot;&quot;…&quot;&quot;&quot;</code></td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center"><code>\</code></td>
+</tr>
+<tr>
+<td align="center">Slashy</td>
+<td align="center"><code>/…/</code></td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center"><code>\</code></td>
+</tr>
+<tr>
+<td align="center">Dollar slashy</td>
+<td align="center"><code>$/…/$</code></td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center"><code>$</code></td>
+</tr>
+</tbody></table>
+<h3 id="4-9-字符"><a href="#4-9-字符" class="headerlink" title="4.9.字符"></a>4.9.字符</h3><p>与Java不同，Groovy没有明确的字符文字，但是有三种方式明确地把Groovy字符变成变成一个实际的字符。</p>
+<pre><code class="Groovy">char c1 = &#39;A&#39; //通过显式声明char类型
+assert c1 instanceof Character
+
+def c2 = &#39;B&#39; as char //通过as运算符类型转换
+assert c2 instanceof Character
+
+def c3 = (char)&#39;C&#39; //通过强制类型转换
+assert c3 instanceof Character</code></pre>
+<h2 id="5-Numbers"><a href="#5-Numbers" class="headerlink" title="5.Numbers"></a>5.Numbers</h2><p>Groovy支持多种类型的整型数字和十进制文本，支持Java的常用数字类型。</p>
+<h3 id="5-1-整型"><a href="#5-1-整型" class="headerlink" title="5.1.整型"></a>5.1.整型</h3><p>整型和Java中相同</p>
+<ul>
+<li><p><code>byte</code></p>
+</li>
+<li><p><code>char</code></p>
+</li>
+<li><p><code>short</code></p>
+</li>
+<li><p><code>int</code></p>
+</li>
+<li><p><code>long</code></p>
+</li>
+<li><p><code>java.lang.BigInteger</code></p>
+</li>
+</ul>
+<p>可以用以下的方式创建上述的整型:</p>
+<pre><code class="Groovy">// 基本数据类型
+byte  b = 1
+char  c = 2
+short s = 3
+int   i = 4
+long  l = 5
+
+// infinite precision
+BigInteger bi =  6</code></pre>
+<p>如果使用<code>def</code>关键字声明变量，那么这些数字会自动选择可以容纳的类型</p>
+<p>对于正数:</p>
+<pre><code class="Groovy">def a = 1
+assert a instanceof Integer
+
+// Integer.MAX_VALUE
+def b = 2147483647
+assert b instanceof Integer
+
+// Integer.MAX_VALUE + 1
+def c = 2147483648
+assert c instanceof Long
+
+// Long.MAX_VALUE
+def d = 9223372036854775807
+assert d instanceof Long
+
+// Long.MAX_VALUE + 1
+def e = 9223372036854775808
+assert e instanceof BigInteger</code></pre>
+<p>负数也一样:</p>
+<pre><code class="Groovy">def na = -1
+assert na instanceof Integer
+
+// Integer.MIN_VALUE
+def nb = -2147483648
+assert nb instanceof Integer
+
+// Integer.MIN_VALUE - 1
+def nc = -2147483649
+assert nc instanceof Long
+
+// Long.MIN_VALUE
+def nd = -9223372036854775808
+assert nd instanceof Long
+
+// Long.MIN_VALUE - 1
+def ne = -9223372036854775809
+assert ne instanceof BigInteger</code></pre>
+<h4 id="5-1-1-非10进制表示"><a href="#5-1-1-非10进制表示" class="headerlink" title="5.1.1.非10进制表示"></a>5.1.1.非10进制表示</h4><p>数字也可以用二进制，八进制，十六进制和十进制表示。</p>
+<p>$\color{orange}{二进制文本}$</p>
+<p>二进制数字以<code>0b</code>前缀开头:</p>
+<pre><code class="Groovy">int xInt = 0b10101111
+assert xInt == 175
+
+short xShort = 0b11001001
+assert xShort == 201 as short
+
+byte xByte = 0b11
+assert xByte == 3 as byte
+
+long xLong = 0b101101101101
+assert xLong == 2925l
+
+BigInteger xBigInteger = 0b111100100001
+assert xBigInteger == 3873g
+
+int xNegativeInt = -0b10101111
+assert xNegativeInt == -175</code></pre>
+<p>$\color{orange}{八进制文本}$</p>
+<p>八进制数字以<code>0</code>开头:</p>
+<pre><code class="Groovy">int xInt = 077
+assert xInt == 63
+
+short xShort = 011
+assert xShort == 9 as short
+
+byte xByte = 032
+assert xByte == 26 as byte
+
+long xLong = 0246
+assert xLong == 166l
+
+BigInteger xBigInteger = 01111
+assert xBigInteger == 585g
+
+int xNegativeInt = -077
+assert xNegativeInt == -63</code></pre>
+<p>$\color{orange}{十六进制文本}$</p>
+<p>十六进制文本以<code>0x</code>开头:</p>
+<pre><code class="Groovy">int xInt = 0x77
+assert xInt == 119
+
+short xShort = 0xaa
+assert xShort == 170 as short
+
+byte xByte = 0x3a
+assert xByte == 58 as byte
+
+long xLong = 0xffff
+assert xLong == 65535l
+
+BigInteger xBigInteger = 0xaaaa
+assert xBigInteger == 43690g
+
+Double xDouble = new Double(&#39;0x1.0p0&#39;)
+assert xDouble == 1.0d
+
+int xNegativeInt = -0x77
+assert xNegativeInt == -119</code></pre>
+<h3 id="5-2-十进制文本"><a href="#5-2-十进制文本" class="headerlink" title="5.2.十进制文本"></a>5.2.十进制文本</h3><p>十进制文本类型和Java中的类型相同:</p>
+<ul>
+<li><p><code>float</code></p>
+</li>
+<li><p><code>double</code></p>
+</li>
+<li><p><code>java.lang.BigDecimal</code></p>
+</li>
+</ul>
+<p>可以使用以下声明创建这些类型的十进制数:</p>
+<pre><code class="Groovy">// primitive types
+float  f = 1.234
+double d = 2.345
+
+// infinite precision
+BigDecimal bd =  3.456</code></pre>
+<p>十进制可以使用指数<code>e</code>与指数字母<code>E</code>，后跟一个可选符号(<code>+</code>,<code>-</code>)，以及一个表示指数的值:</p>
+<pre><code class="Groovy">assert 1e3  ==  1000.0
+assert 2E4  ==  20000.0
+assert 3e+1 ==  30.0
+assert 4E-2 ==  0.04
+assert 5e-1 ==  0.5</code></pre>
+<p>对于十进制的浮点数，Groovy选择<code>java.lang.BigDecimal</code>作为十进制浮点数默认类型。此外，支持<code>float</code>和<code>double</code>，但需要显式的类型声明，类型强转或后缀。尽管<code>java.lang.BigDecimal</code>是默认的十进制数字的类型，但是同样支持方法或闭包接收一个<code>float</code>或<code>double</code>类型的值作为参数。</p>
+<p>例如:</p>
+<pre><code class="Groovy">def plusOne(BigDecimal decimal){
+    println decimal+1
+}
+
+plusOne(1.0F)</code></pre>
+<h3 id="5-3-下划线数字"><a href="#5-3-下划线数字" class="headerlink" title="5.3.下划线数字"></a>5.3.下划线数字</h3><p>当有些数字字面长度较长时，可以在文本中使用下划线对数字分组，可以方便方便识别数字:</p>
+<pre><code class="Groovy">long creditCardNumber = 1234_5678_9012_3456L
+long socialSecurityNumbers = 999_99_9999L
+double monetaryAmount = 12_345_132.12
+long hexBytes = 0xFF_EC_DE_5E
+long hexWords = 0xFFEC_DE5E
+long maxLong = 0x7fff_ffff_ffff_ffffL
+long alsoMaxLong = 9_223_372_036_854_775_807L
+long bytes = 0b11010010_01101001_10010100_10010010</code></pre>
+<h3 id="5-4-数字类型后缀"><a href="#5-4-数字类型后缀" class="headerlink" title="5.4.数字类型后缀"></a>5.4.数字类型后缀</h3><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">后缀</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">BigInteger</td>
+<td align="left"><code>G</code> or <code>g</code></td>
+</tr>
+<tr>
+<td align="left">Long</td>
+<td align="left"><code>L</code> or <code>l</code></td>
+</tr>
+<tr>
+<td align="left">Integer</td>
+<td align="left"><code>I</code> or <code>i</code></td>
+</tr>
+<tr>
+<td align="left">BigDecimal</td>
+<td align="left"><code>G</code> or <code>g</code></td>
+</tr>
+<tr>
+<td align="left">Double</td>
+<td align="left"><code>D</code> or <code>d</code></td>
+</tr>
+<tr>
+<td align="left">Float</td>
+<td align="left"><code>F</code> or <code>f</code></td>
+</tr>
+</tbody></table>
+<p>例如:</p>
+<pre><code class="Groovy">assert 42I == new Integer(&#39;42&#39;)
+assert 42i == new Integer(&#39;42&#39;) // lowercase i more readable
+assert 123L == new Long(&quot;123&quot;) // uppercase L more readable
+assert 2147483648 == new Long(&#39;2147483648&#39;) // Long type used, value too large for an Integer
+assert 456G == new BigInteger(&#39;456&#39;)
+assert 456g == new BigInteger(&#39;456&#39;)
+assert 123.45 == new BigDecimal(&#39;123.45&#39;) // default BigDecimal type used
+assert 1.200065D == new Double(&#39;1.200065&#39;)
+assert 1.234F == new Float(&#39;1.234&#39;)
+assert 1.23E23D == new Double(&#39;1.23E23&#39;)
+assert 0b1111L.class == Long // binary
+assert 0xFFi.class == Integer // hexadecimal
+assert 034G.class == BigInteger // octal</code></pre>
+<h3 id="5-5-数学运算"><a href="#5-5-数学运算" class="headerlink" title="5.5.数学运算"></a>5.5.数学运算</h3><p>尽管操作符后续才讲到，但先讨论数学运算的结果也很重要。<br>除法和幂二元运算除外。</p>
+<ul>
+<li><p><code>byte</code>,<code>char</code>,<code>short</code>和,<code>int</code>之间的二元计算结果为<code>int</code></p>
+</li>
+<li><p><code>long</code>和 <code>byte</code>,<code>char</code>,<code>short</code>,<code>int</code>之间的二元计算结果为<code>long</code></p>
+</li>
+<li><p><code>BigInteger</code>和任何其他整数类型的二元计算结果都为<code>BigInteger</code></p>
+</li>
+<li><p><code>BigDecimal</code>和<code>byte</code>,<code>char</code>,<code>short</code>,<code>int</code>,<code>BigInteger</code>的二元运算结果都为<code>BigDecimal</code></p>
+</li>
+<li><p><code>float</code>,<code>double</code>,<code>BigDecimal</code>之间的二元运算结果都是<code>double</code></p>
+</li>
+<li><p><code>BigDecimal</code>和<code>BigDecimal</code>之间的运算结果事<code>BigDecimal</code></p>
+</li>
+</ul>
+<p>下面这个表格总结了规律:</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">byte</th>
+<th align="left">char</th>
+<th align="left">short</th>
+<th align="left">int</th>
+<th align="left">long</th>
+<th align="left">BigInteger</th>
+<th align="left">float</th>
+<th align="left">double</th>
+<th align="left">BigDecimal</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>byte</strong></td>
+<td align="left">int</td>
+<td align="left">int</td>
+<td align="left">int</td>
+<td align="left">int</td>
+<td align="left">long</td>
+<td align="left">BigInteger</td>
+<td align="left">double</td>
+<td align="left">double</td>
+<td align="left">BigDecimal</td>
+</tr>
+<tr>
+<td align="left"><strong>char</strong></td>
+<td align="left"></td>
+<td align="left">int</td>
+<td align="left">int</td>
+<td align="left">int</td>
+<td align="left">long</td>
+<td align="left">BigInteger</td>
+<td align="left">double</td>
+<td align="left">double</td>
+<td align="left">BigDecimal</td>
+</tr>
+<tr>
+<td align="left"><strong>short</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">int</td>
+<td align="left">int</td>
+<td align="left">long</td>
+<td align="left">BigInteger</td>
+<td align="left">double</td>
+<td align="left">double</td>
+<td align="left">BigDecimal</td>
+</tr>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">int</td>
+<td align="left">long</td>
+<td align="left">BigInteger</td>
+<td align="left">double</td>
+<td align="left">double</td>
+<td align="left">BigDecimal</td>
+</tr>
+<tr>
+<td align="left"><strong>long</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">long</td>
+<td align="left">BigInteger</td>
+<td align="left">double</td>
+<td align="left">double</td>
+<td align="left">BigDecimal</td>
+</tr>
+<tr>
+<td align="left"><strong>BigInteger</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">BigInteger</td>
+<td align="left">double</td>
+<td align="left">double</td>
+<td align="left">BigDecimal</td>
+</tr>
+<tr>
+<td align="left"><strong>float</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">double</td>
+<td align="left">double</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left"><strong>double</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">double</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left"><strong>BigDecimal</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">BigDecimal</td>
+</tr>
+</tbody></table>
+<p>得益于Groovy的操作符重载，普通的算术运算符也可以和<code>BigInteger</code>,<code>BigDecimal</code>一起使用给，不同于在Java中必须使用特定的方法进行运算。</p>
+<h4 id="5-5-1-除法运算符"><a href="#5-5-1-除法运算符" class="headerlink" title="5.5.1.除法运算符"></a>5.5.1.除法运算符</h4><p>如果两个运算数中任意一个为浮点数或双精度数，则除法运算符<code>/</code>或<code>/=</code>的结果将是一个double结果，否则将得到<code>BigDecimal</code>(两个运算数都是整型的<code>short</code>, <code>char</code>, <code>byte</code>, <code>int</code>, <code>long</code>, <code>BigInteger</code> 或 <code>BigDecimal</code>)。</p>
+<p>如果是带精度的除法(即产生的可以相同高精度和小数位数范围内表示的结果)，则使用<code>divide()</code>方法执行<code>BigDecimal</code>的除法，或者使用精度为两个操作数的最大精度加上额外精度10的<code>MathContext</code>。<br>对于整数除法和Java相同，应该使用intdiv()方法，因为Groovy没有提供一个整数操作符。<br>(这一段不是很明白)</p>
+<h4 id="5-5-2-幂运算符"><a href="#5-5-2-幂运算符" class="headerlink" title="5.5.2.幂运算符"></a>5.5.2.幂运算符</h4><p>幂运算操作符使用**操作符，有两个参数:基数和指数。幂运算的结果取决于它的操作数以及操作的结果（特别是结果可以被表示为一个整数值）。</p>
+<p>以下这些原则被用于决定Groovy幂运算操作结果的类型:</p>
+<ul>
+<li><p>如果指数是十进制</p>
+<ul>
+<li><p>如果结果可以表示为一个<code>Integer</code>，则返回<code>Integer</code></p>
+</li>
+<li><p>如果结果可以表示为一个<code>Long</code>，则返回<code>Long</code></p>
+</li>
+<li><p>否则返回一个<code>Double</code></p>
+</li>
+</ul>
+</li>
+<li><p>如果指数是一个整数值</p>
+<ul>
+<li><p>如果指数是一个负数，则返回一个<code>Integer</code>，<code>Long</code>, <code>Double</code>如果结果得值匹配这些类型的话</p>
+</li>
+<li><p>如果指数是一个整数或0</p>
+<ul>
+<li><p>如果底数是<code>BigDecimal</code>，则返回一个<code>BigDecimal</code>结果</p>
+</li>
+<li><p>如果底数是<code>BigInteger</code>，则返回一个<code>BigInteger</code>结果</p>
+</li>
+<li><p>如果底数是<code>Integer</code>，则返回一个<code>Integer</code>如果结果匹配该类型，否则返回一个<code>BigInteger</code></p>
+</li>
+<li><p>如果底数是<code>Long</code>，则返回一个<code>Long</code>如果结果匹配该类型，否则返回一个<code>BigInteger</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>我们可以通过一些示例来说明这些规则:</p>
+<pre><code class="Groovy">// 底数和指数都是整型，结果可以被Integer容纳
+assert    2    **   3    instanceof Integer    //  8
+assert   10    **   9    instanceof Integer    //  1_000_000_000
+
+// 底数是一个Long, 结果也也是一个Long
+// 虽然这个结果integer就可以容纳
+assert    5L   **   2    instanceof Long       //  25
+
+// 结果不能被Integer或Long容纳，因此返回了BigInteger
+assert  100    **  10    instanceof BigInteger //  10e20
+assert 1234    ** 123    instanceof BigInteger //  170515806212727042875...
+
+// 底数是BigDecimal并且指数是负整型，结果可以容纳在Integer中
+assert    0.5  **  -2    instanceof Integer    //  4
+
+// 底数是int并且指数是负的浮点数，结果可以容纳在Integer中
+assert    1    **  -0.3f instanceof Integer    //  1
+
+// 底数是int，指数是负的int
+// 但是结果将被计算为Double
+// (底数和指数都将被转换为double)
+assert   10    **  -1    instanceof Double     //  0.1
+
+// 底数是BigDecimal，指数是int，所以结果是BigDecimal
+assert    1.2  **  10    instanceof BigDecimal //  6.1917364224
+
+// 底数是float或double指数是int
+// 结果可以容纳在Double中
+assert    3.4f **   5    instanceof Double     //  454.35430372146965
+assert    5.6d **   2    instanceof Double     //  31.359999999999996
+
+// 指数是一个浮点数
+// 结果可以被容纳在Double中
+assert    7.8  **   1.9  instanceof Double     //  49.542708423868476
+assert    2    **   0.1f instanceof Double     //  1.0717734636432956</code></pre>
+<h2 id="6-Booleans"><a href="#6-Booleans" class="headerlink" title="6.Booleans"></a>6.Booleans</h2><p>Boolean是一种用于表示真值（<code>true</code>和<code>false</code>）的特殊的数据类型。使用这个数据类型用于标记真假条件。</p>
+<p>Boolean可以保存在变量中，并分配给字段，就像其他任意数据类型。</p>
+<pre><code class="Groovy">def myBooleanVariable = true
+boolean untypedBooleanVar = false
+booleanField = true</code></pre>
+<p><code>true</code>和<code>false</code>是仅有的两个原始boolean值。但是使用逻辑运算符可以表示更复杂的Boolean表达式。</p>
+<p>另外，Groovy具有特殊的规则，通常被称为<em>Groovy Truth</em>，用于将非Boolean值强制转为Boolean值。</p>
+<h2 id="7-列表"><a href="#7-列表" class="headerlink" title="7.列表"></a>7.列表</h2><p>Groovy使用一个用方括号包裹的以逗号为分隔的值作为列表。Groovy列表是JDK的<code>java.util.List</code>，因为Groovy没有定义一个自己的集合类。在定义列表是默认的实现是<code>java.util.ArrayList</code>，除非另行指定，正如后面将会看到。</p>
+<pre><code class="Groovy">def numbers = [1, 2, 3] // 定义一个数字列表，以逗号分隔包裹在方括号中，赋值给变量
+
+assert numbers instanceof List // 这个列表是Java的`java.util.list`的接口
+assert numbers.size() == 3 // 列表的大小可以调用`size()`方法得到</code></pre>
+<p>上面的例子中，我们定义了一个同类元素的列表，但是同样也可以创建一个非同类元素的列表:</p>
+<pre><code class="Groovy">def heterogeneous = [1, &quot;a&quot;, true] // 列表包含了一个数字，一个字符串以及一个Boolean值</code></pre>
+<p>上面提到过在默认情况下列表实际上是<code>java.util.ArrayList</code>的实例，但是如果使用<code>as</code>关键字类型强转或使用显式的类型声明，列表也可以是其他的备选类型。</p>
+<pre><code class="Groovy">def arrayList = [1, 2, 3]
+assert arrayList instanceof java.util.ArrayList
+
+def linkedList = [2, 3, 4] as LinkedList // 使用as显式地转化为java.util.LinkedList实现
+assert linkedList instanceof java.util.LinkedList
+
+LinkedList otherLinked = [3, 4, 5] // 也可以显式地声明列表的类型是java.util.LinkedList
+assert otherLinked instanceof java.util.LinkedList</code></pre>
+<p>你可以访问列表的元素使用<code>[]</code>下标运算符（可用于取值和赋值），和正数索引或负数索引（从列表的末尾开始访问）。使用range也是一样。并且可以使用<code>&lt;&lt;</code>运算符追加元素到列表:</p>
+<pre><code class="Groovy">def letters = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+
+assert letters[0] == &#39;a&#39; // 访问列表的第一个元素，起始索引为0
+assert letters[1] == &#39;b&#39;
+
+assert letters[-1] == &#39;d&#39; // 用-1索引访问列表的最后一个元素，-1表示从列表的末尾开始第一个元素
+assert letters[-2] == &#39;c&#39;
+
+letters[2] = &#39;C&#39; // 给列表的第三个元素赋新值
+assert letters[2] == &#39;C&#39;
+
+letters &lt;&lt; &#39;e&#39; // 使用&lt;&lt;符号追加一个元素到列表的末尾
+assert letters[ 4] == &#39;e&#39;
+assert letters[-1] == &#39;e&#39;
+
+assert letters[1, 3] == [&#39;b&#39;, &#39;d&#39;] // 一次性访问两个元素，返回一个新的列表包含这两个元素
+assert letters[2..4] == [&#39;C&#39;, &#39;d&#39;, &#39;e&#39;] // 使用一个range访问范围内的值，从范围的开始到结束</code></pre>
+<p>由于列表本质上是异构的，所以列表同样可以包含其他列表以创建一个多维列表</p>
+<pre><code class="Groovy">def multi = [[0, 1], [2, 3]] // 定义一个二维数字列表
+assert multi[1][0] == 2 // 访问外部列表的第二项中的第一项的值</code></pre>
+<h2 id="8-数组"><a href="#8-数组" class="headerlink" title="8.数组"></a>8.数组</h2><p>Groovy复用了列表的表示法用来表示数组，但是需要显式地声明数组类型或强转为数组类型。</p>
+<pre><code class="Groovy">String[] arrStr = [&#39;Ananas&#39;, &#39;Banana&#39;, &#39;Kiwi&#39;] // 显式地定义一个字符串数组
+
+assert arrStr instanceof String[] //断言确实创建了一个字符串数组
+assert !(arrStr instanceof List)
+
+def numArr = [1, 2, 3] as int[] // 用as操作符创建了一个int数组
+
+assert numArr instanceof int[]
+assert numArr.size() == 3</code></pre>
+<p>同样可以创建多维数组:</p>
+<pre><code class="Groovy">def matrix3 = new Integer[3][3] // 可以定义数组的大小
+assert matrix3.size() == 3
+
+Integer[][] matrix2 //或者定义一个不指定大小的数组
+matrix2 = [[1, 2], [3, 4]]
+assert matrix2 instanceof Integer[][]</code></pre>
+<p>访问数组的元素使用和列表相同的符号:</p>
+<pre><code class="Groovy">String[] names = [&#39;Cédric&#39;, &#39;Guillaume&#39;, &#39;Jochen&#39;, &#39;Paul&#39;]
+assert names[0] == &#39;Cédric&#39; // 访问数组的第一个元素
+
+names[2] = &#39;Blackdrag&#39;
+assert names[2] == &#39;Blackdrag&#39; // 为数组的第三个元素重新赋值</code></pre>
+<p>Groovy不支持Java的数组初始化符号，因为可能和Groovy的闭包大括号混淆。</p>
+<h3 id="8-1Java风格的数组初始化"><a href="#8-1Java风格的数组初始化" class="headerlink" title="8.1Java风格的数组初始化"></a>8.1Java风格的数组初始化</h3><p>Groovy始终支持使用方括号定义数组或里列表，并避免使用Java风格的大括号定义数组，以避免和闭包的混淆。但是如果大括号紧跟在数组的类型定义之后，这样不会导致和闭包的混淆，这种情况下是支持Java风格的数组定义方式的。</p>
+<pre><code class="Groovy">def primes = new int[] {2, 3, 5, 7, 11}
+assert primes.size() == 5 &amp;&amp; primes.sum() == 28
+assert primes.class.name == &#39;[I&#39;
+
+def pets = new String[] {&#39;cat&#39;, &#39;dog&#39;} // 大括号跟在类型定义之后
+assert pets.size() == 2 &amp;&amp; pets.sum() == &#39;catdog&#39;
+assert pets.class.name == &#39;[Ljava.lang.String;&#39;
+
+// traditional Groovy alternative still supported
+String[] groovyBooks = [ &#39;Groovy in Action&#39;, &#39;Making Java Groovy&#39; ]
+assert groovyBooks.every{ it.contains(&#39;Groovy&#39;) }</code></pre>
+<p>9.Maps</p>
+<p>Groovy Map在其他语言中可能被称为字典或关联数组。Map将键和值关联起来，用冒号分隔键和值，每个键值对用逗号分隔，所有的键值对用方括号包裹。</p>
+<pre><code class="Groovy">def colors = [red: &#39;#FF0000&#39;, green: &#39;#00FF00&#39;, blue: &#39;#0000FF&#39;] // 定义一个Map，键为颜色字符串，值为对应的16进制html颜色
+
+assert colors[&#39;red&#39;] == &#39;#FF0000&#39; // 使用下标符号访问red键对应的内容
+assert colors.green  == &#39;#00FF00&#39; // 使用属性符号来访问green键对应的值
+
+colors[&#39;pink&#39;] = &#39;#FF00FF&#39; // 相似的使用下标符号添加新的键值对
+colors.yellow  = &#39;#FFFF00&#39; // 使用属性符号来添加键值对
+
+assert colors.pink == &#39;#FF00FF&#39;
+assert colors[&#39;yellow&#39;] == &#39;#FFFF00&#39;
+
+assert colors instanceof java.util.LinkedHashMap</code></pre>
+<p>Groovy的map实际上是<code>java.util.LinkedHashMap</code>的实例。</p>
+<p>如果访问一个Map中不存在的key时，会得到一个null</p>
+<pre><code class="Groovy">assert colors.unknown == null</code></pre>
+<p>上面的例子中使用了字符串作为key，但也可以使用其他类型的值作为key</p>
+<pre><code class="Groovy">def numbers = [1: &#39;one&#39;, 2: &#39;two&#39;]
+
+assert numbers[1] == &#39;one&#39;</code></pre>
+<p>这里使用了数字作为key，由于数字可以明确地被识别为数字，所以Groovy不需要像上面地其他例子一样创建一个字符串key。但是如果要传递一个变量中的值作为key:</p>
+<pre><code class="Groovy">def key = &#39;name&#39;
+def person = [key: &#39;Guillaume&#39;] // 与Guillaume关联的键实际上是key字符串，而不是key变量中的值
+
+assert !person.containsKey(&#39;name&#39;) // map中不包含name键
+assert person.containsKey(&#39;key&#39;) // map中包含key键</code></pre>
+<p>当使用名称作为key时，实际上在map中定义了字符串key。<br>如果需要传递变量的值作为key值，必须用括号包裹值或表达式:</p>
+<pre><code class="Groovy">def key = &#39;name&#39;
+person = [(key): &#39;Guillaume&#39;] // 用引号包裹key变量，指示解析器我们传递的是变量的值，而不是变量的名称
+
+assert person.containsKey(&#39;name&#39;) // map中包含name键
+assert !person.containsKey(&#39;key&#39;) // map中不包含key键</code></pre>
+<p>你可以传递带引号的字符串作为key:<code>[&quot;name&quot;:&quot;Guillaume&quot;]</code>。如果key字符串不是一个有效标识，则必须添加引号。例如想要使用一个包含其他字符的字符串作为key时: <code>[&quot;street-name&quot;: &quot;Main street&quot;]</code>。如果这个key值不带引号则不支持。</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io">https://suifengczc.github.io</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="../../../../../../tags/Language/">
+                                    <span class="chip bg-color">Language</span>
+                                </a>
+                            
+                                <a href="../../../../../../tags/Groovy/">
+                                    <span class="chip bg-color">Groovy</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="../../../../29/Tools/markdown/FontProperties/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="markdown中指定文字特性">
+                        
+                        <span class="card-title">markdown中指定文字特性</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            markdown指定文字颜色注: 因为Hexo不支持Latex，所以在Hexo网页上得效果不行
+如果只是想修改文字颜色可以使用$\color{颜色名称或者RGB值}{文字内容}}$方式来修改。例如:这是一个$\color{red}{红色}$
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../../../../../../categories/markdown/" class="post-category">
+                                    markdown
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../../../../../../tags/markdown/">
+                        <span class="chip bg-color">markdown</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/tools/">
+                        <span class="chip bg-color">tools</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/clolor/">
+                        <span class="chip bg-color">clolor</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="../../../../16/Tools/Idea/Tomcat/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Idea社区版搭建JavaWeb开发环境">
+                        
+                        <span class="card-title">Idea社区版搭建JavaWeb开发环境</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Idea社区版搭建JavaWeb开发环境环境准备
+jdk
+Tomcat
+IDEA 社区版
+IDEA插件：Smart Tomcat
+
+
+创建项目选择创建一个新Java项目，项目构建选择Gradle，kotlin
+
+修改build.gradle
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../../../../../../categories/Tools/" class="post-category">
+                                    Tools
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../../../../../../tags/Tools/">
+                        <span class="chip bg-color">Tools</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/IDEA/">
+                        <span class="chip bg-color">IDEA</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/Tomcat/">
+                        <span class="chip bg-color">Tomcat</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Suifeng Blog<br />'
+            + '文章作者: suifeng<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">42.2k</span>&nbsp;
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script src="/js/prettify.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('pre').addClass('prettyprint linenums');
+                    prettyPrint();
+                })
+            </script>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "3";
+                    var startDate = "3";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/suifengczc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ssuifengczc@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>

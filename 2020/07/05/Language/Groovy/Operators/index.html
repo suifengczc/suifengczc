@@ -1,0 +1,1858 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Groovy运算符, Suifeng Blog">
+    <meta name="description" content="Groovy运算符Groovy运算符阅读笔记，非全文翻译。
+1.算术运算符Groovy支持常见的算术运算符，和所有Java支持的运算符。
+1.1.普通算术运算符Groovy支持的二元运算符:
+
+
+
+运算符
+用途
+备注
+
+
+
++
+加
+
+
+
+-">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Groovy运算符 | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<style> 
+		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+		{ list-style-type: decimal !important }
+	</style>
+
+    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="../../../../../../index.html" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Suifeng Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Suifeng Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/suifengczc" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/suifengczc" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Groovy运算符
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="../../../../../../tags/Language/">
+                                <span class="chip bg-color">Language</span>
+                            </a>
+                        
+                            <a href="../../../../../../tags/Groovy/">
+                                <span class="chip bg-color">Groovy</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="../../../../../../categories/Language/" class="post-category">
+                                Language
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-07-12
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Groovy运算符"><a href="#Groovy运算符" class="headerlink" title="Groovy运算符"></a>Groovy运算符</h1><p><a href="http://www.groovy-lang.org/operators.html" target="_blank" rel="noopener">Groovy运算符</a>阅读笔记，非全文翻译。</p>
+<h2 id="1-算术运算符"><a href="#1-算术运算符" class="headerlink" title="1.算术运算符"></a>1.算术运算符</h2><p>Groovy支持常见的算术运算符，和所有Java支持的运算符。</p>
+<h3 id="1-1-普通算术运算符"><a href="#1-1-普通算术运算符" class="headerlink" title="1.1.普通算术运算符"></a>1.1.普通算术运算符</h3><p>Groovy支持的二元运算符:</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">用途</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>+</code></td>
+<td align="center">加</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"><code>-</code></td>
+<td align="center"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"><code>*</code></td>
+<td align="center">乘</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"><code>/</code></td>
+<td align="center">除</td>
+<td align="left">整数除法用的是<code>intdiv()</code>,更多的除法返回值类型参看<a href="https://docs.groovy-lang.org/latest/html/documentation/core-syntax.html#integer_division" target="_blank" rel="noopener">integer division</a></td>
+</tr>
+<tr>
+<td align="center"><code>%</code></td>
+<td align="center">取余</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"><code>**</code></td>
+<td align="center">乘方</td>
+<td align="left">参看<a href="https://docs.groovy-lang.org/latest/html/documentation/core-syntax.html#power_operator" target="_blank" rel="noopener">the power operation</a>了解更多关于乘方返回值类型</td>
+</tr>
+</tbody></table>
+<h3 id="1-2-一元运算符"><a href="#1-2-一元运算符" class="headerlink" title="1.2.一元运算符"></a>1.2.一元运算符</h3><p><code>+</code>和<code>-</code>都可以作为一元运算符。并支持<code>++</code>和<code>--</code>方式的前缀和后缀</p>
+<h3 id="1-3-赋值运算符"><a href="#1-3-赋值运算符" class="headerlink" title="1.3.赋值运算符"></a>1.3.赋值运算符</h3><p>上面的二元运算符也可以作为赋值运算符使用:</p>
+<ul>
+<li><p><code>+=</code></p>
+</li>
+<li><p><code>-=</code></p>
+</li>
+<li><p><code>*=</code></p>
+</li>
+<li><p><code>/=</code></p>
+</li>
+<li><p><code>%=</code></p>
+</li>
+<li><p><code>**=</code></p>
+</li>
+</ul>
+<h2 id="2-关系运算符"><a href="#2-关系运算符" class="headerlink" title="2.关系运算符"></a>2.关系运算符</h2><table>
+<thead>
+<tr>
+<th align="center">操作符</th>
+<th align="center">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>==</code></td>
+<td align="center">相等</td>
+</tr>
+<tr>
+<td align="center"><code>!=</code></td>
+<td align="center">不相等</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;</code></td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;=</code></td>
+<td align="center">小于等于</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;</code></td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;=</code></td>
+<td align="center">大于等于</td>
+</tr>
+<tr>
+<td align="center"><code>===</code></td>
+<td align="center">完全相同</td>
+</tr>
+<tr>
+<td align="center"><code>!==</code></td>
+<td align="center">不完全相同</td>
+</tr>
+</tbody></table>
+<p><code>===</code>和<code>!==</code>的效果等同于调用<code>is()</code>方法。</p>
+<p>在Groovy中 <code>==</code> 操作符是调用了对象的<code>equals()</code>方法做比较，<code>===</code>操作符是比较对象的内存地址是否相同</p>
+<p>而在Java中，<code>==</code>是比较对象的地址，如果需要比较对象的值是否相同则是调用对象的<code>equals()</code>方法做比较。并且该对象需要重写<code>equals()</code>和<code>hashCode()</code>方法。</p>
+<h2 id="3-逻辑运算符"><a href="#3-逻辑运算符" class="headerlink" title="3.逻辑运算符"></a>3.逻辑运算符</h2><p>逻辑运算符有<code>&amp;&amp;</code>,<code>||</code>,<code>!</code></p>
+<h3 id="3-1-优先级"><a href="#3-1-优先级" class="headerlink" title="3.1.优先级"></a>3.1.优先级</h3><p><code>!</code> &gt; <code>&amp;&amp;</code> &gt; <code>||</code></p>
+<pre><code class="Groovy">assert (!false &amp;&amp; false) == false // ! &gt; &amp;&amp;, 结果为false
+
+assert true || true &amp;&amp; false // &amp;&amp; &gt; ||, 结果为true</code></pre>
+<h3 id="3-2-短路"><a href="#3-2-短路" class="headerlink" title="3.2.短路"></a>3.2.短路</h3><p>对于<code>||</code>, 当运算符左边的值为true时，不会计算右边的值。只有左边的值为false时才会计算有百年的值。<br>对于<code>&amp;&amp;</code>, 只有当左边的值为ture时才会计算右边的值。</p>
+<h2 id="4-位运算符"><a href="#4-位运算符" class="headerlink" title="4.位运算符"></a>4.位运算符</h2><p>Groovy提供了四种位运算符</p>
+<ul>
+<li><p><code>&amp;</code> : 按位和</p>
+</li>
+<li><p><code>|</code> : 按位或</p>
+</li>
+<li><p><code>^</code> : 按位异或</p>
+</li>
+<li><p><code>~</code> : 按位取反</p>
+</li>
+</ul>
+<p>Groovy的基础类型遵循Java的规范，基础类型都是有符号数，所以在使用按位取反的时候，使用mask来对指定的位置取反。</p>
+<h2 id="5-条件运算符"><a href="#5-条件运算符" class="headerlink" title="5.条件运算符"></a>5.条件运算符</h2><h3 id="5-1-否操作符"><a href="#5-1-否操作符" class="headerlink" title="5.1.否操作符"></a>5.1.否操作符</h3><p>使用<code>!</code>反转结果</p>
+<h3 id="5-2-三元运算符"><a href="#5-2-三元运算符" class="headerlink" title="5.2.三元运算符"></a>5.2.三元运算符</h3><p><code>result = string ? &#39;Found&#39; : &#39;Not found&#39;</code></p>
+<p><code>string?</code>判断字符串是否为空</p>
+<h3 id="5-3-Elvis操作符"><a href="#5-3-Elvis操作符" class="headerlink" title="5.3.Elvis操作符"></a>5.3.Elvis操作符</h3><p>Groovy 3.0.0引入了Elvis操作符，这是对三元表达式的进一步简化:</p>
+<pre><code class="Groovy">import groovy.transform.ToString
+
+@ToString
+class Element {
+    String name
+    int atomicNumber
+}
+
+def he = new Element(name: &#39;Helium&#39;)
+he.with {
+    name = name ?: &#39;Hydrogen&#39;   // existing Elvis operator
+    atomicNumber ?= 2           // new Elvis assignment shorthand
+}
+assert he.toString() == &#39;Element(Helium, 2)&#39;</code></pre>
+<h2 id="6-对象操作符"><a href="#6-对象操作符" class="headerlink" title="6.对象操作符"></a>6.对象操作符</h2><h3 id="6-1-空安全操作符"><a href="#6-1-空安全操作符" class="headerlink" title="6.1.空安全操作符"></a>6.1.空安全操作符</h3><p>空安全操作符可以规避<code>NullPointerException</code>.</p>
+<pre><code class="Groovy">def person = Person.find { it.id == 123 }
+def name = person?.name
+assert name == null</code></pre>
+<h3 id="6-2-直接访问操作符"><a href="#6-2-直接访问操作符" class="headerlink" title="6.2.直接访问操作符"></a>6.2.直接访问操作符</h3><pre><code class="Groovy">class User {
+    public final String name
+    User(String name) { this.name = name}
+    String getName() { &quot;Name: $name&quot; }
+}
+def user = new User(&#39;Bob&#39;)
+assert user.name == &#39;Name: Bob&#39;</code></pre>
+<p>对于上面的例子，在访问<code>name</code>属性时实际是调用了对应的get方法。如果想要直接获取字段而不是调用方法，可以使用<code>.@</code>操作符。<br>通过<code>.@</code>可以直接访问字段而不是通过get方法</p>
+<h3 id="6-3-方法指针操作符"><a href="#6-3-方法指针操作符" class="headerlink" title="6.3.方法指针操作符"></a>6.3.方法指针操作符</h3><pre><code class="Groovy">def str = &#39;example of method reference&#39;
+def fun = str.&amp;toUpperCase // 将str的toUpperCase方法整体作为一个变量保存在fun中
+def upper = fun() // 像调用常规方法一样调用fun方法
+assert upper == str.toUpperCase() // fun方法的结果和str.toUpperCase()结果相同</code></pre>
+<p>方法指针是<code>groovy.lang.Closure</code>类型的，因此可以在任何使用闭包的位置使用。</p>
+<pre><code class="Groovy">def transform(List elements, Closure action) {
+    def result = []
+    elements.each {
+        result &lt;&lt; action(it)
+    }
+    result
+}
+
+//定义describe方法，作用是输出Person的信息
+String describe(Person p) {
+    &quot;$p.name is $p.age&quot;
+}
+
+//方法指针保存在action中
+def action = this.&amp;describe
+def list = [
+    new Person(name: &#39;Bob&#39;,   age: 42),
+    new Person(name: &#39;Julia&#39;, age: 35)]
+//把方法指针作为闭包传入方法
+assert transform(list, action) == [&#39;Bob is 42&#39;, &#39;Julia is 35&#39;]</code></pre>
+<p>方法指针与接收者和方法名绑定。对于重载方法，在运行时Groovy会根据传参选择正确的方法。</p>
+<pre><code class="Groovy">def doSomething(String str) { str.toUpperCase() }
+def doSomething(Integer x) { 2*x }
+def reference = this.&amp;doSomething
+assert reference(&#39;foo&#39;) == &#39;FOO&#39;
+assert reference(123)   == 246</code></pre>
+<p>在Groovy3.0及以上，可以使用<code>new</code>作为一个方法名来指向一个构造函数。<br>例如:</p>
+<pre><code class="Groovy">def foo  = BigInteger.&amp;new
+def fortyTwo = foo(&#39;42&#39;)
+assert fortyTwo == 42G</code></pre>
+<p>在Groovy3.0及以上，可以使用方法指针指向一个类的实例方法，这个方法指针接收一个接收者类型的实例作为参数。例如:</p>
+<pre><code class="Groovy">def instanceMethod = String.&amp;toUpperCase // 指向实例方法的方法指针
+assert instanceMethod(&#39;foo&#39;) == &#39;FOO&#39; // 方法指针接收一个实例</code></pre>
+<p>总结一下:</p>
+<ul>
+<li><p>方法指针可以指向一个具体实例的方法，例如</p>
+<pre><code class="Groovy">  def str = &#39;example of method reference&#39;
+  def fun = str.&amp;toUpperCase</code></pre>
+</li>
+<li><p>方法指针可以指向当前脚本的方法，例如:</p>
+<pre><code class="Groovy">  String describe(Person p) {
+  &quot;$p.name is $p.age&quot;
+  }
+  def action = this.&amp;describe</code></pre>
+</li>
+<li><p>方法指针可以指向多个重载方法，在运行时根据传参选择正确的方法执行</p>
+</li>
+<li><p>方法指针可以使用<code>new</code>来指向一个构造方法</p>
+</li>
+<li><p>方法指针可以指向一个实例方法。</p>
+</li>
+</ul>
+<h3 id="6-4-方法引用运算符"><a href="#6-4-方法引用运算符" class="headerlink" title="6.4.方法引用运算符"></a>6.4.方法引用运算符</h3><p>在Groovy 3.0及以上支持Java8以上的<code>::</code>运算符。</p>
+<pre><code class="vGroovy">import groovy.transform.CompileStatic
+import static java.util.stream.Collectors.toList
+
+@CompileStatic
+void methodRefs() {
+    assert 6G == [1G, 2G, 3G].stream().reduce(0G, BigInteger::add)
+
+    assert [4G, 5G, 6G] == [1G, 2G, 3G].stream().map(3G::add).collect(toList())
+
+    assert [1G, 2G, 3G] == [1L, 2L, 3L].stream().map(BigInteger::valueOf).collect(toList())  
+
+    assert [1G, 2G, 3G] == [1L, 2L, 3L].stream().map(3G::valueOf).collect(toList())
+}
+
+methodRefs()</code></pre>
+<pre><code class="Groovy">@CompileStatic
+void constructorRefs() {
+    assert [1, 2, 3] == [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;].stream().map(Integer::new).collect(toList())   // 使用类构造函数
+
+    def result = [1, 2, 3].stream().toArray(Integer[]::new) // 使用数组构造函数
+    assert result instanceof Integer[]
+    assert result.toString() == &#39;[1, 2, 3]&#39;
+}
+
+constructorRefs()</code></pre>
+<h2 id="7-正则表达式运算符"><a href="#7-正则表达式运算符" class="headerlink" title="7.正则表达式运算符"></a>7.正则表达式运算符</h2><h3 id="7-1-Pattern运算符"><a href="#7-1-Pattern运算符" class="headerlink" title="7.1.Pattern运算符"></a>7.1.Pattern运算符</h3><p>Groovy中使用<code>~</code>简化了创建<code>java.util.regex.Pattern</code>实例。</p>
+<pre><code class="Groovy">def p = ~/foo/
+assert p instanceof Pattern</code></pre>
+<p><code>~</code>支持Groovy中的任意String类型:</p>
+<pre><code class="Groovy">    p = ~&#39;foo&#39;
+    p = ~&quot;foo&quot;
+    p = ~$/dollar/slashy $ string/$
+    p = ~&quot;${pattern}&quot;</code></pre>
+<h3 id="7-2-查找运算符"><a href="#7-2-查找运算符" class="headerlink" title="7.2.查找运算符"></a>7.2.查找运算符</h3><p>除了<code>~</code>方式，还可以使用<code>=~</code>运算符直接创建一个<code>java.util.regex.Matcher</code>实例。</p>
+<pre><code class="Groovy">def text = &quot;some text to match&quot;
+def m = text =~ /match/ // 使用=~右侧的正则表达式创建匹配
+assert m instanceof Matcher // 返回的类型是Matcher
+if (!m) { // 等效于if (!m.find(0))
+    throw new RuntimeException(&quot;Oops, text not found!&quot;)
+}</code></pre>
+<h3 id="7-3-匹配运算符"><a href="#7-3-匹配运算符" class="headerlink" title="7.3.匹配运算符"></a>7.3.匹配运算符</h3><p><code>==~</code>是Match.find的简单实用方式，它只返回布尔值。<code>==~</code>是严格匹配的。</p>
+<pre><code class="Groovy">m = text ==~ /match/
+assert m instanceof Boolean
+if (m) {
+    throw new RuntimeException(&quot;Should not reach that point!&quot;)
+}</code></pre>
+<h2 id="8-其他运算符"><a href="#8-其他运算符" class="headerlink" title="8.其他运算符"></a>8.其他运算符</h2><h3 id="8-1-扩展运算符"><a href="#8-1-扩展运算符" class="headerlink" title="8.1.扩展运算符"></a>8.1.扩展运算符</h3><p>扩展点运算符<code>*.</code>通常作用于集合对象。它会对集合的每一项都做同一运算并将结果保存在一个集合中。</p>
+<pre><code class="Groovy">class Car {
+    String make
+    String model
+}
+def cars = [
+       new Car(make: &#39;Peugeot&#39;, model: &#39;508&#39;),
+       new Car(make: &#39;Renault&#39;, model: &#39;Clio&#39;)]
+def makes = cars*.make //访问cars中的每一个元素的make
+assert makes == [&#39;Peugeot&#39;, &#39;Renault&#39;] //将cars中的每个元素的make字段值添加到列表中。</code></pre>
+<p>这里的<code>cars*.make</code>等同于<code>cars.collect{ it.make }</code>。当要访问聊表中元素的属性时，Groovy的GPath表示法允许使用这样的快捷方式来访问，它会自动扩展到每一个元素。<br>在上面的例子中使用<code>cars.make</code>也可以使用，但是更推荐显式地保留<code>*.</code>运算符。</p>
+<p><code>*.</code>运算符是空安全的，对于空元素会返回<code>null</code>而不是空异常。</p>
+<p><code>*.</code>可以用于所有实现了<code>Iterable</code>的类。</p>
+<pre><code class="Groovy">class Component {
+    Long id
+    String name
+}
+class CompositeObject implements Iterable&lt;Component&gt; {
+    def components = [
+        new Component(id: 1, name: &#39;Foo&#39;),
+        new Component(id: 2, name: &#39;Bar&#39;)]
+
+    @Override
+    Iterator&lt;Component&gt; iterator() {
+        components.iterator()
+    }
+}
+def composite = new CompositeObject()
+assert composite*.id == [1,2]
+assert composite*.name == [&#39;Foo&#39;,&#39;Bar&#39;]</code></pre>
+<p>当数据包含了多层结构时，使用多次<code>*.</code>调用来访问数据。</p>
+<pre><code class="Groovy">class Make {
+    String name
+    List&lt;Model&gt; models
+}
+
+@Canonical
+class Model {
+    String name
+}
+
+def cars = [
+    new Make(name: &#39;Peugeot&#39;,
+             models: [new Model(&#39;408&#39;), new Model(&#39;508&#39;)]),
+    new Make(name: &#39;Renault&#39;,
+             models: [new Model(&#39;Clio&#39;), new Model(&#39;Captur&#39;)])
+]
+
+def makes = cars*.name
+assert makes == [&#39;Peugeot&#39;, &#39;Renault&#39;]
+
+def models = cars*.models*.name
+assert models == [[&#39;408&#39;, &#39;508&#39;], [&#39;Clio&#39;, &#39;Captur&#39;]]
+assert models.sum() == [&#39;408&#39;, &#39;508&#39;, &#39;Clio&#39;, &#39;Captur&#39;] // flatten one level
+assert models.flatten() == [&#39;408&#39;, &#39;508&#39;, &#39;Clio&#39;, &#39;Captur&#39;] // flatten all levels (one in this case)</code></pre>
+<p>也可以使用<code>collectNested</code>方法来获取所有元素的属性。</p>
+<pre><code class="Groovy">class Car {
+    String make
+    String model
+}
+def cars = [
+   [
+       new Car(make: &#39;Peugeot&#39;, model: &#39;408&#39;),
+       new Car(make: &#39;Peugeot&#39;, model: &#39;508&#39;)
+   ], [
+       new Car(make: &#39;Renault&#39;, model: &#39;Clio&#39;),
+       new Car(make: &#39;Renault&#39;, model: &#39;Captur&#39;)
+   ]
+]
+def models = cars.collectNested{ it.model }
+assert models == [[&#39;408&#39;, &#39;508&#39;], [&#39;Clio&#39;, &#39;Captur&#39;]]</code></pre>
+<h4 id="8-1-1-扩展方法参数"><a href="#8-1-1-扩展方法参数" class="headerlink" title="8.1.1.扩展方法参数"></a>8.1.1.扩展方法参数</h4><p>当方法传参于列表的各项一一对应时，可以使用扩展方法参数的方式调用方法，而不需要从列表中逐个取出参数传入方法。</p>
+<pre><code class="Groovy">int function(int x, int y, int z){
+    x * y + z
+}
+def args = [4, 5, 6]
+assert function(*args) == 26</code></pre>
+<p>另外可以将正常参数和扩展参数混合使用:</p>
+<pre><code class="Groovy">args = [4]
+assert function(*args, 5, 6) == 26</code></pre>
+<h4 id="8-1-2-扩展列表"><a href="#8-1-2-扩展列表" class="headerlink" title="8.1.2.扩展列表"></a>8.1.2.扩展列表</h4><pre><code class="Groovy">def items = [4, 5]
+def list = [1, 2, 3, *items, 6]
+assert list == [1, 2, 3, 4, 5, 6]</code></pre>
+<h4 id="8-1-3-扩展map"><a href="#8-1-3-扩展map" class="headerlink" title="8.1.3.扩展map"></a>8.1.3.扩展map</h4><p>使用<code>*:</code>的方式将一个map内联到另一个map内。</p>
+<pre><code class="Groovy">def m1 = [c:3, d:4]
+def map = [a:1, b:2, *:m1]
+assert map == [a:1, b:2, c:3, d:4]</code></pre>
+<pre><code class="Groovy">def m1 = [c:3, d:4]
+def map = [a:1, b:2, *:m1, d: 8]
+assert map == [a:1, b:2, c:3, d:8]</code></pre>
+<p>由<code>*:</code>方式内联进来的元素支持被覆盖。</p>
+<h3 id="8-2-范围运算符"><a href="#8-2-范围运算符" class="headerlink" title="8.2.范围运算符"></a>8.2.范围运算符</h3><p>Groovy支持使用<code>..</code>来创建一个Range</p>
+<pre><code class="Groovy">def range = 0..5 // 从0到5的列表
+assert (0..5).collect() == [0, 1, 2, 3, 4, 5]
+assert (0..&lt;5).collect() == [0, 1, 2, 3, 4] // 从0到4的列表
+assert (0..5) instanceof List
+assert (0..5).size() == 6</code></pre>
+<p>任何可比较对象都可以使用<code>..</code></p>
+<h3 id="8-3-Spaceship运算符"><a href="#8-3-Spaceship运算符" class="headerlink" title="8.3.Spaceship运算符"></a>8.3.Spaceship运算符</h3><p><code>&lt;=&gt;</code>是对<code>compareTo</code>方法的代理</p>
+<pre><code class="Groovy">assert (1 &lt;=&gt; 1) == 0
+assert (1 &lt;=&gt; 2) == -1
+assert (2 &lt;=&gt; 1) == 1
+assert (&#39;a&#39; &lt;=&gt; &#39;z&#39;) == -1</code></pre>
+<h3 id="8-4-下标运算符"><a href="#8-4-下标运算符" class="headerlink" title="8.4.下标运算符"></a>8.4.下标运算符</h3><p><code>[]</code>是<code>getAt</code>和<code>putAt</code>的简写，取决于在赋值符号的左边还是右边调用。</p>
+<pre><code class="Groovy">def list = [0,1,2,3,4]
+assert list[2] == 2
+list[2] = 4
+assert list[0..2] == [0,1,4]
+list[0..2] = [6,6,6]
+assert list == [6,6,6,3,4]</code></pre>
+<p>重写类的<code>getAt</code>和<code>putAt</code>方法，可以使用下标来访问属性。</p>
+<pre><code class="Groovy">class User {
+    Long id
+    String name
+    def getAt(int i) {
+        switch (i) {
+            case 0: return id
+            case 1: return name
+        }
+        throw new IllegalArgumentException(&quot;No such element $i&quot;)
+    }
+    void putAt(int i, def value) {
+        switch (i) {
+            case 0: id = value; return
+            case 1: name = value; return
+        }
+        throw new IllegalArgumentException(&quot;No such element $i&quot;)
+    }
+}
+def user = new User(id: 1, name: &#39;Alex&#39;)
+assert user[0] == 1
+assert user[1] == &#39;Alex&#39;
+user[1] = &#39;Bob&#39;
+assert user.name == &#39;Bob&#39;</code></pre>
+<h3 id="8-5-安全索引运算符"><a href="#8-5-安全索引运算符" class="headerlink" title="8.5.安全索引运算符"></a>8.5.安全索引运算符</h3><p>Groovy3.0引入了安全索引运算符:<code>?[]</code>, 和<code>?.</code>相似。</p>
+<pre><code class="Groovy">String[] array = [&#39;a&#39;, &#39;b&#39;]
+assert &#39;b&#39; == array?[1]      // get using normal array index
+array?[1] = &#39;c&#39;              // set using normal array index
+assert &#39;c&#39; == array?[1]
+
+array = null
+assert null == array?[1]     // return null for all index values
+array?[1] = &#39;c&#39;              // quietly ignore attempt to set value
+assert null == array?[1]
+
+def personInfo = [name: &#39;Daniel.Sun&#39;, location: &#39;Shanghai&#39;]
+assert &#39;Daniel.Sun&#39; == personInfo?[&#39;name&#39;]      // get using normal map index
+personInfo?[&#39;name&#39;] = &#39;sunlan&#39;                  // set using normal map index
+assert &#39;sunlan&#39; == personInfo?[&#39;name&#39;]
+
+personInfo = null
+assert null == personInfo?[&#39;name&#39;]              // return null for all map values
+personInfo?[&#39;name&#39;] = &#39;sunlan&#39;                  // quietly ignore attempt to set value
+assert null == personInfo?[&#39;name&#39;]</code></pre>
+<h3 id="8-6-成员运算符"><a href="#8-6-成员运算符" class="headerlink" title="8.6.成员运算符"></a>8.6.成员运算符</h3><p>成员运算符<code>in</code>可以判断该列表中是否包含该值。等同于<code>isCase</code>和列表的<code>contais</code>方法。</p>
+<pre><code class="Groovy">def list = [&#39;Grace&#39;,&#39;Rob&#39;,&#39;Emmy&#39;]
+assert (&#39;Emmy&#39; in list)
+assert list.isCase(&#39;Emmy&#39;)
+assert list.contains(&#39;Emmy&#39;)</code></pre>
+<h3 id="8-7-相等运算符"><a href="#8-7-相等运算符" class="headerlink" title="8.7.相等运算符"></a>8.7.相等运算符</h3><p>在Groovy使用<code>==</code>判断是否相等和Java中不同，使用<code>==</code>实际是调用了实例的<code>equals</code>方法。<br>如果需要判断是否为相同引用，应该使用<code>is</code>。</p>
+<pre><code class="Groovy">def list1 = [&#39;Groovy 1.8&#39;,&#39;Groovy 2.0&#39;,&#39;Groovy 2.3&#39;]
+def list2 = [&#39;Groovy 1.8&#39;,&#39;Groovy 2.0&#39;,&#39;Groovy 2.3&#39;]
+assert list1 == list2
+assert !list1.is(list2)</code></pre>
+<h3 id="8-8-强转运算符"><a href="#8-8-强转运算符" class="headerlink" title="8.8.强转运算符"></a>8.8.强转运算符</h3><p>强转运算符<code>as</code>是类型强转的变体，但不同于类型强转。</p>
+<pre><code class="Groovy">Integer x = 123
+String s = (String) x // Integer不能强转成String，会抛出ClassCastException</code></pre>
+<pre><code class="Groovy">Integer x = 123
+String s = x as String
+println s
+assert &quot;123&quot; == s // 使用as成功把Integer转换成了String</code></pre>
+<p>当对象被强制转换为另一个对象时，除非目标类型与源类型相同，否则强制将返回一个新对象。强制规则因源类型和目标类型而异，如果未找到转换规则，则强制可能会失败。自定义转换规则可以由asType方法实现:</p>
+<pre><code class="Groovy">class Identifiable {
+    String name
+}
+class User {
+    Long id
+    String name
+    def asType(Class target) {
+        if (target == Identifiable) {
+            return new Identifiable(name: name)
+        }
+        throw new ClassCastException(&quot;User cannot be coerced into $target&quot;)
+    }
+}
+def u = new User(name: &#39;Xavier&#39;)
+def p = u as Identifiable
+assert p instanceof Identifiable
+assert !(p instanceof User)</code></pre>
+<h3 id="8-9-尖括号运算符"><a href="#8-9-尖括号运算符" class="headerlink" title="8.9.尖括号运算符"></a>8.9.尖括号运算符</h3><p>尖括号运算符<code>&lt;&gt;</code>是仅添加语法的糖运算符，以支持与Java 7中同名运算符的兼容性。它用于指示应从声明中推断出泛型类型：</p>
+<pre><code class="Groovy">List&lt;String&gt; strings = new LinkedList&lt;&gt;()</code></pre>
+<p>在动态Groovy中，这是完全未使用的。 在静态类型检查的Groovy中，它也是可选的，因为Groovy类型检查器会执行类型推断，无论是否存在此运算符。</p>
+<h3 id="8-10-Call运算符"><a href="#8-10-Call运算符" class="headerlink" title="8.10.Call运算符"></a>8.10.Call运算符</h3><p><code>()</code>运算符是隐式地调用<code>call</code>方法。对于任意定义了<code>call</code>方法的对象，可以省略<code>.call</code>的部分，而直接使用Call运算符。</p>
+<pre><code class="Groovy">class MyCallable {
+    int call(int x) { // 在MyCallable中定义了call方法
+        2*x
+    }
+}
+
+def mc = new MyCallable()
+assert mc.call(2) == 4 // 使用传统的调用方式调用call方法
+assert mc(2) == 4 // 省略.call直接使用()运算符</code></pre>
+<h2 id="9-运算符优先级"><a href="#9-运算符优先级" class="headerlink" title="9.运算符优先级"></a>9.运算符优先级</h2><p>下面列出了Groovy 操作符的优先级</p>
+<table>
+<thead>
+<tr>
+<th align="left">Level</th>
+<th align="left">Operator(s)</th>
+<th align="left">Name(s)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><code>new</code>  <code>()</code></td>
+<td align="left">object creation, explicit parentheses</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>()</code>  <code>{}</code>  <code>[]</code></td>
+<td align="left">method call, closure, literal list/map</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>.</code>  <code>.&amp;</code>  <code>.@</code></td>
+<td align="left">member access, method closure, field/attribute access</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>?.</code>  <code>*</code>  <code>*.</code>  <code>*:</code></td>
+<td align="left">safe dereferencing, spread, spread-dot, spread-map</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>~</code>  <code>!</code>  <code>(type)</code></td>
+<td align="left">bitwise negate/pattern, not, typecast</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>[]</code>  <code>?[]</code>  <code>++</code>  <code>--</code></td>
+<td align="left">list/map/array (safe) index, post inc/decrement</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><code>**</code></td>
+<td align="left">power</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><code>++</code>  <code>--</code>  <code>+</code>  <code>-</code></td>
+<td align="left">pre inc/decrement, unary plus, unary minus</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left"><code>*</code>  <code>/</code>  <code>%</code></td>
+<td align="left">multiply, div, remainder</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left"><code>+</code>  <code>-</code></td>
+<td align="left">addition, subtraction</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left"><code>&lt;&lt;</code>  <code>&gt;&gt;</code>  <code>&gt;&gt;&gt;</code>  <code>..</code>  <code>..&lt;</code></td>
+<td align="left">left/right (unsigned) shift, inclusive/exclusive range</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left"><code>&lt;</code>  <code>&lt;=</code>  <code>&gt;</code>  <code>&gt;=</code>  <code>in</code>  <code>!in</code>  <code>instanceof</code>  <code>!instanceof</code>  <code>as</code></td>
+<td align="left">less/greater than/or equal, in, not in, instanceof, not instanceof, type coercion</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left"><code>==</code>  <code>!=</code>  <code>&lt;=&gt;</code>  <code>===</code>  <code>!==</code></td>
+<td align="left">equals, not equals, compare to, identical to, not identical to</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>=~</code>  <code>==~</code></td>
+<td align="left">regex find, regex match</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left"><code>&amp;</code></td>
+<td align="left">binary/bitwise and</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left"><code>^</code></td>
+<td align="left">binary/bitwise xor</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">`</td>
+<td align="left">`</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left"><code>&amp;&amp;</code></td>
+<td align="left">logical and</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">`</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left"><code>? :</code></td>
+<td align="left">ternary conditional</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>?:</code></td>
+<td align="left">elvis operator</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left"><code>=</code>  <code>**=</code>  <code>*=</code>  <code>/=</code>  <code>%=</code>  <code>+=</code>  <code>-=</code>  <code>&lt;&lt;=</code>  <code>&gt;&gt;=</code>  <code>&gt;&gt;&gt;=</code>  <code>&amp;=</code>  <code>^=</code>  `</td>
+<td align="left">=<code>   </code>?=`</td>
+</tr>
+</tbody></table>
+<h2 id="10-运算符重载"><a href="#10-运算符重载" class="headerlink" title="10.运算符重载"></a>10.运算符重载</h2><p>Groovy允许多种运算符的重载。</p>
+<pre><code class="Groovy">class Bucket {
+    int size
+
+    Bucket(int size) { this.size = size }
+
+    Bucket plus(Bucket other) { // Bucket实现了一个plus方法
+        return new Bucket(this.size + other.size)
+    }
+}
+
+def b1 = new Bucket(4)
+def b2 = new Bucket(11)
+assert (b1 + b2).size == 15 // 因为实现了plus方法，所以可以使用+运算符</code></pre>
+<p>下面是运算符及其对应方法的完整列表:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Method</th>
+<th align="left">Operator</th>
+<th align="left">Method</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>+</code></td>
+<td align="left">a.plus(b)</td>
+<td align="left"><code>a[b]</code></td>
+<td align="left">a.getAt(b)</td>
+</tr>
+<tr>
+<td align="left"><code>-</code></td>
+<td align="left">a.minus(b)</td>
+<td align="left"><code>a[b] = c</code></td>
+<td align="left">a.putAt(b, c)</td>
+</tr>
+<tr>
+<td align="left"><code>*</code></td>
+<td align="left">a.multiply(b)</td>
+<td align="left"><code>a in b</code></td>
+<td align="left">b.isCase(a)</td>
+</tr>
+<tr>
+<td align="left"><code>/</code></td>
+<td align="left">a.div(b)</td>
+<td align="left"><code>&lt;&lt;</code></td>
+<td align="left">a.leftShift(b)</td>
+</tr>
+<tr>
+<td align="left"><code>%</code></td>
+<td align="left">a.mod(b)</td>
+<td align="left"><code>&gt;&gt;</code></td>
+<td align="left">a.rightShift(b)</td>
+</tr>
+<tr>
+<td align="left"><code>**</code></td>
+<td align="left">a.power(b)</td>
+<td align="left"><code>&gt;&gt;&gt;</code></td>
+<td align="left">a.rightShiftUnsigned(b)</td>
+</tr>
+<tr>
+<td align="left">`</td>
+<td align="left">`</td>
+<td align="left">a.or(b)</td>
+<td align="left"><code>++</code></td>
+</tr>
+<tr>
+<td align="left"><code>&amp;</code></td>
+<td align="left">a.and(b)</td>
+<td align="left"><code>--</code></td>
+<td align="left">a.previous()</td>
+</tr>
+<tr>
+<td align="left"><code>^</code></td>
+<td align="left">a.xor(b)</td>
+<td align="left"><code>+a</code></td>
+<td align="left">a.positive()</td>
+</tr>
+<tr>
+<td align="left"><code>as</code></td>
+<td align="left">a.asType(b)</td>
+<td align="left"><code>-a</code></td>
+<td align="left">a.negative()</td>
+</tr>
+<tr>
+<td align="left"><code>a()</code></td>
+<td align="left">a.call()</td>
+<td align="left"><code>~a</code></td>
+<td align="left">a.bitwiseNegate()</td>
+</tr>
+</tbody></table>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io">https://suifengczc.github.io</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="../../../../../../tags/Language/">
+                                    <span class="chip bg-color">Language</span>
+                                </a>
+                            
+                                <a href="../../../../../../tags/Groovy/">
+                                    <span class="chip bg-color">Groovy</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="../../../../12/Language/Groovy/Structure/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Groovy 程序结构">
+                        
+                        <span class="card-title">Groovy 程序结构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Groovy 程序结构本篇是程序结构的阅读笔记。
+1.包名包名和Java相同
+2.Import2.1.默认导入Groovy默认导入了
+import java.lang.*
+import java.util.*
+import java.io.
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../../../../../../categories/Language/" class="post-category">
+                                    Language
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../../../../../../tags/Language/">
+                        <span class="chip bg-color">Language</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/Groovy/">
+                        <span class="chip bg-color">Groovy</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="../../../hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            suifeng
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Suifeng Blog<br />'
+            + '文章作者: suifeng<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">42.2k</span>&nbsp;
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script src="/js/prettify.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('pre').addClass('prettyprint linenums');
+                    prettyPrint();
+                })
+            </script>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "3";
+                    var startDate = "3";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/suifengczc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ssuifengczc@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>

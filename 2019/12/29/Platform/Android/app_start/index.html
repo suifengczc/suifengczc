@@ -1,0 +1,2252 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="从点击桌面图标到启动app流程, Suifeng Blog">
+    <meta name="description" content="在智能手机的日常使用中，最常见的操作应该就是点击桌面图标然后打开对应app了，本文主要分析了在这个过程中系统做了什么事。
+材料准备
+Android源码，Android可以下载源码到本地用source insight导入阅读，或者使用在线源码">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>从点击桌面图标到启动app流程 | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<style> 
+		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+		{ list-style-type: decimal !important }
+	</style>
+
+    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="../../../../../../index.html" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Suifeng Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Suifeng Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/suifengczc" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/suifengczc" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        从点击桌面图标到启动app流程
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="../../../../../../tags/Platform/">
+                                <span class="chip bg-color">Platform</span>
+                            </a>
+                        
+                            <a href="../../../../../../tags/Android/">
+                                <span class="chip bg-color">Android</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="../../../../../../categories/Platform/" class="post-category">
+                                Platform
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-12-29
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-09-13
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    33 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>在智能手机的日常使用中，最常见的操作应该就是点击桌面图标然后打开对应app了，本文主要分析了在这个过程中系统做了什么事。</p>
+<h1 id="材料准备"><a href="#材料准备" class="headerlink" title="材料准备"></a>材料准备</h1><ol>
+<li>Android源码，Android可以下载源码到本地用source insight导入阅读，或者使用在线源码阅读工具，比如：<a href="http://androidxref.com/" target="_blank" rel="noopener">AndroidXRef</a>,<a href="https://cs.android.com/" target="_blank" rel="noopener">官方源码在线阅读工具</a>等。本文基于安卓源码<strong>android-6.0.1_r72</strong>版本分析。</li>
+<li>Android设备，本文使用设备是Nexus 5，Android版本号是6.0.1。</li>
+</ol>
+<h2 id="桌面Activity"><a href="#桌面Activity" class="headerlink" title="桌面Activity"></a>桌面Activity</h2><p>系统桌面的源码在源码目录的<code>android-6.0.1_r72\packages\apps\Launcher3</code>下，查看该<code>Launcher3</code>目录下的<strong>AndroidManifest.xml</strong>发现其中只有<code>com.android.launcher3.Launcher</code>这个类包含了<code>&lt;category android:name=&quot;android.intent.category.HOME&quot; /&gt;</code>标签。可以确定桌面Activity是<code>com.android.launcher3.Launcher</code></p>
+<p>在实际设备中让设备处在桌面，然后执行</p>
+<pre><code class="shell">adb shell
+dumpsys activity top |grep ACTIVITY</code></pre>
+<p>可以得到当前的顶层Activity。<br>如图所示：<br><img src="/2019/12/29/Platform/Android/app_start/top_activity.png" alt="桌面Activity"></p>
+<p>可以看到实际设备的桌面包名是<code>com.google.android.googlequicksearchbox</code>，实际桌面Activity是<code>com.google.android.launcher.GEL</code>。<br>接着使用<code>adb shell pm path com.google.android.googlequicksearchbox</code>命令可以看到桌面应用的apk所在位置。<br><img src="/2019/12/29/Platform/Android/app_start/pm_path.png" alt="launcher path"><br>反编译<code>Velvet.apk</code>这个包后发现<code>com.google.android.launcher.GEL</code>这个类实际也是继承自<code>com.android.launcher3.Launcher</code>，所以后续分析过程中还是以<code>com.android.launcher3.Launcher</code>为分析目标。</p>
+<h2 id="Launcher-java"><a href="#Launcher-java" class="headerlink" title="Launcher.java"></a>Launcher.java</h2><p>首先，打开app的行为是在点击桌面图标后发生的，而且<strong>Launcher</strong>继承自<strong>Activity</strong>，所以先去看<strong>Launcher</strong>的<code>onClick(View v)</code>方法<br><code>Launcher.onClick(View v)</code>方法的代码如下：</p>
+<pre><code class="java">        Object tag = v.getTag();
+        if (tag instanceof ShortcutInfo) {
+            //原生桌面点击app生成的快捷图标后调用
+            onClickAppShortcut(v);
+        } else if (tag instanceof FolderInfo) {
+            if (v instanceof FolderIcon) {
+                onClickFolderIcon(v);
+            }
+        } else if (v == mAllAppsButton) {
+            onClickAllAppsButton(v);
+        } else if (tag instanceof AppInfo) {
+            //原生桌面点击抽屉中的app图标后调用
+            startAppShortcutOrInfoActivity(v);
+        } else if (tag instanceof LauncherAppWidgetInfo) {
+            if (v instanceof PendingAppWidgetHostView) {
+                onClickPendingWidget((PendingAppWidgetHostView) v);
+            }
+        }</code></pre>
+<p>可以看到，在<code>onClick</code>中判断了view 的tag，当点击的是桌面的应用快捷方式时，tag的类型是<code>ShortcutInfo</code>。当点击的是桌面的文件夹时，tag的类型是<code>FolderInfo</code>。当点击的是app图标时，tag的类型是<code>AppInfo</code>。</p>
+<p>所以接下来跳到<code>Launcher</code>的<code>startAppShortcutOrInfoActivity(View v)</code>方法。可以看到，当tag是<code>ShortcutInfo</code>类型时，给intent设置了<code>SourceBounds</code>。当tag是<code>AppInfo</code>时，则不做操作，直接把intent传给<code>Launcher</code>的<code>startActivitySafely(View v,Intent intent,Object tag)</code>方法。</p>
+<pre><code class="java">    @Thunk void startAppShortcutOrInfoActivity(View v) {
+        Object tag = v.getTag();
+        final ShortcutInfo shortcut;
+        final Intent intent;
+        if (tag instanceof ShortcutInfo) {
+            shortcut = (ShortcutInfo) tag;
+            intent = shortcut.intent;
+            int[] pos = new int[2];
+            v.getLocationOnScreen(pos);
+            intent.setSourceBounds(new Rect(pos[0], pos[1],
+                    pos[0] + v.getWidth(), pos[1] + v.getHeight()));
+
+        } else if (tag instanceof AppInfo) {
+            shortcut = null;
+            intent = ((AppInfo) tag).intent;
+        } else {
+            throw new IllegalArgumentException(&quot;Input must be a Shortcut or AppInfo&quot;);
+        }
+
+        boolean success = startActivitySafely(v, intent, tag);
+        mStats.recordLaunch(v, intent, shortcut);
+
+        if (success &amp;&amp; v instanceof BubbleTextView) {
+            mWaitingForResume = (BubbleTextView) v;
+            mWaitingForResume.setStayPressed(true);
+        }
+    }</code></pre>
+<p>在<code>startActivitySafely(View v,Intent intent,Object tag)</code>方法中先判断了当前是否在安全模式，如果在安全模式下则不允许启动非系统应用。<br>通过判断后接着就调用了<code>Launcher</code>的<code>startActivity(View v,Intent intent,Object tag)</code>。<br><code>startActivitySafely(View v,Intent intent,Object tag)</code>的代码如下：</p>
+<pre><code class="java">    public boolean startActivitySafely(View v, Intent intent, Object tag) {
+        boolean success = false;
+        //如果在安全模式下不允许启动非系统应用
+        if (mIsSafeModeEnabled &amp;&amp; !Utilities.isSystemApp(this, intent)) {
+            Toast.makeText(this, R.string.safemode_shortcut_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        try {
+            success = startActivity(v, intent, tag);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.activity_not_found, Toast.LENGTH_SHORT).show();
+            Log.e(TAG, &quot;Unable to launch. tag=&quot; + tag + &quot; intent=&quot; + intent, e);
+        }
+        return success;
+    }</code></pre>
+<pre><code class="java">private boolean startActivity(View v, Intent intent, Object tag) {
+        //第一步：为intent添加Intent.FLAG_ACTIVITY_NEW_TASK，当不存在和被启动activity相同的taskAffinity时，会新建一个任务栈来保存activity
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            // Only launch using the new animation if the shortcut has not opted out (this is a private contract between launcher and may be ignored in the future).
+            boolean useLaunchAnimation = (v != null) &amp;&amp;
+                    !intent.hasExtra(INTENT_EXTRA_IGNORE_LAUNCH_ANIMATION);
+            LauncherAppsCompat launcherApps = LauncherAppsCompat.getInstance(this);
+            UserManagerCompat userManager = UserManagerCompat.getInstance(this);
+            //第二步：获取user
+            UserHandleCompat user = null;
+            if (intent.hasExtra(AppInfo.EXTRA_PROFILE)) {
+                long serialNumber = intent.getLongExtra(AppInfo.EXTRA_PROFILE, -1);
+                user = userManager.getUserForSerialNumber(serialNumber);
+            }
+
+            //第三步：构建动画
+            Bundle optsBundle = null;
+            if (useLaunchAnimation) {
+                ActivityOptions opts = null;
+                if (Utilities.ATLEAST_MARSHMALLOW) {
+                    int left = 0, top = 0;
+                    int width = v.getMeasuredWidth(), height = v.getMeasuredHeight();
+                    if (v instanceof TextView) {
+                        // Launch from center of icon, not entire view
+                        Drawable icon = Workspace.getTextViewIcon((TextView) v);
+                        if (icon != null) {
+                            Rect bounds = icon.getBounds();
+                            left = (width - bounds.width()) / 2;
+                            top = v.getPaddingTop();
+                            width = bounds.width();
+                            height = bounds.height();
+                        }
+                    }
+                    opts = ActivityOptions.makeClipRevealAnimation(v, left, top, width, height);
+                } else if (!Utilities.ATLEAST_LOLLIPOP) {
+                    // Below L, we use a scale up animation
+                    opts = ActivityOptions.makeScaleUpAnimation(v, 0, 0,
+                                    v.getMeasuredWidth(), v.getMeasuredHeight());
+                } else if (Utilities.ATLEAST_LOLLIPOP_MR1) {
+                    // On L devices, we use the device default slide-up transition.
+                    // On L MR1 devices, we a custom version of the slide-up transition which
+                    // doesn&#39;t have the delay present in the device default.
+                    opts = ActivityOptions.makeCustomAnimation(this,
+                            R.anim.task_open_enter, R.anim.no_anim);
+                }
+                optsBundle = opts != null ? opts.toBundle() : null;
+            }
+
+            //第四步：执行启动
+            if (user == null || user.equals(UserHandleCompat.myUserHandle())) {
+                // Could be launching some bookkeeping activity
+                startActivity(intent, optsBundle);
+            } else {
+                // TODO Component can be null when shortcuts are supported for secondary user
+                launcherApps.startActivityForProfile(intent.getComponent(), user,
+                        intent.getSourceBounds(), optsBundle);
+            }
+            return true;
+        } catch (SecurityException e) {
+            Toast.makeText(this, R.string.activity_not_found, Toast.LENGTH_SHORT).show();
+            Log.e(TAG, &quot;Launcher does not have the permission to launch &quot; + intent +
+                    &quot;. Make sure to create a MAIN intent-filter for the corresponding activity &quot; +
+                    &quot;or use the exported attribute for this activity. &quot;
+                    + &quot;tag=&quot;+ tag + &quot; intent=&quot; + intent, e);
+        }
+        return false;
+    }</code></pre>
+<p>在<code>Launcher</code>的<code>startActivity(View v,Intent intent,Object tag)</code>中一共做了四件事。<br>第一件事是为<code>intent</code>添加一个<code>Intent.FLAG_ACTIVITY_NEW_TASK</code>。如果当前不存在和被启动activity相同taskAffinity的任务栈，那就会新建一个任务栈来存放新启动的activity。</p>
+<p>第二件事是从<code>UserManagerCompat</code>的单例对象中获取对应的<code>UserHandleCompat</code>。<br>// todo 解释UserHandleCompat 和 UserManagerCompat</p>
+<p>第三件事判断intent中是否包含<code>INTENT_EXTRA_IGNORE_LAUNCH_ANIMATION</code>，如果包含就忽略动画。<br>如果不包含则默认需要播放动画，接着根据不同Android版本构建<code>ActivityOptions</code></p>
+<p>第四件事，如果<code>user</code>和<code>new UserHandleCompat(android.os.Process.myUserHandle()</code>相同则调用<code>Activity</code>的<code>startActivity(Intent intent, @Nullable Bundle options)</code>。</p>
+<h2 id="android-app-Activity-java"><a href="#android-app-Activity-java" class="headerlink" title="android.app.Activity.java"></a>android.app.Activity.java</h2><p>在Activity的<code>startActivity(Intent intent, Bundle options)</code>中，因为options非空，会调用<code>Activity</code>的<code>startActivityForResult(Intent intent, int requestCode, Bundle options)</code>。中间的requestCode默认传了-1，表示不关心返回结果</p>
+<p>在<code>Activity</code>的<code>startActivityForResult(Intent intent, int requestCode, Bundle options)</code>中首先判断了<code>mParent</code>是否为空，当<code>mParent</code>为空时，由<code>Instrumentation</code>来执行启动操作，如果<code>mParent</code>不为空，则由<code>mParent</code>来执行启动操作。<code>startActivityForResult(Intent intent, int requestCode, @Nullable Bundle options)</code>的代码如下：</p>
+<pre><code class="java">public void startActivityForResult(Intent intent, int requestCode, @Nullable Bundle options) {
+        if (mParent == null) {
+            //当mParent为空时由mInstrumentation继续处理启动流程
+            Instrumentation.ActivityResult ar =
+                mInstrumentation.execStartActivity(
+                    this, mMainThread.getApplicationThread(), mToken, this,
+                    intent, requestCode, options);
+            if (ar != null) {
+                mMainThread.sendActivityResult(
+                    mToken, mEmbeddedID, requestCode, ar.getResultCode(),
+                    ar.getResultData());
+            }
+            if (requestCode &gt;= 0) {
+                mStartedActivity = true;
+            }
+
+            cancelInputsAndStartExitTransition(options);
+        } else {
+            if (options != null) {
+                mParent.startActivityFromChild(this, intent, requestCode, options);
+            } else {
+                mParent.startActivityFromChild(this, intent, requestCode);
+            }
+        }
+    }</code></pre>
+<p>这里的<code>mParent</code>为空，所以调用了<code>Instrumentation</code>的<code>ActivityResult execStartActivity(Context who, IBinder contextThread, IBinder token, Activity target,Intent intent, int requestCode, Bundle options)</code>方法，方法很长，一共传了7个参数。分别是：</p>
+<ul>
+<li><code>Context who</code>：</li>
+</ul>
+<blockquote>
+<p>The Context from which the activity is being started.</p>
+</blockquote>
+<p>启动activity操作的来源Context，可以直接认为是<code>startActivity()</code>的调用者。<br>这里传入的就是<code>com.google.android.launcher.GEL</code>自身</p>
+<ul>
+<li><code>IBinder contextThread</code>：</li>
+</ul>
+<blockquote>
+<p>The main thread of the Context from which the activity is being started.</p>
+</blockquote>
+<p>启动activity的Context的主线程。<br>这里用<code>mMainThread.getApplicationThread()</code>获取了<code>ActivityThread</code>中保存的<code>ApplicationThread</code></p>
+<ul>
+<li><code>IBinder token</code>：</li>
+</ul>
+<blockquote>
+<p>Internal token identifying to the system who is starting the activity; may be null.</p>
+</blockquote>
+<p>为系统标识当前正在启动activity的是谁。可能为空。<br>这里传递了当前<code>com.google.android.launcher.GEL</code>的<code>mToken</code>，用来标识当前是<code>com.google.android.launcher.GEL</code>正在启动activity。</p>
+<ul>
+<li><code>Activity target</code>：</li>
+</ul>
+<blockquote>
+<p>Which activity is performing the start (and thus receiving any result); may be null if this call is not being made from an activity.</p>
+</blockquote>
+<p>正在执行Activity启动操作的Activity。如果不是从一个Activity发起的启动操作，该项可能为空。<br>这里传入的也是<code>com.google.android.launcher.GEL</code>自身</p>
+<ul>
+<li><code>Intent intent</code>：</li>
+</ul>
+<blockquote>
+<p>The actual Intent to start.</p>
+</blockquote>
+<p>启动的实际Intent。</p>
+<ul>
+<li><code>int requestCode</code>：</li>
+</ul>
+<blockquote>
+<p>Identifier for this request’s result; less than zero if the caller is not expecting a result.</p>
+</blockquote>
+<p>请求结果的标识，如果调用者不关注结果则传入负值。<br>这里传入的是-1</p>
+<ul>
+<li><code>Bundle options</code></li>
+</ul>
+<blockquote>
+<p>Addition options</p>
+</blockquote>
+<p>附加选项<br>这里传入的是调用<code>startActivity</code>时传入的options</p>
+<p><code>Instrumentation</code>的<code>execStartActivity</code>方法代码如下：</p>
+<pre><code class="java">public ActivityResult execStartActivity(
+            Context who, IBinder contextThread, IBinder token, Activity target,
+            Intent intent, int requestCode, Bundle options) {
+        IApplicationThread whoThread = (IApplicationThread) contextThread;
+        Uri referrer = target != null ? target.onProvideReferrer() : null;
+        if (referrer != null) {
+            intent.putExtra(Intent.EXTRA_REFERRER, referrer);
+        }
+        if (mActivityMonitors != null) {
+            synchronized (mSync) {
+                final int N = mActivityMonitors.size();
+                for (int i=0; i&lt;N; i++) {
+                    final ActivityMonitor am = mActivityMonitors.get(i);
+                    if (am.match(who, null, intent)) {
+                        am.mHits++;
+                        if (am.isBlocking()) {
+                            return requestCode &gt;= 0 ? am.getResult() : null;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        try {
+            intent.migrateExtraStreamToClipData();
+            intent.prepareToLeaveProcess();
+            int result = ActivityManagerNative.getDefault()
+                .startActivity(whoThread, who.getBasePackageName(), intent,
+                        intent.resolveTypeIfNeeded(who.getContentResolver()),
+                        token, target != null ? target.mEmbeddedID : null,
+                        requestCode, 0, null, options);
+            checkStartActivityResult(result, intent);
+        } catch (RemoteException e) {
+            throw new RuntimeException(&quot;Failure from system&quot;, e);
+        }
+        return null;
+    }</code></pre>
+<p>这里可以看到第一步是先从<strong>target</strong>中获取<strong>referrer</strong>，在<code>Activity</code>的<code>onProvideReferrer()</code>方法中默认是直接返回null的。如果这里的<strong>target</strong>是继承了<code>Activity</code>的子类并重写了<code>onProvideReferrer()</code>方法，那么就能从中获取到<code>Uri</code>了。</p>
+<p>接下来的<code>mActivityMonitors</code>相关的内容是与<code>InstrumentationTestCases</code>测试相关的。在这里不多加讨论。<br>启动相关的内容在后续的<code>try-catch</code>块中。<br>首先调用<code>Intent</code>的<code>migrateExtraStreamToClipData</code>方法将<strong>intent</strong>中的<strong>extra</strong>数据序列化传递给目标进程。<br>然后调用<code>Intent</code>的<code>prepareToLeaveProcess</code>方法做好离开当前线程的准备。<br>接下来就是调用<code>ActivityManagerNative.getDefault()</code>得到了一个<strong>android.app.ActivityManagerProxy</strong>对象。</p>
+<p>先来看看<code>getDefault()</code>方法是怎么获取到这个<code>ActivityManagerProxy</code>对象的。<br>在<code>ActivityManagerNative.getDefault()</code>中只有一行代码。</p>
+<pre><code class="java">    static public IActivityManager getDefault() {
+        return gDefault.get();
+    }</code></pre>
+<p>这里的<strong>gDefault</strong>实际上是定义在<strong>ActivityManagerNative</strong>中的静态变量，具体类型如下：</p>
+<pre><code class="java">    private static final Singleton&lt;IActivityManager&gt; gDefault = new Singleton&lt;IActivityManager&gt;() {
+        protected IActivityManager create() {
+            IBinder b = ServiceManager.getService(&quot;activity&quot;);
+            if (false) {
+                Log.v(&quot;ActivityManager&quot;, &quot;default service binder = &quot; + b);
+            }
+            IActivityManager am = asInterface(b);
+            if (false) {
+                Log.v(&quot;ActivityManager&quot;, &quot;default service = &quot; + am);
+            }
+            return am;
+        }
+    };</code></pre>
+<p>可以看到<strong>gDefault</strong>就是一个实现了IActivityManager接口的<code>ActivityManagerProxy</code>对象。<br>所以实际上这里是调用了<code>ActivityManagerProxy</code>的<code>startActivity</code>方法。</p>
+<pre><code class="Java"> public int startActivity(IApplicationThread caller, String callingPackage, Intent intent,
+            String resolvedType, IBinder resultTo, String resultWho, int requestCode,
+            int startFlags, ProfilerInfo profilerInfo, Bundle options) throws RemoteException {
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
+        data.writeInterfaceToken(IActivityManager.descriptor);
+        data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        data.writeString(callingPackage);
+        intent.writeToParcel(data, 0);
+        data.writeString(resolvedType);
+        data.writeStrongBinder(resultTo);
+        data.writeString(resultWho);
+        data.writeInt(requestCode);
+        data.writeInt(startFlags);
+        if (profilerInfo != null) {
+            data.writeInt(1);
+            profilerInfo.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
+        } else {
+            data.writeInt(0);
+        }
+        if (options != null) {
+            data.writeInt(1);
+            options.writeToParcel(data, 0);
+        } else {
+            data.writeInt(0);
+        }
+        mRemote.transact(START_ACTIVITY_TRANSACTION, data, reply, 0);
+        reply.readException();
+        int result = reply.readInt();
+        reply.recycle();
+        data.recycle();
+        return result;
+    }
+</code></pre>
+<p>在这里通过AIDL将startActivity任务交给了远端服务器执行。所以会跳转到<code>ActivityManagreNative</code>的<code>onTransact</code>方法。</p>
+<pre><code class="Java">    @Override
+    public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
+            throws RemoteException {
+        switch (code) {
+            case START_ACTIVITY_TRANSACTION:
+            {
+                data.enforceInterface(IActivityManager.descriptor);
+                IBinder b = data.readStrongBinder();
+                IApplicationThread app = ApplicationThreadNative.asInterface(b);
+                String callingPackage = data.readString();
+                Intent intent = Intent.CREATOR.createFromParcel(data);
+                String resolvedType = data.readString();
+                IBinder resultTo = data.readStrongBinder();
+                String resultWho = data.readString();
+                int requestCode = data.readInt();
+                int startFlags = data.readInt();
+                ProfilerInfo profilerInfo = data.readInt() != 0
+                        ? ProfilerInfo.CREATOR.createFromParcel(data) : null;
+                Bundle options = data.readInt() != 0
+                        ? Bundle.CREATOR.createFromParcel(data) : null;
+                int result = startActivity(app, callingPackage, intent, resolvedType,
+                        resultTo, resultWho, requestCode, startFlags, profilerInfo, options);
+                reply.writeNoException();
+                reply.writeInt(result);
+                return true;
+            }
+        }
+    }</code></pre>
+<p>在服务端会调用到<code>ActivityManagerService</code>(以下简称<code>AMS</code>)的<code>startActivity</code>方法，然后又会调用到<code>AMS</code>的<code>startActivityAsUser</code>方法。<br>然后在<code>AMS</code>的<code>startActivityAsUser</code>会调用<code>ActivityStackSupervisor</code>的<code>startActivityMayWait</code>方法。<br>从<code>ActivityStackSupervisor</code>类名可以看出，这个类承担了Activity栈管理者的作用。</p>
+<pre><code class="Java">    public final int startActivity(IApplicationThread caller, String callingPackage,
+            Intent intent, String resolvedType, IBinder resultTo, String resultWho, int requestCode,
+            int startFlags, ProfilerInfo profilerInfo, Bundle options) {
+        return startActivityAsUser(caller, callingPackage, intent, resolvedType, resultTo,
+            resultWho, requestCode, startFlags, profilerInfo, options,
+            UserHandle.getCallingUserId());
+    }</code></pre>
+<pre><code class="Java">    public final int startActivityAsUser(IApplicationThread caller, String callingPackage,
+            Intent intent, String resolvedType, IBinder resultTo, String resultWho, int requestCode,
+            int startFlags, ProfilerInfo profilerInfo, Bundle options, int userId) {
+        enforceNotIsolatedCaller(&quot;startActivity&quot;);
+        userId = handleIncomingUser(Binder.getCallingPid(), Binder.getCallingUid(), userId,
+                false, ALLOW_FULL_ONLY, &quot;startActivity&quot;, null);
+        // Switch to user app stacks here.
+        return mStackSupervisor.startActivityMayWait(caller, -1, callingPackage, intent,
+                resolvedType, null, null, resultTo, resultWho, requestCode, startFlags,
+                profilerInfo, null, null, options, false, userId, null, null);
+    }</code></pre>
+<pre><code class="Java">final int startActivityMayWait(IApplicationThread caller, int callingUid,
+            String callingPackage, Intent intent, String resolvedType,
+            IVoiceInteractionSession voiceSession, IVoiceInteractor voiceInteractor,
+            IBinder resultTo, String resultWho, int requestCode, int startFlags,
+            ProfilerInfo profilerInfo, WaitResult outResult, Configuration config,
+            Bundle options, boolean ignoreTargetSecurity, int userId,
+            IActivityContainer iContainer, TaskRecord inTask) {
+        // Refuse possible leaked file descriptors
+        // Intent不能包含文件描述符
+        if (intent != null &amp;&amp; intent.hasFileDescriptors()) {
+            throw new IllegalArgumentException(&quot;File descriptors passed in Intent&quot;);
+        }
+        boolean componentSpecified = intent.getComponent() != null;
+
+        // Don&#39;t modify the client&#39;s object!
+        // 不对原Intent修改
+        intent = new Intent(intent);
+
+        // Collect information about the target of the Intent.
+        // 得到目标启动Activity的信息
+        ActivityInfo aInfo =
+                resolveActivity(intent, resolvedType, startFlags, profilerInfo, userId);
+
+        ActivityContainer container = (ActivityContainer)iContainer;
+        synchronized (mService) {
+            if (container != null &amp;&amp; container.mParentActivity != null &amp;&amp;
+                    container.mParentActivity.state != RESUMED) {
+                // Cannot start a child activity if the parent is not resumed.
+                return ActivityManager.START_CANCELED;
+            }
+            final int realCallingPid = Binder.getCallingPid();
+            final int realCallingUid = Binder.getCallingUid();
+            int callingPid;
+            if (callingUid &gt;= 0) {
+                callingPid = -1;
+            } else if (caller == null) {
+                callingPid = realCallingPid;
+                callingUid = realCallingUid;
+            } else {
+                callingPid = callingUid = -1;
+            }
+
+            final ActivityStack stack;
+            if (container == null || container.mStack.isOnHomeDisplay()) {
+                stack = mFocusedStack;
+            } else {
+                stack = container.mStack;
+            }
+            stack.mConfigWillChange = config != null &amp;&amp; mService.mConfiguration.diff(config) != 0;
+            if (DEBUG_CONFIGURATION) Slog.v(TAG_CONFIGURATION,
+                    &quot;Starting activity when config will change = &quot; + stack.mConfigWillChange);
+
+            final long origId = Binder.clearCallingIdentity();
+
+            if (aInfo != null &amp;&amp;
+                    (aInfo.applicationInfo.privateFlags
+                            &amp;ApplicationInfo.PRIVATE_FLAG_CANT_SAVE_STATE) != 0) {
+                // This may be a heavy-weight process!  Check to see if we already
+                // have another, different heavy-weight process running.
+                if (aInfo.processName.equals(aInfo.applicationInfo.packageName)) {
+                    if (mService.mHeavyWeightProcess != null &amp;&amp;
+                            (mService.mHeavyWeightProcess.info.uid != aInfo.applicationInfo.uid ||
+                            !mService.mHeavyWeightProcess.processName.equals(aInfo.processName))) {
+                        int appCallingUid = callingUid;
+                        if (caller != null) {
+                            //通过调用者的ApplicationThread从最近使用中获取对应的ProcessRecord
+                            ProcessRecord callerApp = mService.getRecordForAppLocked(caller);
+                            if (callerApp != null) {
+                                appCallingUid = callerApp.info.uid;
+                            } else {
+                                Slog.w(TAG, &quot;Unable to find app for caller &quot; + caller
+                                      + &quot; (pid=&quot; + callingPid + &quot;) when starting: &quot;
+                                      + intent.toString());
+                                //找不到调用者无法启动Activity
+                                ActivityOptions.abort(options);
+                                return ActivityManager.START_PERMISSION_DENIED;
+                            }
+                        }
+
+                        //获取对应的PendingIntentRecord
+                        IIntentSender target = mService.getIntentSenderLocked(
+                                ActivityManager.INTENT_SENDER_ACTIVITY, &quot;android&quot;,
+                                appCallingUid, userId, null, null, 0, new Intent[] { intent },
+                                new String[] { resolvedType }, PendingIntent.FLAG_CANCEL_CURRENT
+                                | PendingIntent.FLAG_ONE_SHOT, null);
+
+                        Intent newIntent = new Intent();
+                        if (requestCode &gt;= 0) {
+                            // Caller is requesting a result.
+                            //需要Activity启动结果的需要添加HeavyWeightSwitcherActivity.KEY_HAS_RESULT
+                            newIntent.putExtra(HeavyWeightSwitcherActivity.KEY_HAS_RESULT, true);
+                        }
+                        newIntent.putExtra(HeavyWeightSwitcherActivity.KEY_INTENT,
+                                new IntentSender(target));
+                        //mHeavyWeightProcess中正在运行Activity，添加信息到newIntent中
+                        if (mService.mHeavyWeightProcess.activities.size() &gt; 0) {
+                            ActivityRecord hist = mService.mHeavyWeightProcess.activities.get(0);
+                            newIntent.putExtra(HeavyWeightSwitcherActivity.KEY_CUR_APP,
+                                    hist.packageName);
+                            newIntent.putExtra(HeavyWeightSwitcherActivity.KEY_CUR_TASK,
+                                    hist.task.taskId);
+                        }
+                        newIntent.putExtra(HeavyWeightSwitcherActivity.KEY_NEW_APP,
+                                aInfo.packageName);
+                        newIntent.setFlags(intent.getFlags());
+                        newIntent.setClassName(&quot;android&quot;,
+                                HeavyWeightSwitcherActivity.class.getName());
+                        //修改intent为新intent
+                        intent = newIntent;
+                        resolvedType = null;
+                        caller = null;
+                        callingUid = Binder.getCallingUid();
+                        callingPid = Binder.getCallingPid();
+                        componentSpecified = true;
+                        try {
+                            ResolveInfo rInfo =
+                                AppGlobals.getPackageManager().resolveIntent(
+                                        intent, null,
+                                        PackageManager.MATCH_DEFAULT_ONLY
+                                        | ActivityManagerService.STOCK_PM_FLAGS, userId);
+                            aInfo = rInfo != null ? rInfo.activityInfo : null;
+                            aInfo = mService.getActivityInfoForUser(aInfo, userId);
+                        } catch (RemoteException e) {
+                            aInfo = null;
+                        }
+                    }
+                }
+            }
+
+            int res = startActivityLocked(caller, intent, resolvedType, aInfo,
+                    voiceSession, voiceInteractor, resultTo, resultWho,
+                    requestCode, callingPid, callingUid, callingPackage,
+                    realCallingPid, realCallingUid, startFlags, options, ignoreTargetSecurity,
+                    componentSpecified, null, container, inTask);
+
+            Binder.restoreCallingIdentity(origId);
+
+            if (stack.mConfigWillChange) {
+                // If the caller also wants to switch to a new configuration,
+                // do so now.  This allows a clean switch, as we are waiting
+                // for the current activity to pause (so we will not destroy
+                // it), and have not yet started the next activity.
+                mService.enforceCallingPermission(android.Manifest.permission.CHANGE_CONFIGURATION,
+                        &quot;updateConfiguration()&quot;);
+                stack.mConfigWillChange = false;
+                if (DEBUG_CONFIGURATION) Slog.v(TAG_CONFIGURATION,
+                        &quot;Updating to new configuration after starting activity.&quot;);
+                mService.updateConfigurationLocked(config, null, false, false);
+            }
+
+            if (outResult != null) {
+                outResult.result = res;
+                if (res == ActivityManager.START_SUCCESS) {
+                    mWaitingActivityLaunched.add(outResult);
+                    do {
+                        try {
+                            mService.wait();
+                        } catch (InterruptedException e) {
+                        }
+                    } while (!outResult.timeout &amp;&amp; outResult.who == null);
+                } else if (res == ActivityManager.START_TASK_TO_FRONT) {
+                    ActivityRecord r = stack.topRunningActivityLocked(null);
+                    if (r.nowVisible &amp;&amp; r.state == RESUMED) {
+                        outResult.timeout = false;
+                        outResult.who = new ComponentName(r.info.packageName, r.info.name);
+                        outResult.totalTime = 0;
+                        outResult.thisTime = 0;
+                    } else {
+                        outResult.thisTime = SystemClock.uptimeMillis();
+                        mWaitingActivityVisible.add(outResult);
+                        do {
+                            try {
+                                mService.wait();
+                            } catch (InterruptedException e) {
+                            }
+                        } while (!outResult.timeout &amp;&amp; outResult.who == null);
+                    }
+                }
+            }
+
+            return res;
+        }
+    }</code></pre>
+<p><code>startActivityMayWait</code>方法内包含了获取启动信息的逻辑。经过一系列处理后调用了<code>ActivityStackSupervisor</code>的<code>startActivityLocked</code>方法</p>
+<pre><code class="Java">//frameworks\base\services\core\java\com\android\server\am\ActivityStackSupervisor.java
+final int startActivityLocked(IApplicationThread caller,
+            Intent intent, String resolvedType, ActivityInfo aInfo,
+            IVoiceInteractionSession voiceSession, IVoiceInteractor voiceInteractor,
+            IBinder resultTo, String resultWho, int requestCode,
+            int callingPid, int callingUid, String callingPackage,
+            int realCallingPid, int realCallingUid, int startFlags, Bundle options,
+            boolean ignoreTargetSecurity, boolean componentSpecified, ActivityRecord[] outActivity,
+            ActivityContainer container, TaskRecord inTask) {
+        int err = ActivityManager.START_SUCCESS;
+
+        ProcessRecord callerApp = null;
+        if (caller != null) {
+            //通过调用者的ApplicationThread从最近任务中获取对应的ProcessRecord
+            callerApp = mService.getRecordForAppLocked(caller);
+            if (callerApp != null) {
+                callingPid = callerApp.pid;
+                callingUid = callerApp.info.uid;
+            } else {
+                Slog.w(TAG, &quot;Unable to find app for caller &quot; + caller
+                      + &quot; (pid=&quot; + callingPid + &quot;) when starting: &quot;
+                      + intent.toString());
+                err = ActivityManager.START_PERMISSION_DENIED;
+            }
+        }
+
+        final int userId = aInfo != null ? UserHandle.getUserId(aInfo.applicationInfo.uid) : 0;
+
+        if (err == ActivityManager.START_SUCCESS) {
+            Slog.i(TAG, &quot;START u&quot; + userId + &quot; {&quot; + intent.toShortString(true, true, true, false)
+                    + &quot;} from uid &quot; + callingUid
+                    + &quot; on display &quot; + (container == null ? (mFocusedStack == null ?
+                            Display.DEFAULT_DISPLAY : mFocusedStack.mDisplayId) :
+                            (container.mActivityDisplay == null ? Display.DEFAULT_DISPLAY :
+                                    container.mActivityDisplay.mDisplayId)));
+        }
+
+        ActivityRecord sourceRecord = null;
+        ActivityRecord resultRecord = null;
+        if (resultTo != null) {
+            //通过接收启动结果的token查找对应的ActivityRecord
+            sourceRecord = isInAnyStackLocked(resultTo);
+            if (DEBUG_RESULTS) Slog.v(TAG_RESULTS,
+                    &quot;Will send result to &quot; + resultTo + &quot; &quot; + sourceRecord);
+            if (sourceRecord != null) {
+                if (requestCode &gt;= 0 &amp;&amp; !sourceRecord.finishing) {
+                    resultRecord = sourceRecord;
+                }
+            }
+        }
+
+        final int launchFlags = intent.getFlags();
+
+        //Intent.FLAG_ACTIVITY_FORWARD_RESULT标识从ActivityA启动ActivityB或更多层跳转启动了ActivityZ
+        //在这种情况下启动的结果应该返回给ActivityA，而不是中间过度Activity。
+        if ((launchFlags &amp; Intent.FLAG_ACTIVITY_FORWARD_RESULT) != 0 &amp;&amp; sourceRecord != null) {
+            // Transfer the result target from the source activity to the new
+            // one being started, including any failures.
+            if (requestCode &gt;= 0) {
+                //这种情况下不允许中间过渡页设置requestCode &gt;= 0
+                ActivityOptions.abort(options);
+                return ActivityManager.START_FORWARD_AND_REQUEST_CONFLICT;
+            }
+            resultRecord = sourceRecord.resultTo;
+            if (resultRecord != null &amp;&amp; !resultRecord.isInStackLocked()) {
+                resultRecord = null;
+            }
+            //指定返回结果给上层同样的对象，层层转发
+            resultWho = sourceRecord.resultWho;
+            requestCode = sourceRecord.requestCode;
+            sourceRecord.resultTo = null;
+            if (resultRecord != null) {
+                resultRecord.removeResultsLocked(sourceRecord, resultWho, requestCode);
+            }
+            if (sourceRecord.launchedFromUid == callingUid) {
+                // The new activity is being launched from the same uid as the previous
+                // activity in the flow, and asking to forward its result back to the
+                // previous.  In this case the activity is serving as a trampoline between
+                // the two, so we also want to update its launchedFromPackage to be the
+                // same as the previous activity.  Note that this is safe, since we know
+                // these two packages come from the same uid; the caller could just as
+                // well have supplied that same package name itself.  This specifially
+                // deals with the case of an intent picker/chooser being launched in the app
+                // flow to redirect to an activity picked by the user, where we want the final
+                // activity to consider it to have been launched by the previous app activity.
+                callingPackage = sourceRecord.launchedFromPackage;
+            }
+        }
+
+        if (err == ActivityManager.START_SUCCESS &amp;&amp; intent.getComponent() == null) {
+            // We couldn&#39;t find a class that can handle the given Intent.
+            // That&#39;s the end of that!
+            err = ActivityManager.START_INTENT_NOT_RESOLVED;
+        }
+
+        if (err == ActivityManager.START_SUCCESS &amp;&amp; aInfo == null) {
+            // We couldn&#39;t find the specific class specified in the Intent.
+            // Also the end of the line.
+            err = ActivityManager.START_CLASS_NOT_FOUND;
+        }
+
+        if (err == ActivityManager.START_SUCCESS
+                &amp;&amp; !isCurrentProfileLocked(userId)
+                &amp;&amp; (aInfo.flags &amp; FLAG_SHOW_FOR_ALL_USERS) == 0) {
+            // Trying to launch a background activity that doesn&#39;t show for all users.
+            err = ActivityManager.START_NOT_CURRENT_USER_ACTIVITY;
+        }
+
+        if (err == ActivityManager.START_SUCCESS &amp;&amp; sourceRecord != null
+                &amp;&amp; sourceRecord.task.voiceSession != null) {
+            // If this activity is being launched as part of a voice session, we need
+            // to ensure that it is safe to do so.  If the upcoming activity will also
+            // be part of the voice session, we can only launch it if it has explicitly
+            // said it supports the VOICE category, or it is a part of the calling app.
+            if ((launchFlags &amp; Intent.FLAG_ACTIVITY_NEW_TASK) == 0
+                    &amp;&amp; sourceRecord.info.applicationInfo.uid != aInfo.applicationInfo.uid) {
+                try {
+                    intent.addCategory(Intent.CATEGORY_VOICE);
+                    if (!AppGlobals.getPackageManager().activitySupportsIntent(
+                            intent.getComponent(), intent, resolvedType)) {
+                        Slog.w(TAG,
+                                &quot;Activity being started in current voice task does not support voice: &quot;
+                                + intent);
+                        err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
+                    }
+                } catch (RemoteException e) {
+                    Slog.w(TAG, &quot;Failure checking voice capabilities&quot;, e);
+                    err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
+                }
+            }
+        }
+
+        if (err == ActivityManager.START_SUCCESS &amp;&amp; voiceSession != null) {
+            // If the caller is starting a new voice session, just make sure the target
+            // is actually allowing it to run this way.
+            try {
+                if (!AppGlobals.getPackageManager().activitySupportsIntent(intent.getComponent(),
+                        intent, resolvedType)) {
+                    Slog.w(TAG,
+                            &quot;Activity being started in new voice task does not support: &quot;
+                            + intent);
+                    err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
+                }
+            } catch (RemoteException e) {
+                Slog.w(TAG, &quot;Failure checking voice capabilities&quot;, e);
+                err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
+            }
+        }
+
+        final ActivityStack resultStack = resultRecord == null ? null : resultRecord.task.stack;
+
+        if (err != ActivityManager.START_SUCCESS) {
+            if (resultRecord != null) {
+                resultStack.sendActivityResultLocked(-1,
+                    resultRecord, resultWho, requestCode,
+                    Activity.RESULT_CANCELED, null);
+            }
+            ActivityOptions.abort(options);
+            return err;
+        }
+
+        boolean abort = false;
+
+        //检查是否具有启动权限
+        final int startAnyPerm = mService.checkPermission(
+                START_ANY_ACTIVITY, callingPid, callingUid);
+
+        if (startAnyPerm != PERMISSION_GRANTED) {
+            final int componentRestriction = getComponentRestrictionForCallingPackage(
+                    aInfo, callingPackage, callingPid, callingUid, ignoreTargetSecurity);
+            final int actionRestriction = getActionRestrictionForCallingPackage(
+                    intent.getAction(), callingPackage, callingPid, callingUid);
+
+            if (componentRestriction == ACTIVITY_RESTRICTION_PERMISSION
+                    || actionRestriction == ACTIVITY_RESTRICTION_PERMISSION) {
+                if (resultRecord != null) {
+                    resultStack.sendActivityResultLocked(-1,
+                            resultRecord, resultWho, requestCode,
+                            Activity.RESULT_CANCELED, null);
+                }
+                String msg;
+                if (actionRestriction == ACTIVITY_RESTRICTION_PERMISSION) {
+                    msg = &quot;Permission Denial: starting &quot; + intent.toString()
+                            + &quot; from &quot; + callerApp + &quot; (pid=&quot; + callingPid
+                            + &quot;, uid=&quot; + callingUid + &quot;)&quot; + &quot; with revoked permission &quot;
+                            + ACTION_TO_RUNTIME_PERMISSION.get(intent.getAction());
+                } else if (!aInfo.exported) {
+                    msg = &quot;Permission Denial: starting &quot; + intent.toString()
+                            + &quot; from &quot; + callerApp + &quot; (pid=&quot; + callingPid
+                            + &quot;, uid=&quot; + callingUid + &quot;)&quot;
+                            + &quot; not exported from uid &quot; + aInfo.applicationInfo.uid;
+                } else {
+                    msg = &quot;Permission Denial: starting &quot; + intent.toString()
+                            + &quot; from &quot; + callerApp + &quot; (pid=&quot; + callingPid
+                            + &quot;, uid=&quot; + callingUid + &quot;)&quot;
+                            + &quot; requires &quot; + aInfo.permission;
+                }
+                Slog.w(TAG, msg);
+                throw new SecurityException(msg);
+            }
+
+            if (actionRestriction == ACTIVITY_RESTRICTION_APPOP) {
+                String message = &quot;Appop Denial: starting &quot; + intent.toString()
+                        + &quot; from &quot; + callerApp + &quot; (pid=&quot; + callingPid
+                        + &quot;, uid=&quot; + callingUid + &quot;)&quot;
+                        + &quot; requires &quot; + AppOpsManager.permissionToOp(
+                                ACTION_TO_RUNTIME_PERMISSION.get(intent.getAction()));
+                Slog.w(TAG, message);
+                abort = true;
+            } else if (componentRestriction == ACTIVITY_RESTRICTION_APPOP) {
+                String message = &quot;Appop Denial: starting &quot; + intent.toString()
+                        + &quot; from &quot; + callerApp + &quot; (pid=&quot; + callingPid
+                        + &quot;, uid=&quot; + callingUid + &quot;)&quot;
+                        + &quot; requires appop &quot; + AppOpsManager.permissionToOp(aInfo.permission);
+                Slog.w(TAG, message);
+                abort = true;
+            }
+        }
+
+        abort |= !mService.mIntentFirewall.checkStartActivity(intent, callingUid,
+                callingPid, resolvedType, aInfo.applicationInfo);
+
+        if (mService.mController != null) {
+            try {
+                // The Intent we give to the watcher has the extra data
+                // stripped off, since it can contain private information.
+                Intent watchIntent = intent.cloneFilter();
+                abort |= !mService.mController.activityStarting(watchIntent,
+                        aInfo.applicationInfo.packageName);
+            } catch (RemoteException e) {
+                mService.mController = null;
+            }
+        }
+
+        if (abort) {
+            if (resultRecord != null) {
+                resultStack.sendActivityResultLocked(-1, resultRecord, resultWho, requestCode,
+                        Activity.RESULT_CANCELED, null);
+            }
+            // We pretend to the caller that it was really started, but
+            // they will just get a cancel result.
+            ActivityOptions.abort(options);
+            return ActivityManager.START_SUCCESS;
+        }
+
+        ActivityRecord r = new ActivityRecord(mService, callerApp, callingUid, callingPackage,
+                intent, resolvedType, aInfo, mService.mConfiguration, resultRecord, resultWho,
+                requestCode, componentSpecified, voiceSession != null, this, container, options);
+        if (outActivity != null) {
+            outActivity[0] = r;
+        }
+
+        if (r.appTimeTracker == null &amp;&amp; sourceRecord != null) {
+            // If the caller didn&#39;t specify an explicit time tracker, we want to continue
+            // tracking under any it has.
+            r.appTimeTracker = sourceRecord.appTimeTracker;
+        }
+
+        final ActivityStack stack = mFocusedStack;
+        if (voiceSession == null &amp;&amp; (stack.mResumedActivity == null
+                || stack.mResumedActivity.info.applicationInfo.uid != callingUid)) {
+                //当前stack中没有resume状态的Activity或者和发起者的uid不同
+            if (!mService.checkAppSwitchAllowedLocked(callingPid, callingUid,
+                    realCallingPid, realCallingUid, &quot;Activity start&quot;)) {
+                PendingActivityLaunch pal =
+                        new PendingActivityLaunch(r, sourceRecord, startFlags, stack);
+                mPendingActivityLaunches.add(pal);
+                ActivityOptions.abort(options);
+                return ActivityManager.START_SWITCHES_CANCELED;
+            }
+        }
+
+        //是否已经完成了应用选择
+        if (mService.mDidAppSwitch) {
+            // This is the second allowed switch since we stopped switches,
+            // so now just generally allow switches.  Use case: user presses
+            // home (switches disabled, switch to home, mDidAppSwitch now true);
+            // user taps a home icon (coming from home so allowed, we hit here
+            // and now allow anyone to switch again).
+            //已经完成应用选择，可以随意切换应用了
+            mService.mAppSwitchesAllowedTime = 0;
+        } else {
+            mService.mDidAppSwitch = true;
+        }
+
+        //启动挂起的应用
+        doPendingActivityLaunchesLocked(false);
+
+        //启动目标应用
+        err = startActivityUncheckedLocked(r, sourceRecord, voiceSession, voiceInteractor,
+                startFlags, true, options, inTask);
+
+        if (err &lt; 0) {
+            // If someone asked to have the keyguard dismissed on the next
+            // activity start, but we are not actually doing an activity
+            // switch...  just dismiss the keyguard now, because we
+            // probably want to see whatever is behind it.
+            notifyActivityDrawnForKeyguard();
+        }
+        return err;
+    }</code></pre>
+<p>在<code>startActivityLocked</code>方法中最后调用了<code>startActivityUncheckedLocked</code>方法。<br><code>startActivityUncheckedLocked</code>方法内容太长，不方便完整贴出来，只贴部分代码</p>
+<pre><code class="Java"></code></pre>
+<p>在这个方法中主要做了：</p>
+<ul>
+<li>检查Intent是否设置Intent.FLAG_ACTIVITY_NO_USER_ACTION标志</li>
+<li>检查Intent是否设置Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP标志</li>
+<li>检查Intent是否设置ActivityManager.START_FLAG_ONLY_IF_NEEDED标志</li>
+<li>判断是否需要为目的Activity分配新的task，并判断是否有可复用的task。</li>
+<li>为目的Activity设置task，并根据目的Activity的launchmode调整该Task中的Activity。</li>
+<li>方法接着调用了ActivityStack的startActivityLocked方法。</li>
+</ul>
+<p>接着就进入到<code>ActivityStack</code>的<code>startAcivityLocked</code>方法</p>
+<pre><code class="Java">//frameworks\base\services\core\java\com\android\server\am\ActivityStack.java
+
+final void startActivityLocked(ActivityRecord r, boolean newTask,
+            boolean doResume, boolean keepCurTransition, Bundle options) {
+        //目标task信息
+        TaskRecord rTask = r.task;
+        final int taskId = rTask.taskId;
+        // mLaunchTaskBehind tasks get placed at the back of the task stack.
+        if (!r.mLaunchTaskBehind &amp;&amp; (taskForIdLocked(taskId) == null || newTask)) {
+            // Last activity in task had been removed or ActivityManagerService is reusing task.
+            // Insert or replace.
+            // Might not even be in.
+            //如果原来不存在该task，则插入
+            insertTaskAtTop(rTask, r);
+            //并且切换到前台
+            mWindowManager.moveTaskToTop(taskId);
+        }
+        TaskRecord task = null;
+        //newTask为false表示当前栈中已有对应任务，不需要重新创建
+        if (!newTask) {
+            // If starting in an existing task, find where that is...
+            //这是一个已经存在的任务，在历史列表里查找它
+            boolean startIt = true;
+            for (int taskNdx = mTaskHistory.size() - 1; taskNdx &gt;= 0; --taskNdx) {
+                task = mTaskHistory.get(taskNdx);
+                if (task.getTopActivity() == null) {
+                    // All activities in task are finishing.
+                    continue;
+                }
+                if (task == r.task) {
+                    // Here it is!  Now, if this is not yet visible to the
+                    // user, then just add it without starting; it will
+                    // get started when the user navigates back to it.
+                    // 找到对应的task, 如果当前对用户不可见则只是添加但不启动直到用户跳转到这里
+                    if (!startIt) {
+                        if (DEBUG_ADD_REMOVE) Slog.i(TAG, &quot;Adding activity &quot; + r + &quot; to task &quot;
+                                + task, new RuntimeException(&quot;here&quot;).fillInStackTrace());
+                        //task栈中添加r到顶部
+                        task.addActivityToTop(r);
+                        r.putInHistory();
+                        //如果WindowManagerService的mTokenMap中不包含对应的AppWindowToken的话就创建一个
+                        mWindowManager.addAppToken(task.mActivities.indexOf(r), r.appToken,
+                                r.task.taskId, mStackId, r.info.screenOrientation, r.fullscreen,
+                                (r.info.flags &amp; ActivityInfo.FLAG_SHOW_FOR_ALL_USERS) != 0,
+                                r.userId, r.info.configChanges, task.voiceSession != null,
+                                r.mLaunchTaskBehind);
+                        if (VALIDATE_TOKENS) {
+                            validateAppTokensLocked();
+                        }
+                        ActivityOptions.abort(options);
+                        return;
+                    }
+                    break;
+                } else if (task.numFullscreen &gt; 0) {
+                    startIt = false;
+                }
+            }
+        }
+
+        //替换栈顶的Activity，用户才可以交互
+        // Place a new activity at top of stack, so it is next to interact
+        // with the user.
+
+        // If we are not placing the new activity frontmost, we do not want
+        // to deliver the onUserLeaving callback to the actual frontmost
+        // activity
+        //如果没有把Activity放到前台，则不会分发onUserLeaving回调给实际的前台Activity
+        if (task == r.task &amp;&amp; mTaskHistory.indexOf(task) != (mTaskHistory.size() - 1)) {
+            //当前最上层的task不是启动的Activity所在的task
+            mStackSupervisor.mUserLeaving = false;
+            if (DEBUG_USER_LEAVING) Slog.v(TAG_USER_LEAVING,
+                    &quot;startActivity() behind front, mUserLeaving=false&quot;);
+        }
+
+        task = r.task;
+
+        // Slot the activity into the history stack and proceed
+        if (DEBUG_ADD_REMOVE) Slog.i(TAG, &quot;Adding activity &quot; + r + &quot; to stack to task &quot; + task,
+                new RuntimeException(&quot;here&quot;).fillInStackTrace());
+        //把ActivityRecord放到顶层
+        task.addActivityToTop(r);
+        //设置ActivityRecord的frontOfTask为true
+        task.setFrontOfTask();
+
+        r.putInHistory();
+        if (!isHomeStack() || numActivities() &gt; 0) {
+            //启动Activity的栈不在桌面应用栈中，并且当前已经有启动过的Activity
+            // We want to show the starting preview window if we are
+            // switching to a new task, or the next activity&#39;s process is
+            // not currently running.
+            //将启动一个预览窗口，如果这要跳转到一个新的task或者下一个Activity所在的进程不处于运行状态
+            boolean showStartingIcon = newTask;
+            ProcessRecord proc = r.app;
+            if (proc == null) {
+                proc = mService.mProcessNames.get(r.processName, r.info.applicationInfo.uid);
+            }
+            if (proc == null || proc.thread == null) {
+                showStartingIcon = true;
+            }
+            if (DEBUG_TRANSITION) Slog.v(TAG_TRANSITION,
+                    &quot;Prepare open transition: starting &quot; + r);
+            if ((r.intent.getFlags() &amp; Intent.FLAG_ACTIVITY_NO_ANIMATION) != 0) {
+                //Intent配置了切换无效果
+                mWindowManager.prepareAppTransition(AppTransition.TRANSIT_NONE, keepCurTransition);
+                mNoAnimActivities.add(r);
+            } else {
+                mWindowManager.prepareAppTransition(newTask
+                        ? r.mLaunchTaskBehind
+                                ? AppTransition.TRANSIT_TASK_OPEN_BEHIND
+                                : AppTransition.TRANSIT_TASK_OPEN
+                        : AppTransition.TRANSIT_ACTIVITY_OPEN, keepCurTransition);
+                mNoAnimActivities.remove(r);
+            }
+            mWindowManager.addAppToken(task.mActivities.indexOf(r),
+                    r.appToken, r.task.taskId, mStackId, r.info.screenOrientation, r.fullscreen,
+                    (r.info.flags &amp; ActivityInfo.FLAG_SHOW_FOR_ALL_USERS) != 0, r.userId,
+                    r.info.configChanges, task.voiceSession != null, r.mLaunchTaskBehind);
+            boolean doShow = true;
+            if (newTask) {
+                // Even though this activity is starting fresh, we still need
+                // to reset it to make sure we apply affinities to move any
+                // existing activities from other tasks in to it.
+                // If the caller has requested that the target task be
+                // reset, then do so.
+                // 即使Activity已经启动了，仍然需要reset保证使用了affinity，在一个新的任务栈启动
+                if ((r.intent.getFlags() &amp; Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED) != 0) {
+                    //重置task
+                    resetTaskIfNeededLocked(r, r);
+                    //判断重置task后顶层Activity是否就是需要启动的Activity
+                    doShow = topRunningNonDelayedActivityLocked(null) == r;
+                }
+            } else if (options != null &amp;&amp; new ActivityOptions(options).getAnimationType()
+                    == ActivityOptions.ANIM_SCENE_TRANSITION) {
+                doShow = false;
+            }
+            if (r.mLaunchTaskBehind) {
+                //表示热启动，不需要启动界面，即使当前仍然处于栈下部还是告诉WindowManager已经可见了
+                // Don&#39;t do a starting window for mLaunchTaskBehind. More importantly make sure we
+                // tell WindowManager that r is visible even though it is at the back of the stack.
+                mWindowManager.setAppVisibility(r.appToken, true);
+                ensureActivitiesVisibleLocked(null, 0);
+            } else if (SHOW_APP_STARTING_PREVIEW &amp;&amp; doShow) {
+                // Figure out if we are transitioning from another activity that is
+                // &quot;has the same starting icon&quot; as the next one.  This allows the
+                // window manager to keep the previous window it had previously
+                // created, if it still had one.
+                ActivityRecord prev = mResumedActivity;
+                if (prev != null) {
+                    //在两种情况下不会复用之前的启动预览：
+                    //1. 当前Activity处在不同任务
+                    //2. 当前Activity已展示
+                    // We don&#39;t want to reuse the previous starting preview if:
+                    // (1) The current activity is in a different task.
+                    if (prev.task != r.task) {
+                        prev = null;
+                    }
+                    // (2) The current activity is already displayed.
+                    else if (prev.nowVisible) {
+                        prev = null;
+                    }
+                }
+                //为启动的Activity设置启动窗口
+                mWindowManager.setAppStartingWindow(
+                        r.appToken, r.packageName, r.theme,
+                        mService.compatibilityInfoForPackageLocked(
+                                r.info.applicationInfo), r.nonLocalizedLabel,
+                        r.labelRes, r.icon, r.logo, r.windowFlags,
+                        prev != null ? prev.appToken : null, showStartingIcon);
+                r.mStartingWindowShown = true;
+            }
+        } else {
+            // If this is the first activity, don&#39;t do any fancy animations,
+            // because there is nothing for it to animate on top of.
+            //如果这是第一个Activity，不需要任何动画
+            mWindowManager.addAppToken(task.mActivities.indexOf(r), r.appToken,
+                    r.task.taskId, mStackId, r.info.screenOrientation, r.fullscreen,
+                    (r.info.flags &amp; ActivityInfo.FLAG_SHOW_FOR_ALL_USERS) != 0, r.userId,
+                    r.info.configChanges, task.voiceSession != null, r.mLaunchTaskBehind);
+            ActivityOptions.abort(options);
+            options = null;
+        }
+        if (VALIDATE_TOKENS) {
+            validateAppTokensLocked();
+        }
+
+        if (doResume) {
+            //再回到ActivityStackSupervisor中
+            mStackSupervisor.resumeTopActivitiesLocked(this, r, options);
+        }
+    }</code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io">https://suifengczc.github.io</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="../../../../../../tags/Platform/">
+                                    <span class="chip bg-color">Platform</span>
+                                </a>
+                            
+                                <a href="../../../../../../tags/Android/">
+                                    <span class="chip bg-color">Android</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="../../../../../../2020/01/05/Tools/git/common_commands/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git常用命令">
+                        
+                        <span class="card-title">git常用命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            git常用命令参考文档：git-book
+init初始化仓库git init
+clone克隆远端仓库的内容到本地git clone https://github.com/xxx/xxx.git
+add作用：把文件加入git跟踪或把文件修改添
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../../../../../../categories/Tools/" class="post-category">
+                                    Tools
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../../../../../../tags/Tools/">
+                        <span class="chip bg-color">Tools</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/command/">
+                        <span class="chip bg-color">command</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="../../../../01/Platform/Android/aidl/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Android AIDL的简单使用">
+                        
+                        <span class="card-title">Android AIDL的简单使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Android AIDL 的简单使用AIDL全称是Android Interface Definition Language，字面翻译成中文就是Android的接口定义语言。显而易见，这说明AIDL是一种语言。
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../../../../../../categories/Platform/" class="post-category">
+                                    Platform
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../../../../../../tags/Platform/">
+                        <span class="chip bg-color">Platform</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/Android/">
+                        <span class="chip bg-color">Android</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/AIDL/">
+                        <span class="chip bg-color">AIDL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Suifeng Blog<br />'
+            + '文章作者: suifeng<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">42.2k</span>&nbsp;
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script src="/js/prettify.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('pre').addClass('prettyprint linenums');
+                    prettyPrint();
+                })
+            </script>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "3";
+                    var startDate = "3";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/suifengczc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ssuifengczc@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>

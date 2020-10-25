@@ -1,0 +1,2053 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="markdown中指定文字特性, Suifeng Blog">
+    <meta name="description" content="markdown指定文字颜色注: 因为Hexo不支持Latex，所以在Hexo网页上得效果不行
+如果只是想修改文字颜色可以使用$\color{颜色名称或者RGB值}{文字内容}}$方式来修改。例如:这是一个$\color{red}{红色}$">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>markdown中指定文字特性 | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<style> 
+		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+		{ list-style-type: decimal !important }
+	</style>
+
+    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="../../../../../../index.html" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Suifeng Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Suifeng Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/suifengczc" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/suifengczc" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        markdown中指定文字特性
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="../../../../../../tags/markdown/">
+                                <span class="chip bg-color">markdown</span>
+                            </a>
+                        
+                            <a href="../../../../../../tags/tools/">
+                                <span class="chip bg-color">tools</span>
+                            </a>
+                        
+                            <a href="../../../../../../tags/clolor/">
+                                <span class="chip bg-color">clolor</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="../../../../../../categories/markdown/" class="post-category">
+                                markdown
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-29
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-07-05
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="markdown指定文字颜色"><a href="#markdown指定文字颜色" class="headerlink" title="markdown指定文字颜色"></a>markdown指定文字颜色</h1><p>注: 因为Hexo不支持Latex，所以在Hexo网页上得效果不行</p>
+<p>如果只是想修改文字颜色可以使用<br><code>$\color{颜色名称或者RGB值}{文字内容}}$</code><br>方式来修改。<br>例如:<br>这是一个$\color{red}{红色}$的字<br>这是一个$\color{#0066AA}{蓝色}$的字</p>
+<p>当文字中存在<code>#</code>时需要用<code>\</code>转义</p>
+<table>
+<thead>
+<tr>
+<th align="center">颜色名</th>
+<th align="center">十六进制颜色值</th>
+<th align="center">RGB值</th>
+<th align="center">颜色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$\color{#020202}{AliceBlue}$</td>
+<td align="center">$\color{AliceBlue}\text{#F0F8FF}$</td>
+<td align="center">$\color{AliceBlue}\text{rgb(240, 248, 255)}$</td>
+<td align="center">$\colorbox{AliceBlue}{\color{AliceBlue}\texttt{#F0F8FF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{AntiqueWhite}$</td>
+<td align="center">$\color{AntiqueWhite}\text{#FAEBD7}$</td>
+<td align="center">$\color{AntiqueWhite}\text{rgb(250, 235, 215)}$</td>
+<td align="center">$\colorbox{AntiqueWhite}{\color{AntiqueWhite}\texttt{#FAEBD7}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Aqua}$</td>
+<td align="center">$\color{Aqua}\text{#00FFFF}$</td>
+<td align="center">$\color{Aqua}\text{rgb(0, 255, 255)}$</td>
+<td align="center">$\colorbox{Aqua}{\color{Aqua}\texttt{#00FFFF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Aquamarine}$</td>
+<td align="center">$\color{Aquamarine}\text{#7FFFD4}$</td>
+<td align="center">$\color{Aquamarine}\text{rgb(127, 255, 212)}$</td>
+<td align="center">$\colorbox{Aquamarine}{\color{Aquamarine}\texttt{#7FFFD4}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Azure}$</td>
+<td align="center">$\color{Azure}\text{#F0FFFF}$</td>
+<td align="center">$\color{Azure}\text{rgb(240, 255, 255)}$</td>
+<td align="center">$\colorbox{Azure}{\color{Azure}\texttt{#F0FFFF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Beige}$</td>
+<td align="center">$\color{Beige}\text{#F5F5DC}$</td>
+<td align="center">$\color{Beige}\text{rgb(245, 245, 220)}$</td>
+<td align="center">$\colorbox{Beige}{\color{Beige}\texttt{#F5F5DC}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Bisque}$</td>
+<td align="center">$\color{Bisque}\text{#FFE4C4}$</td>
+<td align="center">$\color{Bisque}\text{rgb(255, 228, 196)}$</td>
+<td align="center">$\colorbox{Bisque}{\color{Bisque}\texttt{#FFE4C4}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Black}$</td>
+<td align="center">$\color{Black}\text{#000000}$</td>
+<td align="center">$\color{Black}\text{rgb(0, 0, 0)}$</td>
+<td align="center">$\colorbox{Black}{\color{Black}\texttt{#000000}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{BlanchedAlmond}$</td>
+<td align="center">$\color{BlanchedAlmond}\text{#FFEBCD}$</td>
+<td align="center">$\color{BlanchedAlmond}\text{rgb(255, 235, 205)}$</td>
+<td align="center">$\colorbox{BlanchedAlmond}{\color{BlanchedAlmond}\texttt{#FFEBCD}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Blue}$</td>
+<td align="center">$\color{Blue}\text{#0000FF}$</td>
+<td align="center">$\color{Blue}\text{rgb(0, 0, 255)}$</td>
+<td align="center">$\colorbox{Blue}{\color{Blue}\texttt{#0000FF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{BlueViolet}$</td>
+<td align="center">$\color{BlueViolet}\text{#8A2BE2}$</td>
+<td align="center">$\color{BlueViolet}\text{rgb(138, 43, 226)}$</td>
+<td align="center">$\colorbox{BlueViolet}{\color{BlueViolet}\texttt{#8A2BE2}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Brown}$</td>
+<td align="center">$\color{Brown}\text{#A52A2A}$</td>
+<td align="center">$\color{Brown}\text{rgb(165, 42, 42)}$</td>
+<td align="center">$\colorbox{Brown}{\color{Brown}\texttt{#A52A2A}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{BurlyWood}$</td>
+<td align="center">$\color{BurlyWood}\text{#DEB887}$</td>
+<td align="center">$\color{BurlyWood}\text{rgb(222, 184, 135)}$</td>
+<td align="center">$\colorbox{BurlyWood}{\color{BurlyWood}\texttt{#DEB887}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{CadetBlue}$</td>
+<td align="center">$\color{CadetBlue}\text{#5F9EA0}$</td>
+<td align="center">$\color{CadetBlue}\text{rgb(95, 158, 160)}$</td>
+<td align="center">$\colorbox{CadetBlue}{\color{CadetBlue}\texttt{#5F9EA0}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Chartreuse}$</td>
+<td align="center">$\color{Chartreuse}\text{#7FFF00}$</td>
+<td align="center">$\color{Chartreuse}\text{rgb(127, 255, 0)}$</td>
+<td align="center">$\colorbox{Chartreuse}{\color{Chartreuse}\texttt{#7FFF00}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Chocolate}$</td>
+<td align="center">$\color{Chocolate}\text{#D2691E}$</td>
+<td align="center">$\color{Chocolate}\text{rgb(210, 105, 30)}$</td>
+<td align="center">$\colorbox{Chocolate}{\color{Chocolate}\texttt{#D2691E}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Coral}$</td>
+<td align="center">$\color{Coral}\text{#FF7F50}$</td>
+<td align="center">$\color{Coral}\text{rgb(255, 127, 80)}$</td>
+<td align="center">$\colorbox{Coral}{\color{Coral}\texttt{#FF7F50}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{CornflowerBlue}$</td>
+<td align="center">$\color{CornflowerBlue}\text{#6495ED}$</td>
+<td align="center">$\color{CornflowerBlue}\text{rgb(100, 149, 237)}$</td>
+<td align="center">$\colorbox{CornflowerBlue}{\color{CornflowerBlue}\texttt{#6495ED}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Cornsilk}$</td>
+<td align="center">$\color{Cornsilk}\text{#FFF8DC}$</td>
+<td align="center">$\color{Cornsilk}\text{rgb(255, 248, 220)}$</td>
+<td align="center">$\colorbox{Cornsilk}{\color{Cornsilk}\texttt{#FFF8DC}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Crimson}$</td>
+<td align="center">$\color{Crimson}\text{#DC143C}$</td>
+<td align="center">$\color{Crimson}\text{rgb(220, 20, 60)}$</td>
+<td align="center">$\colorbox{Crimson}{\color{Crimson}\texttt{#DC143C}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Cyan}$</td>
+<td align="center">$\color{Cyan}\text{#00FFFF}$</td>
+<td align="center">$\color{Cyan}\text{rgb(0, 255, 255)}$</td>
+<td align="center">$\colorbox{Cyan}{\color{Cyan}\texttt{#00FFFF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkBlue}$</td>
+<td align="center">$\color{DarkBlue}\text{#00008B}$</td>
+<td align="center">$\color{DarkBlue}\text{rgb(0, 0, 139)}$</td>
+<td align="center">$\colorbox{DarkBlue}{\color{DarkBlue}\texttt{#00008B}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkCyan}$</td>
+<td align="center">$\color{DarkCyan}\text{#008B8B}$</td>
+<td align="center">$\color{DarkCyan}\text{rgb(0, 139, 139)}$</td>
+<td align="center">$\colorbox{DarkCyan}{\color{DarkCyan}\texttt{#008B8B}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkGoldenRod}$</td>
+<td align="center">$\color{DarkGoldenRod}\text{#B8860B}$</td>
+<td align="center">$\color{DarkGoldenRod}\text{rgb(184, 134, 11)}$</td>
+<td align="center">$\colorbox{DarkGoldenRod}{\color{DarkGoldenRod}\texttt{#B8860B}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkGray}$</td>
+<td align="center">$\color{DarkGray}\text{#A9A9A9}$</td>
+<td align="center">$\color{DarkGray}\text{rgb(169, 169, 169)}$</td>
+<td align="center">$\colorbox{DarkGray}{\color{DarkGray}\texttt{#A9A9A9}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkGreen}$</td>
+<td align="center">$\color{DarkGreen}\text{#006400}$</td>
+<td align="center">$\color{DarkGreen}\text{rgb(0, 100, 0)}$</td>
+<td align="center">$\colorbox{DarkGreen}{\color{DarkGreen}\texttt{#006400}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkKhaki}$</td>
+<td align="center">$\color{DarkKhaki}\text{#BDB76B}$</td>
+<td align="center">$\color{DarkKhaki}\text{rgb(189, 183, 107)}$</td>
+<td align="center">$\colorbox{DarkKhaki}{\color{DarkKhaki}\texttt{#BDB76B}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkMagenta}$</td>
+<td align="center">$\color{DarkMagenta}\text{#8B008B}$</td>
+<td align="center">$\color{DarkMagenta}\text{rgb(139, 0, 139)}$</td>
+<td align="center">$\colorbox{DarkMagenta}{\color{DarkMagenta}\texttt{#8B008B}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkOliveGreen}$</td>
+<td align="center">$\color{DarkOliveGreen}\text{#556B2F}$</td>
+<td align="center">$\color{DarkOliveGreen}\text{rgb(85, 107, 47)}$</td>
+<td align="center">$\colorbox{DarkOliveGreen}{\color{DarkOliveGreen}\texttt{#556B2F}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Darkorange}$</td>
+<td align="center">$\color{Darkorange}\text{#FF8C00}$</td>
+<td align="center">$\color{Darkorange}\text{rgb(255, 140, 0)}$</td>
+<td align="center">$\colorbox{Darkorange}{\color{Darkorange}\texttt{#FF8C00}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkOrchid}$</td>
+<td align="center">$\color{DarkOrchid}\text{#9932CC}$</td>
+<td align="center">$\color{DarkOrchid}\text{rgb(153, 50, 204)}$</td>
+<td align="center">$\colorbox{DarkOrchid}{\color{DarkOrchid}\texttt{#9932CC}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkRed}$</td>
+<td align="center">$\color{DarkRed}\text{#8B0000}$</td>
+<td align="center">$\color{DarkRed}\text{rgb(139, 0, 0)}$</td>
+<td align="center">$\colorbox{DarkRed}{\color{DarkRed}\texttt{#8B0000}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkSalmon}$</td>
+<td align="center">$\color{DarkSalmon}\text{#E9967A}$</td>
+<td align="center">$\color{DarkSalmon}\text{rgb(233, 150, 122)}$</td>
+<td align="center">$\colorbox{DarkSalmon}{\color{DarkSalmon}\texttt{#E9967A}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkSeaGreen}$</td>
+<td align="center">$\color{DarkSeaGreen}\text{#8FBC8F}$</td>
+<td align="center">$\color{DarkSeaGreen}\text{rgb(143, 188, 143)}$</td>
+<td align="center">$\colorbox{DarkSeaGreen}{\color{DarkSeaGreen}\texttt{#8FBC8F}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkSlateBlue}$</td>
+<td align="center">$\color{DarkSlateBlue}\text{#483D8B}$</td>
+<td align="center">$\color{DarkSlateBlue}\text{rgb(72, 61, 139)}$</td>
+<td align="center">$\colorbox{DarkSlateBlue}{\color{DarkSlateBlue}\texttt{#483D8B}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkSlateGray}$</td>
+<td align="center">$\color{DarkSlateGray}\text{#2F4F4F}$</td>
+<td align="center">$\color{DarkSlateGray}\text{rgb(47, 79, 79)}$</td>
+<td align="center">$\colorbox{DarkSlateGray}{\color{DarkSlateGray}\texttt{#2F4F4F}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkTurquoise}$</td>
+<td align="center">$\color{DarkTurquoise}\text{#00CED1}$</td>
+<td align="center">$\color{DarkTurquoise}\text{rgb(0, 206, 209)}$</td>
+<td align="center">$\colorbox{DarkTurquoise}{\color{DarkTurquoise}\texttt{#00CED1}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DarkViolet}$</td>
+<td align="center">$\color{DarkViolet}\text{#9400D3}$</td>
+<td align="center">$\color{DarkViolet}\text{rgb(148, 0, 211)}$</td>
+<td align="center">$\colorbox{DarkViolet}{\color{DarkViolet}\texttt{#9400D3}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DeepPink}$</td>
+<td align="center">$\color{DeepPink}\text{#FF1493}$</td>
+<td align="center">$\color{DeepPink}\text{rgb(255, 20, 147)}$</td>
+<td align="center">$\colorbox{DeepPink}{\color{DeepPink}\texttt{#FF1493}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DeepSkyBlue}$</td>
+<td align="center">$\color{DeepSkyBlue}\text{#00BFFF}$</td>
+<td align="center">$\color{DeepSkyBlue}\text{rgb(0, 191, 255)}$</td>
+<td align="center">$\colorbox{DeepSkyBlue}{\color{DeepSkyBlue}\texttt{#00BFFF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DimGray}$</td>
+<td align="center">$\color{DimGray}\text{#696969}$</td>
+<td align="center">$\color{DimGray}\text{rgb(105, 105, 105)}$</td>
+<td align="center">$\colorbox{DimGray}{\color{DimGray}\texttt{#696969}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{DodgerBlue}$</td>
+<td align="center">$\color{DodgerBlue}\text{#1E90FF}$</td>
+<td align="center">$\color{DodgerBlue}\text{rgb(30, 144, 255)}$</td>
+<td align="center">$\colorbox{DodgerBlue}{\color{DodgerBlue}\texttt{#1E90FF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Feldspar}$</td>
+<td align="center">$\color{Feldspar}\text{#D19275}$</td>
+<td align="center">$\color{Feldspar}\text{rgb(209, 146, 117)}$</td>
+<td align="center">$\colorbox{Feldspar}{\color{Feldspar}\texttt{#D19275}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{FireBrick}$</td>
+<td align="center">$\color{FireBrick}\text{#B22222}$</td>
+<td align="center">$\color{FireBrick}\text{rgb(178, 34, 34)}$</td>
+<td align="center">$\colorbox{FireBrick}{\color{FireBrick}\texttt{#B22222}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{FloralWhite}$</td>
+<td align="center">$\color{FloralWhite}\text{#FFFAF0}$</td>
+<td align="center">$\color{FloralWhite}\text{rgb(255, 250, 240)}$</td>
+<td align="center">$\colorbox{FloralWhite}{\color{FloralWhite}\texttt{#FFFAF0}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{ForestGreen}$</td>
+<td align="center">$\color{ForestGreen}\text{#228B22}$</td>
+<td align="center">$\color{ForestGreen}\text{rgb(34, 139, 34)}$</td>
+<td align="center">$\colorbox{ForestGreen}{\color{ForestGreen}\texttt{#228B22}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Fuchsia}$</td>
+<td align="center">$\color{Fuchsia}\text{#FF00FF}$</td>
+<td align="center">$\color{Fuchsia}\text{rgb(255, 0, 255)}$</td>
+<td align="center">$\colorbox{Fuchsia}{\color{Fuchsia}\texttt{#FF00FF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Gainsboro}$</td>
+<td align="center">$\color{Gainsboro}\text{#DCDCDC}$</td>
+<td align="center">$\color{Gainsboro}\text{rgb(220, 220, 220)}$</td>
+<td align="center">$\colorbox{Gainsboro}{\color{Gainsboro}\texttt{#DCDCDC}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{GhostWhite}$</td>
+<td align="center">$\color{GhostWhite}\text{#F8F8FF}$</td>
+<td align="center">$\color{GhostWhite}\text{rgb(248, 248, 255)}$</td>
+<td align="center">$\colorbox{GhostWhite}{\color{GhostWhite}\texttt{#F8F8FF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Gold}$</td>
+<td align="center">$\color{Gold}\text{#FFD700}$</td>
+<td align="center">$\color{Gold}\text{rgb(255, 215, 0)}$</td>
+<td align="center">$\colorbox{Gold}{\color{Gold}\texttt{#FFD700}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{GoldenRod}$</td>
+<td align="center">$\color{GoldenRod}\text{#DAA520}$</td>
+<td align="center">$\color{GoldenRod}\text{rgb(218, 165, 32)}$</td>
+<td align="center">$\colorbox{GoldenRod}{\color{GoldenRod}\texttt{#DAA520}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Gray}$</td>
+<td align="center">$\color{Gray}\text{#808080}$</td>
+<td align="center">$\color{Gray}\text{rgb(128, 128, 128)}$</td>
+<td align="center">$\colorbox{Gray}{\color{Gray}\texttt{#808080}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Green}$</td>
+<td align="center">$\color{Green}\text{#008000}$</td>
+<td align="center">$\color{Green}\text{rgb(0, 128, 0)}$</td>
+<td align="center">$\colorbox{Green}{\color{Green}\texttt{#008000}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{GreenYellow}$</td>
+<td align="center">$\color{GreenYellow}\text{#ADFF2F}$</td>
+<td align="center">$\color{GreenYellow}\text{rgb(173, 255, 47)}$</td>
+<td align="center">$\colorbox{GreenYellow}{\color{GreenYellow}\texttt{#ADFF2F}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{HoneyDew}$</td>
+<td align="center">$\color{HoneyDew}\text{#F0FFF0}$</td>
+<td align="center">$\color{HoneyDew}\text{rgb(240, 255, 240)}$</td>
+<td align="center">$\colorbox{HoneyDew}{\color{HoneyDew}\texttt{#F0FFF0}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{HotPink}$</td>
+<td align="center">$\color{HotPink}\text{#FF69B4}$</td>
+<td align="center">$\color{HotPink}\text{rgb(255, 105, 180)}$</td>
+<td align="center">$\colorbox{HotPink}{\color{HotPink}\texttt{#FF69B4}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{IndianRed}$</td>
+<td align="center">$\color{IndianRed}\text{#CD5C5C}$</td>
+<td align="center">$\color{IndianRed}\text{rgb(205, 92, 92)}$</td>
+<td align="center">$\colorbox{IndianRed}{\color{IndianRed}\texttt{#CD5C5C}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Indigo}$</td>
+<td align="center">$\color{Indigo}\text{#4B0082}$</td>
+<td align="center">$\color{Indigo}\text{rgb(75, 0, 130)}$</td>
+<td align="center">$\colorbox{Indigo}{\color{Indigo}\texttt{#4B0082}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Ivory}$</td>
+<td align="center">$\color{Ivory}\text{#FFFFF0}$</td>
+<td align="center">$\color{Ivory}\text{rgb(255, 255, 240)}$</td>
+<td align="center">$\colorbox{Ivory}{\color{Ivory}\texttt{#FFFFF0}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Khaki}$</td>
+<td align="center">$\color{Khaki}\text{#F0E68C}$</td>
+<td align="center">$\color{Khaki}\text{rgb(240, 230, 140)}$</td>
+<td align="center">$\colorbox{Khaki}{\color{Khaki}\texttt{#F0E68C}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Lavender}$</td>
+<td align="center">$\color{Lavender}\text{#E6E6FA}$</td>
+<td align="center">$\color{Lavender}\text{rgb(230, 230, 250)}$</td>
+<td align="center">$\colorbox{Lavender}{\color{Lavender}\texttt{#E6E6FA}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LavenderBlush}$</td>
+<td align="center">$\color{LavenderBlush}\text{#FFF0F5}$</td>
+<td align="center">$\color{LavenderBlush}\text{rgb(255, 240, 245)}$</td>
+<td align="center">$\colorbox{LavenderBlush}{\color{LavenderBlush}\texttt{#FFF0F5}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LawnGreen}$</td>
+<td align="center">$\color{LawnGreen}\text{#7CFC00}$</td>
+<td align="center">$\color{LawnGreen}\text{rgb(124, 252, 0)}$</td>
+<td align="center">$\colorbox{LawnGreen}{\color{LawnGreen}\texttt{#7CFC00}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LemonChiffon}$</td>
+<td align="center">$\color{LemonChiffon}\text{#FFFACD}$</td>
+<td align="center">$\color{LemonChiffon}\text{rgb(255, 250, 205)}$</td>
+<td align="center">$\colorbox{LemonChiffon}{\color{LemonChiffon}\texttt{#FFFACD}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightBlue}$</td>
+<td align="center">$\color{LightBlue}\text{#ADD8E6}$</td>
+<td align="center">$\color{LightBlue}\text{rgb(173, 216, 230)}$</td>
+<td align="center">$\colorbox{LightBlue}{\color{LightBlue}\texttt{#ADD8E6}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightCoral}$</td>
+<td align="center">$\color{LightCoral}\text{#F08080}$</td>
+<td align="center">$\color{LightCoral}\text{rgb(240, 128, 128)}$</td>
+<td align="center">$\colorbox{LightCoral}{\color{LightCoral}\texttt{#F08080}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightCyan}$</td>
+<td align="center">$\color{LightCyan}\text{#E0FFFF}$</td>
+<td align="center">$\color{LightCyan}\text{rgb(224, 255, 255)}$</td>
+<td align="center">$\colorbox{LightCyan}{\color{LightCyan}\texttt{#E0FFFF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightGoldenRodYellow}$</td>
+<td align="center">$\color{LightGoldenRodYellow}\text{#FAFAD2}$</td>
+<td align="center">$\color{LightGoldenRodYellow}\text{rgb(250, 250, 210)}$</td>
+<td align="center">$\colorbox{LightGoldenRodYellow}{\color{LightGoldenRodYellow}\texttt{#FAFAD2}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightGrey}$</td>
+<td align="center">$\color{LightGrey}\text{#D3D3D3}$</td>
+<td align="center">$\color{LightGrey}\text{rgb(211, 211, 211)}$</td>
+<td align="center">$\colorbox{LightGrey}{\color{LightGrey}\texttt{#D3D3D3}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightGreen}$</td>
+<td align="center">$\color{LightGreen}\text{#90EE90}$</td>
+<td align="center">$\color{LightGreen}\text{rgb(144, 238, 144)}$</td>
+<td align="center">$\colorbox{LightGreen}{\color{LightGreen}\texttt{#90EE90}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightPink}$</td>
+<td align="center">$\color{LightPink}\text{#FFB6C1}$</td>
+<td align="center">$\color{LightPink}\text{rgb(255, 182, 193)}$</td>
+<td align="center">$\colorbox{LightPink}{\color{LightPink}\texttt{#FFB6C1}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightSalmon}$</td>
+<td align="center">$\color{LightSalmon}\text{#FFA07A}$</td>
+<td align="center">$\color{LightSalmon}\text{rgb(255, 160, 122)}$</td>
+<td align="center">$\colorbox{LightSalmon}{\color{LightSalmon}\texttt{#FFA07A}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightSeaGreen}$</td>
+<td align="center">$\color{LightSeaGreen}\text{#20B2AA}$</td>
+<td align="center">$\color{LightSeaGreen}\text{rgb(32, 178, 170)}$</td>
+<td align="center">$\colorbox{LightSeaGreen}{\color{LightSeaGreen}\texttt{#20B2AA}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightSkyBlue}$</td>
+<td align="center">$\color{LightSkyBlue}\text{#87CEFA}$</td>
+<td align="center">$\color{LightSkyBlue}\text{rgb(135, 206, 250)}$</td>
+<td align="center">$\colorbox{LightSkyBlue}{\color{LightSkyBlue}\texttt{#87CEFA}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightSlateBlue}$</td>
+<td align="center">$\color{LightSlateBlue}\text{#8470FF}$</td>
+<td align="center">$\color{LightSlateBlue}\text{rgb(132, 112, 255)}$</td>
+<td align="center">$\colorbox{LightSlateBlue}{\color{LightSlateBlue}\texttt{#8470FF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightSlateGray}$</td>
+<td align="center">$\color{LightSlateGray}\text{#778899}$</td>
+<td align="center">$\color{LightSlateGray}\text{rgb(119, 136, 153)}$</td>
+<td align="center">$\colorbox{LightSlateGray}{\color{LightSlateGray}\texttt{#778899}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightSteelBlue}$</td>
+<td align="center">$\color{LightSteelBlue}\text{#B0C4DE}$</td>
+<td align="center">$\color{LightSteelBlue}\text{rgb(176, 196, 222)}$</td>
+<td align="center">$\colorbox{LightSteelBlue}{\color{LightSteelBlue}\texttt{#B0C4DE}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LightYellow}$</td>
+<td align="center">$\color{LightYellow}\text{#FFFFE0}$</td>
+<td align="center">$\color{LightYellow}\text{rgb(255, 255, 224)}$</td>
+<td align="center">$\colorbox{LightYellow}{\color{LightYellow}\texttt{#FFFFE0}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Lime}$</td>
+<td align="center">$\color{Lime}\text{#00FF00}$</td>
+<td align="center">$\color{Lime}\text{rgb(0, 255, 0)}$</td>
+<td align="center">$\colorbox{Lime}{\color{Lime}\texttt{#00FF00}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{LimeGreen}$</td>
+<td align="center">$\color{LimeGreen}\text{#32CD32}$</td>
+<td align="center">$\color{LimeGreen}\text{rgb(50, 205, 50)}$</td>
+<td align="center">$\colorbox{LimeGreen}{\color{LimeGreen}\texttt{#32CD32}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Linen}$</td>
+<td align="center">$\color{Linen}\text{#FAF0E6}$</td>
+<td align="center">$\color{Linen}\text{rgb(250, 240, 230)}$</td>
+<td align="center">$\colorbox{Linen}{\color{Linen}\texttt{#FAF0E6}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Magenta}$</td>
+<td align="center">$\color{Magenta}\text{#FF00FF}$</td>
+<td align="center">$\color{Magenta}\text{rgb(255, 0, 255)}$</td>
+<td align="center">$\colorbox{Magenta}{\color{Magenta}\texttt{#FF00FF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Maroon}$</td>
+<td align="center">$\color{Maroon}\text{#800000}$</td>
+<td align="center">$\color{Maroon}\text{rgb(128, 0, 0)}$</td>
+<td align="center">$\colorbox{Maroon}{\color{Maroon}\texttt{#800000}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MediumAquaMarine}$</td>
+<td align="center">$\color{MediumAquaMarine}\text{#66CDAA}$</td>
+<td align="center">$\color{MediumAquaMarine}\text{rgb(102, 205, 170)}$</td>
+<td align="center">$\colorbox{MediumAquaMarine}{\color{MediumAquaMarine}\texttt{#66CDAA}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MediumBlue}$</td>
+<td align="center">$\color{MediumBlue}\text{#0000CD}$</td>
+<td align="center">$\color{MediumBlue}\text{rgb(0, 0, 205)}$</td>
+<td align="center">$\colorbox{MediumBlue}{\color{MediumBlue}\texttt{#0000CD}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MediumOrchid}$</td>
+<td align="center">$\color{MediumOrchid}\text{#BA55D3}$</td>
+<td align="center">$\color{MediumOrchid}\text{rgb(186, 85, 211)}$</td>
+<td align="center">$\colorbox{MediumOrchid}{\color{MediumOrchid}\texttt{#BA55D3}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MediumPurple}$</td>
+<td align="center">$\color{MediumPurple}\text{#9370D8}$</td>
+<td align="center">$\color{MediumPurple}\text{rgb(147, 112, 216)}$</td>
+<td align="center">$\colorbox{MediumPurple}{\color{MediumPurple}\texttt{#9370D8}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MediumSeaGreen}$</td>
+<td align="center">$\color{MediumSeaGreen}\text{#3CB371}$</td>
+<td align="center">$\color{MediumSeaGreen}\text{rgb(60, 179, 113)}$</td>
+<td align="center">$\colorbox{MediumSeaGreen}{\color{MediumSeaGreen}\texttt{#3CB371}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MediumSlateBlue}$</td>
+<td align="center">$\color{MediumSlateBlue}\text{#7B68EE}$</td>
+<td align="center">$\color{MediumSlateBlue}\text{rgb(123, 104, 238)}$</td>
+<td align="center">$\colorbox{MediumSlateBlue}{\color{MediumSlateBlue}\texttt{#7B68EE}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MediumSpringGreen}$</td>
+<td align="center">$\color{MediumSpringGreen}\text{#00FA9A}$</td>
+<td align="center">$\color{MediumSpringGreen}\text{rgb(0, 250, 154)}$</td>
+<td align="center">$\colorbox{MediumSpringGreen}{\color{MediumSpringGreen}\texttt{#00FA9A}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MediumTurquoise}$</td>
+<td align="center">$\color{MediumTurquoise}\text{#48D1CC}$</td>
+<td align="center">$\color{MediumTurquoise}\text{rgb(72, 209, 204)}$</td>
+<td align="center">$\colorbox{MediumTurquoise}{\color{MediumTurquoise}\texttt{#48D1CC}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MediumVioletRed}$</td>
+<td align="center">$\color{MediumVioletRed}\text{#C71585}$</td>
+<td align="center">$\color{MediumVioletRed}\text{rgb(199, 21, 133)}$</td>
+<td align="center">$\colorbox{MediumVioletRed}{\color{MediumVioletRed}\texttt{#C71585}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MidnightBlue}$</td>
+<td align="center">$\color{MidnightBlue}\text{#191970}$</td>
+<td align="center">$\color{MidnightBlue}\text{rgb(25, 25, 112)}$</td>
+<td align="center">$\colorbox{MidnightBlue}{\color{MidnightBlue}\texttt{#191970}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MintCream}$</td>
+<td align="center">$\color{MintCream}\text{#F5FFFA}$</td>
+<td align="center">$\color{MintCream}\text{rgb(245, 255, 250)}$</td>
+<td align="center">$\colorbox{MintCream}{\color{MintCream}\texttt{#F5FFFA}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{MistyRose}$</td>
+<td align="center">$\color{MistyRose}\text{#FFE4E1}$</td>
+<td align="center">$\color{MistyRose}\text{rgb(255, 228, 225)}$</td>
+<td align="center">$\colorbox{MistyRose}{\color{MistyRose}\texttt{#FFE4E1}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Moccasin}$</td>
+<td align="center">$\color{Moccasin}\text{#FFE4B5}$</td>
+<td align="center">$\color{Moccasin}\text{rgb(255, 228, 181)}$</td>
+<td align="center">$\colorbox{Moccasin}{\color{Moccasin}\texttt{#FFE4B5}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{NavajoWhite}$</td>
+<td align="center">$\color{NavajoWhite}\text{#FFDEAD}$</td>
+<td align="center">$\color{NavajoWhite}\text{rgb(255, 222, 173)}$</td>
+<td align="center">$\colorbox{NavajoWhite}{\color{NavajoWhite}\texttt{#FFDEAD}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Navy}$</td>
+<td align="center">$\color{Navy}\text{#000080}$</td>
+<td align="center">$\color{Navy}\text{rgb(0, 0, 128)}$</td>
+<td align="center">$\colorbox{Navy}{\color{Navy}\texttt{#000080}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{OldLace}$</td>
+<td align="center">$\color{OldLace}\text{#FDF5E6}$</td>
+<td align="center">$\color{OldLace}\text{rgb(253, 245, 230)}$</td>
+<td align="center">$\colorbox{OldLace}{\color{OldLace}\texttt{#FDF5E6}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Olive}$</td>
+<td align="center">$\color{Olive}\text{#808000}$</td>
+<td align="center">$\color{Olive}\text{rgb(128, 128, 0)}$</td>
+<td align="center">$\colorbox{Olive}{\color{Olive}\texttt{#808000}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{OliveDrab}$</td>
+<td align="center">$\color{OliveDrab}\text{#6B8E23}$</td>
+<td align="center">$\color{OliveDrab}\text{rgb(107, 142, 35)}$</td>
+<td align="center">$\colorbox{OliveDrab}{\color{OliveDrab}\texttt{#6B8E23}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Orange}$</td>
+<td align="center">$\color{Orange}\text{#FFA500}$</td>
+<td align="center">$\color{Orange}\text{rgb(255, 165, 0)}$</td>
+<td align="center">$\colorbox{Orange}{\color{Orange}\texttt{#FFA500}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{OrangeRed}$</td>
+<td align="center">$\color{OrangeRed}\text{#FF4500}$</td>
+<td align="center">$\color{OrangeRed}\text{rgb(255, 69, 0)}$</td>
+<td align="center">$\colorbox{OrangeRed}{\color{OrangeRed}\texttt{#FF4500}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Orchid}$</td>
+<td align="center">$\color{Orchid}\text{#DA70D6}$</td>
+<td align="center">$\color{Orchid}\text{rgb(218, 112, 214)}$</td>
+<td align="center">$\colorbox{Orchid}{\color{Orchid}\texttt{#DA70D6}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{PaleGoldenRod}$</td>
+<td align="center">$\color{PaleGoldenRod}\text{#EEE8AA}$</td>
+<td align="center">$\color{PaleGoldenRod}\text{rgb(238, 232, 170)}$</td>
+<td align="center">$\colorbox{PaleGoldenRod}{\color{PaleGoldenRod}\texttt{#EEE8AA}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{PaleGreen}$</td>
+<td align="center">$\color{PaleGreen}\text{#98FB98}$</td>
+<td align="center">$\color{PaleGreen}\text{rgb(152, 251, 152)}$</td>
+<td align="center">$\colorbox{PaleGreen}{\color{PaleGreen}\texttt{#98FB98}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{PaleTurquoise}$</td>
+<td align="center">$\color{PaleTurquoise}\text{#AFEEEE}$</td>
+<td align="center">$\color{PaleTurquoise}\text{rgb(175, 238, 238)}$</td>
+<td align="center">$\colorbox{PaleTurquoise}{\color{PaleTurquoise}\texttt{#AFEEEE}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{PaleVioletRed}$</td>
+<td align="center">$\color{PaleVioletRed}\text{#D87093}$</td>
+<td align="center">$\color{PaleVioletRed}\text{rgb(216, 112, 147)}$</td>
+<td align="center">$\colorbox{PaleVioletRed}{\color{PaleVioletRed}\texttt{#D87093}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{PapayaWhip}$</td>
+<td align="center">$\color{PapayaWhip}\text{#FFEFD5}$</td>
+<td align="center">$\color{PapayaWhip}\text{rgb(255, 239, 213)}$</td>
+<td align="center">$\colorbox{PapayaWhip}{\color{PapayaWhip}\texttt{#FFEFD5}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{PeachPuff}$</td>
+<td align="center">$\color{PeachPuff}\text{#FFDAB9}$</td>
+<td align="center">$\color{PeachPuff}\text{rgb(255, 218, 185)}$</td>
+<td align="center">$\colorbox{PeachPuff}{\color{PeachPuff}\texttt{#FFDAB9}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Peru}$</td>
+<td align="center">$\color{Peru}\text{#CD853F}$</td>
+<td align="center">$\color{Peru}\text{rgb(205, 133, 63)}$</td>
+<td align="center">$\colorbox{Peru}{\color{Peru}\texttt{#CD853F}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Pink}$</td>
+<td align="center">$\color{Pink}\text{#FFC0CB}$</td>
+<td align="center">$\color{Pink}\text{rgb(255, 192, 203)}$</td>
+<td align="center">$\colorbox{Pink}{\color{Pink}\texttt{#FFC0CB}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Plum}$</td>
+<td align="center">$\color{Plum}\text{#DDA0DD}$</td>
+<td align="center">$\color{Plum}\text{rgb(221, 160, 221)}$</td>
+<td align="center">$\colorbox{Plum}{\color{Plum}\texttt{#DDA0DD}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{PowderBlue}$</td>
+<td align="center">$\color{PowderBlue}\text{#B0E0E6}$</td>
+<td align="center">$\color{PowderBlue}\text{rgb(176, 224, 230)}$</td>
+<td align="center">$\colorbox{PowderBlue}{\color{PowderBlue}\texttt{#B0E0E6}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Purple}$</td>
+<td align="center">$\color{Purple}\text{#800080}$</td>
+<td align="center">$\color{Purple}\text{rgb(128, 0, 128)}$</td>
+<td align="center">$\colorbox{Purple}{\color{Purple}\texttt{#800080}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Red}$</td>
+<td align="center">$\color{Red}\text{#FF0000}$</td>
+<td align="center">$\color{Red}\text{rgb(255, 0, 0)}$</td>
+<td align="center">$\colorbox{Red}{\color{Red}\texttt{#FF0000}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{RosyBrown}$</td>
+<td align="center">$\color{RosyBrown}\text{#BC8F8F}$</td>
+<td align="center">$\color{RosyBrown}\text{rgb(188, 143, 143)}$</td>
+<td align="center">$\colorbox{RosyBrown}{\color{RosyBrown}\texttt{#BC8F8F}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{RoyalBlue}$</td>
+<td align="center">$\color{RoyalBlue}\text{#4169E1}$</td>
+<td align="center">$\color{RoyalBlue}\text{rgb(65, 105, 225)}$</td>
+<td align="center">$\colorbox{RoyalBlue}{\color{RoyalBlue}\texttt{#4169E1}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{SaddleBrown}$</td>
+<td align="center">$\color{SaddleBrown}\text{#8B4513}$</td>
+<td align="center">$\color{SaddleBrown}\text{rgb(139, 69, 19)}$</td>
+<td align="center">$\colorbox{SaddleBrown}{\color{SaddleBrown}\texttt{#8B4513}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Salmon}$</td>
+<td align="center">$\color{Salmon}\text{#FA8072}$</td>
+<td align="center">$\color{Salmon}\text{rgb(250, 128, 114)}$</td>
+<td align="center">$\colorbox{Salmon}{\color{Salmon}\texttt{#FA8072}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{SandyBrown}$</td>
+<td align="center">$\color{SandyBrown}\text{#F4A460}$</td>
+<td align="center">$\color{SandyBrown}\text{rgb(244, 164, 96)}$</td>
+<td align="center">$\colorbox{SandyBrown}{\color{SandyBrown}\texttt{#F4A460}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{SeaGreen}$</td>
+<td align="center">$\color{SeaGreen}\text{#2E8B57}$</td>
+<td align="center">$\color{SeaGreen}\text{rgb(46, 139, 87)}$</td>
+<td align="center">$\colorbox{SeaGreen}{\color{SeaGreen}\texttt{#2E8B57}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{SeaShell}$</td>
+<td align="center">$\color{SeaShell}\text{#FFF5EE}$</td>
+<td align="center">$\color{SeaShell}\text{rgb(255, 245, 238)}$</td>
+<td align="center">$\colorbox{SeaShell}{\color{SeaShell}\texttt{#FFF5EE}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Sienna}$</td>
+<td align="center">$\color{Sienna}\text{#A0522D}$</td>
+<td align="center">$\color{Sienna}\text{rgb(160, 82, 45)}$</td>
+<td align="center">$\colorbox{Sienna}{\color{Sienna}\texttt{#A0522D}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Silver}$</td>
+<td align="center">$\color{Silver}\text{#C0C0C0}$</td>
+<td align="center">$\color{Silver}\text{rgb(192, 192, 192)}$</td>
+<td align="center">$\colorbox{Silver}{\color{Silver}\texttt{#C0C0C0}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{SkyBlue}$</td>
+<td align="center">$\color{SkyBlue}\text{#87CEEB}$</td>
+<td align="center">$\color{SkyBlue}\text{rgb(135, 206, 235)}$</td>
+<td align="center">$\colorbox{SkyBlue}{\color{SkyBlue}\texttt{#87CEEB}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{SlateBlue}$</td>
+<td align="center">$\color{SlateBlue}\text{#6A5ACD}$</td>
+<td align="center">$\color{SlateBlue}\text{rgb(106, 90, 205)}$</td>
+<td align="center">$\colorbox{SlateBlue}{\color{SlateBlue}\texttt{#6A5ACD}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{SlateGray}$</td>
+<td align="center">$\color{SlateGray}\text{#708090}$</td>
+<td align="center">$\color{SlateGray}\text{rgb(112, 128, 144)}$</td>
+<td align="center">$\colorbox{SlateGray}{\color{SlateGray}\texttt{#708090}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Snow}$</td>
+<td align="center">$\color{Snow}\text{#FFFAFA}$</td>
+<td align="center">$\color{Snow}\text{rgb(255, 250, 250)}$</td>
+<td align="center">$\colorbox{Snow}{\color{Snow}\texttt{#FFFAFA}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{SpringGreen}$</td>
+<td align="center">$\color{SpringGreen}\text{#00FF7F}$</td>
+<td align="center">$\color{SpringGreen}\text{rgb(0, 255, 127)}$</td>
+<td align="center">$\colorbox{SpringGreen}{\color{SpringGreen}\texttt{#00FF7F}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{SteelBlue}$</td>
+<td align="center">$\color{SteelBlue}\text{#4682B4}$</td>
+<td align="center">$\color{SteelBlue}\text{rgb(70, 130, 180)}$</td>
+<td align="center">$\colorbox{SteelBlue}{\color{SteelBlue}\texttt{#4682B4}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Tan}$</td>
+<td align="center">$\color{Tan}\text{#D2B48C}$</td>
+<td align="center">$\color{Tan}\text{rgb(210, 180, 140)}$</td>
+<td align="center">$\colorbox{Tan}{\color{Tan}\texttt{#D2B48C}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Teal}$</td>
+<td align="center">$\color{Teal}\text{#008080}$</td>
+<td align="center">$\color{Teal}\text{rgb(0, 128, 128)}$</td>
+<td align="center">$\colorbox{Teal}{\color{Teal}\texttt{#008080}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Thistle}$</td>
+<td align="center">$\color{Thistle}\text{#D8BFD8}$</td>
+<td align="center">$\color{Thistle}\text{rgb(216, 191, 216)}$</td>
+<td align="center">$\colorbox{Thistle}{\color{Thistle}\texttt{#D8BFD8}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Tomato}$</td>
+<td align="center">$\color{Tomato}\text{#FF6347}$</td>
+<td align="center">$\color{Tomato}\text{rgb(255, 99, 71)}$</td>
+<td align="center">$\colorbox{Tomato}{\color{Tomato}\texttt{#FF6347}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Turquoise}$</td>
+<td align="center">$\color{Turquoise}\text{#40E0D0}$</td>
+<td align="center">$\color{Turquoise}\text{rgb(64, 224, 208)}$</td>
+<td align="center">$\colorbox{Turquoise}{\color{Turquoise}\texttt{#40E0D0}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Violet}$</td>
+<td align="center">$\color{Violet}\text{#EE82EE}$</td>
+<td align="center">$\color{Violet}\text{rgb(238, 130, 238)}$</td>
+<td align="center">$\colorbox{Violet}{\color{Violet}\texttt{#EE82EE}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{VioletRed}$</td>
+<td align="center">$\color{VioletRed}\text{#D02090}$</td>
+<td align="center">$\color{VioletRed}\text{rgb(208, 32, 144)}$</td>
+<td align="center">$\colorbox{VioletRed}{\color{VioletRed}\texttt{#D02090}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Wheat}$</td>
+<td align="center">$\color{Wheat}\text{#F5DEB3}$</td>
+<td align="center">$\color{Wheat}\text{rgb(245, 222, 179)}$</td>
+<td align="center">$\colorbox{Wheat}{\color{Wheat}\texttt{#F5DEB3}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{White}$</td>
+<td align="center">$\color{White}\text{#FFFFFF}$</td>
+<td align="center">$\color{White}\text{rgb(255, 255, 255)}$</td>
+<td align="center">$\colorbox{White}{\color{White}\texttt{#FFFFFF}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{WhiteSmoke}$</td>
+<td align="center">$\color{WhiteSmoke}\text{#F5F5F5}$</td>
+<td align="center">$\color{WhiteSmoke}\text{rgb(245, 245, 245)}$</td>
+<td align="center">$\colorbox{WhiteSmoke}{\color{WhiteSmoke}\texttt{#F5F5F5}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{Yellow}$</td>
+<td align="center">$\color{Yellow}\text{#FFFF00}$</td>
+<td align="center">$\color{Yellow}\text{rgb(255, 255, 0)}$</td>
+<td align="center">$\colorbox{Yellow}{\color{Yellow}\texttt{#FFFF00}}$</td>
+</tr>
+<tr>
+<td align="center">$\color{#020202}{YellowGreen}$</td>
+<td align="center">$\color{YellowGreen}\text{#9ACD32}$</td>
+<td align="center">$\color{YellowGreen}\text{rgb(154, 205, 50)}$</td>
+<td align="center">$\colorbox{YellowGreen}{\color{YellowGreen}\texttt{#9ACD32}}$</td>
+</tr>
+</tbody></table>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io">https://suifengczc.github.io</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="../../../../../../tags/markdown/">
+                                    <span class="chip bg-color">markdown</span>
+                                </a>
+                            
+                                <a href="../../../../../../tags/tools/">
+                                    <span class="chip bg-color">tools</span>
+                                </a>
+                            
+                                <a href="../../../../../../tags/clolor/">
+                                    <span class="chip bg-color">clolor</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="../../../../../07/05/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            suifeng
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="../../../../25/Language/Groovy/Syntax/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Groovy 基础语法">
+                        
+                        <span class="card-title">Groovy 基础语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Groovy 基础语法翻译自官方文档:Syntax部分内容为了方便表述做了修改。
+1.注释1.1.单行注释单行注释以//开头，可以放在行中的任意位置。从//开始知道行尾的内容都算作是注释的部分。
+// 独立的单行注释
+println &qu
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../../../../../../categories/Language/" class="post-category">
+                                    Language
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../../../../../../tags/Language/">
+                        <span class="chip bg-color">Language</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/Groovy/">
+                        <span class="chip bg-color">Groovy</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Suifeng Blog<br />'
+            + '文章作者: suifeng<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">42.2k</span>&nbsp;
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script src="/js/prettify.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('pre').addClass('prettyprint linenums');
+                    prettyPrint();
+                })
+            </script>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "3";
+                    var startDate = "3";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/suifengczc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ssuifengczc@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>

@@ -1,0 +1,1491 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="hexo踩坑记录和优化, Suifeng Blog">
+    <meta name="description" content="hexo踩坑记录和优化本地预览图片丢失当新建了博客编写完后执行hexo g和hexo s预览文章发现所有的图片都丢失了，无法正常加载。chrome中按F12查看发现hexo-asset-image插件没有正确地转换图片地址
+
+而且生成的资源">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>hexo踩坑记录和优化 | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<style> 
+		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+		{ list-style-type: decimal !important }
+	</style>
+
+    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="../../../../../../index.html" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Suifeng Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Suifeng Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/suifengczc" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/suifengczc" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        hexo踩坑记录和优化
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="../../../../../../tags/Tools/">
+                                <span class="chip bg-color">Tools</span>
+                            </a>
+                        
+                            <a href="../../../../../../tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
+                            </a>
+                        
+                            <a href="../../../../../../tags/help/">
+                                <span class="chip bg-color">help</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="../../../../../../categories/Tools/" class="post-category">
+                                Tools
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-22
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-07-03
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="hexo踩坑记录和优化"><a href="#hexo踩坑记录和优化" class="headerlink" title="hexo踩坑记录和优化"></a>hexo踩坑记录和优化</h1><h2 id="本地预览图片丢失"><a href="#本地预览图片丢失" class="headerlink" title="本地预览图片丢失"></a>本地预览图片丢失</h2><p>当新建了博客编写完后执行<code>hexo g</code>和<code>hexo s</code>预览文章发现所有的图片都丢失了，无法正常加载。chrome中按<code>F12</code>查看发现<code>hexo-asset-image</code>插件没有正确地转换图片地址</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/error_src.png" alt="错误图片地址"></p>
+<p>而且生成的资源下也不包含任何图片信息。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/no_src.png" alt="无图片资源"></p>
+<p>一开始在这个<a href="https://blog.csdn.net/xjm850552586/article/details/84101345" target="_blank" rel="noopener">博客</a>下找到了解决方案。</p>
+<p>找到博客根目录下的<code>/node_modules/hexo-asset-image/index.js</code>文件，将其中的代码修改正博客中的代码，贴上代码如下：</p>
+<pre><code class="js">&#39;use strict&#39;;
+var cheerio = require(&#39;cheerio&#39;);
+
+// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string--123456794563543543543545435
+function getPosition(str, m, i) {
+  return str.split(m, i).join(m).length;
+}
+
+var version = String(hexo.version).split(&#39;.&#39;);
+hexo.extend.filter.register(&#39;after_post_render&#39;, function(data){
+  var config = hexo.config;
+  if(config.post_asset_folder){
+        var link = data.permalink;
+    if(version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)
+       var beginPos = getPosition(link, &#39;/&#39;, 1) + 1;
+    else
+       var beginPos = getPosition(link, &#39;/&#39;, 3) + 1;
+    // In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.
+    var endPos = link.lastIndexOf(&#39;/&#39;) + 1;
+    link = link.substring(beginPos, endPos);
+
+    var toprocess = [&#39;excerpt&#39;, &#39;more&#39;, &#39;content&#39;];
+    for(var i = 0; i &lt; toprocess.length; i++){
+      var key = toprocess[i];
+
+      var $ = cheerio.load(data[key], {
+        ignoreWhitespace: false,
+        xmlMode: false,
+        lowerCaseTags: false,
+        decodeEntities: false
+      });
+
+      $(&#39;img&#39;).each(function(){
+        if ($(this).attr(&#39;src&#39;)){
+            // For windows style path, we replace &#39;\&#39; to &#39;/&#39;.
+            var src = $(this).attr(&#39;src&#39;).replace(&#39;\\&#39;, &#39;/&#39;);
+            if(!/http[s]*.*|\/\/.*/.test(src) &amp;&amp;
+               !/^\s*\//.test(src)) {
+              // For &quot;about&quot; page, the first part of &quot;src&quot; can&#39;t be removed.
+              // In addition, to support multi-level local directory.
+              var linkArray = link.split(&#39;/&#39;).filter(function(elem){
+                return elem != &#39;&#39;;
+              });
+              var srcArray = src.split(&#39;/&#39;).filter(function(elem){
+                return elem != &#39;&#39; &amp;&amp; elem != &#39;.&#39;;
+              });
+              if(srcArray.length &gt; 1)
+                srcArray.shift();
+              src = srcArray.join(&#39;/&#39;);
+              $(this).attr(&#39;src&#39;, config.root + link + src);
+              console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);
+            }
+        }else{
+            console.info&amp;&amp;console.info(&quot;no src attr, skipped...&quot;);
+            console.info&amp;&amp;console.info($(this));
+        }
+      });
+      data[key] = $.html();
+    }
+  }
+});</code></pre>
+<p>但是这个解决方案其实是有问题</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/error_src_1.png" alt="方案1"></p>
+<p>可以看到这里的<code>src</code>资源路径还是错误的。原因是这里的方案只支持Hexo的标签方式(Hexo的标签引用<a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="noopener">看这里</a>)的引用，对于markdown的引用方式还是不支持。如果把这里的图片引入方式修改为Hexo的标签方式<code></code>就可以正常显示了。</p>
+<p>但是这有一个问题就是使用标签方式在markdown中无法直接预览效果。</p>
+<p>所以我就基于这个解决方案做了修改。代码如下：</p>
+<pre><code class="javascript">&#39;use strict&#39;;
+var cheerio = require(&#39;cheerio&#39;);
+
+// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string
+function getPosition(str, m, i) {
+    return str.split(m, i).join(m).length;
+}
+
+var version = String(hexo.version).split(&#39;.&#39;);
+hexo.extend.filter.register(&#39;after_post_render&#39;, function (data) {
+    var config = hexo.config;
+    if (config.post_asset_folder) {
+        var link = data.permalink;
+        if (version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)
+            var beginPos = getPosition(link, &#39;/&#39;, 1) + 1;
+        else
+            var beginPos = getPosition(link, &#39;/&#39;, 3) + 1;
+        // In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.
+        var endPos = link.lastIndexOf(&#39;/&#39;) + 1;
+        link = link.substring(beginPos, endPos);
+        var beginDir = getPosition(link, &quot;/&quot;, 2)
+        var endDir = link.length
+        var srcDir = link.substring(beginDir, endDir)
+
+        var toprocess = [&#39;excerpt&#39;, &#39;more&#39;, &#39;content&#39;];
+        for (var i = 0; i &lt; toprocess.length; i++) {
+            var key = toprocess[i];
+
+            var $ = cheerio.load(data[key], {
+                ignoreWhitespace: false,
+                xmlMode: false,
+                lowerCaseTags: false,
+                decodeEntities: false
+            });
+
+            $(&#39;img&#39;).each(function () {
+                if ($(this).attr(&#39;src&#39;)) {
+                    // For windows style path, we replace &#39;\&#39; to &#39;/&#39;.
+                    var src = $(this).attr(&#39;src&#39;)
+                    src = src.replace(&#39;\\&#39;, &#39;/&#39;);
+                    var b1 = !/http[s]*.*|\/\/.*/.test(src)
+                    if (b1) {
+                        // For &quot;about&quot; page, the first part of &quot;src&quot; can&#39;t be removed.
+                        // In addition, to support multi-level local directory.
+                        var linkArray = link.split(&#39;/&#39;).filter(function (elem) {
+                            return elem != &#39;&#39;;
+                        });
+                        var srcArray = src.split(&#39;/&#39;).filter(function (elem) {
+                            return elem != &#39;&#39; &amp;&amp; elem != &#39;.&#39;;
+                        });
+                        if (srcArray.length &gt; 1)
+                            srcArray.shift();
+                        var mSrc = srcArray.join(&#39;/&#39;);
+                        var realLink = srcDir + mSrc
+                        $(this).attr(&#39;src&#39;, realLink);
+                        console.info &amp;&amp; console.info(&quot;update link as:--&gt;&quot; + realLink);
+                    }
+                } else {
+                    console.info &amp;&amp; console.info(&quot;no src attr, skipped...&quot;);
+                    console.info &amp;&amp; console.info($(this));
+                }
+            });
+            data[key] = $.html();
+        }
+    }
+});</code></pre>
+<p>这样就可以支持markdown的图片引入了</p>
+<p>效果如下：</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/good_src.png" alt="正常显示"></p>
+<h2 id="代码行号丢失"><a href="#代码行号丢失" class="headerlink" title="代码行号丢失"></a>代码行号丢失</h2><p>按照官网文档的推荐使用<a href="https://github.com/ele828/hexo-prism-plugin" target="_blank" rel="noopener">hexo-prism-plugin</a>作为代码高亮插件，但是按照官网的配置发现预览网页中没有行号。</p>
+<p>需要做如下修改，打开主题的<code>themes\hexo-theme-matery\source\css\matery.css</code>文件，修改第95~111行如下</p>
+<pre><code class="css">pre {
+    padding: 1.5rem 1.5rem 1.5rem 3.3rem !important;
+    margin: 1rem 0 !important;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.35rem;
+    tab-size: 4;
+}
+
+code {
+    padding: 1px 5px;
+    font-family: Inconsolata, Monaco, Consolas, &#39;Courier New&#39;, Courier, monospace;
+    /* font-size: 0.91rem;*/
+    color: #e96900;
+    background-color: #f8f8f8;
+    border-radius: 2px;
+}</code></pre>
+<p>重新生成预览页面就正常了</p>
+<h2 id="代码行号错位"><a href="#代码行号错位" class="headerlink" title="代码行号错位"></a>代码行号错位</h2><p>当代码中存在较长代码自动换行时会导致代码行号与代码不对应。</p>
+<p>使用<code>code-prettify</code>代替</p>
+<h2 id="更换代码高亮插件"><a href="#更换代码高亮插件" class="headerlink" title="更换代码高亮插件"></a>更换代码高亮插件</h2><p>因为<code>hexo-prism-plugin</code>在行号显示和复制代码丢失缩进和换行的问题，所以决定更换代码高亮插件为<a href="https://github.com/google/code-prettify" target="_blank" rel="noopener">code-prettify</a>。</p>
+<p>从<a href="https://github.com/google/code-prettify" target="_blank" rel="noopener">code-prettify</a>clone下来最新代码，复制<code>code-prettify\src\prettify.js</code>文件到博客主题的<code>source\js</code>下</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/copy_prettifyjs.png" alt="复制prettify.js"></p>
+<p>然后复制<code>code-prettify\styles\sons-of-obsidian.css</code>文件到博客的<code>source\css</code>下（这里是使用了<code>sons-of-obsidian</code>代码高亮主题，如果要使用默认主题的话就复制<code>code-prettify\src\prettify.css</code>到这个目录下）。</p>
+<p>然后打开<code>themes\hexo-theme-matery\layout\_partial\head.ejs</code>文件，增加引用新css的代码</p>
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;%- config.root %&gt;css/sons-of-obsidian.css&quot; media=&quot;screen&quot; type=&quot;text/css&quot;&gt;</code></pre>
+<p> 如果用的是默认的css，这里就设置为对应的css就好了。</p>
+<p>另外很重要的一点是这里还需要添加一段style代码：</p>
+<pre><code class="html">&lt;style&gt;
+    li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+    { list-style-type: decimal !important }
+&lt;/style&gt;</code></pre>
+<p>这其实是为了解决<code>code-prettify</code>的行号bug，不然会出现在代码块中只有一个点但没有代码行号的情况。</p>
+<p>接着打开<code>themes\hexo-theme-matery\layout\_partial\footer.ejs</code>文件，增加加载<code>prettify.js</code>的代码：</p>
+<pre><code class="html">&lt;script src=&quot;&lt;%- config.root %&gt;js/prettify.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>再给<code>pre</code>标签增加<code>prettyprint</code>和<code>linenums</code>这两个css的class</p>
+<pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function(){
+        $(&#39;pre&#39;).addClass(&#39;prettyprint linenums&#39;);
+            prettyPrint();
+    })
+&lt;/script&gt;</code></pre>
+<p>最后要记得把博客根目录下的<code>_config.yml</code>中highlight相关的配置都修改为false</p>
+<p>做完这些后就可以执行<code>hexo g</code>和<code>hexo s</code>预览一下效果了，代码块应该是能正常工作了</p>
+<p>参考自：</p>
+<ol>
+<li><p>[<a href="http://masikkk.com/article/hexo-12-google-code-prettify/" target="_blank" rel="noopener">Hexo博客(12)使用google-code-prettify代码高亮</a>]</p>
+</li>
+<li><p><a href="https://www.v2ex.com/t/32260" target="_blank" rel="noopener">https://www.v2ex.com/t/32260</a></p>
+</li>
+</ol>
+<p>下面是我自己对主题的一些修改:</p>
+<h3 id="去除代码隔行背景色"><a href="#去除代码隔行背景色" class="headerlink" title="去除代码隔行背景色"></a>去除代码隔行背景色</h3><p>去除代码的隔行不同背景色，把<code>sons-of-obsidian.css</code>里的69~71行代码注释掉。被注释代码如下</p>
+<pre><code class="css">li.L1, li.L3, li.L5, li.L7, li.L9 {
+    background: #111;
+}</code></pre>
+<h3 id="去除代码下背景色"><a href="#去除代码下背景色" class="headerlink" title="去除代码下背景色"></a>去除代码下背景色</h3><p>去除每行代码的背景色，通过查看style发现是在<code>matery.css</code>里的<code>pre code</code>里的<code>background-color</code>控制的，所以这里把<code>background-color</code>的alpha值设为0就好了</p>
+<p>更正：这里的<code>background-color</code>值应该修改为#00000000，否则在其他背景色下还是能看到。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/code_bg.png" alt="代码背景色"></p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/code_bg_1.png" alt="代码取消背景色"></p>
+<h3 id="修复代码块复制后丢失缩进的问题"><a href="#修复代码块复制后丢失缩进的问题" class="headerlink" title="修复代码块复制后丢失缩进的问题"></a>修复代码块复制后丢失缩进的问题</h3><p><code>matery</code>还有这样一个bug，当复制的代码数量大于主题的<code>_config.yml</code>下的<code>copyright</code>中配置的<code>minCharNumber</code>阈值时会导致粘贴时代码丢失缩进，排查后解决方案如下：在<code>themes\hexo-theme-matery\layout\_partial\post-detail.ejs</code>代码中为<code>newdiv</code>增加<code>newdiv.style.whiteSpace = &#39;pre&#39;</code>属性。</p>
+<pre><code class="javascript">// create a div outside of the visible area and fill it with the selected text.
+var bodyElement = document.getElementsByTagName(&#39;body&#39;)[0];
+var newdiv = document.createElement(&#39;div&#39;);
+newdiv.style.position = &#39;absolute&#39;;
+newdiv.style.left = &#39;-99999px&#39;;
+newdiv.style.whiteSpace = &#39;pre&#39;; //增加这个属性，以防止空格缩进被去除
+bodyElement.appendChild(newdiv);
+var cloneContents = selection.getRangeAt(0).cloneContents()
+newdiv.appendChild(cloneContents);</code></pre>
+<h3 id="修改代码块背景色"><a href="#修改代码块背景色" class="headerlink" title="修改代码块背景色"></a>修改代码块背景色</h3><p>默认的代码背景色是黑色的，看着眼睛不舒服，所以修改为idea的默认背景色<code>#2B2B2B</code>。对代码块检查发现代码块背景色在<code>sons-of-obsidian.css</code>的61行的<code>.prettyprint</code>里的<code>background</code>属性。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/code_block_bg_1.png" alt="black_bg"></p>
+<p>所以打开博客根目录下的<code>themes\hexo-theme-matery\source\css\sons-of-obsidian.css</code>，修改 <code>.prettyprint</code>的<code>background</code>属性为<code>#2B2B2B</code>。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/code_block_bg_2.png" alt="black_bg"></p>
+<p>修改完成后直接刷新界面就能看到修改后的效果了。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/code_block_bg_3.png" alt="black_bg"></p>
+<p>这样看着就舒服多了。</p>
+<h2 id="线上博客异常"><a href="#线上博客异常" class="headerlink" title="线上博客异常"></a>线上博客异常</h2><p>本地博客push到线上后发现界面排版错误，所有图片无法加载，其实是因为GitHub上的仓库名称命名错误。</p>
+<p>仓库名称应该命名为[GitHub name].github.io</p>
+<h2 id="更新matery1-2-0导致Bug"><a href="#更新matery1-2-0导致Bug" class="headerlink" title="更新matery1.2.0导致Bug"></a>更新matery1.2.0导致Bug</h2><p>刚刚更新了matery的1.2.0版本，导致博客中出现了一些预期之外的bug，下面记录一下具体的Bug和修复记录。</p>
+<h3 id="代码块缩放异常"><a href="#代码块缩放异常" class="headerlink" title="代码块缩放异常"></a>代码块缩放异常</h3><p>matery1.2.0在代码块中增加了代码块的缩放和复制功能，但是这个功能和<code>code-prettify</code>有冲突，导致缩放代码块时代码消失，但代码行号仍然保留的bug。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/upgrade_codeblock_error.png" alt="codeblock error"></p>
+<p>通过搜索<code>fas fa-angle-up code-expand</code>发现这个关键字只在<code>themes\hexo-theme-matery\source\libs\codeBlock\codeShrink.js</code>被使用，这里设置了代码缩放按钮的点击事件。</p>
+<pre><code class="js">// 代码块收缩
+
+$(function () {
+  var $code_expand = $(&#39;&lt;i class=&quot;fas fa-angle-up code-expand&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&#39;);
+
+  $(&#39;.code-area&#39;).prepend($code_expand);
+  $(&#39;.code-expand&#39;).on(&#39;click&#39;, function () {
+    if ($(this).parent().hasClass(&#39;code-closed&#39;)) {
+      $(this).siblings(&#39;pre&#39;).find(&#39;code&#39;).show();
+      $(this).parent().removeClass(&#39;code-closed&#39;);
+    } else {
+      $(this).siblings(&#39;pre&#39;).find(&#39;code&#39;).hide();
+      $(this).parent().addClass(&#39;code-closed&#39;);
+    }
+  });
+});
+</code></pre>
+<p>这里可以看到，在点击事件里在<code>pre</code>标签下查找<code>code</code>标签然后对其做显示和隐藏以实现代码的缩放功能。但是使用了<code>code-prettify</code>后，pre下不是直接包裹<code>code</code>标签，所以原来的代码直接对code标签做处理导致了这个bug。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/upgrade_codeblock_error_1.png"></p>
+<p>所以修改这个bug只需要将原来的代码中的<code>find(&#39;code&#39;)</code>修改为<code>find(&#39;ol&#39;)</code>就可以了。修改后代码如下：</p>
+<pre><code class="javascript">// 代码块收缩
+
+$(function () {
+  var $code_expand = $(&#39;&lt;i class=&quot;fas fa-angle-up code-expand&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&#39;);
+
+  $(&#39;.code-area&#39;).prepend($code_expand);
+  $(&#39;.code-expand&#39;).on(&#39;click&#39;, function () {
+    if ($(this).parent().hasClass(&#39;code-closed&#39;)) {
+      $(this).siblings(&#39;pre&#39;).find(&#39;ol&#39;).show();
+      $(this).parent().removeClass(&#39;code-closed&#39;);
+    } else {
+      $(this).siblings(&#39;pre&#39;).find(&#39;ol&#39;).hide();
+      $(this).parent().addClass(&#39;code-closed&#39;);
+    }
+  });
+});</code></pre>
+<h3 id="代码块复制Bug"><a href="#代码块复制Bug" class="headerlink" title="代码块复制Bug"></a>代码块复制Bug</h3><p>1.2.0新增的代码复制功能和<code>code-prettify</code>也存在兼容问题。使用<code>code-prettify</code>后导致复制按钮只能复制第一行代码。</p>
+<p>通过搜索<code>fas fa-copy code_copy</code>找到复制按钮的逻辑在<code>themes\hexo-theme-matery\source\libs\codeBlock\codeCopy.js</code>文件中。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/upgrade_codeblock_copy_1.png"></p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/upgrade_codeblock_copy_2.png"></p>
+<p>从这里的第50行可以看出，复制功能bug和代码块缩放bug原因是差不多的。</p>
+<p>所以将这里的<code>find(&#39;code&#39;)</code>修改为<code>find(&#39;ol&#39;)</code>就可以了。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/upgrade_codeblock_copy_3.png"></p>
+<h3 id="网页末尾的站点总字数丢失"><a href="#网页末尾的站点总字数丢失" class="headerlink" title="网页末尾的站点总字数丢失"></a>网页末尾的站点总字数丢失</h3><p>更新1.2.0后网页末尾的站点总字数丢失，在<code>hexo-theme-matery</code>目录下搜索发现源码中是存在对应功能的，在博客根目录的<code>themes\hexo-theme-matery\layout\_partial\footer.ejs</code>下。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/upgrade_wordcount_1.png"></p>
+<p>这里对<code>theme.wordCount.totalCount</code>的值做了判断，于是到<code>themes\hexo-theme-matery\_config.yml</code>查找<code>wordCount</code>相关配置，发现在<code>wordCount</code>下只有一个`enabled属性。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/upgrade_wordcount_2.png">所以这里为它添加一个<code>wordCount</code>属性。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/upgrade_wordcount_3.png"></p>
+<p>这样就解决了站点总字数统计丢失的问题</p>
+<h3 id="关于页面的图标位置"><a href="#关于页面的图标位置" class="headerlink" title="关于页面的图标位置"></a>关于页面的图标位置</h3><p>更新后1.2.0后关于界面上里的文章统计图标出现上移导致文字部分被遮挡的问题。</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/upgrade_about_1.png"></p>
+<p>通过搜索<code>文章发布统计图</code>发现是在<code>themes\hexo-theme-matery\languages\zh-CN.yml</code>中定义的<code>postPublishChart</code>的中文名。再继续搜索<code>postPublishChart</code>发现是在<code>themes\hexo-theme-matery\layout\_widget\post-charts.ejs</code>。在<code>post-charts.ejs</code>中搜索<code>postPublishChart</code>，<code>categoriesChart</code>，<code>top10TagsChart</code>在统计的属性内修改<code>top</code>属性。</p>
+<p>修改后如下：</p>
+<p><img src="/2019/09/22/Tools/hexo/hexo_help/upgrade_about_2.png"></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://suifengczc.github.io">https://suifengczc.github.io</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="../../../../../../tags/Tools/">
+                                    <span class="chip bg-color">Tools</span>
+                                </a>
+                            
+                                <a href="../../../../../../tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
+                                </a>
+                            
+                                <a href="../../../../../../tags/help/">
+                                    <span class="chip bg-color">help</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="../../../../28/Language/Java/classloader_detail/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java ClassLoader的简单介绍">
+                        
+                        <span class="card-title">Java ClassLoader的简单介绍</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java ClassLoader的简单介绍本文是阅读《深入理解Java虚拟机》第七章类加载器相关部分过程中生成的阅读笔记。简单介绍了ClassLoader的是什么，主要的类型和双亲委派模型。
+ClassLoader是什么
+虚拟机设计团队把类
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-09-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../../../../../../categories/Language/" class="post-category">
+                                    Language
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../../../../../../tags/Language/">
+                        <span class="chip bg-color">Language</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/ClassLoader/">
+                        <span class="chip bg-color">ClassLoader</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="../../../../20/Tools/hexo/start_hexo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="开始hexo之旅">
+                        
+                        <span class="card-title">开始hexo之旅</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            hexo常用命令这篇博客主要记录hexo使用中的命令
+
+生成静态页面
+  hexo g 或 hexo generate
+
+启动本地服务，预览效果
+  hexo s 或 hexo server
+
+上传博客到GitHub并部署
+  hexo d
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../../../../../../categories/Tools/" class="post-category">
+                                    Tools
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../../../../../../tags/Tools/">
+                        <span class="chip bg-color">Tools</span>
+                    </a>
+                    
+                    <a href="../../../../../../tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Suifeng Blog<br />'
+            + '文章作者: suifeng<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">42.2k</span>&nbsp;
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script src="/js/prettify.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('pre').addClass('prettyprint linenums');
+                    prettyPrint();
+                })
+            </script>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "3";
+                    var startDate = "3";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/suifengczc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ssuifengczc@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>
