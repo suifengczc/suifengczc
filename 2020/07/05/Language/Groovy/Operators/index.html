@@ -2,27 +2,10 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="Groovy运算符, Suifeng Blog">
-    <meta name="description" content="Groovy运算符Groovy运算符阅读笔记，非全文翻译。
-1.算术运算符Groovy支持常见的算术运算符，和所有Java支持的运算符。
-1.1.普通算术运算符Groovy支持的二元运算符:
-
-
-
-运算符
-用途
-备注
-
-
-
-+
-加
-
-
-
--">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,33 +13,35 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Groovy运算符 | Suifeng Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-	<style> 
-		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
-		{ list-style-type: decimal !important }
-	</style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</head>
+
+    <title>Groovy运算符 | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="../../../../../../favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/my.css">
+
+    <script src="../../../../../../libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
 
 
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="../../../../../../index.html" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="../../../../../../medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Suifeng Blog</span>
                 </a>
@@ -68,7 +53,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/" class="waves-effect waves-light">
+    <a href="../../../../../../index.html" class="waves-effect waves-light">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
@@ -79,7 +64,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
+    <a href="../../../../../../tags" class="waves-effect waves-light">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
@@ -90,7 +75,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/categories" class="waves-effect waves-light">
+    <a href="../../../../../../categories" class="waves-effect waves-light">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
@@ -101,7 +86,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/archives" class="waves-effect waves-light">
+    <a href="../../../../../../archives" class="waves-effect waves-light">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
@@ -112,7 +97,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
+    <a href="../../../../../../about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
@@ -123,7 +108,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
+    <a href="../../../../../../contact" class="waves-effect waves-light">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
@@ -139,11 +124,12 @@
   </li>
 </ul>
 
+
 <div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="../../../../../../medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Suifeng Blog</div>
         <div class="logo-desc">
@@ -159,7 +145,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/" class="waves-effect waves-light">
+		<a href="../../../../../../index.html" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
@@ -170,7 +156,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="../../../../../../tags" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
@@ -181,7 +167,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/categories" class="waves-effect waves-light">
+		<a href="../../../../../../categories" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
@@ -192,7 +178,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/archives" class="waves-effect waves-light">
+		<a href="../../../../../../archives" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
@@ -203,7 +189,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
+		<a href="../../../../../../about" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
@@ -214,11 +200,11 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/contact" class="waves-effect waves-light">
+		<a href="../../../../../../contact" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -233,6 +219,7 @@
         
     </ul>
 </div>
+
 
         </div>
 
@@ -301,14 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('../../../../../../medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="description center-align post-title">
-                        Groovy运算符
-                    </div>
+                    <h1 class="description center-align post-title">Groovy运算符</h1>
                 </div>
             </div>
         </div>
@@ -317,10 +302,11 @@
 
 
 
+
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="../../../../../../libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -345,12 +331,12 @@
     }
 
     .toc-widget {
+        width: 345px;
         padding-left: 20px;
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -359,6 +345,11 @@
     .toc-widget ol {
         padding: 0;
         list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
     }
 
     #toc-content ol {
@@ -378,14 +369,14 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
     }
 
     #toc-content .is-active-link {
         color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -461,30 +452,27 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    4.1k
                 </div>
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
-                </div>
+
                 
-				
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
-            
         </div>
         <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="../../../../../../libs/prism/prism.css">
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Groovy运算符"><a href="#Groovy运算符" class="headerlink" title="Groovy运算符"></a>Groovy运算符</h1><p><a href="http://www.groovy-lang.org/operators.html" target="_blank" rel="noopener">Groovy运算符</a>阅读笔记，非全文翻译。</p>
+                <h1 id="Groovy运算符"><a href="#Groovy运算符" class="headerlink" title="Groovy运算符"></a>Groovy运算符</h1><p><a target="_blank" rel="noopener" href="http://www.groovy-lang.org/operators.html">Groovy运算符</a>阅读笔记，非全文翻译。</p>
 <h2 id="1-算术运算符"><a href="#1-算术运算符" class="headerlink" title="1.算术运算符"></a>1.算术运算符</h2><p>Groovy支持常见的算术运算符，和所有Java支持的运算符。</p>
 <h3 id="1-1-普通算术运算符"><a href="#1-1-普通算术运算符" class="headerlink" title="1.1.普通算术运算符"></a>1.1.普通算术运算符</h3><p>Groovy支持的二元运算符:</p>
 <table>
@@ -513,7 +501,7 @@
 <tr>
 <td align="center"><code>/</code></td>
 <td align="center">除</td>
-<td align="left">整数除法用的是<code>intdiv()</code>,更多的除法返回值类型参看<a href="https://docs.groovy-lang.org/latest/html/documentation/core-syntax.html#integer_division" target="_blank" rel="noopener">integer division</a></td>
+<td align="left">整数除法用的是<code>intdiv()</code>,更多的除法返回值类型参看<a target="_blank" rel="noopener" href="https://docs.groovy-lang.org/latest/html/documentation/core-syntax.html#integer_division">integer division</a></td>
 </tr>
 <tr>
 <td align="center"><code>%</code></td>
@@ -523,7 +511,7 @@
 <tr>
 <td align="center"><code>**</code></td>
 <td align="center">乘方</td>
-<td align="left">参看<a href="https://docs.groovy-lang.org/latest/html/documentation/core-syntax.html#power_operator" target="_blank" rel="noopener">the power operation</a>了解更多关于乘方返回值类型</td>
+<td align="left">参看<a target="_blank" rel="noopener" href="https://docs.groovy-lang.org/latest/html/documentation/core-syntax.html#power_operator">the power operation</a>了解更多关于乘方返回值类型</td>
 </tr>
 </tbody></table>
 <h3 id="1-2-一元运算符"><a href="#1-2-一元运算符" class="headerlink" title="1.2.一元运算符"></a>1.2.一元运算符</h3><p><code>+</code>和<code>-</code>都可以作为一元运算符。并支持<code>++</code>和<code>--</code>方式的前缀和后缀</p>
@@ -587,9 +575,9 @@
 <p>而在Java中，<code>==</code>是比较对象的地址，如果需要比较对象的值是否相同则是调用对象的<code>equals()</code>方法做比较。并且该对象需要重写<code>equals()</code>和<code>hashCode()</code>方法。</p>
 <h2 id="3-逻辑运算符"><a href="#3-逻辑运算符" class="headerlink" title="3.逻辑运算符"></a>3.逻辑运算符</h2><p>逻辑运算符有<code>&amp;&amp;</code>,<code>||</code>,<code>!</code></p>
 <h3 id="3-1-优先级"><a href="#3-1-优先级" class="headerlink" title="3.1.优先级"></a>3.1.优先级</h3><p><code>!</code> &gt; <code>&amp;&amp;</code> &gt; <code>||</code></p>
-<pre><code class="Groovy">assert (!false &amp;&amp; false) == false // ! &gt; &amp;&amp;, 结果为false
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">assert (!false &amp;&amp; false) &#x3D;&#x3D; false &#x2F;&#x2F; ! &gt; &amp;&amp;, 结果为false
 
-assert true || true &amp;&amp; false // &amp;&amp; &gt; ||, 结果为true</code></pre>
+assert true || true &amp;&amp; false &#x2F;&#x2F; &amp;&amp; &gt; ||, 结果为true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-2-短路"><a href="#3-2-短路" class="headerlink" title="3.2.短路"></a>3.2.短路</h3><p>对于<code>||</code>, 当运算符左边的值为true时，不会计算右边的值。只有左边的值为false时才会计算有百年的值。<br>对于<code>&amp;&amp;</code>, 只有当左边的值为ture时才会计算右边的值。</p>
 <h2 id="4-位运算符"><a href="#4-位运算符" class="headerlink" title="4.位运算符"></a>4.位运算符</h2><p>Groovy提供了四种位运算符</p>
 <ul>
@@ -607,82 +595,80 @@ assert true || true &amp;&amp; false // &amp;&amp; &gt; ||, 结果为true</code>
 <h3 id="5-2-三元运算符"><a href="#5-2-三元运算符" class="headerlink" title="5.2.三元运算符"></a>5.2.三元运算符</h3><p><code>result = string ? &#39;Found&#39; : &#39;Not found&#39;</code></p>
 <p><code>string?</code>判断字符串是否为空</p>
 <h3 id="5-3-Elvis操作符"><a href="#5-3-Elvis操作符" class="headerlink" title="5.3.Elvis操作符"></a>5.3.Elvis操作符</h3><p>Groovy 3.0.0引入了Elvis操作符，这是对三元表达式的进一步简化:</p>
-<pre><code class="Groovy">import groovy.transform.ToString
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">import groovy.transform.ToString
 
 @ToString
-class Element {
+class Element &#123;
     String name
     int atomicNumber
-}
+&#125;
 
-def he = new Element(name: &#39;Helium&#39;)
-he.with {
-    name = name ?: &#39;Hydrogen&#39;   // existing Elvis operator
-    atomicNumber ?= 2           // new Elvis assignment shorthand
-}
-assert he.toString() == &#39;Element(Helium, 2)&#39;</code></pre>
+def he &#x3D; new Element(name: &#39;Helium&#39;)
+he.with &#123;
+    name &#x3D; name ?: &#39;Hydrogen&#39;   &#x2F;&#x2F; existing Elvis operator
+    atomicNumber ?&#x3D; 2           &#x2F;&#x2F; new Elvis assignment shorthand
+&#125;
+assert he.toString() &#x3D;&#x3D; &#39;Element(Helium, 2)&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="6-对象操作符"><a href="#6-对象操作符" class="headerlink" title="6.对象操作符"></a>6.对象操作符</h2><h3 id="6-1-空安全操作符"><a href="#6-1-空安全操作符" class="headerlink" title="6.1.空安全操作符"></a>6.1.空安全操作符</h3><p>空安全操作符可以规避<code>NullPointerException</code>.</p>
-<pre><code class="Groovy">def person = Person.find { it.id == 123 }
-def name = person?.name
-assert name == null</code></pre>
-<h3 id="6-2-直接访问操作符"><a href="#6-2-直接访问操作符" class="headerlink" title="6.2.直接访问操作符"></a>6.2.直接访问操作符</h3><pre><code class="Groovy">class User {
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def person &#x3D; Person.find &#123; it.id &#x3D;&#x3D; 123 &#125;
+def name &#x3D; person?.name
+assert name &#x3D;&#x3D; null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-2-直接访问操作符"><a href="#6-2-直接访问操作符" class="headerlink" title="6.2.直接访问操作符"></a>6.2.直接访问操作符</h3><pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">class User &#123;
     public final String name
-    User(String name) { this.name = name}
-    String getName() { &quot;Name: $name&quot; }
-}
-def user = new User(&#39;Bob&#39;)
-assert user.name == &#39;Name: Bob&#39;</code></pre>
+    User(String name) &#123; this.name &#x3D; name&#125;
+    String getName() &#123; &quot;Name: $name&quot; &#125;
+&#125;
+def user &#x3D; new User(&#39;Bob&#39;)
+assert user.name &#x3D;&#x3D; &#39;Name: Bob&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>对于上面的例子，在访问<code>name</code>属性时实际是调用了对应的get方法。如果想要直接获取字段而不是调用方法，可以使用<code>.@</code>操作符。<br>通过<code>.@</code>可以直接访问字段而不是通过get方法</p>
-<h3 id="6-3-方法指针操作符"><a href="#6-3-方法指针操作符" class="headerlink" title="6.3.方法指针操作符"></a>6.3.方法指针操作符</h3><pre><code class="Groovy">def str = &#39;example of method reference&#39;
-def fun = str.&amp;toUpperCase // 将str的toUpperCase方法整体作为一个变量保存在fun中
-def upper = fun() // 像调用常规方法一样调用fun方法
-assert upper == str.toUpperCase() // fun方法的结果和str.toUpperCase()结果相同</code></pre>
+<h3 id="6-3-方法指针操作符"><a href="#6-3-方法指针操作符" class="headerlink" title="6.3.方法指针操作符"></a>6.3.方法指针操作符</h3><pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def str &#x3D; &#39;example of method reference&#39;
+def fun &#x3D; str.&amp;toUpperCase &#x2F;&#x2F; 将str的toUpperCase方法整体作为一个变量保存在fun中
+def upper &#x3D; fun() &#x2F;&#x2F; 像调用常规方法一样调用fun方法
+assert upper &#x3D;&#x3D; str.toUpperCase() &#x2F;&#x2F; fun方法的结果和str.toUpperCase()结果相同<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>方法指针是<code>groovy.lang.Closure</code>类型的，因此可以在任何使用闭包的位置使用。</p>
-<pre><code class="Groovy">def transform(List elements, Closure action) {
-    def result = []
-    elements.each {
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def transform(List elements, Closure action) &#123;
+    def result &#x3D; []
+    elements.each &#123;
         result &lt;&lt; action(it)
-    }
+    &#125;
     result
-}
+&#125;
 
-//定义describe方法，作用是输出Person的信息
-String describe(Person p) {
+&#x2F;&#x2F;定义describe方法，作用是输出Person的信息
+String describe(Person p) &#123;
     &quot;$p.name is $p.age&quot;
-}
+&#125;
 
-//方法指针保存在action中
-def action = this.&amp;describe
-def list = [
+&#x2F;&#x2F;方法指针保存在action中
+def action &#x3D; this.&amp;describe
+def list &#x3D; [
     new Person(name: &#39;Bob&#39;,   age: 42),
     new Person(name: &#39;Julia&#39;, age: 35)]
-//把方法指针作为闭包传入方法
-assert transform(list, action) == [&#39;Bob is 42&#39;, &#39;Julia is 35&#39;]</code></pre>
+&#x2F;&#x2F;把方法指针作为闭包传入方法
+assert transform(list, action) &#x3D;&#x3D; [&#39;Bob is 42&#39;, &#39;Julia is 35&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>方法指针与接收者和方法名绑定。对于重载方法，在运行时Groovy会根据传参选择正确的方法。</p>
-<pre><code class="Groovy">def doSomething(String str) { str.toUpperCase() }
-def doSomething(Integer x) { 2*x }
-def reference = this.&amp;doSomething
-assert reference(&#39;foo&#39;) == &#39;FOO&#39;
-assert reference(123)   == 246</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def doSomething(String str) &#123; str.toUpperCase() &#125;
+def doSomething(Integer x) &#123; 2*x &#125;
+def reference &#x3D; this.&amp;doSomething
+assert reference(&#39;foo&#39;) &#x3D;&#x3D; &#39;FOO&#39;
+assert reference(123)   &#x3D;&#x3D; 246<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在Groovy3.0及以上，可以使用<code>new</code>作为一个方法名来指向一个构造函数。<br>例如:</p>
-<pre><code class="Groovy">def foo  = BigInteger.&amp;new
-def fortyTwo = foo(&#39;42&#39;)
-assert fortyTwo == 42G</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def foo  &#x3D; BigInteger.&amp;new
+def fortyTwo &#x3D; foo(&#39;42&#39;)
+assert fortyTwo &#x3D;&#x3D; 42G<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>在Groovy3.0及以上，可以使用方法指针指向一个类的实例方法，这个方法指针接收一个接收者类型的实例作为参数。例如:</p>
-<pre><code class="Groovy">def instanceMethod = String.&amp;toUpperCase // 指向实例方法的方法指针
-assert instanceMethod(&#39;foo&#39;) == &#39;FOO&#39; // 方法指针接收一个实例</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def instanceMethod &#x3D; String.&amp;toUpperCase &#x2F;&#x2F; 指向实例方法的方法指针
+assert instanceMethod(&#39;foo&#39;) &#x3D;&#x3D; &#39;FOO&#39; &#x2F;&#x2F; 方法指针接收一个实例<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>总结一下:</p>
 <ul>
 <li><p>方法指针可以指向一个具体实例的方法，例如</p>
-<pre><code class="Groovy">  def str = &#39;example of method reference&#39;
-  def fun = str.&amp;toUpperCase</code></pre>
-</li>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def str &#x3D; &#39;example of method reference&#39;
+def fun &#x3D; str.&amp;toUpperCase<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>方法指针可以指向当前脚本的方法，例如:</p>
-<pre><code class="Groovy">  String describe(Person p) {
-  &quot;$p.name is $p.age&quot;
-  }
-  def action = this.&amp;describe</code></pre>
-</li>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">String describe(Person p) &#123;
+&quot;$p.name is $p.age&quot;
+&#125;
+def action &#x3D; this.&amp;describe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>方法指针可以指向多个重载方法，在运行时根据传参选择正确的方法执行</p>
 </li>
 <li><p>方法指针可以使用<code>new</code>来指向一个构造方法</p>
@@ -691,113 +677,113 @@ assert instanceMethod(&#39;foo&#39;) == &#39;FOO&#39; // 方法指针接收一�
 </li>
 </ul>
 <h3 id="6-4-方法引用运算符"><a href="#6-4-方法引用运算符" class="headerlink" title="6.4.方法引用运算符"></a>6.4.方法引用运算符</h3><p>在Groovy 3.0及以上支持Java8以上的<code>::</code>运算符。</p>
-<pre><code class="vGroovy">import groovy.transform.CompileStatic
+<pre class="line-numbers language-vGroovy" data-language="vGroovy"><code class="language-vGroovy">import groovy.transform.CompileStatic
 import static java.util.stream.Collectors.toList
 
 @CompileStatic
-void methodRefs() {
-    assert 6G == [1G, 2G, 3G].stream().reduce(0G, BigInteger::add)
+void methodRefs() &#123;
+    assert 6G &#x3D;&#x3D; [1G, 2G, 3G].stream().reduce(0G, BigInteger::add)
 
-    assert [4G, 5G, 6G] == [1G, 2G, 3G].stream().map(3G::add).collect(toList())
+    assert [4G, 5G, 6G] &#x3D;&#x3D; [1G, 2G, 3G].stream().map(3G::add).collect(toList())
 
-    assert [1G, 2G, 3G] == [1L, 2L, 3L].stream().map(BigInteger::valueOf).collect(toList())  
+    assert [1G, 2G, 3G] &#x3D;&#x3D; [1L, 2L, 3L].stream().map(BigInteger::valueOf).collect(toList())  
 
-    assert [1G, 2G, 3G] == [1L, 2L, 3L].stream().map(3G::valueOf).collect(toList())
-}
+    assert [1G, 2G, 3G] &#x3D;&#x3D; [1L, 2L, 3L].stream().map(3G::valueOf).collect(toList())
+&#125;
 
-methodRefs()</code></pre>
-<pre><code class="Groovy">@CompileStatic
-void constructorRefs() {
-    assert [1, 2, 3] == [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;].stream().map(Integer::new).collect(toList())   // 使用类构造函数
+methodRefs()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">@CompileStatic
+void constructorRefs() &#123;
+    assert [1, 2, 3] &#x3D;&#x3D; [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;].stream().map(Integer::new).collect(toList())   &#x2F;&#x2F; 使用类构造函数
 
-    def result = [1, 2, 3].stream().toArray(Integer[]::new) // 使用数组构造函数
+    def result &#x3D; [1, 2, 3].stream().toArray(Integer[]::new) &#x2F;&#x2F; 使用数组构造函数
     assert result instanceof Integer[]
-    assert result.toString() == &#39;[1, 2, 3]&#39;
-}
+    assert result.toString() &#x3D;&#x3D; &#39;[1, 2, 3]&#39;
+&#125;
 
-constructorRefs()</code></pre>
+constructorRefs()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="7-正则表达式运算符"><a href="#7-正则表达式运算符" class="headerlink" title="7.正则表达式运算符"></a>7.正则表达式运算符</h2><h3 id="7-1-Pattern运算符"><a href="#7-1-Pattern运算符" class="headerlink" title="7.1.Pattern运算符"></a>7.1.Pattern运算符</h3><p>Groovy中使用<code>~</code>简化了创建<code>java.util.regex.Pattern</code>实例。</p>
-<pre><code class="Groovy">def p = ~/foo/
-assert p instanceof Pattern</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def p &#x3D; ~&#x2F;foo&#x2F;
+assert p instanceof Pattern<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><code>~</code>支持Groovy中的任意String类型:</p>
-<pre><code class="Groovy">    p = ~&#39;foo&#39;
-    p = ~&quot;foo&quot;
-    p = ~$/dollar/slashy $ string/$
-    p = ~&quot;${pattern}&quot;</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">p &#x3D; ~&#39;foo&#39;
+p &#x3D; ~&quot;foo&quot;
+p &#x3D; ~$&#x2F;dollar&#x2F;slashy $ string&#x2F;$
+p &#x3D; ~&quot;$&#123;pattern&#125;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="7-2-查找运算符"><a href="#7-2-查找运算符" class="headerlink" title="7.2.查找运算符"></a>7.2.查找运算符</h3><p>除了<code>~</code>方式，还可以使用<code>=~</code>运算符直接创建一个<code>java.util.regex.Matcher</code>实例。</p>
-<pre><code class="Groovy">def text = &quot;some text to match&quot;
-def m = text =~ /match/ // 使用=~右侧的正则表达式创建匹配
-assert m instanceof Matcher // 返回的类型是Matcher
-if (!m) { // 等效于if (!m.find(0))
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def text &#x3D; &quot;some text to match&quot;
+def m &#x3D; text &#x3D;~ &#x2F;match&#x2F; &#x2F;&#x2F; 使用&#x3D;~右侧的正则表达式创建匹配
+assert m instanceof Matcher &#x2F;&#x2F; 返回的类型是Matcher
+if (!m) &#123; &#x2F;&#x2F; 等效于if (!m.find(0))
     throw new RuntimeException(&quot;Oops, text not found!&quot;)
-}</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="7-3-匹配运算符"><a href="#7-3-匹配运算符" class="headerlink" title="7.3.匹配运算符"></a>7.3.匹配运算符</h3><p><code>==~</code>是Match.find的简单实用方式，它只返回布尔值。<code>==~</code>是严格匹配的。</p>
-<pre><code class="Groovy">m = text ==~ /match/
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">m &#x3D; text &#x3D;&#x3D;~ &#x2F;match&#x2F;
 assert m instanceof Boolean
-if (m) {
+if (m) &#123;
     throw new RuntimeException(&quot;Should not reach that point!&quot;)
-}</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="8-其他运算符"><a href="#8-其他运算符" class="headerlink" title="8.其他运算符"></a>8.其他运算符</h2><h3 id="8-1-扩展运算符"><a href="#8-1-扩展运算符" class="headerlink" title="8.1.扩展运算符"></a>8.1.扩展运算符</h3><p>扩展点运算符<code>*.</code>通常作用于集合对象。它会对集合的每一项都做同一运算并将结果保存在一个集合中。</p>
-<pre><code class="Groovy">class Car {
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">class Car &#123;
     String make
     String model
-}
-def cars = [
+&#125;
+def cars &#x3D; [
        new Car(make: &#39;Peugeot&#39;, model: &#39;508&#39;),
        new Car(make: &#39;Renault&#39;, model: &#39;Clio&#39;)]
-def makes = cars*.make //访问cars中的每一个元素的make
-assert makes == [&#39;Peugeot&#39;, &#39;Renault&#39;] //将cars中的每个元素的make字段值添加到列表中。</code></pre>
-<p>这里的<code>cars*.make</code>等同于<code>cars.collect{ it.make }</code>。当要访问聊表中元素的属性时，Groovy的GPath表示法允许使用这样的快捷方式来访问，它会自动扩展到每一个元素。<br>在上面的例子中使用<code>cars.make</code>也可以使用，但是更推荐显式地保留<code>*.</code>运算符。</p>
+def makes &#x3D; cars*.make &#x2F;&#x2F;访问cars中的每一个元素的make
+assert makes &#x3D;&#x3D; [&#39;Peugeot&#39;, &#39;Renault&#39;] &#x2F;&#x2F;将cars中的每个元素的make字段值添加到列表中。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里的<code>cars*.make</code>等同于<code>cars.collect&#123; it.make &#125;</code>。当要访问聊表中元素的属性时，Groovy的GPath表示法允许使用这样的快捷方式来访问，它会自动扩展到每一个元素。<br>在上面的例子中使用<code>cars.make</code>也可以使用，但是更推荐显式地保留<code>*.</code>运算符。</p>
 <p><code>*.</code>运算符是空安全的，对于空元素会返回<code>null</code>而不是空异常。</p>
 <p><code>*.</code>可以用于所有实现了<code>Iterable</code>的类。</p>
-<pre><code class="Groovy">class Component {
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">class Component &#123;
     Long id
     String name
-}
-class CompositeObject implements Iterable&lt;Component&gt; {
-    def components = [
+&#125;
+class CompositeObject implements Iterable&lt;Component&gt; &#123;
+    def components &#x3D; [
         new Component(id: 1, name: &#39;Foo&#39;),
         new Component(id: 2, name: &#39;Bar&#39;)]
 
     @Override
-    Iterator&lt;Component&gt; iterator() {
+    Iterator&lt;Component&gt; iterator() &#123;
         components.iterator()
-    }
-}
-def composite = new CompositeObject()
-assert composite*.id == [1,2]
-assert composite*.name == [&#39;Foo&#39;,&#39;Bar&#39;]</code></pre>
+    &#125;
+&#125;
+def composite &#x3D; new CompositeObject()
+assert composite*.id &#x3D;&#x3D; [1,2]
+assert composite*.name &#x3D;&#x3D; [&#39;Foo&#39;,&#39;Bar&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当数据包含了多层结构时，使用多次<code>*.</code>调用来访问数据。</p>
-<pre><code class="Groovy">class Make {
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">class Make &#123;
     String name
     List&lt;Model&gt; models
-}
+&#125;
 
 @Canonical
-class Model {
+class Model &#123;
     String name
-}
+&#125;
 
-def cars = [
+def cars &#x3D; [
     new Make(name: &#39;Peugeot&#39;,
              models: [new Model(&#39;408&#39;), new Model(&#39;508&#39;)]),
     new Make(name: &#39;Renault&#39;,
              models: [new Model(&#39;Clio&#39;), new Model(&#39;Captur&#39;)])
 ]
 
-def makes = cars*.name
-assert makes == [&#39;Peugeot&#39;, &#39;Renault&#39;]
+def makes &#x3D; cars*.name
+assert makes &#x3D;&#x3D; [&#39;Peugeot&#39;, &#39;Renault&#39;]
 
-def models = cars*.models*.name
-assert models == [[&#39;408&#39;, &#39;508&#39;], [&#39;Clio&#39;, &#39;Captur&#39;]]
-assert models.sum() == [&#39;408&#39;, &#39;508&#39;, &#39;Clio&#39;, &#39;Captur&#39;] // flatten one level
-assert models.flatten() == [&#39;408&#39;, &#39;508&#39;, &#39;Clio&#39;, &#39;Captur&#39;] // flatten all levels (one in this case)</code></pre>
+def models &#x3D; cars*.models*.name
+assert models &#x3D;&#x3D; [[&#39;408&#39;, &#39;508&#39;], [&#39;Clio&#39;, &#39;Captur&#39;]]
+assert models.sum() &#x3D;&#x3D; [&#39;408&#39;, &#39;508&#39;, &#39;Clio&#39;, &#39;Captur&#39;] &#x2F;&#x2F; flatten one level
+assert models.flatten() &#x3D;&#x3D; [&#39;408&#39;, &#39;508&#39;, &#39;Clio&#39;, &#39;Captur&#39;] &#x2F;&#x2F; flatten all levels (one in this case)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>也可以使用<code>collectNested</code>方法来获取所有元素的属性。</p>
-<pre><code class="Groovy">class Car {
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">class Car &#123;
     String make
     String model
-}
-def cars = [
+&#125;
+def cars &#x3D; [
    [
        new Car(make: &#39;Peugeot&#39;, model: &#39;408&#39;),
        new Car(make: &#39;Peugeot&#39;, model: &#39;508&#39;)
@@ -806,139 +792,139 @@ def cars = [
        new Car(make: &#39;Renault&#39;, model: &#39;Captur&#39;)
    ]
 ]
-def models = cars.collectNested{ it.model }
-assert models == [[&#39;408&#39;, &#39;508&#39;], [&#39;Clio&#39;, &#39;Captur&#39;]]</code></pre>
+def models &#x3D; cars.collectNested&#123; it.model &#125;
+assert models &#x3D;&#x3D; [[&#39;408&#39;, &#39;508&#39;], [&#39;Clio&#39;, &#39;Captur&#39;]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="8-1-1-扩展方法参数"><a href="#8-1-1-扩展方法参数" class="headerlink" title="8.1.1.扩展方法参数"></a>8.1.1.扩展方法参数</h4><p>当方法传参于列表的各项一一对应时，可以使用扩展方法参数的方式调用方法，而不需要从列表中逐个取出参数传入方法。</p>
-<pre><code class="Groovy">int function(int x, int y, int z){
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">int function(int x, int y, int z)&#123;
     x * y + z
-}
-def args = [4, 5, 6]
-assert function(*args) == 26</code></pre>
+&#125;
+def args &#x3D; [4, 5, 6]
+assert function(*args) &#x3D;&#x3D; 26<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>另外可以将正常参数和扩展参数混合使用:</p>
-<pre><code class="Groovy">args = [4]
-assert function(*args, 5, 6) == 26</code></pre>
-<h4 id="8-1-2-扩展列表"><a href="#8-1-2-扩展列表" class="headerlink" title="8.1.2.扩展列表"></a>8.1.2.扩展列表</h4><pre><code class="Groovy">def items = [4, 5]
-def list = [1, 2, 3, *items, 6]
-assert list == [1, 2, 3, 4, 5, 6]</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">args &#x3D; [4]
+assert function(*args, 5, 6) &#x3D;&#x3D; 26<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="8-1-2-扩展列表"><a href="#8-1-2-扩展列表" class="headerlink" title="8.1.2.扩展列表"></a>8.1.2.扩展列表</h4><pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def items &#x3D; [4, 5]
+def list &#x3D; [1, 2, 3, *items, 6]
+assert list &#x3D;&#x3D; [1, 2, 3, 4, 5, 6]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h4 id="8-1-3-扩展map"><a href="#8-1-3-扩展map" class="headerlink" title="8.1.3.扩展map"></a>8.1.3.扩展map</h4><p>使用<code>*:</code>的方式将一个map内联到另一个map内。</p>
-<pre><code class="Groovy">def m1 = [c:3, d:4]
-def map = [a:1, b:2, *:m1]
-assert map == [a:1, b:2, c:3, d:4]</code></pre>
-<pre><code class="Groovy">def m1 = [c:3, d:4]
-def map = [a:1, b:2, *:m1, d: 8]
-assert map == [a:1, b:2, c:3, d:8]</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def m1 &#x3D; [c:3, d:4]
+def map &#x3D; [a:1, b:2, *:m1]
+assert map &#x3D;&#x3D; [a:1, b:2, c:3, d:4]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def m1 &#x3D; [c:3, d:4]
+def map &#x3D; [a:1, b:2, *:m1, d: 8]
+assert map &#x3D;&#x3D; [a:1, b:2, c:3, d:8]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>由<code>*:</code>方式内联进来的元素支持被覆盖。</p>
 <h3 id="8-2-范围运算符"><a href="#8-2-范围运算符" class="headerlink" title="8.2.范围运算符"></a>8.2.范围运算符</h3><p>Groovy支持使用<code>..</code>来创建一个Range</p>
-<pre><code class="Groovy">def range = 0..5 // 从0到5的列表
-assert (0..5).collect() == [0, 1, 2, 3, 4, 5]
-assert (0..&lt;5).collect() == [0, 1, 2, 3, 4] // 从0到4的列表
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def range &#x3D; 0..5 &#x2F;&#x2F; 从0到5的列表
+assert (0..5).collect() &#x3D;&#x3D; [0, 1, 2, 3, 4, 5]
+assert (0..&lt;5).collect() &#x3D;&#x3D; [0, 1, 2, 3, 4] &#x2F;&#x2F; 从0到4的列表
 assert (0..5) instanceof List
-assert (0..5).size() == 6</code></pre>
+assert (0..5).size() &#x3D;&#x3D; 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>任何可比较对象都可以使用<code>..</code></p>
 <h3 id="8-3-Spaceship运算符"><a href="#8-3-Spaceship运算符" class="headerlink" title="8.3.Spaceship运算符"></a>8.3.Spaceship运算符</h3><p><code>&lt;=&gt;</code>是对<code>compareTo</code>方法的代理</p>
-<pre><code class="Groovy">assert (1 &lt;=&gt; 1) == 0
-assert (1 &lt;=&gt; 2) == -1
-assert (2 &lt;=&gt; 1) == 1
-assert (&#39;a&#39; &lt;=&gt; &#39;z&#39;) == -1</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">assert (1 &lt;&#x3D;&gt; 1) &#x3D;&#x3D; 0
+assert (1 &lt;&#x3D;&gt; 2) &#x3D;&#x3D; -1
+assert (2 &lt;&#x3D;&gt; 1) &#x3D;&#x3D; 1
+assert (&#39;a&#39; &lt;&#x3D;&gt; &#39;z&#39;) &#x3D;&#x3D; -1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="8-4-下标运算符"><a href="#8-4-下标运算符" class="headerlink" title="8.4.下标运算符"></a>8.4.下标运算符</h3><p><code>[]</code>是<code>getAt</code>和<code>putAt</code>的简写，取决于在赋值符号的左边还是右边调用。</p>
-<pre><code class="Groovy">def list = [0,1,2,3,4]
-assert list[2] == 2
-list[2] = 4
-assert list[0..2] == [0,1,4]
-list[0..2] = [6,6,6]
-assert list == [6,6,6,3,4]</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def list &#x3D; [0,1,2,3,4]
+assert list[2] &#x3D;&#x3D; 2
+list[2] &#x3D; 4
+assert list[0..2] &#x3D;&#x3D; [0,1,4]
+list[0..2] &#x3D; [6,6,6]
+assert list &#x3D;&#x3D; [6,6,6,3,4]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>重写类的<code>getAt</code>和<code>putAt</code>方法，可以使用下标来访问属性。</p>
-<pre><code class="Groovy">class User {
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">class User &#123;
     Long id
     String name
-    def getAt(int i) {
-        switch (i) {
+    def getAt(int i) &#123;
+        switch (i) &#123;
             case 0: return id
             case 1: return name
-        }
+        &#125;
         throw new IllegalArgumentException(&quot;No such element $i&quot;)
-    }
-    void putAt(int i, def value) {
-        switch (i) {
-            case 0: id = value; return
-            case 1: name = value; return
-        }
+    &#125;
+    void putAt(int i, def value) &#123;
+        switch (i) &#123;
+            case 0: id &#x3D; value; return
+            case 1: name &#x3D; value; return
+        &#125;
         throw new IllegalArgumentException(&quot;No such element $i&quot;)
-    }
-}
-def user = new User(id: 1, name: &#39;Alex&#39;)
-assert user[0] == 1
-assert user[1] == &#39;Alex&#39;
-user[1] = &#39;Bob&#39;
-assert user.name == &#39;Bob&#39;</code></pre>
+    &#125;
+&#125;
+def user &#x3D; new User(id: 1, name: &#39;Alex&#39;)
+assert user[0] &#x3D;&#x3D; 1
+assert user[1] &#x3D;&#x3D; &#39;Alex&#39;
+user[1] &#x3D; &#39;Bob&#39;
+assert user.name &#x3D;&#x3D; &#39;Bob&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="8-5-安全索引运算符"><a href="#8-5-安全索引运算符" class="headerlink" title="8.5.安全索引运算符"></a>8.5.安全索引运算符</h3><p>Groovy3.0引入了安全索引运算符:<code>?[]</code>, 和<code>?.</code>相似。</p>
-<pre><code class="Groovy">String[] array = [&#39;a&#39;, &#39;b&#39;]
-assert &#39;b&#39; == array?[1]      // get using normal array index
-array?[1] = &#39;c&#39;              // set using normal array index
-assert &#39;c&#39; == array?[1]
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">String[] array &#x3D; [&#39;a&#39;, &#39;b&#39;]
+assert &#39;b&#39; &#x3D;&#x3D; array?[1]      &#x2F;&#x2F; get using normal array index
+array?[1] &#x3D; &#39;c&#39;              &#x2F;&#x2F; set using normal array index
+assert &#39;c&#39; &#x3D;&#x3D; array?[1]
 
-array = null
-assert null == array?[1]     // return null for all index values
-array?[1] = &#39;c&#39;              // quietly ignore attempt to set value
-assert null == array?[1]
+array &#x3D; null
+assert null &#x3D;&#x3D; array?[1]     &#x2F;&#x2F; return null for all index values
+array?[1] &#x3D; &#39;c&#39;              &#x2F;&#x2F; quietly ignore attempt to set value
+assert null &#x3D;&#x3D; array?[1]
 
-def personInfo = [name: &#39;Daniel.Sun&#39;, location: &#39;Shanghai&#39;]
-assert &#39;Daniel.Sun&#39; == personInfo?[&#39;name&#39;]      // get using normal map index
-personInfo?[&#39;name&#39;] = &#39;sunlan&#39;                  // set using normal map index
-assert &#39;sunlan&#39; == personInfo?[&#39;name&#39;]
+def personInfo &#x3D; [name: &#39;Daniel.Sun&#39;, location: &#39;Shanghai&#39;]
+assert &#39;Daniel.Sun&#39; &#x3D;&#x3D; personInfo?[&#39;name&#39;]      &#x2F;&#x2F; get using normal map index
+personInfo?[&#39;name&#39;] &#x3D; &#39;sunlan&#39;                  &#x2F;&#x2F; set using normal map index
+assert &#39;sunlan&#39; &#x3D;&#x3D; personInfo?[&#39;name&#39;]
 
-personInfo = null
-assert null == personInfo?[&#39;name&#39;]              // return null for all map values
-personInfo?[&#39;name&#39;] = &#39;sunlan&#39;                  // quietly ignore attempt to set value
-assert null == personInfo?[&#39;name&#39;]</code></pre>
+personInfo &#x3D; null
+assert null &#x3D;&#x3D; personInfo?[&#39;name&#39;]              &#x2F;&#x2F; return null for all map values
+personInfo?[&#39;name&#39;] &#x3D; &#39;sunlan&#39;                  &#x2F;&#x2F; quietly ignore attempt to set value
+assert null &#x3D;&#x3D; personInfo?[&#39;name&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="8-6-成员运算符"><a href="#8-6-成员运算符" class="headerlink" title="8.6.成员运算符"></a>8.6.成员运算符</h3><p>成员运算符<code>in</code>可以判断该列表中是否包含该值。等同于<code>isCase</code>和列表的<code>contais</code>方法。</p>
-<pre><code class="Groovy">def list = [&#39;Grace&#39;,&#39;Rob&#39;,&#39;Emmy&#39;]
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def list &#x3D; [&#39;Grace&#39;,&#39;Rob&#39;,&#39;Emmy&#39;]
 assert (&#39;Emmy&#39; in list)
 assert list.isCase(&#39;Emmy&#39;)
-assert list.contains(&#39;Emmy&#39;)</code></pre>
+assert list.contains(&#39;Emmy&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="8-7-相等运算符"><a href="#8-7-相等运算符" class="headerlink" title="8.7.相等运算符"></a>8.7.相等运算符</h3><p>在Groovy使用<code>==</code>判断是否相等和Java中不同，使用<code>==</code>实际是调用了实例的<code>equals</code>方法。<br>如果需要判断是否为相同引用，应该使用<code>is</code>。</p>
-<pre><code class="Groovy">def list1 = [&#39;Groovy 1.8&#39;,&#39;Groovy 2.0&#39;,&#39;Groovy 2.3&#39;]
-def list2 = [&#39;Groovy 1.8&#39;,&#39;Groovy 2.0&#39;,&#39;Groovy 2.3&#39;]
-assert list1 == list2
-assert !list1.is(list2)</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">def list1 &#x3D; [&#39;Groovy 1.8&#39;,&#39;Groovy 2.0&#39;,&#39;Groovy 2.3&#39;]
+def list2 &#x3D; [&#39;Groovy 1.8&#39;,&#39;Groovy 2.0&#39;,&#39;Groovy 2.3&#39;]
+assert list1 &#x3D;&#x3D; list2
+assert !list1.is(list2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="8-8-强转运算符"><a href="#8-8-强转运算符" class="headerlink" title="8.8.强转运算符"></a>8.8.强转运算符</h3><p>强转运算符<code>as</code>是类型强转的变体，但不同于类型强转。</p>
-<pre><code class="Groovy">Integer x = 123
-String s = (String) x // Integer不能强转成String，会抛出ClassCastException</code></pre>
-<pre><code class="Groovy">Integer x = 123
-String s = x as String
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">Integer x &#x3D; 123
+String s &#x3D; (String) x &#x2F;&#x2F; Integer不能强转成String，会抛出ClassCastException<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">Integer x &#x3D; 123
+String s &#x3D; x as String
 println s
-assert &quot;123&quot; == s // 使用as成功把Integer转换成了String</code></pre>
+assert &quot;123&quot; &#x3D;&#x3D; s &#x2F;&#x2F; 使用as成功把Integer转换成了String<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当对象被强制转换为另一个对象时，除非目标类型与源类型相同，否则强制将返回一个新对象。强制规则因源类型和目标类型而异，如果未找到转换规则，则强制可能会失败。自定义转换规则可以由asType方法实现:</p>
-<pre><code class="Groovy">class Identifiable {
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">class Identifiable &#123;
     String name
-}
-class User {
+&#125;
+class User &#123;
     Long id
     String name
-    def asType(Class target) {
-        if (target == Identifiable) {
+    def asType(Class target) &#123;
+        if (target &#x3D;&#x3D; Identifiable) &#123;
             return new Identifiable(name: name)
-        }
+        &#125;
         throw new ClassCastException(&quot;User cannot be coerced into $target&quot;)
-    }
-}
-def u = new User(name: &#39;Xavier&#39;)
-def p = u as Identifiable
+    &#125;
+&#125;
+def u &#x3D; new User(name: &#39;Xavier&#39;)
+def p &#x3D; u as Identifiable
 assert p instanceof Identifiable
-assert !(p instanceof User)</code></pre>
+assert !(p instanceof User)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="8-9-尖括号运算符"><a href="#8-9-尖括号运算符" class="headerlink" title="8.9.尖括号运算符"></a>8.9.尖括号运算符</h3><p>尖括号运算符<code>&lt;&gt;</code>是仅添加语法的糖运算符，以支持与Java 7中同名运算符的兼容性。它用于指示应从声明中推断出泛型类型：</p>
-<pre><code class="Groovy">List&lt;String&gt; strings = new LinkedList&lt;&gt;()</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">List&lt;String&gt; strings &#x3D; new LinkedList&lt;&gt;()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在动态Groovy中，这是完全未使用的。 在静态类型检查的Groovy中，它也是可选的，因为Groovy类型检查器会执行类型推断，无论是否存在此运算符。</p>
 <h3 id="8-10-Call运算符"><a href="#8-10-Call运算符" class="headerlink" title="8.10.Call运算符"></a>8.10.Call运算符</h3><p><code>()</code>运算符是隐式地调用<code>call</code>方法。对于任意定义了<code>call</code>方法的对象，可以省略<code>.call</code>的部分，而直接使用Call运算符。</p>
-<pre><code class="Groovy">class MyCallable {
-    int call(int x) { // 在MyCallable中定义了call方法
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">class MyCallable &#123;
+    int call(int x) &#123; &#x2F;&#x2F; 在MyCallable中定义了call方法
         2*x
-    }
-}
+    &#125;
+&#125;
 
-def mc = new MyCallable()
-assert mc.call(2) == 4 // 使用传统的调用方式调用call方法
-assert mc(2) == 4 // 省略.call直接使用()运算符</code></pre>
+def mc &#x3D; new MyCallable()
+assert mc.call(2) &#x3D;&#x3D; 4 &#x2F;&#x2F; 使用传统的调用方式调用call方法
+assert mc(2) &#x3D;&#x3D; 4 &#x2F;&#x2F; 省略.call直接使用()运算符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="9-运算符优先级"><a href="#9-运算符优先级" class="headerlink" title="9.运算符优先级"></a>9.运算符优先级</h2><p>下面列出了Groovy 操作符的优先级</p>
 <table>
 <thead>
@@ -955,7 +941,7 @@ assert mc(2) == 4 // 省略.call直接使用()运算符</code></pre>
 </tr>
 <tr>
 <td align="left"></td>
-<td align="left"><code>()</code>  <code>{}</code>  <code>[]</code></td>
+<td align="left"><code>()</code>  <code>&#123;&#125;</code>  <code>[]</code></td>
 <td align="left">method call, closure, literal list/map</td>
 </tr>
 <tr>
@@ -1060,19 +1046,19 @@ assert mc(2) == 4 // 省略.call直接使用()运算符</code></pre>
 </tr>
 </tbody></table>
 <h2 id="10-运算符重载"><a href="#10-运算符重载" class="headerlink" title="10.运算符重载"></a>10.运算符重载</h2><p>Groovy允许多种运算符的重载。</p>
-<pre><code class="Groovy">class Bucket {
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">class Bucket &#123;
     int size
 
-    Bucket(int size) { this.size = size }
+    Bucket(int size) &#123; this.size &#x3D; size &#125;
 
-    Bucket plus(Bucket other) { // Bucket实现了一个plus方法
+    Bucket plus(Bucket other) &#123; &#x2F;&#x2F; Bucket实现了一个plus方法
         return new Bucket(this.size + other.size)
-    }
-}
+    &#125;
+&#125;
 
-def b1 = new Bucket(4)
-def b2 = new Bucket(11)
-assert (b1 + b2).size == 15 // 因为实现了plus方法，所以可以使用+运算符</code></pre>
+def b1 &#x3D; new Bucket(4)
+def b2 &#x3D; new Bucket(11)
+assert (b1 + b2).size &#x3D;&#x3D; 15 &#x2F;&#x2F; 因为实现了plus方法，所以可以使用+运算符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>下面是运算符及其对应方法的完整列表:</p>
 <table>
 <thead>
@@ -1151,6 +1137,7 @@ assert (b1 + b2).size == 15 // 因为实现了plus方法，所以可以使用+�
 </tr>
 </tbody></table>
 
+                
             </div>
             <hr/>
 
@@ -1165,7 +1152,7 @@ assert (b1 + b2).size == 15 // 因为实现了plus方法，所以可以使用+�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                    <a href="../../../../../../about" rel="external nofollow noreferrer">suifeng</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -1188,7 +1175,7 @@ assert (b1 + b2).size == 15 // 因为实现了plus方法，所以可以使用+�
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    <a href="../../../../../../about" target="_blank">suifeng</a>
                     !
                 </span>
             </div>
@@ -1225,13 +1212,12 @@ assert (b1 + b2).size == 15 // 因为实现了plus方法，所以可以使用+�
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
+                    <link rel="stylesheet" type="text/css" href="../../../../../../libs/share/css/share.min.css">
 <div id="article-share">
-    
+
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <script src="../../../../../../libs/share/js/social-share.min.js"></script>
     
 
     
@@ -1349,10 +1335,10 @@ assert (b1 + b2).size == 15 // 因为实现了plus方法，所以可以使用+�
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="../../../../../../medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="../../../../../../medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1365,9 +1351,14 @@ assert (b1 + b2).size == 15 // 因为实现了plus方法，所以可以使用+�
         $('.tabs').tabs();
     });
 </script>
+
             
         </div>
     </div>
+
+    
+
+    
 
     
 
@@ -1392,7 +1383,7 @@ assert (b1 + b2).size == 15 // 因为实现了plus方法，所以可以使用+�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Groovy 程序结构">
+                        <img src="../../../../../../medias/featureimages/17.jpg" class="responsive-img" alt="Groovy 程序结构">
                         
                         <span class="card-title">Groovy 程序结构</span>
                     </div>
@@ -1400,12 +1391,7 @@ assert (b1 + b2).size == 15 // 因为实现了plus方法，所以可以使用+�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Groovy 程序结构本篇是程序结构的阅读笔记。
-1.包名包名和Java相同
-2.Import2.1.默认导入Groovy默认导入了
-import java.lang.*
-import java.util.*
-import java.io.
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1450,7 +1436,7 @@ import java.io.
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="../../../../../../medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
                         <span class="card-title">Hello World</span>
                     </div>
@@ -1458,7 +1444,7 @@ import java.io.
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1483,72 +1469,28 @@ import java.io.
 </div>
 
 
-<script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
-
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
-
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
-
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
-
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: Suifeng Blog<br />'
-            + '文章作者: suifeng<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
-
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
-</script>
-
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeLang.js"></script>
 
-    
+
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeShrink.js"></script>
 
-
-<!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -1564,14 +1506,14 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="../../../../../../libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
+            collapseDepth: Number('0'),
             headingSelector: 'h1, h2, h3, h4'
         });
 
@@ -1639,24 +1581,30 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         
     });
 </script>
+
     
 
 </main>
 
 
 
+
     <footer class="page-footer bg-color">
-    <div class="container row center-align">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">年份</span>
-            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            
+                <span id="year">2019-2020</span>
+            
+            <span id="year">2019</span>
+            <a href="../../../../../../about" target="_blank">suifeng</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.2k</span>&nbsp;
+                class="white-color">41.4k</span>&nbsp;字
             
             
             
@@ -1677,16 +1625,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             <span id="sitetime">载入运行时间...</span>
-            <script src="/js/prettify.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    $('pre').addClass('prettyprint linenums');
-                    prettyPrint();
-                })
-            </script>
             <script>
                 function siteTime() {
-                    window.setTimeout("siteTime()", 1000);
                     var seconds = 1000;
                     var minutes = seconds * 60;
                     var hours = minutes * 60;
@@ -1773,12 +1713,98 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('../../../../../../search.xml', 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1787,15 +1813,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <script src="../../../../../../libs/materialize/materialize.min.js"></script>
+    <script src="../../../../../../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../../../../../libs/aos/aos.js"></script>
+    <script src="../../../../../../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../../../../../../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../../../../../../js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1817,7 +1840,14 @@ $(function () {
 
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="../../../../../../libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
     
 
     
@@ -1825,17 +1855,9 @@ $(function () {
     
 
     
-
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    <script src="../../../../../../libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+  MathJax.Hub.Config({{ JSON.stringify(config) }});
 </script>
 
 <script type="text/x-mathjax-config">
@@ -1847,7 +1869,7 @@ $(function () {
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/javascript" src="{{ src }}">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

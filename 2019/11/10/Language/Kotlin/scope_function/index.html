@@ -2,12 +2,10 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="kotlin的作用域函数[译], Suifeng Blog">
-    <meta name="description" content="Kotlin的作用域函数[译]Kotlin的作用域函数的介绍本文时对kotlin官方文档的翻译，文档地址
-
-The Kotlin standard library contains several functions whose sole ">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,33 +13,35 @@ The Kotlin standard library contains several functions whose sole ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>kotlin的作用域函数[译] | Suifeng Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-	<style> 
-		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
-		{ list-style-type: decimal !important }
-	</style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</head>
+
+    <title>kotlin的作用域函数[译] | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="../../../../../../favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/my.css">
+
+    <script src="../../../../../../libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
 
 
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="../../../../../../index.html" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="../../../../../../medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Suifeng Blog</span>
                 </a>
@@ -53,7 +53,7 @@ The Kotlin standard library contains several functions whose sole ">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/" class="waves-effect waves-light">
+    <a href="../../../../../../index.html" class="waves-effect waves-light">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
@@ -64,7 +64,7 @@ The Kotlin standard library contains several functions whose sole ">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
+    <a href="../../../../../../tags" class="waves-effect waves-light">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
@@ -75,7 +75,7 @@ The Kotlin standard library contains several functions whose sole ">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/categories" class="waves-effect waves-light">
+    <a href="../../../../../../categories" class="waves-effect waves-light">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
@@ -86,7 +86,7 @@ The Kotlin standard library contains several functions whose sole ">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/archives" class="waves-effect waves-light">
+    <a href="../../../../../../archives" class="waves-effect waves-light">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
@@ -97,7 +97,7 @@ The Kotlin standard library contains several functions whose sole ">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
+    <a href="../../../../../../about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
@@ -108,7 +108,7 @@ The Kotlin standard library contains several functions whose sole ">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
+    <a href="../../../../../../contact" class="waves-effect waves-light">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
@@ -124,11 +124,12 @@ The Kotlin standard library contains several functions whose sole ">
   </li>
 </ul>
 
+
 <div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="../../../../../../medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Suifeng Blog</div>
         <div class="logo-desc">
@@ -144,7 +145,7 @@ The Kotlin standard library contains several functions whose sole ">
         
         <li class="m-nav-item">
 	  
-		<a href="/" class="waves-effect waves-light">
+		<a href="../../../../../../index.html" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
@@ -155,7 +156,7 @@ The Kotlin standard library contains several functions whose sole ">
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="../../../../../../tags" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
@@ -166,7 +167,7 @@ The Kotlin standard library contains several functions whose sole ">
         
         <li class="m-nav-item">
 	  
-		<a href="/categories" class="waves-effect waves-light">
+		<a href="../../../../../../categories" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
@@ -177,7 +178,7 @@ The Kotlin standard library contains several functions whose sole ">
         
         <li class="m-nav-item">
 	  
-		<a href="/archives" class="waves-effect waves-light">
+		<a href="../../../../../../archives" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
@@ -188,7 +189,7 @@ The Kotlin standard library contains several functions whose sole ">
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
+		<a href="../../../../../../about" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
@@ -199,11 +200,11 @@ The Kotlin standard library contains several functions whose sole ">
         
         <li class="m-nav-item">
 	  
-		<a href="/contact" class="waves-effect waves-light">
+		<a href="../../../../../../contact" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -218,6 +219,7 @@ The Kotlin standard library contains several functions whose sole ">
         
     </ul>
 </div>
+
 
         </div>
 
@@ -286,14 +288,12 @@ The Kotlin standard library contains several functions whose sole ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('../../../../../../medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="description center-align post-title">
-                        kotlin的作用域函数[译]
-                    </div>
+                    <h1 class="description center-align post-title">kotlin的作用域函数[译]</h1>
                 </div>
             </div>
         </div>
@@ -302,10 +302,11 @@ The Kotlin standard library contains several functions whose sole ">
 
 
 
+
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="../../../../../../libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -330,12 +331,12 @@ The Kotlin standard library contains several functions whose sole ">
     }
 
     .toc-widget {
+        width: 345px;
         padding-left: 20px;
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -344,6 +345,11 @@ The Kotlin standard library contains several functions whose sole ">
     .toc-widget ol {
         padding: 0;
         list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
     }
 
     #toc-content ol {
@@ -363,14 +369,14 @@ The Kotlin standard library contains several functions whose sole ">
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
     }
 
     #toc-content .is-active-link {
         color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -455,27 +461,24 @@ The Kotlin standard library contains several functions whose sole ">
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    25 分
-                </div>
+
                 
-				
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
-            
         </div>
         <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="../../../../../../libs/prism/prism.css">
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Kotlin的作用域函数-译"><a href="#Kotlin的作用域函数-译" class="headerlink" title="Kotlin的作用域函数[译]"></a>Kotlin的作用域函数[译]</h1><h2 id="Kotlin的作用域函数的介绍"><a href="#Kotlin的作用域函数的介绍" class="headerlink" title="Kotlin的作用域函数的介绍"></a>Kotlin的作用域函数的介绍</h2><p>本文时对kotlin官方文档的翻译，<a href="https://www.kotlincn.net/docs/reference/scope-functions.html#scope-functions" target="_blank" rel="noopener">文档地址</a></p>
+                <h1 id="Kotlin的作用域函数-译"><a href="#Kotlin的作用域函数-译" class="headerlink" title="Kotlin的作用域函数[译]"></a>Kotlin的作用域函数[译]</h1><h2 id="Kotlin的作用域函数的介绍"><a href="#Kotlin的作用域函数的介绍" class="headerlink" title="Kotlin的作用域函数的介绍"></a>Kotlin的作用域函数的介绍</h2><p>本文时对kotlin官方文档的翻译，<a target="_blank" rel="noopener" href="https://www.kotlincn.net/docs/reference/scope-functions.html#scope-functions">文档地址</a></p>
 <blockquote>
-<p>The Kotlin standard library contains several functions whose sole purpose is to execute a block of code within the context of an object. When you call such a function on an object with a <a href="https://www.kotlincn.net/docs/reference/lambdas.html" target="_blank" rel="noopener">lambda expression</a> provided, it forms a temporary scope. In this scope, you can access the object without its name. Such functions are called <em>scope functions</em>. There are five of them: <code>let</code>, <code>run</code>, <code>with</code>, <code>apply</code>, and <code>also</code> .</p>
+<p>The Kotlin standard library contains several functions whose sole purpose is to execute a block of code within the context of an object. When you call such a function on an object with a <a target="_blank" rel="noopener" href="https://www.kotlincn.net/docs/reference/lambdas.html">lambda expression</a> provided, it forms a temporary scope. In this scope, you can access the object without its name. Such functions are called <em>scope functions</em>. There are five of them: <code>let</code>, <code>run</code>, <code>with</code>, <code>apply</code>, and <code>also</code> .</p>
 <p>Basically, these functions do the same: execute a block of code on an object. What’s different is how this object becomes available inside the block and what is the result of the whole expression.</p>
 </blockquote>
 <p>kotlin的官方标准库包含了几个函数，这些函数的作用是在对象的上下文内部执行代码块。当你在提供了lambda表达式的对象中调用这些方法时，这将形成一个临时的作用域。在这个作用域中，你可以访问当前对象而不使用它的变量名。这些方法被称为作用域函数。这里共有5个作用域函数，分别为：<code>let</code>,<code>run</code>,<code>with</code>,<code>apply</code>,<code>also</code>。</p>
@@ -484,39 +487,39 @@ The Kotlin standard library contains several functions whose sole ">
 <p>Here’s a typical usage of a scope function:</p>
 </blockquote>
 <p>这里是一个典型的作用域函数使用方式：</p>
-<pre><code class="kotlin">data class Person(var name: String, var age: Int, var city: String) {
-    fun moveTo(newCity: String) { city = newCity }
-    fun incrementAge() { age++ }
-}
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token keyword">var</span> name<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">var</span> age<span class="token operator">:</span> Int<span class="token punctuation">,</span> <span class="token keyword">var</span> city<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">fun</span> <span class="token function">moveTo</span><span class="token punctuation">(</span>newCity<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> city <span class="token operator">=</span> newCity <span class="token punctuation">&#125;</span>
+    <span class="token keyword">fun</span> <span class="token function">incrementAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> age<span class="token operator">++</span> <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-fun main() {
-    //sampleStart
-    Person(&quot;Alice&quot;, 20, &quot;Amsterdam&quot;).let {
-        println(it)
-        it.moveTo(&quot;London&quot;)
-        it.incrementAge()
-        println(it)
-    }
-    //sampleEnd
-}</code></pre>
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token function">Person</span><span class="token punctuation">(</span><span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">"Amsterdam"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">let</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span>
+        it<span class="token punctuation">.</span><span class="token function">moveTo</span><span class="token punctuation">(</span><span class="token string">"London"</span><span class="token punctuation">)</span>
+        it<span class="token punctuation">.</span><span class="token function">incrementAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>If you write the same without <code>let</code>, you’ll have to introduce a new variable and repeat its name whenever you use it.</p>
 </blockquote>
 <p>如果你不使用<code>let</code>这个作用域函数，你需要定义一个变量并且在每个使用到的地方重复它的名字。</p>
-<pre><code class="kotlin">data class Person(var name: String, var age: Int, var city: String) {
-    fun moveTo(newCity: String) { city = newCity }
-    fun incrementAge() { age++ }
-}
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token keyword">var</span> name<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">var</span> age<span class="token operator">:</span> Int<span class="token punctuation">,</span> <span class="token keyword">var</span> city<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">fun</span> <span class="token function">moveTo</span><span class="token punctuation">(</span>newCity<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> city <span class="token operator">=</span> newCity <span class="token punctuation">&#125;</span>
+    <span class="token keyword">fun</span> <span class="token function">incrementAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> age<span class="token operator">++</span> <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-fun main() {
-    //sampleStart
-    val alice = Person(&quot;Alice&quot;, 20, &quot;Amsterdam&quot;)
-    println(alice)
-    alice.moveTo(&quot;London&quot;)
-    alice.incrementAge()
-    println(alice)
-    //sampleEnd
-}</code></pre>
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> alice <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">"Amsterdam"</span><span class="token punctuation">)</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>alice<span class="token punctuation">)</span>
+    alice<span class="token punctuation">.</span><span class="token function">moveTo</span><span class="token punctuation">(</span><span class="token string">"London"</span><span class="token punctuation">)</span>
+    alice<span class="token punctuation">.</span><span class="token function">incrementAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>alice<span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>The scope functions do not introduce any new technical capabilities, but they can make your code more concise and readable.</p>
 </blockquote>
@@ -540,78 +543,78 @@ fun main() {
 </li>
 </ul>
 <h3 id="上下文对象是this还是it"><a href="#上下文对象是this还是it" class="headerlink" title="上下文对象是this还是it"></a>上下文对象是this还是it</h3><blockquote>
-<p>Inside the lambda of a scope function, the context object is available by a short reference instead of its actual name. Each scope function uses one of two ways to access the context object: as a <a href="https://www.kotlincn.net/docs/reference/lambdas.html#%E5%B8%A6%E6%9C%89%E6%8E%A5%E6%94%B6%E8%80%85%E7%9A%84%E5%87%BD%E6%95%B0%E5%AD%97%E9%9D%A2%E5%80%BC" target="_blank" rel="noopener">lambda receiver</a> (<code>this</code>) or as a lambda argument (<code>it</code>). Both provide the same capabilities, so we’ll describe the pros and cons of each for different cases and provide recommendations on their use.</p>
+<p>Inside the lambda of a scope function, the context object is available by a short reference instead of its actual name. Each scope function uses one of two ways to access the context object: as a <a target="_blank" rel="noopener" href="https://www.kotlincn.net/docs/reference/lambdas.html#%E5%B8%A6%E6%9C%89%E6%8E%A5%E6%94%B6%E8%80%85%E7%9A%84%E5%87%BD%E6%95%B0%E5%AD%97%E9%9D%A2%E5%80%BC">lambda receiver</a> (<code>this</code>) or as a lambda argument (<code>it</code>). Both provide the same capabilities, so we’ll describe the pros and cons of each for different cases and provide recommendations on their use.</p>
 </blockquote>
 <p>在作用域函数的lambda表达式中，上下文对象可以使用短引用的方式替代变量的真实名称。每个作用域函数使用两种访问上下文对象的方式之一：作为lambda接收者(<code>this</code>)或者作为lambda参数(<code>it</code>)。两者提供了相同的功能，所以我们将描述每一个案例下的优缺点并且提供推荐的用法。</p>
-<pre><code class="kotlin">fun main() {
-    val str = &quot;Hello&quot;
-    // this
-    str.run {
-        println(&quot;The receiver string length: $length&quot;)
-        //println(&quot;The receiver string length: ${this.length}&quot;) // does the same
-    }
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">val</span> str <span class="token operator">=</span> <span class="token string">"Hello"</span>
+    <span class="token comment">// this</span>
+    str<span class="token punctuation">.</span><span class="token function">run</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The receiver string length: <span class="token interpolation variable">$length</span>"</span><span class="token punctuation">)</span>
+        <span class="token comment">//println("The receiver string length: $&#123;this.length&#125;") // does the same</span>
+    <span class="token punctuation">&#125;</span>
 
-    // it
-    str.let {
-        println(&quot;The receiver string&#39;s length is ${it.length}&quot;)
-    }
-}</code></pre>
+    <span class="token comment">// it</span>
+    str<span class="token punctuation">.</span><span class="token function">let</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The receiver string's length is <span class="token interpolation"><span class="token delimiter variable">$&#123;</span>it<span class="token punctuation">.</span>length<span class="token delimiter variable">&#125;</span></span>"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><blockquote>
 <p><code>run</code>, <code>with</code>, and <code>apply</code> refer to the context object as a lambda receiver - by keyword <code>this</code>. Hence, in their lambdas, the object is available as it would be in ordinary class functions. In most cases, you can omit <code>this</code> when accessing the members of the receiver object, making the code shorter. On the other hand, if <code>this</code> is omitted, it can be hard to distinguish between the receiver members and external objects or functions. So, having the context object as a receiver (<code>this</code>) is recommended for lambdas that mainly operate on the object members: call its functions or assign properties.</p>
 </blockquote>
 <p><code>run</code>，<code>with</code>，<code>apply</code>通过<code>this</code>关键字引用到上下文对象作为一个lambda接收者。因此，在这些lambda中，该上下文对象就像在普通类方法中一样可用的。在多数情况下，当你访问接收对象的成员时可以忽略<code>this</code>关键字，使得代码更短。另一方面，如果<code>this</code>被省略，这会很难区分接收者的成员和外部对象或方法。因此，更推荐持有上下文对象作为主要操作对象成员的lambda表达式的接收者(<code>this</code>)：调用该对象的方法或指定属性。</p>
-<pre><code class="kotlin">data class Person(var name: String, var age: Int = 0, var city: String = &quot;&quot;)
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token keyword">var</span> name<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">var</span> age<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">var</span> city<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">)</span>
 
-fun main() {
-    //sampleStart
-    val adam = Person(&quot;Adam&quot;).apply {
-        age = 20                       // same as this.age = 20 or adam.age = 20
-        city = &quot;London&quot;
-    }
-    //sampleEnd
-}</code></pre>
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> adam <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token string">"Adam"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">apply</span> <span class="token punctuation">&#123;</span>
+        age <span class="token operator">=</span> <span class="token number">20</span>                       <span class="token comment">// same as this.age = 20 or adam.age = 20</span>
+        city <span class="token operator">=</span> <span class="token string">"London"</span>
+    <span class="token punctuation">&#125;</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="it"><a href="#it" class="headerlink" title="it"></a>it</h4><blockquote>
 <p>In turn, <code>let</code> and <code>also</code> have the context object as a lambda argument. If the argument name is not specified, the object is accessed by the implicit default name <code>it</code>. <code>it</code> is shorter than <code>this</code> and expressions with <code>it</code> are usually easier for reading. However, when calling the object functions or properties you don’t have the object available implicitly like <code>this</code>. Hence, having the context object as <code>it</code> is better when the object is mostly used as an argument in function calls. <code>it</code> is also better if you use multiple variables in the code block.</p>
 </blockquote>
 <p>相反的，<code>let</code>和<code>also</code>持有上下文对象作为lambda表达式的参数。如果参数名称是非指定的，那么这个对象就使用隐式的默认名称<code>it</code>访问。<code>it</code>比<code>this</code>更短，并且使用<code>it</code>的表达式通常更容易阅读。但是，当调用对象的方法或属性时你没有像<code>this</code>方式一样的隐式可用对象。因此，当主要使用对象作为方法调用中的参数时，最好使用<code>it</code>的方式持有上下文对象。同样如果在代码块中多次使用变量使用<code>it</code>也是更好的方式。</p>
-<pre><code class="kotlin">import kotlin.random.Random
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">import</span> kotlin<span class="token punctuation">.</span>random<span class="token punctuation">.</span>Random
 
-fun writeToLog(message: String) {
-    println(&quot;INFO: $message&quot;)
-}
+<span class="token keyword">fun</span> <span class="token function">writeToLog</span><span class="token punctuation">(</span>message<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"INFO: <span class="token interpolation variable">$message</span>"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
 
-fun main() {
-    //sampleStart
-    fun getRandomInt(): Int {
-        return Random.nextInt(100).also {
-            writeToLog(&quot;getRandomInt() generated value $it&quot;)
-        }
-    }
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">fun</span> <span class="token function">getRandomInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> Random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">also</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">writeToLog</span><span class="token punctuation">(</span><span class="token string">"getRandomInt() generated value <span class="token interpolation variable">$it</span>"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
 
-    val i = getRandomInt()
-    //sampleEnd
-}</code></pre>
+    <span class="token keyword">val</span> i <span class="token operator">=</span> <span class="token function">getRandomInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>Additionally, when you pass the context object as an argument, you can provide a custom name for the context object inside the scope.</p>
 </blockquote>
 <p>另外，当你将上下文对象作为参数传递时，你可以为该对象提供一个在当前作用域内使用的自定义名称。</p>
-<pre><code class="kotlin">import kotlin.random.Random
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">import</span> kotlin<span class="token punctuation">.</span>random<span class="token punctuation">.</span>Random
 
-fun writeToLog(message: String) {
-    println(&quot;INFO: $message&quot;)
-}
+<span class="token keyword">fun</span> <span class="token function">writeToLog</span><span class="token punctuation">(</span>message<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"INFO: <span class="token interpolation variable">$message</span>"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
 
-fun main() {
-    //sampleStart
-    fun getRandomInt(): Int {
-        return Random.nextInt(100).also { value -&gt;
-            writeToLog(&quot;getRandomInt() generated value $value&quot;)
-        }
-    }
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">fun</span> <span class="token function">getRandomInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> Random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">also</span> <span class="token punctuation">&#123;</span> value <span class="token operator">-></span>
+            <span class="token function">writeToLog</span><span class="token punctuation">(</span><span class="token string">"getRandomInt() generated value <span class="token interpolation variable">$value</span>"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
 
-    val i = getRandomInt()
-    //sampleEnd
-}</code></pre>
+    <span class="token keyword">val</span> i <span class="token operator">=</span> <span class="token function">getRandomInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><blockquote>
 <p>The scope functions differ by the result they return</p>
 <ul>
@@ -632,70 +635,70 @@ fun main() {
 <p>The return value of <code>apply</code> and <code>also</code> is the context object itself. Hence, they can be included into call chains as <em>side steps</em>: you can continue chaining function calls on the same object after them.</p>
 </blockquote>
 <p><code>apply</code>和<code>alse</code>的返回值是上下文对象自身。因此，他们可以被包括到调用链中作为连续步骤：你可以在同一个对象上继续链接方法调用。</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val numberList = mutableListOf&lt;Double&gt;()
-    numberList.also { println(&quot;Populating the list&quot;) }
-        .apply {
-            add(2.71)
-            add(3.14)
-            add(1.0)
-        }
-        .also { println(&quot;Sorting the list&quot;) }
-        .sort()
-    //sampleEnd
-    println(numberList)
-}</code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> numberList <span class="token operator">=</span> mutableListOf<span class="token operator">&lt;</span>Double<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    numberList<span class="token punctuation">.</span><span class="token function">also</span> <span class="token punctuation">&#123;</span> <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Populating the list"</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">.</span><span class="token function">apply</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2.71</span><span class="token punctuation">)</span>
+            <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3.14</span><span class="token punctuation">)</span>
+            <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">.</span><span class="token function">also</span> <span class="token punctuation">&#123;</span> <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Sorting the list"</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>numberList<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>They also can be used in return statements of functions returning the context object.</p>
 </blockquote>
 <p>他们同样可以被应用在返回上下文对象的方法return语句中。</p>
-<pre><code class="kotlin">import kotlin.random.Random
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">import</span> kotlin<span class="token punctuation">.</span>random<span class="token punctuation">.</span>Random
 
-fun writeToLog(message: String) {
-    println(&quot;INFO: $message&quot;)
-}
+<span class="token keyword">fun</span> <span class="token function">writeToLog</span><span class="token punctuation">(</span>message<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"INFO: <span class="token interpolation variable">$message</span>"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
 
-fun main() {
-    //sampleStart
-    fun getRandomInt(): Int {
-        return Random.nextInt(100).also {
-            writeToLog(&quot;getRandomInt() generated value $it&quot;)
-        }
-    }
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">fun</span> <span class="token function">getRandomInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> Random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">also</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">writeToLog</span><span class="token punctuation">(</span><span class="token string">"getRandomInt() generated value <span class="token interpolation variable">$it</span>"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
 
-    val i = getRandomInt()
-    //sampleEnd
-}</code></pre>
+    <span class="token keyword">val</span> i <span class="token operator">=</span> <span class="token function">getRandomInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="Lambda表达式结果"><a href="#Lambda表达式结果" class="headerlink" title="Lambda表达式结果"></a>Lambda表达式结果</h4><blockquote>
 <p><code>let</code>, <code>run</code>, and <code>with</code> return the lambda result. So, you can use them when assigning the result to a variable, chaining operations on the result, and so on.</p>
 </blockquote>
 <p><code>let</code>，<code>run</code>和<code>with</code>都返回lambda的结果。因此，你可以在需要将结果赋值给变量，对结果继续链接操作等等情况下选择这三种作用域函数。</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val numbers = mutableListOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;)
-    val countEndsWithE = numbers.run {
-        add(&quot;four&quot;)
-        add(&quot;five&quot;)
-        count { it.endsWith(&quot;e&quot;) }
-    }
-    println(&quot;There are $countEndsWithE elements that end with e.&quot;)
-    //sampleEnd
-}</code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> numbers <span class="token operator">=</span> <span class="token function">mutableListOf</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">,</span> <span class="token string">"three"</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> countEndsWithE <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">run</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"four"</span><span class="token punctuation">)</span>
+        <span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"five"</span><span class="token punctuation">)</span>
+        count <span class="token punctuation">&#123;</span> it<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">"e"</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"There are <span class="token interpolation variable">$countEndsWithE</span> elements that end with e."</span><span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>Additionally, you can ignore the return value and use a scope function to create a temporary scope for variables.</p>
 </blockquote>
 <p>另外，你可以忽略返回值并且使用作用域函数为变量创建临时作用域。</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val numbers = mutableListOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;)
-    with(numbers) {
-        val firstItem = first()
-        val lastItem = last()
-        println(&quot;First item: $firstItem, last item: $lastItem&quot;)
-    }
-    //sampleEnd
-}</code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> numbers <span class="token operator">=</span> <span class="token function">mutableListOf</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">,</span> <span class="token string">"three"</span><span class="token punctuation">)</span>
+    <span class="token function">with</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">val</span> firstItem <span class="token operator">=</span> <span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> lastItem <span class="token operator">=</span> <span class="token function">last</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"First item: <span class="token interpolation variable">$firstItem</span>, last item: <span class="token interpolation variable">$lastItem</span>"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h2><blockquote>
 <p>To help you choose the right scope function for your case, we’ll describe them in detail and provide usage recommendations. Technically, functions are interchangeable in many cases, so the examples show the conventions that define the common usage style.</p>
 </blockquote>
@@ -706,54 +709,54 @@ fun main() {
 </blockquote>
 <p>上下文对象可用作参数(<code>it</code>)，返回值是lambda表达式的结果。</p>
 <p><code>let</code>可以用于在调用链的结果上调用一个或多个方法。例如，下面的代码打印了一个集合在两个操作后的结果。</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val numbers = mutableListOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;)
-    val resultList = numbers.map { it.length }.filter { it &gt; 3 }
-    println(resultList)
-    //sampleEnd
-}</code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> numbers <span class="token operator">=</span> <span class="token function">mutableListOf</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">,</span> <span class="token string">"three"</span><span class="token punctuation">,</span> <span class="token string">"four"</span><span class="token punctuation">,</span> <span class="token string">"five"</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> resultList <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">&#123;</span> it<span class="token punctuation">.</span>length <span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">filter</span> <span class="token punctuation">&#123;</span> it <span class="token operator">></span> <span class="token number">3</span> <span class="token punctuation">&#125;</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>resultList<span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>使用<code>let</code>，你可以重写成这个形式：</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val numbers = mutableListOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;)
-    numbers.map { it.length }.filter { it &gt; 3 }.let {
-        println(it)
-        // and more function calls if needed
-        // 需要的话可以调用其他方法
-    }
-    //sampleEnd
-}</code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> numbers <span class="token operator">=</span> <span class="token function">mutableListOf</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">,</span> <span class="token string">"three"</span><span class="token punctuation">,</span> <span class="token string">"four"</span><span class="token punctuation">,</span> <span class="token string">"five"</span><span class="token punctuation">)</span>
+    numbers<span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">&#123;</span> it<span class="token punctuation">.</span>length <span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">filter</span> <span class="token punctuation">&#123;</span> it <span class="token operator">></span> <span class="token number">3</span> <span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">let</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span>
+        <span class="token comment">// and more function calls if needed</span>
+        <span class="token comment">// 需要的话可以调用其他方法</span>
+    <span class="token punctuation">&#125;</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>If the code block contains a single function with <code>it</code> as an argument, you can use the method reference (<code>::</code>) instead of the lambda:</p>
 </blockquote>
 <p>如果代码块中只包含单个方法并且使用了<code>it</code>作为参数，那么你可以使用方法引用<code>(::)</code>替代lambda表达式。</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val numbers = mutableListOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;)
-    numbers.map { it.length }.filter { it &gt; 3 }.let(::println)
-    //等效于.let{ println(it) }
-    //sampleEnd
-}</code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> numbers <span class="token operator">=</span> <span class="token function">mutableListOf</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">,</span> <span class="token string">"three"</span><span class="token punctuation">,</span> <span class="token string">"four"</span><span class="token punctuation">,</span> <span class="token string">"five"</span><span class="token punctuation">)</span>
+    numbers<span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">&#123;</span> it<span class="token punctuation">.</span>length <span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">filter</span> <span class="token punctuation">&#123;</span> it <span class="token operator">></span> <span class="token number">3</span> <span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">let</span><span class="token punctuation">(</span><span class="token operator">::</span>println<span class="token punctuation">)</span>
+    <span class="token comment">//等效于.let&#123; println(it) &#125;</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>let</code> is often used for executing a code block only with non-null values. To perform actions on a non-null object, use the safe call operator <code>?.</code> on it and call <code>let</code> with the actions in its lambda.</p>
 </blockquote>
 <p><code>let</code>通常用于执行仅使用非空值的代码块。为了对非空对象执行操作，应该使用安全操作符<code>?.</code>并且调用<code>let</code>在lambda中执行操作。</p>
-<pre><code class="kotlin">fun processNonNullString(str: String) {}
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">processNonNullString</span><span class="token punctuation">(</span>str<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
 
-fun main() {
-    //sampleStart
-    val str: String? = &quot;Hello&quot;
-    //processNonNullString(str)       // compilation error: str can be null
-    val length = str?.let {
-        // 因为使用了?.操作符，当str为null时不会执行到lambda代码块的内容，
-        // 保证了processNonNullString()方法不会传入空值
-        println(&quot;let() called on $it&quot;)
-        processNonNullString(it)      // OK: &#39;it&#39; is not null inside &#39;?.let { }&#39;
-        it.length
-    }
-    //sampleEnd
-}</code></pre>
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> str<span class="token operator">:</span> String<span class="token operator">?</span> <span class="token operator">=</span> <span class="token string">"Hello"</span>
+    <span class="token comment">//processNonNullString(str)       // compilation error: str can be null</span>
+    <span class="token keyword">val</span> length <span class="token operator">=</span> str<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">let</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 因为使用了?.操作符，当str为null时不会执行到lambda代码块的内容，</span>
+        <span class="token comment">// 保证了processNonNullString()方法不会传入空值</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"let() called on <span class="token interpolation variable">$it</span>"</span><span class="token punctuation">)</span>
+        <span class="token function">processNonNullString</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span>      <span class="token comment">// OK: 'it' is not null inside '?.let &#123; &#125;'</span>
+        it<span class="token punctuation">.</span>length
+    <span class="token punctuation">&#125;</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>Another case for using <code>let</code> is introducing local variables with a limited scope for improving code readability. To define a new variable for the context object, provide its name as the lambda argument so that it can be used instead of the default <code>it</code>.</p>
 </blockquote>
@@ -764,29 +767,29 @@ fun main() {
 </blockquote>
 <p>一个非拓展方法：上下文对象是作为参数传递的，但是在lambda内部，它作为一个接收者(<code>this</code>)。返回值是lambda的结果。</p>
 <p>我们推荐在不需要提供lambda结果的情况下使用<code>with</code>在上下文对象上调用函数。在代码中<code>with</code>可以解释为“在这个对象上执行如下操作”</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val numbers = mutableListOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;)
-    with(numbers) {
-        println(&quot;&#39;with&#39; is called with argument $this&quot;)
-        println(&quot;It contains $size elements&quot;)
-    }
-    //sampleEnd
-}</code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> numbers <span class="token operator">=</span> <span class="token function">mutableListOf</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">,</span> <span class="token string">"three"</span><span class="token punctuation">)</span>
+    <span class="token function">with</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"'with' is called with argument <span class="token interpolation variable">$this</span>"</span><span class="token punctuation">)</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"It contains <span class="token interpolation variable">$size</span> elements"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>Another use case for <code>with</code> is introducing a helper object whose properties or functions will be used for calculating a value.</p>
 </blockquote>
 <p>另一个使用<code>with</code>的案例是引入一个辅助对象其属性和方法可以用于计算值。</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val numbers = mutableListOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;)
-    val firstAndLast = with(numbers) {
-        &quot;The first element is ${first()},&quot; +
-        &quot; the last element is ${last()}&quot;
-    }
-    println(firstAndLast)
-    //sampleEnd
-}</code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> numbers <span class="token operator">=</span> <span class="token function">mutableListOf</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">,</span> <span class="token string">"three"</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> firstAndLast <span class="token operator">=</span> <span class="token function">with</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token string">"The first element is <span class="token interpolation"><span class="token delimiter variable">$&#123;</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token delimiter variable">&#125;</span></span>,"</span> <span class="token operator">+</span>
+        <span class="token string">" the last element is <span class="token interpolation"><span class="token delimiter variable">$&#123;</span><span class="token function">last</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token delimiter variable">&#125;</span></span>"</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>firstAndLast<span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="run"><a href="#run" class="headerlink" title="run"></a>run</h3><blockquote>
 <p><strong>The context object</strong> is available as a receiver (<code>this</code>). <strong>The return value</strong> is the lambda result.</p>
 <p><code>run</code> does the same as <code>with</code> but invokes as <code>let</code> - as an extension function of the context object.</p>
@@ -795,64 +798,64 @@ fun main() {
 <p>上下文对象可用作接收者(<code>this</code>)，返回值是lambda结果。</p>
 <p><code>run</code>和<code>with</code>有相同功能，按照<code>let</code>的调用方式 -作为上下文对象的拓展方法。</p>
 <p><code>run</code>很有效当你的lambda表达式中都包含了对象初始化和返回值的计算。</p>
-<pre><code class="kotlin">class MultiportService(var url: String, var port: Int) {
-    fun prepareRequest(): String = &quot;Default request&quot;
-    fun query(request: String): String = &quot;Result for query &#39;$request&#39;&quot;
-}
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">MultiportService</span><span class="token punctuation">(</span><span class="token keyword">var</span> url<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">var</span> port<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">fun</span> <span class="token function">prepareRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">"Default request"</span>
+    <span class="token keyword">fun</span> <span class="token function">query</span><span class="token punctuation">(</span>request<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">"Result for query '<span class="token interpolation variable">$request</span>'"</span>
+<span class="token punctuation">&#125;</span>
 
-fun main() {
-    //sampleStart
-    val service = MultiportService(&quot;https://example.kotlinlang.org&quot;, 80)
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> service <span class="token operator">=</span> <span class="token function">MultiportService</span><span class="token punctuation">(</span><span class="token string">"https://example.kotlinlang.org"</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span>
 
-    val result = service.run {
-        port = 8080
-        query(prepareRequest() + &quot; to port $port&quot;)
-    }
+    <span class="token keyword">val</span> result <span class="token operator">=</span> service<span class="token punctuation">.</span><span class="token function">run</span> <span class="token punctuation">&#123;</span>
+        port <span class="token operator">=</span> <span class="token number">8080</span>
+        <span class="token function">query</span><span class="token punctuation">(</span><span class="token function">prepareRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" to port <span class="token interpolation variable">$port</span>"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
 
-    // the same code written with let() function:
-    val letResult = service.let {
-        it.port = 8080
-        it.query(it.prepareRequest() + &quot; to port ${it.port}&quot;)
-    }
-    //sampleEnd
-    println(result)
-    println(letResult)
-}</code></pre>
+    <span class="token comment">// the same code written with let() function:</span>
+    <span class="token keyword">val</span> letResult <span class="token operator">=</span> service<span class="token punctuation">.</span><span class="token function">let</span> <span class="token punctuation">&#123;</span>
+        it<span class="token punctuation">.</span>port <span class="token operator">=</span> <span class="token number">8080</span>
+        it<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">prepareRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" to port <span class="token interpolation"><span class="token delimiter variable">$&#123;</span>it<span class="token punctuation">.</span>port<span class="token delimiter variable">&#125;</span></span>"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+	<span class="token comment">//sampleEnd</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>letResult<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>Besides calling <code>run</code> on a receiver object, you can use it as a non-extension function. Non-extension <code>run</code> lets you execute a block of several statements where an expression is required.</p>
 </blockquote>
 <p>除了在接收者对象上调用<code>run</code>方法之外，你还可以使用它作为非拓展方法。非拓展的<code>run</code>使你可以在需要表达式时执行一个包含多个语句的代码块。</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val hexNumberRegex = run {
-        val digits = &quot;0-9&quot;
-        val hexDigits = &quot;A-Fa-f&quot;
-        val sign = &quot;+-&quot;
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> hexNumberRegex <span class="token operator">=</span> run <span class="token punctuation">&#123;</span>
+        <span class="token keyword">val</span> digits <span class="token operator">=</span> <span class="token string">"0-9"</span>
+        <span class="token keyword">val</span> hexDigits <span class="token operator">=</span> <span class="token string">"A-Fa-f"</span>
+        <span class="token keyword">val</span> sign <span class="token operator">=</span> <span class="token string">"+-"</span>
 
-        Regex(&quot;[$sign]?[$digits$hexDigits]+&quot;)
-    }
+        <span class="token function">Regex</span><span class="token punctuation">(</span><span class="token string">"[<span class="token interpolation variable">$sign</span>]?[<span class="token interpolation variable">$digits</span><span class="token interpolation variable">$hexDigits</span>]+"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
 
-    for (match in hexNumberRegex.findAll(&quot;+1234 -FFFF not-a-number&quot;)) {
-        println(match.value)
-    }
-    //sampleEnd
-}</code></pre>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>match <span class="token keyword">in</span> hexNumberRegex<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token string">"+1234 -FFFF not-a-number"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>match<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><blockquote>
 <p><strong>The context object</strong> is available as a receiver (<code>this</code>). <strong>The return value</strong> is the object itself.</p>
 <p>Use <code>apply</code> for code blocks that don’t return a value and mainly operate on the members of the receiver object. The common case for <code>apply</code> is the object configuration. Such calls can be read as “<em>apply the following assignments to the object.</em>”</p>
 </blockquote>
 <p>上下文对象作为接收者(<code>this</code>)，返回值是上下文对象本身。</p>
 <p><code>apply</code>用于不返回值并且主要操作于接受对象的成员的代码块，常见的<code>apply</code>使用场景是对象的配置。<code>apply</code>方法可以解释为“应用如下的分配到对象”</p>
-<pre><code class="kotlin">data class Person(var name: String, var age: Int = 0, var city: String = &quot;&quot;)
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token keyword">var</span> name<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">var</span> age<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">var</span> city<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">)</span>
 
-fun main() {
-    //sampleStart
-    val adam = Person(&quot;Adam&quot;).apply {
-        age = 32
-        city = &quot;London&quot;
-    }
-    //sampleEnd
-}</code></pre>
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> adam <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token string">"Adam"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">apply</span> <span class="token punctuation">&#123;</span>
+        age <span class="token operator">=</span> <span class="token number">32</span>
+        city <span class="token operator">=</span> <span class="token string">"London"</span>
+    <span class="token punctuation">&#125;</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>Having the receiver as the return value, you can easily include <code>apply</code> into call chains for more complex processing.</p>
 </blockquote>
@@ -865,14 +868,14 @@ fun main() {
 <p>上下文对象作为参数(<code>it</code>)，返回值是上下文对象自身。</p>
 <p><code>also</code>对一些将上下文对象作为参数传递的行为很有用。对于其他不改变上下文对象例如log或者打印调试信息的行为也可以使用<code>also</code>。通常，你可以从调用链中移除<code>also</code>调用而不影响原有程序逻辑。</p>
 <p>当你在代码中看到<code>also</code>时，你可以将其解释为“并且执行如下操作”</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val numbers = mutableListOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;)
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> numbers <span class="token operator">=</span> <span class="token function">mutableListOf</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">,</span> <span class="token string">"three"</span><span class="token punctuation">)</span>
     numbers
-        .also { println(&quot;The list elements before adding new one: $it&quot;) }
-        .add(&quot;four&quot;)
-    //sampleEnd
-}</code></pre>
+        <span class="token punctuation">.</span><span class="token function">also</span> <span class="token punctuation">&#123;</span> <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The list elements before adding new one: <span class="token interpolation variable">$it</span>"</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"four"</span><span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="函数选择"><a href="#函数选择" class="headerlink" title="函数选择"></a>函数选择</h2><blockquote>
 <p>To help you choose the right scope function for your purpose, we provide the table of key differences between them.</p>
 </blockquote>
@@ -957,65 +960,65 @@ fun main() {
 <p>When called on an object with a predicate provided, <code>takeIf</code> returns this object if it matches the predicate. Otherwise, it returns <code>null</code>. So, <code>takeIf</code> is a filtering function for a single object. In turn, <code>takeUnless</code> returns the object if it doesn’t match the predicate and <code>null</code> if it does. The object is available as a lambda argument (<code>it</code>).</p>
 </blockquote>
 <p>当在提供了predicate的对象上调用时，<code>takeIf</code>返回对象本身如果它是匹配predicate的。否则，返回<code>null</code>。因此，<code>takeIf</code>是一个对单个对象的过滤方法。相反的，<code>takeUnless</code>返回对象本身如果它不匹配predicate，返回<code>null</code>如果它匹配。这个对象在lambda中作为参数可用(<code>it</code>)。</p>
-<pre><code class="kotlin">import kotlin.random.*
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">import</span> kotlin<span class="token punctuation">.</span>random<span class="token punctuation">.</span><span class="token operator">*</span>
 
-fun main() {
-    //sampleStart
-    val number = Random.nextInt(100)
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> number <span class="token operator">=</span> Random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
 
-    val evenOrNull = number.takeIf { it % 2 == 0 }
-    val oddOrNull = number.takeUnless { it % 2 == 0 }
-    println(&quot;even: $evenOrNull, odd: $oddOrNull&quot;)
-    //sampleEnd
-}</code></pre>
+    <span class="token keyword">val</span> evenOrNull <span class="token operator">=</span> number<span class="token punctuation">.</span><span class="token function">takeIf</span> <span class="token punctuation">&#123;</span> it <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">&#125;</span>
+    <span class="token keyword">val</span> oddOrNull <span class="token operator">=</span> number<span class="token punctuation">.</span><span class="token function">takeUnless</span> <span class="token punctuation">&#123;</span> it <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">&#125;</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"even: <span class="token interpolation variable">$evenOrNull</span>, odd: <span class="token interpolation variable">$oddOrNull</span>"</span><span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>When chaining other functions after <code>takeIf</code> and <code>takeUnless</code>, don’t forget to perform the null check or the safe call (<code>?.</code>) because their return value is nullable.</p>
 </blockquote>
 <p>在<code>takeIf</code>或<code>takeUnless</code>后链接其他方法时不要忘记执行null检查或者使用安全调用符号<code>?.</code>，因为它们的返回值是可为空的。</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    val str = &quot;Hello&quot;
-    val caps = str.takeIf { it.isNotEmpty() }?.toUpperCase()
-       //val caps = str.takeIf { it.isNotEmpty() }.toUpperCase() //compilation error
-    println(caps)
-    //sampleEnd
-}</code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> str <span class="token operator">=</span> <span class="token string">"Hello"</span>
+    <span class="token keyword">val</span> caps <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">takeIf</span> <span class="token punctuation">&#123;</span> it<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+   	<span class="token comment">//val caps = str.takeIf &#123; it.isNotEmpty() &#125;.toUpperCase() //compilation error</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>caps<span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>takeIf</code> and <code>takeUnless</code> are especially useful together with scope functions. A good case is chaining them with <code>let</code> for running a code block on objects that match the given predicate. To do this, call <code>takeIf</code> on the object and then call <code>let</code> with a safe call (<code>?</code>). For objects that don’t match the predicate, <code>takeIf</code> returns <code>null</code> and <code>let</code> isn’t invoked.</p>
 </blockquote>
 <p><code>takeIf</code>和<code>takeUnless</code>和作用域函数一起使用是非常有用的。一个合适的使用场景是使用<code>let</code>链接它们，用来在一个匹配给定的 predicate 的对象上运行代码块。为了这样做，在对象上调用<code>takeIf</code>然后使用<code>?.</code>调用<code>let</code>。对于不匹配 predicate 的对象，<code>takeIf</code>返回<code>null</code>并且不会被<code>let</code>调用。</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    fun displaySubstringPosition(input: String, sub: String) {
-        input.indexOf(sub).takeIf { it &gt;= 0 }?.let {
-            println(&quot;The substring $sub is found in $input.&quot;)
-            println(&quot;Its start position is $it.&quot;)
-        }
-    }
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">fun</span> <span class="token function">displaySubstringPosition</span><span class="token punctuation">(</span>input<span class="token operator">:</span> String<span class="token punctuation">,</span> sub<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        input<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>sub<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">takeIf</span> <span class="token punctuation">&#123;</span> it <span class="token operator">>=</span> <span class="token number">0</span> <span class="token punctuation">&#125;</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">let</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The substring <span class="token interpolation variable">$sub</span> is found in <span class="token interpolation variable">$input</span>."</span><span class="token punctuation">)</span>
+            <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Its start position is <span class="token interpolation variable">$it</span>."</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
 
-    displaySubstringPosition(&quot;010000011&quot;, &quot;11&quot;)
-    displaySubstringPosition(&quot;010000011&quot;, &quot;12&quot;)
-    //sampleEnd
-}</code></pre>
+    <span class="token function">displaySubstringPosition</span><span class="token punctuation">(</span><span class="token string">"010000011"</span><span class="token punctuation">,</span> <span class="token string">"11"</span><span class="token punctuation">)</span>
+    <span class="token function">displaySubstringPosition</span><span class="token punctuation">(</span><span class="token string">"010000011"</span><span class="token punctuation">,</span> <span class="token string">"12"</span><span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>This is how the same function looks without the standard library functions:</p>
 </blockquote>
 <p>下面是不使用标准库函数时的代码：</p>
-<pre><code class="kotlin">fun main() {
-    //sampleStart
-    fun displaySubstringPosition(input: String, sub: String) {
-        val index = input.indexOf(sub)
-        if (index &gt;= 0) {
-            println(&quot;The substring $sub is found in $input.&quot;)
-            println(&quot;Its start position is $index.&quot;)
-        }
-    }
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//sampleStart</span>
+    <span class="token keyword">fun</span> <span class="token function">displaySubstringPosition</span><span class="token punctuation">(</span>input<span class="token operator">:</span> String<span class="token punctuation">,</span> sub<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">val</span> index <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>sub<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The substring <span class="token interpolation variable">$sub</span> is found in <span class="token interpolation variable">$input</span>."</span><span class="token punctuation">)</span>
+            <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Its start position is <span class="token interpolation variable">$index</span>."</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
 
-    displaySubstringPosition(&quot;010000011&quot;, &quot;11&quot;)
-    displaySubstringPosition(&quot;010000011&quot;, &quot;12&quot;)
-    //sampleEnd
-}</code></pre>
-
+    <span class="token function">displaySubstringPosition</span><span class="token punctuation">(</span><span class="token string">"010000011"</span><span class="token punctuation">,</span> <span class="token string">"11"</span><span class="token punctuation">)</span>
+    <span class="token function">displaySubstringPosition</span><span class="token punctuation">(</span><span class="token string">"010000011"</span><span class="token punctuation">,</span> <span class="token string">"12"</span><span class="token punctuation">)</span>
+	<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
             </div>
             <hr/>
 
@@ -1030,7 +1033,7 @@ fun main() {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                    <a href="../../../../../../about" rel="external nofollow noreferrer">suifeng</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -1053,7 +1056,7 @@ fun main() {
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    <a href="../../../../../../about" target="_blank">suifeng</a>
                     !
                 </span>
             </div>
@@ -1094,13 +1097,12 @@ fun main() {
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
+                    <link rel="stylesheet" type="text/css" href="../../../../../../libs/share/css/share.min.css">
 <div id="article-share">
-    
+
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <script src="../../../../../../libs/share/js/social-share.min.js"></script>
     
 
     
@@ -1218,10 +1220,10 @@ fun main() {
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="../../../../../../medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="../../../../../../medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1234,9 +1236,14 @@ fun main() {
         $('.tabs').tabs();
     });
 </script>
+
             
         </div>
     </div>
+
+    
+
+    
 
     
 
@@ -1261,7 +1268,7 @@ fun main() {
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="sublime设置文件夹右键菜单">
+                        <img src="../../../../../../medias/featureimages/9.jpg" class="responsive-img" alt="sublime设置文件夹右键菜单">
                         
                         <span class="card-title">sublime设置文件夹右键菜单</span>
                     </div>
@@ -1269,8 +1276,7 @@ fun main() {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            sublime text3设置文件夹右键菜单安装完sublime后会默认在右键菜单中添加Open With Sublime Text选项。但是没有应用图标，不够美观，我们可以为它添加图标并且添加文件夹的右键打开方式。
-sublime tex
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1315,7 +1321,7 @@ sublime tex
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java ClassLoader的简单介绍">
+                        <img src="../../../../../../medias/featureimages/14.jpg" class="responsive-img" alt="Java ClassLoader的简单介绍">
                         
                         <span class="card-title">Java ClassLoader的简单介绍</span>
                     </div>
@@ -1323,9 +1329,7 @@ sublime tex
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java ClassLoader的简单介绍本文是阅读《深入理解Java虚拟机》第七章类加载器相关部分过程中生成的阅读笔记。简单介绍了ClassLoader的是什么，主要的类型和双亲委派模型。
-ClassLoader是什么
-虚拟机设计团队把类
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1370,72 +1374,28 @@ ClassLoader是什么
 </div>
 
 
-<script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
-
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
-
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
-
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
-
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: Suifeng Blog<br />'
-            + '文章作者: suifeng<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
-
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
-</script>
-
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeLang.js"></script>
 
-    
+
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeShrink.js"></script>
 
-
-<!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -1451,14 +1411,14 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="../../../../../../libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
+            collapseDepth: Number('0'),
             headingSelector: 'h1, h2, h3, h4'
         });
 
@@ -1526,24 +1486,30 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         
     });
 </script>
+
     
 
 </main>
 
 
 
+
     <footer class="page-footer bg-color">
-    <div class="container row center-align">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">年份</span>
-            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            
+                <span id="year">2019-2020</span>
+            
+            <span id="year">2019</span>
+            <a href="../../../../../../about" target="_blank">suifeng</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.2k</span>&nbsp;
+                class="white-color">41.4k</span>&nbsp;字
             
             
             
@@ -1564,16 +1530,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             <span id="sitetime">载入运行时间...</span>
-            <script src="/js/prettify.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    $('pre').addClass('prettyprint linenums');
-                    prettyPrint();
-                })
-            </script>
             <script>
                 function siteTime() {
-                    window.setTimeout("siteTime()", 1000);
                     var seconds = 1000;
                     var minutes = seconds * 60;
                     var hours = minutes * 60;
@@ -1660,12 +1618,98 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('../../../../../../search.xml', 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1674,15 +1718,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <script src="../../../../../../libs/materialize/materialize.min.js"></script>
+    <script src="../../../../../../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../../../../../libs/aos/aos.js"></script>
+    <script src="../../../../../../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../../../../../../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../../../../../../js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1704,7 +1745,14 @@ $(function () {
 
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="../../../../../../libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
     
 
     
@@ -1712,17 +1760,9 @@ $(function () {
     
 
     
-
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    <script src="../../../../../../libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+  MathJax.Hub.Config({{ JSON.stringify(config) }});
 </script>
 
 <script type="text/x-mathjax-config">
@@ -1734,7 +1774,7 @@ $(function () {
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/javascript" src="{{ src }}">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

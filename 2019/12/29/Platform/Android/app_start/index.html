@@ -2,12 +2,10 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="从点击桌面图标到启动app流程, Suifeng Blog">
-    <meta name="description" content="在智能手机的日常使用中，最常见的操作应该就是点击桌面图标然后打开对应app了，本文主要分析了在这个过程中系统做了什么事。
-材料准备
-Android源码，Android可以下载源码到本地用source insight导入阅读，或者使用在线源码">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,33 +13,35 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>从点击桌面图标到启动app流程 | Suifeng Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-	<style> 
-		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
-		{ list-style-type: decimal !important }
-	</style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</head>
+
+    <title>从点击桌面图标到启动app流程 | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="../../../../../../favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/my.css">
+
+    <script src="../../../../../../libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
 
 
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="../../../../../../index.html" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="../../../../../../medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Suifeng Blog</span>
                 </a>
@@ -53,7 +53,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/" class="waves-effect waves-light">
+    <a href="../../../../../../index.html" class="waves-effect waves-light">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
@@ -64,7 +64,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
+    <a href="../../../../../../tags" class="waves-effect waves-light">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
@@ -75,7 +75,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/categories" class="waves-effect waves-light">
+    <a href="../../../../../../categories" class="waves-effect waves-light">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
@@ -86,7 +86,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/archives" class="waves-effect waves-light">
+    <a href="../../../../../../archives" class="waves-effect waves-light">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
@@ -97,7 +97,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
+    <a href="../../../../../../about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
@@ -108,7 +108,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
+    <a href="../../../../../../contact" class="waves-effect waves-light">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
@@ -124,11 +124,12 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
   </li>
 </ul>
 
+
 <div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="../../../../../../medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Suifeng Blog</div>
         <div class="logo-desc">
@@ -144,7 +145,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
         
         <li class="m-nav-item">
 	  
-		<a href="/" class="waves-effect waves-light">
+		<a href="../../../../../../index.html" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
@@ -155,7 +156,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="../../../../../../tags" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
@@ -166,7 +167,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
         
         <li class="m-nav-item">
 	  
-		<a href="/categories" class="waves-effect waves-light">
+		<a href="../../../../../../categories" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
@@ -177,7 +178,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
         
         <li class="m-nav-item">
 	  
-		<a href="/archives" class="waves-effect waves-light">
+		<a href="../../../../../../archives" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
@@ -188,7 +189,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
+		<a href="../../../../../../about" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
@@ -199,11 +200,11 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
         
         <li class="m-nav-item">
 	  
-		<a href="/contact" class="waves-effect waves-light">
+		<a href="../../../../../../contact" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -218,6 +219,7 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
         
     </ul>
 </div>
+
 
         </div>
 
@@ -286,14 +288,12 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('../../../../../../medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="description center-align post-title">
-                        从点击桌面图标到启动app流程
-                    </div>
+                    <h1 class="description center-align post-title">从点击桌面图标到启动app流程</h1>
                 </div>
             </div>
         </div>
@@ -302,10 +302,11 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
 
 
 
+
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="../../../../../../libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -330,12 +331,12 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
     }
 
     .toc-widget {
+        width: 345px;
         padding-left: 20px;
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -344,6 +345,11 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
     .toc-widget ol {
         padding: 0;
         list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
     }
 
     #toc-content ol {
@@ -363,14 +369,14 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
     }
 
     #toc-content .is-active-link {
         color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -446,203 +452,200 @@ Android源码，Android可以下载源码到本地用source insight导入阅读�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.4k
+                    7.2k
                 </div>
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    33 分
-                </div>
+
                 
-				
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
-            
         </div>
         <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="../../../../../../libs/prism/prism.css">
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>在智能手机的日常使用中，最常见的操作应该就是点击桌面图标然后打开对应app了，本文主要分析了在这个过程中系统做了什么事。</p>
 <h1 id="材料准备"><a href="#材料准备" class="headerlink" title="材料准备"></a>材料准备</h1><ol>
-<li>Android源码，Android可以下载源码到本地用source insight导入阅读，或者使用在线源码阅读工具，比如：<a href="http://androidxref.com/" target="_blank" rel="noopener">AndroidXRef</a>,<a href="https://cs.android.com/" target="_blank" rel="noopener">官方源码在线阅读工具</a>等。本文基于安卓源码<strong>android-6.0.1_r72</strong>版本分析。</li>
+<li>Android源码，Android可以下载源码到本地用source insight导入阅读，或者使用在线源码阅读工具，比如：<a target="_blank" rel="noopener" href="http://androidxref.com/">AndroidXRef</a>,<a target="_blank" rel="noopener" href="https://cs.android.com/">官方源码在线阅读工具</a>等。本文基于安卓源码<strong>android-6.0.1_r72</strong>版本分析。</li>
 <li>Android设备，本文使用设备是Nexus 5，Android版本号是6.0.1。</li>
 </ol>
 <h2 id="桌面Activity"><a href="#桌面Activity" class="headerlink" title="桌面Activity"></a>桌面Activity</h2><p>系统桌面的源码在源码目录的<code>android-6.0.1_r72\packages\apps\Launcher3</code>下，查看该<code>Launcher3</code>目录下的<strong>AndroidManifest.xml</strong>发现其中只有<code>com.android.launcher3.Launcher</code>这个类包含了<code>&lt;category android:name=&quot;android.intent.category.HOME&quot; /&gt;</code>标签。可以确定桌面Activity是<code>com.android.launcher3.Launcher</code></p>
 <p>在实际设备中让设备处在桌面，然后执行</p>
-<pre><code class="shell">adb shell
-dumpsys activity top |grep ACTIVITY</code></pre>
-<p>可以得到当前的顶层Activity。<br>如图所示：<br><img src="/2019/12/29/Platform/Android/app_start/top_activity.png" alt="桌面Activity"></p>
-<p>可以看到实际设备的桌面包名是<code>com.google.android.googlequicksearchbox</code>，实际桌面Activity是<code>com.google.android.launcher.GEL</code>。<br>接着使用<code>adb shell pm path com.google.android.googlequicksearchbox</code>命令可以看到桌面应用的apk所在位置。<br><img src="/2019/12/29/Platform/Android/app_start/pm_path.png" alt="launcher path"><br>反编译<code>Velvet.apk</code>这个包后发现<code>com.google.android.launcher.GEL</code>这个类实际也是继承自<code>com.android.launcher3.Launcher</code>，所以后续分析过程中还是以<code>com.android.launcher3.Launcher</code>为分析目标。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">adb shell
+dumpsys activity top |grep ACTIVITY<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>可以得到当前的顶层Activity。<br>如图所示：<br><img src="top_activity.png" alt="桌面Activity"></p>
+<p>可以看到实际设备的桌面包名是<code>com.google.android.googlequicksearchbox</code>，实际桌面Activity是<code>com.google.android.launcher.GEL</code>。<br>接着使用<code>adb shell pm path com.google.android.googlequicksearchbox</code>命令可以看到桌面应用的apk所在位置。<br><img src="pm_path.png" alt="launcher path"><br>反编译<code>Velvet.apk</code>这个包后发现<code>com.google.android.launcher.GEL</code>这个类实际也是继承自<code>com.android.launcher3.Launcher</code>，所以后续分析过程中还是以<code>com.android.launcher3.Launcher</code>为分析目标。</p>
 <h2 id="Launcher-java"><a href="#Launcher-java" class="headerlink" title="Launcher.java"></a>Launcher.java</h2><p>首先，打开app的行为是在点击桌面图标后发生的，而且<strong>Launcher</strong>继承自<strong>Activity</strong>，所以先去看<strong>Launcher</strong>的<code>onClick(View v)</code>方法<br><code>Launcher.onClick(View v)</code>方法的代码如下：</p>
-<pre><code class="java">        Object tag = v.getTag();
-        if (tag instanceof ShortcutInfo) {
-            //原生桌面点击app生成的快捷图标后调用
-            onClickAppShortcut(v);
-        } else if (tag instanceof FolderInfo) {
-            if (v instanceof FolderIcon) {
-                onClickFolderIcon(v);
-            }
-        } else if (v == mAllAppsButton) {
-            onClickAllAppsButton(v);
-        } else if (tag instanceof AppInfo) {
-            //原生桌面点击抽屉中的app图标后调用
-            startAppShortcutOrInfoActivity(v);
-        } else if (tag instanceof LauncherAppWidgetInfo) {
-            if (v instanceof PendingAppWidgetHostView) {
-                onClickPendingWidget((PendingAppWidgetHostView) v);
-            }
-        }</code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Object</span> tag <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">getTag</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token keyword">instanceof</span> <span class="token class-name">ShortcutInfo</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//原生桌面点击app生成的快捷图标后调用</span>
+    <span class="token function">onClickAppShortcut</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token keyword">instanceof</span> <span class="token class-name">FolderInfo</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>v <span class="token keyword">instanceof</span> <span class="token class-name">FolderIcon</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">onClickFolderIcon</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>v <span class="token operator">==</span> mAllAppsButton<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">onClickAllAppsButton</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token keyword">instanceof</span> <span class="token class-name">AppInfo</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//原生桌面点击抽屉中的app图标后调用</span>
+    <span class="token function">startAppShortcutOrInfoActivity</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token keyword">instanceof</span> <span class="token class-name">LauncherAppWidgetInfo</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>v <span class="token keyword">instanceof</span> <span class="token class-name">PendingAppWidgetHostView</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">onClickPendingWidget</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">PendingAppWidgetHostView</span><span class="token punctuation">)</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以看到，在<code>onClick</code>中判断了view 的tag，当点击的是桌面的应用快捷方式时，tag的类型是<code>ShortcutInfo</code>。当点击的是桌面的文件夹时，tag的类型是<code>FolderInfo</code>。当点击的是app图标时，tag的类型是<code>AppInfo</code>。</p>
 <p>所以接下来跳到<code>Launcher</code>的<code>startAppShortcutOrInfoActivity(View v)</code>方法。可以看到，当tag是<code>ShortcutInfo</code>类型时，给intent设置了<code>SourceBounds</code>。当tag是<code>AppInfo</code>时，则不做操作，直接把intent传给<code>Launcher</code>的<code>startActivitySafely(View v,Intent intent,Object tag)</code>方法。</p>
-<pre><code class="java">    @Thunk void startAppShortcutOrInfoActivity(View v) {
-        Object tag = v.getTag();
-        final ShortcutInfo shortcut;
-        final Intent intent;
-        if (tag instanceof ShortcutInfo) {
-            shortcut = (ShortcutInfo) tag;
-            intent = shortcut.intent;
-            int[] pos = new int[2];
-            v.getLocationOnScreen(pos);
-            intent.setSourceBounds(new Rect(pos[0], pos[1],
-                    pos[0] + v.getWidth(), pos[1] + v.getHeight()));
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Thunk</span> <span class="token keyword">void</span> <span class="token function">startAppShortcutOrInfoActivity</span><span class="token punctuation">(</span><span class="token class-name">View</span> v<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Object</span> tag <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">getTag</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">final</span> <span class="token class-name">ShortcutInfo</span> shortcut<span class="token punctuation">;</span>
+    <span class="token keyword">final</span> <span class="token class-name">Intent</span> intent<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token keyword">instanceof</span> <span class="token class-name">ShortcutInfo</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        shortcut <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">ShortcutInfo</span><span class="token punctuation">)</span> tag<span class="token punctuation">;</span>
+        intent <span class="token operator">=</span> shortcut<span class="token punctuation">.</span>intent<span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> pos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        v<span class="token punctuation">.</span><span class="token function">getLocationOnScreen</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        intent<span class="token punctuation">.</span><span class="token function">setSourceBounds</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Rect</span><span class="token punctuation">(</span>pos<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> pos<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                pos<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> v<span class="token punctuation">.</span><span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pos<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> v<span class="token punctuation">.</span><span class="token function">getHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        } else if (tag instanceof AppInfo) {
-            shortcut = null;
-            intent = ((AppInfo) tag).intent;
-        } else {
-            throw new IllegalArgumentException(&quot;Input must be a Shortcut or AppInfo&quot;);
-        }
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token keyword">instanceof</span> <span class="token class-name">AppInfo</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        shortcut <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        intent <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">AppInfo</span><span class="token punctuation">)</span> tag<span class="token punctuation">)</span><span class="token punctuation">.</span>intent<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token string">"Input must be a Shortcut or AppInfo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-        boolean success = startActivitySafely(v, intent, tag);
-        mStats.recordLaunch(v, intent, shortcut);
+    <span class="token keyword">boolean</span> success <span class="token operator">=</span> <span class="token function">startActivitySafely</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> intent<span class="token punctuation">,</span> tag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mStats<span class="token punctuation">.</span><span class="token function">recordLaunch</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> intent<span class="token punctuation">,</span> shortcut<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        if (success &amp;&amp; v instanceof BubbleTextView) {
-            mWaitingForResume = (BubbleTextView) v;
-            mWaitingForResume.setStayPressed(true);
-        }
-    }</code></pre>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>success <span class="token operator">&amp;&amp;</span> v <span class="token keyword">instanceof</span> <span class="token class-name">BubbleTextView</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        mWaitingForResume <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">BubbleTextView</span><span class="token punctuation">)</span> v<span class="token punctuation">;</span>
+        mWaitingForResume<span class="token punctuation">.</span><span class="token function">setStayPressed</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在<code>startActivitySafely(View v,Intent intent,Object tag)</code>方法中先判断了当前是否在安全模式，如果在安全模式下则不允许启动非系统应用。<br>通过判断后接着就调用了<code>Launcher</code>的<code>startActivity(View v,Intent intent,Object tag)</code>。<br><code>startActivitySafely(View v,Intent intent,Object tag)</code>的代码如下：</p>
-<pre><code class="java">    public boolean startActivitySafely(View v, Intent intent, Object tag) {
-        boolean success = false;
-        //如果在安全模式下不允许启动非系统应用
-        if (mIsSafeModeEnabled &amp;&amp; !Utilities.isSystemApp(this, intent)) {
-            Toast.makeText(this, R.string.safemode_shortcut_error, Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        try {
-            success = startActivity(v, intent, tag);
-        } catch (ActivityNotFoundException e) {
-            Toast.makeText(this, R.string.activity_not_found, Toast.LENGTH_SHORT).show();
-            Log.e(TAG, &quot;Unable to launch. tag=&quot; + tag + &quot; intent=&quot; + intent, e);
-        }
-        return success;
-    }</code></pre>
-<pre><code class="java">private boolean startActivity(View v, Intent intent, Object tag) {
-        //第一步：为intent添加Intent.FLAG_ACTIVITY_NEW_TASK，当不存在和被启动activity相同的taskAffinity时，会新建一个任务栈来保存activity
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        try {
-            // Only launch using the new animation if the shortcut has not opted out (this is a private contract between launcher and may be ignored in the future).
-            boolean useLaunchAnimation = (v != null) &amp;&amp;
-                    !intent.hasExtra(INTENT_EXTRA_IGNORE_LAUNCH_ANIMATION);
-            LauncherAppsCompat launcherApps = LauncherAppsCompat.getInstance(this);
-            UserManagerCompat userManager = UserManagerCompat.getInstance(this);
-            //第二步：获取user
-            UserHandleCompat user = null;
-            if (intent.hasExtra(AppInfo.EXTRA_PROFILE)) {
-                long serialNumber = intent.getLongExtra(AppInfo.EXTRA_PROFILE, -1);
-                user = userManager.getUserForSerialNumber(serialNumber);
-            }
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">startActivitySafely</span><span class="token punctuation">(</span><span class="token class-name">View</span> v<span class="token punctuation">,</span> <span class="token class-name">Intent</span> intent<span class="token punctuation">,</span> <span class="token class-name">Object</span> tag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">boolean</span> success <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token comment">//如果在安全模式下不允许启动非系统应用</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>mIsSafeModeEnabled <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token class-name">Utilities</span><span class="token punctuation">.</span><span class="token function">isSystemApp</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> intent<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Toast</span><span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token class-name">R</span><span class="token punctuation">.</span>string<span class="token punctuation">.</span>safemode_shortcut_error<span class="token punctuation">,</span> <span class="token class-name">Toast</span><span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+        success <span class="token operator">=</span> <span class="token function">startActivity</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> intent<span class="token punctuation">,</span> tag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ActivityNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Toast</span><span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token class-name">R</span><span class="token punctuation">.</span>string<span class="token punctuation">.</span>activity_not_found<span class="token punctuation">,</span> <span class="token class-name">Toast</span><span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Log</span><span class="token punctuation">.</span><span class="token function">e</span><span class="token punctuation">(</span>TAG<span class="token punctuation">,</span> <span class="token string">"Unable to launch. tag="</span> <span class="token operator">+</span> tag <span class="token operator">+</span> <span class="token string">" intent="</span> <span class="token operator">+</span> intent<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> success<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">startActivity</span><span class="token punctuation">(</span><span class="token class-name">View</span> v<span class="token punctuation">,</span> <span class="token class-name">Intent</span> intent<span class="token punctuation">,</span> <span class="token class-name">Object</span> tag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//第一步：为intent添加Intent.FLAG_ACTIVITY_NEW_TASK，当不存在和被启动activity相同的taskAffinity时，会新建一个任务栈来保存activity</span>
+        intent<span class="token punctuation">.</span><span class="token function">addFlags</span><span class="token punctuation">(</span><span class="token class-name">Intent</span><span class="token punctuation">.</span>FLAG_ACTIVITY_NEW_TASK<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// Only launch using the new animation if the shortcut has not opted out (this is a private contract between launcher and may be ignored in the future).</span>
+            <span class="token keyword">boolean</span> useLaunchAnimation <span class="token operator">=</span> <span class="token punctuation">(</span>v <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+                    <span class="token operator">!</span>intent<span class="token punctuation">.</span><span class="token function">hasExtra</span><span class="token punctuation">(</span>INTENT_EXTRA_IGNORE_LAUNCH_ANIMATION<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">LauncherAppsCompat</span> launcherApps <span class="token operator">=</span> <span class="token class-name">LauncherAppsCompat</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">UserManagerCompat</span> userManager <span class="token operator">=</span> <span class="token class-name">UserManagerCompat</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//第二步：获取user</span>
+            <span class="token class-name">UserHandleCompat</span> user <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>intent<span class="token punctuation">.</span><span class="token function">hasExtra</span><span class="token punctuation">(</span><span class="token class-name">AppInfo</span><span class="token punctuation">.</span>EXTRA_PROFILE<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">long</span> serialNumber <span class="token operator">=</span> intent<span class="token punctuation">.</span><span class="token function">getLongExtra</span><span class="token punctuation">(</span><span class="token class-name">AppInfo</span><span class="token punctuation">.</span>EXTRA_PROFILE<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                user <span class="token operator">=</span> userManager<span class="token punctuation">.</span><span class="token function">getUserForSerialNumber</span><span class="token punctuation">(</span>serialNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
 
-            //第三步：构建动画
-            Bundle optsBundle = null;
-            if (useLaunchAnimation) {
-                ActivityOptions opts = null;
-                if (Utilities.ATLEAST_MARSHMALLOW) {
-                    int left = 0, top = 0;
-                    int width = v.getMeasuredWidth(), height = v.getMeasuredHeight();
-                    if (v instanceof TextView) {
-                        // Launch from center of icon, not entire view
-                        Drawable icon = Workspace.getTextViewIcon((TextView) v);
-                        if (icon != null) {
-                            Rect bounds = icon.getBounds();
-                            left = (width - bounds.width()) / 2;
-                            top = v.getPaddingTop();
-                            width = bounds.width();
-                            height = bounds.height();
-                        }
-                    }
-                    opts = ActivityOptions.makeClipRevealAnimation(v, left, top, width, height);
-                } else if (!Utilities.ATLEAST_LOLLIPOP) {
-                    // Below L, we use a scale up animation
-                    opts = ActivityOptions.makeScaleUpAnimation(v, 0, 0,
-                                    v.getMeasuredWidth(), v.getMeasuredHeight());
-                } else if (Utilities.ATLEAST_LOLLIPOP_MR1) {
-                    // On L devices, we use the device default slide-up transition.
-                    // On L MR1 devices, we a custom version of the slide-up transition which
-                    // doesn&#39;t have the delay present in the device default.
-                    opts = ActivityOptions.makeCustomAnimation(this,
-                            R.anim.task_open_enter, R.anim.no_anim);
-                }
-                optsBundle = opts != null ? opts.toBundle() : null;
-            }
+            <span class="token comment">//第三步：构建动画</span>
+            <span class="token class-name">Bundle</span> optsBundle <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>useLaunchAnimation<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token class-name">ActivityOptions</span> opts <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Utilities</span><span class="token punctuation">.</span>ATLEAST_MARSHMALLOW<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> top <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                    <span class="token keyword">int</span> width <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">getMeasuredWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> height <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">getMeasuredHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>v <span class="token keyword">instanceof</span> <span class="token class-name">TextView</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                        <span class="token comment">// Launch from center of icon, not entire view</span>
+                        <span class="token class-name">Drawable</span> icon <span class="token operator">=</span> <span class="token class-name">Workspace</span><span class="token punctuation">.</span><span class="token function">getTextViewIcon</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">TextView</span><span class="token punctuation">)</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>icon <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                            <span class="token class-name">Rect</span> bounds <span class="token operator">=</span> icon<span class="token punctuation">.</span><span class="token function">getBounds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            left <span class="token operator">=</span> <span class="token punctuation">(</span>width <span class="token operator">-</span> bounds<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+                            top <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">getPaddingTop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            width <span class="token operator">=</span> bounds<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            height <span class="token operator">=</span> bounds<span class="token punctuation">.</span><span class="token function">height</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">&#125;</span>
+                    <span class="token punctuation">&#125;</span>
+                    opts <span class="token operator">=</span> <span class="token class-name">ActivityOptions</span><span class="token punctuation">.</span><span class="token function">makeClipRevealAnimation</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> left<span class="token punctuation">,</span> top<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Utilities</span><span class="token punctuation">.</span>ATLEAST_LOLLIPOP<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token comment">// Below L, we use a scale up animation</span>
+                    opts <span class="token operator">=</span> <span class="token class-name">ActivityOptions</span><span class="token punctuation">.</span><span class="token function">makeScaleUpAnimation</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                                    v<span class="token punctuation">.</span><span class="token function">getMeasuredWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> v<span class="token punctuation">.</span><span class="token function">getMeasuredHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Utilities</span><span class="token punctuation">.</span>ATLEAST_LOLLIPOP_MR1<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token comment">// On L devices, we use the device default slide-up transition.</span>
+                    <span class="token comment">// On L MR1 devices, we a custom version of the slide-up transition which</span>
+                    <span class="token comment">// doesn't have the delay present in the device default.</span>
+                    opts <span class="token operator">=</span> <span class="token class-name">ActivityOptions</span><span class="token punctuation">.</span><span class="token function">makeCustomAnimation</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span>
+                            <span class="token class-name">R</span><span class="token punctuation">.</span>anim<span class="token punctuation">.</span>task_open_enter<span class="token punctuation">,</span> <span class="token class-name">R</span><span class="token punctuation">.</span>anim<span class="token punctuation">.</span>no_anim<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+                optsBundle <span class="token operator">=</span> opts <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">?</span> opts<span class="token punctuation">.</span><span class="token function">toBundle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
 
-            //第四步：执行启动
-            if (user == null || user.equals(UserHandleCompat.myUserHandle())) {
-                // Could be launching some bookkeeping activity
-                startActivity(intent, optsBundle);
-            } else {
-                // TODO Component can be null when shortcuts are supported for secondary user
-                launcherApps.startActivityForProfile(intent.getComponent(), user,
-                        intent.getSourceBounds(), optsBundle);
-            }
-            return true;
-        } catch (SecurityException e) {
-            Toast.makeText(this, R.string.activity_not_found, Toast.LENGTH_SHORT).show();
-            Log.e(TAG, &quot;Launcher does not have the permission to launch &quot; + intent +
-                    &quot;. Make sure to create a MAIN intent-filter for the corresponding activity &quot; +
-                    &quot;or use the exported attribute for this activity. &quot;
-                    + &quot;tag=&quot;+ tag + &quot; intent=&quot; + intent, e);
-        }
-        return false;
-    }</code></pre>
+            <span class="token comment">//第四步：执行启动</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>user <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> user<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">UserHandleCompat</span><span class="token punctuation">.</span><span class="token function">myUserHandle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">// Could be launching some bookkeeping activity</span>
+                <span class="token function">startActivity</span><span class="token punctuation">(</span>intent<span class="token punctuation">,</span> optsBundle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">// TODO Component can be null when shortcuts are supported for secondary user</span>
+                launcherApps<span class="token punctuation">.</span><span class="token function">startActivityForProfile</span><span class="token punctuation">(</span>intent<span class="token punctuation">.</span><span class="token function">getComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> user<span class="token punctuation">,</span>
+                        intent<span class="token punctuation">.</span><span class="token function">getSourceBounds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> optsBundle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">SecurityException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Toast</span><span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token class-name">R</span><span class="token punctuation">.</span>string<span class="token punctuation">.</span>activity_not_found<span class="token punctuation">,</span> <span class="token class-name">Toast</span><span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Log</span><span class="token punctuation">.</span><span class="token function">e</span><span class="token punctuation">(</span>TAG<span class="token punctuation">,</span> <span class="token string">"Launcher does not have the permission to launch "</span> <span class="token operator">+</span> intent <span class="token operator">+</span>
+                    <span class="token string">". Make sure to create a MAIN intent-filter for the corresponding activity "</span> <span class="token operator">+</span>
+                    <span class="token string">"or use the exported attribute for this activity. "</span>
+                    <span class="token operator">+</span> <span class="token string">"tag="</span><span class="token operator">+</span> tag <span class="token operator">+</span> <span class="token string">" intent="</span> <span class="token operator">+</span> intent<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在<code>Launcher</code>的<code>startActivity(View v,Intent intent,Object tag)</code>中一共做了四件事。<br>第一件事是为<code>intent</code>添加一个<code>Intent.FLAG_ACTIVITY_NEW_TASK</code>。如果当前不存在和被启动activity相同taskAffinity的任务栈，那就会新建一个任务栈来存放新启动的activity。</p>
 <p>第二件事是从<code>UserManagerCompat</code>的单例对象中获取对应的<code>UserHandleCompat</code>。<br>// todo 解释UserHandleCompat 和 UserManagerCompat</p>
 <p>第三件事判断intent中是否包含<code>INTENT_EXTRA_IGNORE_LAUNCH_ANIMATION</code>，如果包含就忽略动画。<br>如果不包含则默认需要播放动画，接着根据不同Android版本构建<code>ActivityOptions</code></p>
 <p>第四件事，如果<code>user</code>和<code>new UserHandleCompat(android.os.Process.myUserHandle()</code>相同则调用<code>Activity</code>的<code>startActivity(Intent intent, @Nullable Bundle options)</code>。</p>
 <h2 id="android-app-Activity-java"><a href="#android-app-Activity-java" class="headerlink" title="android.app.Activity.java"></a>android.app.Activity.java</h2><p>在Activity的<code>startActivity(Intent intent, Bundle options)</code>中，因为options非空，会调用<code>Activity</code>的<code>startActivityForResult(Intent intent, int requestCode, Bundle options)</code>。中间的requestCode默认传了-1，表示不关心返回结果</p>
 <p>在<code>Activity</code>的<code>startActivityForResult(Intent intent, int requestCode, Bundle options)</code>中首先判断了<code>mParent</code>是否为空，当<code>mParent</code>为空时，由<code>Instrumentation</code>来执行启动操作，如果<code>mParent</code>不为空，则由<code>mParent</code>来执行启动操作。<code>startActivityForResult(Intent intent, int requestCode, @Nullable Bundle options)</code>的代码如下：</p>
-<pre><code class="java">public void startActivityForResult(Intent intent, int requestCode, @Nullable Bundle options) {
-        if (mParent == null) {
-            //当mParent为空时由mInstrumentation继续处理启动流程
-            Instrumentation.ActivityResult ar =
-                mInstrumentation.execStartActivity(
-                    this, mMainThread.getApplicationThread(), mToken, this,
-                    intent, requestCode, options);
-            if (ar != null) {
-                mMainThread.sendActivityResult(
-                    mToken, mEmbeddedID, requestCode, ar.getResultCode(),
-                    ar.getResultData());
-            }
-            if (requestCode &gt;= 0) {
-                mStartedActivity = true;
-            }
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">startActivityForResult</span><span class="token punctuation">(</span><span class="token class-name">Intent</span> intent<span class="token punctuation">,</span> <span class="token keyword">int</span> requestCode<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> <span class="token class-name">Bundle</span> options<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>mParent <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">//当mParent为空时由mInstrumentation继续处理启动流程</span>
+            <span class="token class-name">Instrumentation</span><span class="token punctuation">.</span><span class="token class-name">ActivityResult</span> ar <span class="token operator">=</span>
+                mInstrumentation<span class="token punctuation">.</span><span class="token function">execStartActivity</span><span class="token punctuation">(</span>
+                    <span class="token keyword">this</span><span class="token punctuation">,</span> mMainThread<span class="token punctuation">.</span><span class="token function">getApplicationThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> mToken<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span>
+                    intent<span class="token punctuation">,</span> requestCode<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>ar <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                mMainThread<span class="token punctuation">.</span><span class="token function">sendActivityResult</span><span class="token punctuation">(</span>
+                    mToken<span class="token punctuation">,</span> mEmbeddedID<span class="token punctuation">,</span> requestCode<span class="token punctuation">,</span> ar<span class="token punctuation">.</span><span class="token function">getResultCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    ar<span class="token punctuation">.</span><span class="token function">getResultData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>requestCode <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                mStartedActivity <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
 
-            cancelInputsAndStartExitTransition(options);
-        } else {
-            if (options != null) {
-                mParent.startActivityFromChild(this, intent, requestCode, options);
-            } else {
-                mParent.startActivityFromChild(this, intent, requestCode);
-            }
-        }
-    }</code></pre>
+            <span class="token function">cancelInputsAndStartExitTransition</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>options <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                mParent<span class="token punctuation">.</span><span class="token function">startActivityFromChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> intent<span class="token punctuation">,</span> requestCode<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                mParent<span class="token punctuation">.</span><span class="token function">startActivityFromChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> intent<span class="token punctuation">,</span> requestCode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里的<code>mParent</code>为空，所以调用了<code>Instrumentation</code>的<code>ActivityResult execStartActivity(Context who, IBinder contextThread, IBinder token, Activity target,Intent intent, int requestCode, Bundle options)</code>方法，方法很长，一共传了7个参数。分别是：</p>
 <ul>
 <li><code>Context who</code>：</li>
@@ -694,276 +697,276 @@ dumpsys activity top |grep ACTIVITY</code></pre>
 </blockquote>
 <p>附加选项<br>这里传入的是调用<code>startActivity</code>时传入的options</p>
 <p><code>Instrumentation</code>的<code>execStartActivity</code>方法代码如下：</p>
-<pre><code class="java">public ActivityResult execStartActivity(
-            Context who, IBinder contextThread, IBinder token, Activity target,
-            Intent intent, int requestCode, Bundle options) {
-        IApplicationThread whoThread = (IApplicationThread) contextThread;
-        Uri referrer = target != null ? target.onProvideReferrer() : null;
-        if (referrer != null) {
-            intent.putExtra(Intent.EXTRA_REFERRER, referrer);
-        }
-        if (mActivityMonitors != null) {
-            synchronized (mSync) {
-                final int N = mActivityMonitors.size();
-                for (int i=0; i&lt;N; i++) {
-                    final ActivityMonitor am = mActivityMonitors.get(i);
-                    if (am.match(who, null, intent)) {
-                        am.mHits++;
-                        if (am.isBlocking()) {
-                            return requestCode &gt;= 0 ? am.getResult() : null;
-                        }
-                        break;
-                    }
-                }
-            }
-        }
-        try {
-            intent.migrateExtraStreamToClipData();
-            intent.prepareToLeaveProcess();
-            int result = ActivityManagerNative.getDefault()
-                .startActivity(whoThread, who.getBasePackageName(), intent,
-                        intent.resolveTypeIfNeeded(who.getContentResolver()),
-                        token, target != null ? target.mEmbeddedID : null,
-                        requestCode, 0, null, options);
-            checkStartActivityResult(result, intent);
-        } catch (RemoteException e) {
-            throw new RuntimeException(&quot;Failure from system&quot;, e);
-        }
-        return null;
-    }</code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">ActivityResult</span> <span class="token function">execStartActivity</span><span class="token punctuation">(</span>
+            <span class="token class-name">Context</span> who<span class="token punctuation">,</span> <span class="token class-name">IBinder</span> contextThread<span class="token punctuation">,</span> <span class="token class-name">IBinder</span> token<span class="token punctuation">,</span> <span class="token class-name">Activity</span> target<span class="token punctuation">,</span>
+            <span class="token class-name">Intent</span> intent<span class="token punctuation">,</span> <span class="token keyword">int</span> requestCode<span class="token punctuation">,</span> <span class="token class-name">Bundle</span> options<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">IApplicationThread</span> whoThread <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">IApplicationThread</span><span class="token punctuation">)</span> contextThread<span class="token punctuation">;</span>
+        <span class="token class-name">Uri</span> referrer <span class="token operator">=</span> target <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">?</span> target<span class="token punctuation">.</span><span class="token function">onProvideReferrer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>referrer <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            intent<span class="token punctuation">.</span><span class="token function">putExtra</span><span class="token punctuation">(</span><span class="token class-name">Intent</span><span class="token punctuation">.</span>EXTRA_REFERRER<span class="token punctuation">,</span> referrer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>mActivityMonitors <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>mSync<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token class-name">N</span> <span class="token operator">=</span> mActivityMonitors<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token class-name">N</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">final</span> <span class="token class-name">ActivityMonitor</span> am <span class="token operator">=</span> mActivityMonitors<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>am<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>who<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> intent<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                        am<span class="token punctuation">.</span>mHits<span class="token operator">++</span><span class="token punctuation">;</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>am<span class="token punctuation">.</span><span class="token function">isBlocking</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                            <span class="token keyword">return</span> requestCode <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">?</span> am<span class="token punctuation">.</span><span class="token function">getResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">&#125;</span>
+                        <span class="token keyword">break</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">&#125;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            intent<span class="token punctuation">.</span><span class="token function">migrateExtraStreamToClipData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            intent<span class="token punctuation">.</span><span class="token function">prepareToLeaveProcess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> result <span class="token operator">=</span> <span class="token class-name">ActivityManagerNative</span><span class="token punctuation">.</span><span class="token function">getDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">startActivity</span><span class="token punctuation">(</span>whoThread<span class="token punctuation">,</span> who<span class="token punctuation">.</span><span class="token function">getBasePackageName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> intent<span class="token punctuation">,</span>
+                        intent<span class="token punctuation">.</span><span class="token function">resolveTypeIfNeeded</span><span class="token punctuation">(</span>who<span class="token punctuation">.</span><span class="token function">getContentResolver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        token<span class="token punctuation">,</span> target <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">?</span> target<span class="token punctuation">.</span>mEmbeddedID <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+                        requestCode<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">checkStartActivityResult</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> intent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">RemoteException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">"Failure from system"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里可以看到第一步是先从<strong>target</strong>中获取<strong>referrer</strong>，在<code>Activity</code>的<code>onProvideReferrer()</code>方法中默认是直接返回null的。如果这里的<strong>target</strong>是继承了<code>Activity</code>的子类并重写了<code>onProvideReferrer()</code>方法，那么就能从中获取到<code>Uri</code>了。</p>
 <p>接下来的<code>mActivityMonitors</code>相关的内容是与<code>InstrumentationTestCases</code>测试相关的。在这里不多加讨论。<br>启动相关的内容在后续的<code>try-catch</code>块中。<br>首先调用<code>Intent</code>的<code>migrateExtraStreamToClipData</code>方法将<strong>intent</strong>中的<strong>extra</strong>数据序列化传递给目标进程。<br>然后调用<code>Intent</code>的<code>prepareToLeaveProcess</code>方法做好离开当前线程的准备。<br>接下来就是调用<code>ActivityManagerNative.getDefault()</code>得到了一个<strong>android.app.ActivityManagerProxy</strong>对象。</p>
 <p>先来看看<code>getDefault()</code>方法是怎么获取到这个<code>ActivityManagerProxy</code>对象的。<br>在<code>ActivityManagerNative.getDefault()</code>中只有一行代码。</p>
-<pre><code class="java">    static public IActivityManager getDefault() {
-        return gDefault.get();
-    }</code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">static</span> <span class="token keyword">public</span> <span class="token class-name">IActivityManager</span> <span class="token function">getDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> gDefault<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>这里的<strong>gDefault</strong>实际上是定义在<strong>ActivityManagerNative</strong>中的静态变量，具体类型如下：</p>
-<pre><code class="java">    private static final Singleton&lt;IActivityManager&gt; gDefault = new Singleton&lt;IActivityManager&gt;() {
-        protected IActivityManager create() {
-            IBinder b = ServiceManager.getService(&quot;activity&quot;);
-            if (false) {
-                Log.v(&quot;ActivityManager&quot;, &quot;default service binder = &quot; + b);
-            }
-            IActivityManager am = asInterface(b);
-            if (false) {
-                Log.v(&quot;ActivityManager&quot;, &quot;default service = &quot; + am);
-            }
-            return am;
-        }
-    };</code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Singleton</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">IActivityManager</span><span class="token punctuation">></span></span> gDefault <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">IActivityManager</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">protected</span> <span class="token class-name">IActivityManager</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">IBinder</span> b <span class="token operator">=</span> <span class="token class-name">ServiceManager</span><span class="token punctuation">.</span><span class="token function">getService</span><span class="token punctuation">(</span><span class="token string">"activity"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Log</span><span class="token punctuation">.</span><span class="token function">v</span><span class="token punctuation">(</span><span class="token string">"ActivityManager"</span><span class="token punctuation">,</span> <span class="token string">"default service binder = "</span> <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">IActivityManager</span> am <span class="token operator">=</span> <span class="token function">asInterface</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Log</span><span class="token punctuation">.</span><span class="token function">v</span><span class="token punctuation">(</span><span class="token string">"ActivityManager"</span><span class="token punctuation">,</span> <span class="token string">"default service = "</span> <span class="token operator">+</span> am<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> am<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以看到<strong>gDefault</strong>就是一个实现了IActivityManager接口的<code>ActivityManagerProxy</code>对象。<br>所以实际上这里是调用了<code>ActivityManagerProxy</code>的<code>startActivity</code>方法。</p>
-<pre><code class="Java"> public int startActivity(IApplicationThread caller, String callingPackage, Intent intent,
-            String resolvedType, IBinder resultTo, String resultWho, int requestCode,
-            int startFlags, ProfilerInfo profilerInfo, Bundle options) throws RemoteException {
-        Parcel data = Parcel.obtain();
-        Parcel reply = Parcel.obtain();
-        data.writeInterfaceToken(IActivityManager.descriptor);
-        data.writeStrongBinder(caller != null ? caller.asBinder() : null);
-        data.writeString(callingPackage);
-        intent.writeToParcel(data, 0);
-        data.writeString(resolvedType);
-        data.writeStrongBinder(resultTo);
-        data.writeString(resultWho);
-        data.writeInt(requestCode);
-        data.writeInt(startFlags);
-        if (profilerInfo != null) {
-            data.writeInt(1);
-            profilerInfo.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        } else {
-            data.writeInt(0);
-        }
-        if (options != null) {
-            data.writeInt(1);
-            options.writeToParcel(data, 0);
-        } else {
-            data.writeInt(0);
-        }
-        mRemote.transact(START_ACTIVITY_TRANSACTION, data, reply, 0);
-        reply.readException();
-        int result = reply.readInt();
-        reply.recycle();
-        data.recycle();
-        return result;
-    }
-</code></pre>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public int startActivity(IApplicationThread caller, String callingPackage, Intent intent,
+           String resolvedType, IBinder resultTo, String resultWho, int requestCode,
+           int startFlags, ProfilerInfo profilerInfo, Bundle options) throws RemoteException &#123;
+       Parcel data &#x3D; Parcel.obtain();
+       Parcel reply &#x3D; Parcel.obtain();
+       data.writeInterfaceToken(IActivityManager.descriptor);
+       data.writeStrongBinder(caller !&#x3D; null ? caller.asBinder() : null);
+       data.writeString(callingPackage);
+       intent.writeToParcel(data, 0);
+       data.writeString(resolvedType);
+       data.writeStrongBinder(resultTo);
+       data.writeString(resultWho);
+       data.writeInt(requestCode);
+       data.writeInt(startFlags);
+       if (profilerInfo !&#x3D; null) &#123;
+           data.writeInt(1);
+           profilerInfo.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
+       &#125; else &#123;
+           data.writeInt(0);
+       &#125;
+       if (options !&#x3D; null) &#123;
+           data.writeInt(1);
+           options.writeToParcel(data, 0);
+       &#125; else &#123;
+           data.writeInt(0);
+       &#125;
+       mRemote.transact(START_ACTIVITY_TRANSACTION, data, reply, 0);
+       reply.readException();
+       int result &#x3D; reply.readInt();
+       reply.recycle();
+       data.recycle();
+       return result;
+   &#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在这里通过AIDL将startActivity任务交给了远端服务器执行。所以会跳转到<code>ActivityManagreNative</code>的<code>onTransact</code>方法。</p>
-<pre><code class="Java">    @Override
-    public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
-            throws RemoteException {
-        switch (code) {
-            case START_ACTIVITY_TRANSACTION:
-            {
-                data.enforceInterface(IActivityManager.descriptor);
-                IBinder b = data.readStrongBinder();
-                IApplicationThread app = ApplicationThreadNative.asInterface(b);
-                String callingPackage = data.readString();
-                Intent intent = Intent.CREATOR.createFromParcel(data);
-                String resolvedType = data.readString();
-                IBinder resultTo = data.readStrongBinder();
-                String resultWho = data.readString();
-                int requestCode = data.readInt();
-                int startFlags = data.readInt();
-                ProfilerInfo profilerInfo = data.readInt() != 0
-                        ? ProfilerInfo.CREATOR.createFromParcel(data) : null;
-                Bundle options = data.readInt() != 0
-                        ? Bundle.CREATOR.createFromParcel(data) : null;
-                int result = startActivity(app, callingPackage, intent, resolvedType,
-                        resultTo, resultWho, requestCode, startFlags, profilerInfo, options);
-                reply.writeNoException();
-                reply.writeInt(result);
-                return true;
-            }
-        }
-    }</code></pre>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">@Override
+public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
+        throws RemoteException &#123;
+    switch (code) &#123;
+        case START_ACTIVITY_TRANSACTION:
+        &#123;
+            data.enforceInterface(IActivityManager.descriptor);
+            IBinder b &#x3D; data.readStrongBinder();
+            IApplicationThread app &#x3D; ApplicationThreadNative.asInterface(b);
+            String callingPackage &#x3D; data.readString();
+            Intent intent &#x3D; Intent.CREATOR.createFromParcel(data);
+            String resolvedType &#x3D; data.readString();
+            IBinder resultTo &#x3D; data.readStrongBinder();
+            String resultWho &#x3D; data.readString();
+            int requestCode &#x3D; data.readInt();
+            int startFlags &#x3D; data.readInt();
+            ProfilerInfo profilerInfo &#x3D; data.readInt() !&#x3D; 0
+                    ? ProfilerInfo.CREATOR.createFromParcel(data) : null;
+            Bundle options &#x3D; data.readInt() !&#x3D; 0
+                    ? Bundle.CREATOR.createFromParcel(data) : null;
+            int result &#x3D; startActivity(app, callingPackage, intent, resolvedType,
+                    resultTo, resultWho, requestCode, startFlags, profilerInfo, options);
+            reply.writeNoException();
+            reply.writeInt(result);
+            return true;
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在服务端会调用到<code>ActivityManagerService</code>(以下简称<code>AMS</code>)的<code>startActivity</code>方法，然后又会调用到<code>AMS</code>的<code>startActivityAsUser</code>方法。<br>然后在<code>AMS</code>的<code>startActivityAsUser</code>会调用<code>ActivityStackSupervisor</code>的<code>startActivityMayWait</code>方法。<br>从<code>ActivityStackSupervisor</code>类名可以看出，这个类承担了Activity栈管理者的作用。</p>
-<pre><code class="Java">    public final int startActivity(IApplicationThread caller, String callingPackage,
-            Intent intent, String resolvedType, IBinder resultTo, String resultWho, int requestCode,
-            int startFlags, ProfilerInfo profilerInfo, Bundle options) {
-        return startActivityAsUser(caller, callingPackage, intent, resolvedType, resultTo,
-            resultWho, requestCode, startFlags, profilerInfo, options,
-            UserHandle.getCallingUserId());
-    }</code></pre>
-<pre><code class="Java">    public final int startActivityAsUser(IApplicationThread caller, String callingPackage,
-            Intent intent, String resolvedType, IBinder resultTo, String resultWho, int requestCode,
-            int startFlags, ProfilerInfo profilerInfo, Bundle options, int userId) {
-        enforceNotIsolatedCaller(&quot;startActivity&quot;);
-        userId = handleIncomingUser(Binder.getCallingPid(), Binder.getCallingUid(), userId,
-                false, ALLOW_FULL_ONLY, &quot;startActivity&quot;, null);
-        // Switch to user app stacks here.
-        return mStackSupervisor.startActivityMayWait(caller, -1, callingPackage, intent,
-                resolvedType, null, null, resultTo, resultWho, requestCode, startFlags,
-                profilerInfo, null, null, options, false, userId, null, null);
-    }</code></pre>
-<pre><code class="Java">final int startActivityMayWait(IApplicationThread caller, int callingUid,
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public final int startActivity(IApplicationThread caller, String callingPackage,
+        Intent intent, String resolvedType, IBinder resultTo, String resultWho, int requestCode,
+        int startFlags, ProfilerInfo profilerInfo, Bundle options) &#123;
+    return startActivityAsUser(caller, callingPackage, intent, resolvedType, resultTo,
+        resultWho, requestCode, startFlags, profilerInfo, options,
+        UserHandle.getCallingUserId());
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public final int startActivityAsUser(IApplicationThread caller, String callingPackage,
+        Intent intent, String resolvedType, IBinder resultTo, String resultWho, int requestCode,
+        int startFlags, ProfilerInfo profilerInfo, Bundle options, int userId) &#123;
+    enforceNotIsolatedCaller(&quot;startActivity&quot;);
+    userId &#x3D; handleIncomingUser(Binder.getCallingPid(), Binder.getCallingUid(), userId,
+            false, ALLOW_FULL_ONLY, &quot;startActivity&quot;, null);
+    &#x2F;&#x2F; Switch to user app stacks here.
+    return mStackSupervisor.startActivityMayWait(caller, -1, callingPackage, intent,
+            resolvedType, null, null, resultTo, resultWho, requestCode, startFlags,
+            profilerInfo, null, null, options, false, userId, null, null);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">final int startActivityMayWait(IApplicationThread caller, int callingUid,
             String callingPackage, Intent intent, String resolvedType,
             IVoiceInteractionSession voiceSession, IVoiceInteractor voiceInteractor,
             IBinder resultTo, String resultWho, int requestCode, int startFlags,
             ProfilerInfo profilerInfo, WaitResult outResult, Configuration config,
             Bundle options, boolean ignoreTargetSecurity, int userId,
-            IActivityContainer iContainer, TaskRecord inTask) {
-        // Refuse possible leaked file descriptors
-        // Intent不能包含文件描述符
-        if (intent != null &amp;&amp; intent.hasFileDescriptors()) {
+            IActivityContainer iContainer, TaskRecord inTask) &#123;
+        &#x2F;&#x2F; Refuse possible leaked file descriptors
+        &#x2F;&#x2F; Intent不能包含文件描述符
+        if (intent !&#x3D; null &amp;&amp; intent.hasFileDescriptors()) &#123;
             throw new IllegalArgumentException(&quot;File descriptors passed in Intent&quot;);
-        }
-        boolean componentSpecified = intent.getComponent() != null;
+        &#125;
+        boolean componentSpecified &#x3D; intent.getComponent() !&#x3D; null;
 
-        // Don&#39;t modify the client&#39;s object!
-        // 不对原Intent修改
-        intent = new Intent(intent);
+        &#x2F;&#x2F; Don&#39;t modify the client&#39;s object!
+        &#x2F;&#x2F; 不对原Intent修改
+        intent &#x3D; new Intent(intent);
 
-        // Collect information about the target of the Intent.
-        // 得到目标启动Activity的信息
-        ActivityInfo aInfo =
+        &#x2F;&#x2F; Collect information about the target of the Intent.
+        &#x2F;&#x2F; 得到目标启动Activity的信息
+        ActivityInfo aInfo &#x3D;
                 resolveActivity(intent, resolvedType, startFlags, profilerInfo, userId);
 
-        ActivityContainer container = (ActivityContainer)iContainer;
-        synchronized (mService) {
-            if (container != null &amp;&amp; container.mParentActivity != null &amp;&amp;
-                    container.mParentActivity.state != RESUMED) {
-                // Cannot start a child activity if the parent is not resumed.
+        ActivityContainer container &#x3D; (ActivityContainer)iContainer;
+        synchronized (mService) &#123;
+            if (container !&#x3D; null &amp;&amp; container.mParentActivity !&#x3D; null &amp;&amp;
+                    container.mParentActivity.state !&#x3D; RESUMED) &#123;
+                &#x2F;&#x2F; Cannot start a child activity if the parent is not resumed.
                 return ActivityManager.START_CANCELED;
-            }
-            final int realCallingPid = Binder.getCallingPid();
-            final int realCallingUid = Binder.getCallingUid();
+            &#125;
+            final int realCallingPid &#x3D; Binder.getCallingPid();
+            final int realCallingUid &#x3D; Binder.getCallingUid();
             int callingPid;
-            if (callingUid &gt;= 0) {
-                callingPid = -1;
-            } else if (caller == null) {
-                callingPid = realCallingPid;
-                callingUid = realCallingUid;
-            } else {
-                callingPid = callingUid = -1;
-            }
+            if (callingUid &gt;&#x3D; 0) &#123;
+                callingPid &#x3D; -1;
+            &#125; else if (caller &#x3D;&#x3D; null) &#123;
+                callingPid &#x3D; realCallingPid;
+                callingUid &#x3D; realCallingUid;
+            &#125; else &#123;
+                callingPid &#x3D; callingUid &#x3D; -1;
+            &#125;
 
             final ActivityStack stack;
-            if (container == null || container.mStack.isOnHomeDisplay()) {
-                stack = mFocusedStack;
-            } else {
-                stack = container.mStack;
-            }
-            stack.mConfigWillChange = config != null &amp;&amp; mService.mConfiguration.diff(config) != 0;
+            if (container &#x3D;&#x3D; null || container.mStack.isOnHomeDisplay()) &#123;
+                stack &#x3D; mFocusedStack;
+            &#125; else &#123;
+                stack &#x3D; container.mStack;
+            &#125;
+            stack.mConfigWillChange &#x3D; config !&#x3D; null &amp;&amp; mService.mConfiguration.diff(config) !&#x3D; 0;
             if (DEBUG_CONFIGURATION) Slog.v(TAG_CONFIGURATION,
-                    &quot;Starting activity when config will change = &quot; + stack.mConfigWillChange);
+                    &quot;Starting activity when config will change &#x3D; &quot; + stack.mConfigWillChange);
 
-            final long origId = Binder.clearCallingIdentity();
+            final long origId &#x3D; Binder.clearCallingIdentity();
 
-            if (aInfo != null &amp;&amp;
+            if (aInfo !&#x3D; null &amp;&amp;
                     (aInfo.applicationInfo.privateFlags
-                            &amp;ApplicationInfo.PRIVATE_FLAG_CANT_SAVE_STATE) != 0) {
-                // This may be a heavy-weight process!  Check to see if we already
-                // have another, different heavy-weight process running.
-                if (aInfo.processName.equals(aInfo.applicationInfo.packageName)) {
-                    if (mService.mHeavyWeightProcess != null &amp;&amp;
-                            (mService.mHeavyWeightProcess.info.uid != aInfo.applicationInfo.uid ||
-                            !mService.mHeavyWeightProcess.processName.equals(aInfo.processName))) {
-                        int appCallingUid = callingUid;
-                        if (caller != null) {
-                            //通过调用者的ApplicationThread从最近使用中获取对应的ProcessRecord
-                            ProcessRecord callerApp = mService.getRecordForAppLocked(caller);
-                            if (callerApp != null) {
-                                appCallingUid = callerApp.info.uid;
-                            } else {
+                            &amp;ApplicationInfo.PRIVATE_FLAG_CANT_SAVE_STATE) !&#x3D; 0) &#123;
+                &#x2F;&#x2F; This may be a heavy-weight process!  Check to see if we already
+                &#x2F;&#x2F; have another, different heavy-weight process running.
+                if (aInfo.processName.equals(aInfo.applicationInfo.packageName)) &#123;
+                    if (mService.mHeavyWeightProcess !&#x3D; null &amp;&amp;
+                            (mService.mHeavyWeightProcess.info.uid !&#x3D; aInfo.applicationInfo.uid ||
+                            !mService.mHeavyWeightProcess.processName.equals(aInfo.processName))) &#123;
+                        int appCallingUid &#x3D; callingUid;
+                        if (caller !&#x3D; null) &#123;
+							&#x2F;&#x2F;通过调用者的ApplicationThread从最近使用中获取对应的ProcessRecord
+                            ProcessRecord callerApp &#x3D; mService.getRecordForAppLocked(caller);
+                            if (callerApp !&#x3D; null) &#123;
+                                appCallingUid &#x3D; callerApp.info.uid;
+                            &#125; else &#123;
                                 Slog.w(TAG, &quot;Unable to find app for caller &quot; + caller
-                                      + &quot; (pid=&quot; + callingPid + &quot;) when starting: &quot;
+                                      + &quot; (pid&#x3D;&quot; + callingPid + &quot;) when starting: &quot;
                                       + intent.toString());
-                                //找不到调用者无法启动Activity
+								&#x2F;&#x2F;找不到调用者无法启动Activity
                                 ActivityOptions.abort(options);
                                 return ActivityManager.START_PERMISSION_DENIED;
-                            }
-                        }
+                            &#125;
+                        &#125;
 
-                        //获取对应的PendingIntentRecord
-                        IIntentSender target = mService.getIntentSenderLocked(
+						&#x2F;&#x2F;获取对应的PendingIntentRecord
+                        IIntentSender target &#x3D; mService.getIntentSenderLocked(
                                 ActivityManager.INTENT_SENDER_ACTIVITY, &quot;android&quot;,
-                                appCallingUid, userId, null, null, 0, new Intent[] { intent },
-                                new String[] { resolvedType }, PendingIntent.FLAG_CANCEL_CURRENT
+                                appCallingUid, userId, null, null, 0, new Intent[] &#123; intent &#125;,
+                                new String[] &#123; resolvedType &#125;, PendingIntent.FLAG_CANCEL_CURRENT
                                 | PendingIntent.FLAG_ONE_SHOT, null);
 
-                        Intent newIntent = new Intent();
-                        if (requestCode &gt;= 0) {
-                            // Caller is requesting a result.
-                            //需要Activity启动结果的需要添加HeavyWeightSwitcherActivity.KEY_HAS_RESULT
+                        Intent newIntent &#x3D; new Intent();
+                        if (requestCode &gt;&#x3D; 0) &#123;
+                            &#x2F;&#x2F; Caller is requesting a result.
+                            &#x2F;&#x2F;需要Activity启动结果的需要添加HeavyWeightSwitcherActivity.KEY_HAS_RESULT
                             newIntent.putExtra(HeavyWeightSwitcherActivity.KEY_HAS_RESULT, true);
-                        }
+                        &#125;
                         newIntent.putExtra(HeavyWeightSwitcherActivity.KEY_INTENT,
                                 new IntentSender(target));
-                        //mHeavyWeightProcess中正在运行Activity，添加信息到newIntent中
-                        if (mService.mHeavyWeightProcess.activities.size() &gt; 0) {
-                            ActivityRecord hist = mService.mHeavyWeightProcess.activities.get(0);
+						&#x2F;&#x2F;mHeavyWeightProcess中正在运行Activity，添加信息到newIntent中
+                        if (mService.mHeavyWeightProcess.activities.size() &gt; 0) &#123;
+                            ActivityRecord hist &#x3D; mService.mHeavyWeightProcess.activities.get(0);
                             newIntent.putExtra(HeavyWeightSwitcherActivity.KEY_CUR_APP,
                                     hist.packageName);
                             newIntent.putExtra(HeavyWeightSwitcherActivity.KEY_CUR_TASK,
                                     hist.task.taskId);
-                        }
+                        &#125;
                         newIntent.putExtra(HeavyWeightSwitcherActivity.KEY_NEW_APP,
                                 aInfo.packageName);
                         newIntent.setFlags(intent.getFlags());
                         newIntent.setClassName(&quot;android&quot;,
                                 HeavyWeightSwitcherActivity.class.getName());
-                        //修改intent为新intent
-                        intent = newIntent;
-                        resolvedType = null;
-                        caller = null;
-                        callingUid = Binder.getCallingUid();
-                        callingPid = Binder.getCallingPid();
-                        componentSpecified = true;
-                        try {
-                            ResolveInfo rInfo =
+						&#x2F;&#x2F;修改intent为新intent
+                        intent &#x3D; newIntent;
+                        resolvedType &#x3D; null;
+                        caller &#x3D; null;
+                        callingUid &#x3D; Binder.getCallingUid();
+                        callingPid &#x3D; Binder.getCallingPid();
+                        componentSpecified &#x3D; true;
+                        try &#123;
+                            ResolveInfo rInfo &#x3D;
                                 AppGlobals.getPackageManager().resolveIntent(
                                         intent, null,
                                         PackageManager.MATCH_DEFAULT_ONLY
                                         | ActivityManagerService.STOCK_PM_FLAGS, userId);
-                            aInfo = rInfo != null ? rInfo.activityInfo : null;
-                            aInfo = mService.getActivityInfoForUser(aInfo, userId);
-                        } catch (RemoteException e) {
-                            aInfo = null;
-                        }
-                    }
-                }
-            }
+                            aInfo &#x3D; rInfo !&#x3D; null ? rInfo.activityInfo : null;
+                            aInfo &#x3D; mService.getActivityInfoForUser(aInfo, userId);
+                        &#125; catch (RemoteException e) &#123;
+                            aInfo &#x3D; null;
+                        &#125;
+                    &#125;
+                &#125;
+            &#125;
 
-            int res = startActivityLocked(caller, intent, resolvedType, aInfo,
+            int res &#x3D; startActivityLocked(caller, intent, resolvedType, aInfo,
                     voiceSession, voiceInteractor, resultTo, resultWho,
                     requestCode, callingPid, callingUid, callingPackage,
                     realCallingPid, realCallingUid, startFlags, options, ignoreTargetSecurity,
@@ -971,54 +974,54 @@ dumpsys activity top |grep ACTIVITY</code></pre>
 
             Binder.restoreCallingIdentity(origId);
 
-            if (stack.mConfigWillChange) {
-                // If the caller also wants to switch to a new configuration,
-                // do so now.  This allows a clean switch, as we are waiting
-                // for the current activity to pause (so we will not destroy
-                // it), and have not yet started the next activity.
+            if (stack.mConfigWillChange) &#123;
+                &#x2F;&#x2F; If the caller also wants to switch to a new configuration,
+                &#x2F;&#x2F; do so now.  This allows a clean switch, as we are waiting
+                &#x2F;&#x2F; for the current activity to pause (so we will not destroy
+                &#x2F;&#x2F; it), and have not yet started the next activity.
                 mService.enforceCallingPermission(android.Manifest.permission.CHANGE_CONFIGURATION,
                         &quot;updateConfiguration()&quot;);
-                stack.mConfigWillChange = false;
+                stack.mConfigWillChange &#x3D; false;
                 if (DEBUG_CONFIGURATION) Slog.v(TAG_CONFIGURATION,
                         &quot;Updating to new configuration after starting activity.&quot;);
                 mService.updateConfigurationLocked(config, null, false, false);
-            }
+            &#125;
 
-            if (outResult != null) {
-                outResult.result = res;
-                if (res == ActivityManager.START_SUCCESS) {
+            if (outResult !&#x3D; null) &#123;
+                outResult.result &#x3D; res;
+                if (res &#x3D;&#x3D; ActivityManager.START_SUCCESS) &#123;
                     mWaitingActivityLaunched.add(outResult);
-                    do {
-                        try {
+                    do &#123;
+                        try &#123;
                             mService.wait();
-                        } catch (InterruptedException e) {
-                        }
-                    } while (!outResult.timeout &amp;&amp; outResult.who == null);
-                } else if (res == ActivityManager.START_TASK_TO_FRONT) {
-                    ActivityRecord r = stack.topRunningActivityLocked(null);
-                    if (r.nowVisible &amp;&amp; r.state == RESUMED) {
-                        outResult.timeout = false;
-                        outResult.who = new ComponentName(r.info.packageName, r.info.name);
-                        outResult.totalTime = 0;
-                        outResult.thisTime = 0;
-                    } else {
-                        outResult.thisTime = SystemClock.uptimeMillis();
+                        &#125; catch (InterruptedException e) &#123;
+                        &#125;
+                    &#125; while (!outResult.timeout &amp;&amp; outResult.who &#x3D;&#x3D; null);
+                &#125; else if (res &#x3D;&#x3D; ActivityManager.START_TASK_TO_FRONT) &#123;
+                    ActivityRecord r &#x3D; stack.topRunningActivityLocked(null);
+                    if (r.nowVisible &amp;&amp; r.state &#x3D;&#x3D; RESUMED) &#123;
+                        outResult.timeout &#x3D; false;
+                        outResult.who &#x3D; new ComponentName(r.info.packageName, r.info.name);
+                        outResult.totalTime &#x3D; 0;
+                        outResult.thisTime &#x3D; 0;
+                    &#125; else &#123;
+                        outResult.thisTime &#x3D; SystemClock.uptimeMillis();
                         mWaitingActivityVisible.add(outResult);
-                        do {
-                            try {
+                        do &#123;
+                            try &#123;
                                 mService.wait();
-                            } catch (InterruptedException e) {
-                            }
-                        } while (!outResult.timeout &amp;&amp; outResult.who == null);
-                    }
-                }
-            }
+                            &#125; catch (InterruptedException e) &#123;
+                            &#125;
+                        &#125; while (!outResult.timeout &amp;&amp; outResult.who &#x3D;&#x3D; null);
+                    &#125;
+                &#125;
+            &#125;
 
             return res;
-        }
-    }</code></pre>
+        &#125;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>startActivityMayWait</code>方法内包含了获取启动信息的逻辑。经过一系列处理后调用了<code>ActivityStackSupervisor</code>的<code>startActivityLocked</code>方法</p>
-<pre><code class="Java">//frameworks\base\services\core\java\com\android\server\am\ActivityStackSupervisor.java
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">&#x2F;&#x2F;frameworks\base\services\core\java\com\android\server\am\ActivityStackSupervisor.java
 final int startActivityLocked(IApplicationThread caller,
             Intent intent, String resolvedType, ActivityInfo aInfo,
             IVoiceInteractionSession voiceSession, IVoiceInteractor voiceInteractor,
@@ -1026,301 +1029,301 @@ final int startActivityLocked(IApplicationThread caller,
             int callingPid, int callingUid, String callingPackage,
             int realCallingPid, int realCallingUid, int startFlags, Bundle options,
             boolean ignoreTargetSecurity, boolean componentSpecified, ActivityRecord[] outActivity,
-            ActivityContainer container, TaskRecord inTask) {
-        int err = ActivityManager.START_SUCCESS;
+            ActivityContainer container, TaskRecord inTask) &#123;
+        int err &#x3D; ActivityManager.START_SUCCESS;
 
-        ProcessRecord callerApp = null;
-        if (caller != null) {
-            //通过调用者的ApplicationThread从最近任务中获取对应的ProcessRecord
-            callerApp = mService.getRecordForAppLocked(caller);
-            if (callerApp != null) {
-                callingPid = callerApp.pid;
-                callingUid = callerApp.info.uid;
-            } else {
+        ProcessRecord callerApp &#x3D; null;
+        if (caller !&#x3D; null) &#123;
+			&#x2F;&#x2F;通过调用者的ApplicationThread从最近任务中获取对应的ProcessRecord
+            callerApp &#x3D; mService.getRecordForAppLocked(caller);
+            if (callerApp !&#x3D; null) &#123;
+                callingPid &#x3D; callerApp.pid;
+                callingUid &#x3D; callerApp.info.uid;
+            &#125; else &#123;
                 Slog.w(TAG, &quot;Unable to find app for caller &quot; + caller
-                      + &quot; (pid=&quot; + callingPid + &quot;) when starting: &quot;
+                      + &quot; (pid&#x3D;&quot; + callingPid + &quot;) when starting: &quot;
                       + intent.toString());
-                err = ActivityManager.START_PERMISSION_DENIED;
-            }
-        }
+                err &#x3D; ActivityManager.START_PERMISSION_DENIED;
+            &#125;
+        &#125;
 
-        final int userId = aInfo != null ? UserHandle.getUserId(aInfo.applicationInfo.uid) : 0;
+        final int userId &#x3D; aInfo !&#x3D; null ? UserHandle.getUserId(aInfo.applicationInfo.uid) : 0;
 
-        if (err == ActivityManager.START_SUCCESS) {
-            Slog.i(TAG, &quot;START u&quot; + userId + &quot; {&quot; + intent.toShortString(true, true, true, false)
-                    + &quot;} from uid &quot; + callingUid
-                    + &quot; on display &quot; + (container == null ? (mFocusedStack == null ?
+        if (err &#x3D;&#x3D; ActivityManager.START_SUCCESS) &#123;
+            Slog.i(TAG, &quot;START u&quot; + userId + &quot; &#123;&quot; + intent.toShortString(true, true, true, false)
+                    + &quot;&#125; from uid &quot; + callingUid
+                    + &quot; on display &quot; + (container &#x3D;&#x3D; null ? (mFocusedStack &#x3D;&#x3D; null ?
                             Display.DEFAULT_DISPLAY : mFocusedStack.mDisplayId) :
-                            (container.mActivityDisplay == null ? Display.DEFAULT_DISPLAY :
+                            (container.mActivityDisplay &#x3D;&#x3D; null ? Display.DEFAULT_DISPLAY :
                                     container.mActivityDisplay.mDisplayId)));
-        }
+        &#125;
 
-        ActivityRecord sourceRecord = null;
-        ActivityRecord resultRecord = null;
-        if (resultTo != null) {
-            //通过接收启动结果的token查找对应的ActivityRecord
-            sourceRecord = isInAnyStackLocked(resultTo);
+        ActivityRecord sourceRecord &#x3D; null;
+        ActivityRecord resultRecord &#x3D; null;
+        if (resultTo !&#x3D; null) &#123;
+			&#x2F;&#x2F;通过接收启动结果的token查找对应的ActivityRecord
+            sourceRecord &#x3D; isInAnyStackLocked(resultTo);
             if (DEBUG_RESULTS) Slog.v(TAG_RESULTS,
                     &quot;Will send result to &quot; + resultTo + &quot; &quot; + sourceRecord);
-            if (sourceRecord != null) {
-                if (requestCode &gt;= 0 &amp;&amp; !sourceRecord.finishing) {
-                    resultRecord = sourceRecord;
-                }
-            }
-        }
+            if (sourceRecord !&#x3D; null) &#123;
+                if (requestCode &gt;&#x3D; 0 &amp;&amp; !sourceRecord.finishing) &#123;
+                    resultRecord &#x3D; sourceRecord;
+                &#125;
+            &#125;
+        &#125;
 
-        final int launchFlags = intent.getFlags();
+        final int launchFlags &#x3D; intent.getFlags();
 
-        //Intent.FLAG_ACTIVITY_FORWARD_RESULT标识从ActivityA启动ActivityB或更多层跳转启动了ActivityZ
-        //在这种情况下启动的结果应该返回给ActivityA，而不是中间过度Activity。
-        if ((launchFlags &amp; Intent.FLAG_ACTIVITY_FORWARD_RESULT) != 0 &amp;&amp; sourceRecord != null) {
-            // Transfer the result target from the source activity to the new
-            // one being started, including any failures.
-            if (requestCode &gt;= 0) {
-                //这种情况下不允许中间过渡页设置requestCode &gt;= 0
+		&#x2F;&#x2F;Intent.FLAG_ACTIVITY_FORWARD_RESULT标识从ActivityA启动ActivityB或更多层跳转启动了ActivityZ
+		&#x2F;&#x2F;在这种情况下启动的结果应该返回给ActivityA，而不是中间过度Activity。
+        if ((launchFlags &amp; Intent.FLAG_ACTIVITY_FORWARD_RESULT) !&#x3D; 0 &amp;&amp; sourceRecord !&#x3D; null) &#123;
+            &#x2F;&#x2F; Transfer the result target from the source activity to the new
+            &#x2F;&#x2F; one being started, including any failures.
+            if (requestCode &gt;&#x3D; 0) &#123;
+				&#x2F;&#x2F;这种情况下不允许中间过渡页设置requestCode &gt;&#x3D; 0
                 ActivityOptions.abort(options);
                 return ActivityManager.START_FORWARD_AND_REQUEST_CONFLICT;
-            }
-            resultRecord = sourceRecord.resultTo;
-            if (resultRecord != null &amp;&amp; !resultRecord.isInStackLocked()) {
-                resultRecord = null;
-            }
-            //指定返回结果给上层同样的对象，层层转发
-            resultWho = sourceRecord.resultWho;
-            requestCode = sourceRecord.requestCode;
-            sourceRecord.resultTo = null;
-            if (resultRecord != null) {
+            &#125;
+            resultRecord &#x3D; sourceRecord.resultTo;
+            if (resultRecord !&#x3D; null &amp;&amp; !resultRecord.isInStackLocked()) &#123;
+                resultRecord &#x3D; null;
+            &#125;
+			&#x2F;&#x2F;指定返回结果给上层同样的对象，层层转发
+            resultWho &#x3D; sourceRecord.resultWho;
+            requestCode &#x3D; sourceRecord.requestCode;
+            sourceRecord.resultTo &#x3D; null;
+            if (resultRecord !&#x3D; null) &#123;
                 resultRecord.removeResultsLocked(sourceRecord, resultWho, requestCode);
-            }
-            if (sourceRecord.launchedFromUid == callingUid) {
-                // The new activity is being launched from the same uid as the previous
-                // activity in the flow, and asking to forward its result back to the
-                // previous.  In this case the activity is serving as a trampoline between
-                // the two, so we also want to update its launchedFromPackage to be the
-                // same as the previous activity.  Note that this is safe, since we know
-                // these two packages come from the same uid; the caller could just as
-                // well have supplied that same package name itself.  This specifially
-                // deals with the case of an intent picker/chooser being launched in the app
-                // flow to redirect to an activity picked by the user, where we want the final
-                // activity to consider it to have been launched by the previous app activity.
-                callingPackage = sourceRecord.launchedFromPackage;
-            }
-        }
+            &#125;
+            if (sourceRecord.launchedFromUid &#x3D;&#x3D; callingUid) &#123;
+                &#x2F;&#x2F; The new activity is being launched from the same uid as the previous
+                &#x2F;&#x2F; activity in the flow, and asking to forward its result back to the
+                &#x2F;&#x2F; previous.  In this case the activity is serving as a trampoline between
+                &#x2F;&#x2F; the two, so we also want to update its launchedFromPackage to be the
+                &#x2F;&#x2F; same as the previous activity.  Note that this is safe, since we know
+                &#x2F;&#x2F; these two packages come from the same uid; the caller could just as
+                &#x2F;&#x2F; well have supplied that same package name itself.  This specifially
+                &#x2F;&#x2F; deals with the case of an intent picker&#x2F;chooser being launched in the app
+                &#x2F;&#x2F; flow to redirect to an activity picked by the user, where we want the final
+                &#x2F;&#x2F; activity to consider it to have been launched by the previous app activity.
+                callingPackage &#x3D; sourceRecord.launchedFromPackage;
+            &#125;
+        &#125;
 
-        if (err == ActivityManager.START_SUCCESS &amp;&amp; intent.getComponent() == null) {
-            // We couldn&#39;t find a class that can handle the given Intent.
-            // That&#39;s the end of that!
-            err = ActivityManager.START_INTENT_NOT_RESOLVED;
-        }
+        if (err &#x3D;&#x3D; ActivityManager.START_SUCCESS &amp;&amp; intent.getComponent() &#x3D;&#x3D; null) &#123;
+            &#x2F;&#x2F; We couldn&#39;t find a class that can handle the given Intent.
+            &#x2F;&#x2F; That&#39;s the end of that!
+            err &#x3D; ActivityManager.START_INTENT_NOT_RESOLVED;
+        &#125;
 
-        if (err == ActivityManager.START_SUCCESS &amp;&amp; aInfo == null) {
-            // We couldn&#39;t find the specific class specified in the Intent.
-            // Also the end of the line.
-            err = ActivityManager.START_CLASS_NOT_FOUND;
-        }
+        if (err &#x3D;&#x3D; ActivityManager.START_SUCCESS &amp;&amp; aInfo &#x3D;&#x3D; null) &#123;
+            &#x2F;&#x2F; We couldn&#39;t find the specific class specified in the Intent.
+            &#x2F;&#x2F; Also the end of the line.
+            err &#x3D; ActivityManager.START_CLASS_NOT_FOUND;
+        &#125;
 
-        if (err == ActivityManager.START_SUCCESS
+        if (err &#x3D;&#x3D; ActivityManager.START_SUCCESS
                 &amp;&amp; !isCurrentProfileLocked(userId)
-                &amp;&amp; (aInfo.flags &amp; FLAG_SHOW_FOR_ALL_USERS) == 0) {
-            // Trying to launch a background activity that doesn&#39;t show for all users.
-            err = ActivityManager.START_NOT_CURRENT_USER_ACTIVITY;
-        }
+                &amp;&amp; (aInfo.flags &amp; FLAG_SHOW_FOR_ALL_USERS) &#x3D;&#x3D; 0) &#123;
+            &#x2F;&#x2F; Trying to launch a background activity that doesn&#39;t show for all users.
+            err &#x3D; ActivityManager.START_NOT_CURRENT_USER_ACTIVITY;
+        &#125;
 
-        if (err == ActivityManager.START_SUCCESS &amp;&amp; sourceRecord != null
-                &amp;&amp; sourceRecord.task.voiceSession != null) {
-            // If this activity is being launched as part of a voice session, we need
-            // to ensure that it is safe to do so.  If the upcoming activity will also
-            // be part of the voice session, we can only launch it if it has explicitly
-            // said it supports the VOICE category, or it is a part of the calling app.
-            if ((launchFlags &amp; Intent.FLAG_ACTIVITY_NEW_TASK) == 0
-                    &amp;&amp; sourceRecord.info.applicationInfo.uid != aInfo.applicationInfo.uid) {
-                try {
+        if (err &#x3D;&#x3D; ActivityManager.START_SUCCESS &amp;&amp; sourceRecord !&#x3D; null
+                &amp;&amp; sourceRecord.task.voiceSession !&#x3D; null) &#123;
+            &#x2F;&#x2F; If this activity is being launched as part of a voice session, we need
+            &#x2F;&#x2F; to ensure that it is safe to do so.  If the upcoming activity will also
+            &#x2F;&#x2F; be part of the voice session, we can only launch it if it has explicitly
+            &#x2F;&#x2F; said it supports the VOICE category, or it is a part of the calling app.
+            if ((launchFlags &amp; Intent.FLAG_ACTIVITY_NEW_TASK) &#x3D;&#x3D; 0
+                    &amp;&amp; sourceRecord.info.applicationInfo.uid !&#x3D; aInfo.applicationInfo.uid) &#123;
+                try &#123;
                     intent.addCategory(Intent.CATEGORY_VOICE);
                     if (!AppGlobals.getPackageManager().activitySupportsIntent(
-                            intent.getComponent(), intent, resolvedType)) {
+                            intent.getComponent(), intent, resolvedType)) &#123;
                         Slog.w(TAG,
                                 &quot;Activity being started in current voice task does not support voice: &quot;
                                 + intent);
-                        err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
-                    }
-                } catch (RemoteException e) {
+                        err &#x3D; ActivityManager.START_NOT_VOICE_COMPATIBLE;
+                    &#125;
+                &#125; catch (RemoteException e) &#123;
                     Slog.w(TAG, &quot;Failure checking voice capabilities&quot;, e);
-                    err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
-                }
-            }
-        }
+                    err &#x3D; ActivityManager.START_NOT_VOICE_COMPATIBLE;
+                &#125;
+            &#125;
+        &#125;
 
-        if (err == ActivityManager.START_SUCCESS &amp;&amp; voiceSession != null) {
-            // If the caller is starting a new voice session, just make sure the target
-            // is actually allowing it to run this way.
-            try {
+        if (err &#x3D;&#x3D; ActivityManager.START_SUCCESS &amp;&amp; voiceSession !&#x3D; null) &#123;
+            &#x2F;&#x2F; If the caller is starting a new voice session, just make sure the target
+            &#x2F;&#x2F; is actually allowing it to run this way.
+            try &#123;
                 if (!AppGlobals.getPackageManager().activitySupportsIntent(intent.getComponent(),
-                        intent, resolvedType)) {
+                        intent, resolvedType)) &#123;
                     Slog.w(TAG,
                             &quot;Activity being started in new voice task does not support: &quot;
                             + intent);
-                    err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
-                }
-            } catch (RemoteException e) {
+                    err &#x3D; ActivityManager.START_NOT_VOICE_COMPATIBLE;
+                &#125;
+            &#125; catch (RemoteException e) &#123;
                 Slog.w(TAG, &quot;Failure checking voice capabilities&quot;, e);
-                err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
-            }
-        }
+                err &#x3D; ActivityManager.START_NOT_VOICE_COMPATIBLE;
+            &#125;
+        &#125;
 
-        final ActivityStack resultStack = resultRecord == null ? null : resultRecord.task.stack;
+        final ActivityStack resultStack &#x3D; resultRecord &#x3D;&#x3D; null ? null : resultRecord.task.stack;
 
-        if (err != ActivityManager.START_SUCCESS) {
-            if (resultRecord != null) {
+        if (err !&#x3D; ActivityManager.START_SUCCESS) &#123;
+            if (resultRecord !&#x3D; null) &#123;
                 resultStack.sendActivityResultLocked(-1,
                     resultRecord, resultWho, requestCode,
                     Activity.RESULT_CANCELED, null);
-            }
+            &#125;
             ActivityOptions.abort(options);
             return err;
-        }
+        &#125;
 
-        boolean abort = false;
+        boolean abort &#x3D; false;
 
-        //检查是否具有启动权限
-        final int startAnyPerm = mService.checkPermission(
+		&#x2F;&#x2F;检查是否具有启动权限
+        final int startAnyPerm &#x3D; mService.checkPermission(
                 START_ANY_ACTIVITY, callingPid, callingUid);
 
-        if (startAnyPerm != PERMISSION_GRANTED) {
-            final int componentRestriction = getComponentRestrictionForCallingPackage(
+        if (startAnyPerm !&#x3D; PERMISSION_GRANTED) &#123;
+            final int componentRestriction &#x3D; getComponentRestrictionForCallingPackage(
                     aInfo, callingPackage, callingPid, callingUid, ignoreTargetSecurity);
-            final int actionRestriction = getActionRestrictionForCallingPackage(
+            final int actionRestriction &#x3D; getActionRestrictionForCallingPackage(
                     intent.getAction(), callingPackage, callingPid, callingUid);
 
-            if (componentRestriction == ACTIVITY_RESTRICTION_PERMISSION
-                    || actionRestriction == ACTIVITY_RESTRICTION_PERMISSION) {
-                if (resultRecord != null) {
+            if (componentRestriction &#x3D;&#x3D; ACTIVITY_RESTRICTION_PERMISSION
+                    || actionRestriction &#x3D;&#x3D; ACTIVITY_RESTRICTION_PERMISSION) &#123;
+                if (resultRecord !&#x3D; null) &#123;
                     resultStack.sendActivityResultLocked(-1,
                             resultRecord, resultWho, requestCode,
                             Activity.RESULT_CANCELED, null);
-                }
+                &#125;
                 String msg;
-                if (actionRestriction == ACTIVITY_RESTRICTION_PERMISSION) {
-                    msg = &quot;Permission Denial: starting &quot; + intent.toString()
-                            + &quot; from &quot; + callerApp + &quot; (pid=&quot; + callingPid
-                            + &quot;, uid=&quot; + callingUid + &quot;)&quot; + &quot; with revoked permission &quot;
+                if (actionRestriction &#x3D;&#x3D; ACTIVITY_RESTRICTION_PERMISSION) &#123;
+                    msg &#x3D; &quot;Permission Denial: starting &quot; + intent.toString()
+                            + &quot; from &quot; + callerApp + &quot; (pid&#x3D;&quot; + callingPid
+                            + &quot;, uid&#x3D;&quot; + callingUid + &quot;)&quot; + &quot; with revoked permission &quot;
                             + ACTION_TO_RUNTIME_PERMISSION.get(intent.getAction());
-                } else if (!aInfo.exported) {
-                    msg = &quot;Permission Denial: starting &quot; + intent.toString()
-                            + &quot; from &quot; + callerApp + &quot; (pid=&quot; + callingPid
-                            + &quot;, uid=&quot; + callingUid + &quot;)&quot;
+                &#125; else if (!aInfo.exported) &#123;
+                    msg &#x3D; &quot;Permission Denial: starting &quot; + intent.toString()
+                            + &quot; from &quot; + callerApp + &quot; (pid&#x3D;&quot; + callingPid
+                            + &quot;, uid&#x3D;&quot; + callingUid + &quot;)&quot;
                             + &quot; not exported from uid &quot; + aInfo.applicationInfo.uid;
-                } else {
-                    msg = &quot;Permission Denial: starting &quot; + intent.toString()
-                            + &quot; from &quot; + callerApp + &quot; (pid=&quot; + callingPid
-                            + &quot;, uid=&quot; + callingUid + &quot;)&quot;
+                &#125; else &#123;
+                    msg &#x3D; &quot;Permission Denial: starting &quot; + intent.toString()
+                            + &quot; from &quot; + callerApp + &quot; (pid&#x3D;&quot; + callingPid
+                            + &quot;, uid&#x3D;&quot; + callingUid + &quot;)&quot;
                             + &quot; requires &quot; + aInfo.permission;
-                }
+                &#125;
                 Slog.w(TAG, msg);
                 throw new SecurityException(msg);
-            }
+            &#125;
 
-            if (actionRestriction == ACTIVITY_RESTRICTION_APPOP) {
-                String message = &quot;Appop Denial: starting &quot; + intent.toString()
-                        + &quot; from &quot; + callerApp + &quot; (pid=&quot; + callingPid
-                        + &quot;, uid=&quot; + callingUid + &quot;)&quot;
+            if (actionRestriction &#x3D;&#x3D; ACTIVITY_RESTRICTION_APPOP) &#123;
+                String message &#x3D; &quot;Appop Denial: starting &quot; + intent.toString()
+                        + &quot; from &quot; + callerApp + &quot; (pid&#x3D;&quot; + callingPid
+                        + &quot;, uid&#x3D;&quot; + callingUid + &quot;)&quot;
                         + &quot; requires &quot; + AppOpsManager.permissionToOp(
                                 ACTION_TO_RUNTIME_PERMISSION.get(intent.getAction()));
                 Slog.w(TAG, message);
-                abort = true;
-            } else if (componentRestriction == ACTIVITY_RESTRICTION_APPOP) {
-                String message = &quot;Appop Denial: starting &quot; + intent.toString()
-                        + &quot; from &quot; + callerApp + &quot; (pid=&quot; + callingPid
-                        + &quot;, uid=&quot; + callingUid + &quot;)&quot;
+                abort &#x3D; true;
+            &#125; else if (componentRestriction &#x3D;&#x3D; ACTIVITY_RESTRICTION_APPOP) &#123;
+                String message &#x3D; &quot;Appop Denial: starting &quot; + intent.toString()
+                        + &quot; from &quot; + callerApp + &quot; (pid&#x3D;&quot; + callingPid
+                        + &quot;, uid&#x3D;&quot; + callingUid + &quot;)&quot;
                         + &quot; requires appop &quot; + AppOpsManager.permissionToOp(aInfo.permission);
                 Slog.w(TAG, message);
-                abort = true;
-            }
-        }
+                abort &#x3D; true;
+            &#125;
+        &#125;
 
-        abort |= !mService.mIntentFirewall.checkStartActivity(intent, callingUid,
+        abort |&#x3D; !mService.mIntentFirewall.checkStartActivity(intent, callingUid,
                 callingPid, resolvedType, aInfo.applicationInfo);
 
-        if (mService.mController != null) {
-            try {
-                // The Intent we give to the watcher has the extra data
-                // stripped off, since it can contain private information.
-                Intent watchIntent = intent.cloneFilter();
-                abort |= !mService.mController.activityStarting(watchIntent,
+        if (mService.mController !&#x3D; null) &#123;
+            try &#123;
+                &#x2F;&#x2F; The Intent we give to the watcher has the extra data
+                &#x2F;&#x2F; stripped off, since it can contain private information.
+                Intent watchIntent &#x3D; intent.cloneFilter();
+                abort |&#x3D; !mService.mController.activityStarting(watchIntent,
                         aInfo.applicationInfo.packageName);
-            } catch (RemoteException e) {
-                mService.mController = null;
-            }
-        }
+            &#125; catch (RemoteException e) &#123;
+                mService.mController &#x3D; null;
+            &#125;
+        &#125;
 
-        if (abort) {
-            if (resultRecord != null) {
+        if (abort) &#123;
+            if (resultRecord !&#x3D; null) &#123;
                 resultStack.sendActivityResultLocked(-1, resultRecord, resultWho, requestCode,
                         Activity.RESULT_CANCELED, null);
-            }
-            // We pretend to the caller that it was really started, but
-            // they will just get a cancel result.
+            &#125;
+            &#x2F;&#x2F; We pretend to the caller that it was really started, but
+            &#x2F;&#x2F; they will just get a cancel result.
             ActivityOptions.abort(options);
             return ActivityManager.START_SUCCESS;
-        }
+        &#125;
 
-        ActivityRecord r = new ActivityRecord(mService, callerApp, callingUid, callingPackage,
+        ActivityRecord r &#x3D; new ActivityRecord(mService, callerApp, callingUid, callingPackage,
                 intent, resolvedType, aInfo, mService.mConfiguration, resultRecord, resultWho,
-                requestCode, componentSpecified, voiceSession != null, this, container, options);
-        if (outActivity != null) {
-            outActivity[0] = r;
-        }
+                requestCode, componentSpecified, voiceSession !&#x3D; null, this, container, options);
+        if (outActivity !&#x3D; null) &#123;
+            outActivity[0] &#x3D; r;
+        &#125;
 
-        if (r.appTimeTracker == null &amp;&amp; sourceRecord != null) {
-            // If the caller didn&#39;t specify an explicit time tracker, we want to continue
-            // tracking under any it has.
-            r.appTimeTracker = sourceRecord.appTimeTracker;
-        }
+        if (r.appTimeTracker &#x3D;&#x3D; null &amp;&amp; sourceRecord !&#x3D; null) &#123;
+            &#x2F;&#x2F; If the caller didn&#39;t specify an explicit time tracker, we want to continue
+            &#x2F;&#x2F; tracking under any it has.
+            r.appTimeTracker &#x3D; sourceRecord.appTimeTracker;
+        &#125;
 
-        final ActivityStack stack = mFocusedStack;
-        if (voiceSession == null &amp;&amp; (stack.mResumedActivity == null
-                || stack.mResumedActivity.info.applicationInfo.uid != callingUid)) {
-                //当前stack中没有resume状态的Activity或者和发起者的uid不同
+        final ActivityStack stack &#x3D; mFocusedStack;
+        if (voiceSession &#x3D;&#x3D; null &amp;&amp; (stack.mResumedActivity &#x3D;&#x3D; null
+                || stack.mResumedActivity.info.applicationInfo.uid !&#x3D; callingUid)) &#123;
+                &#x2F;&#x2F;当前stack中没有resume状态的Activity或者和发起者的uid不同
             if (!mService.checkAppSwitchAllowedLocked(callingPid, callingUid,
-                    realCallingPid, realCallingUid, &quot;Activity start&quot;)) {
-                PendingActivityLaunch pal =
+                    realCallingPid, realCallingUid, &quot;Activity start&quot;)) &#123;
+                PendingActivityLaunch pal &#x3D;
                         new PendingActivityLaunch(r, sourceRecord, startFlags, stack);
                 mPendingActivityLaunches.add(pal);
                 ActivityOptions.abort(options);
                 return ActivityManager.START_SWITCHES_CANCELED;
-            }
-        }
+            &#125;
+        &#125;
 
-        //是否已经完成了应用选择
-        if (mService.mDidAppSwitch) {
-            // This is the second allowed switch since we stopped switches,
-            // so now just generally allow switches.  Use case: user presses
-            // home (switches disabled, switch to home, mDidAppSwitch now true);
-            // user taps a home icon (coming from home so allowed, we hit here
-            // and now allow anyone to switch again).
-            //已经完成应用选择，可以随意切换应用了
-            mService.mAppSwitchesAllowedTime = 0;
-        } else {
-            mService.mDidAppSwitch = true;
-        }
+		&#x2F;&#x2F;是否已经完成了应用选择
+        if (mService.mDidAppSwitch) &#123;
+            &#x2F;&#x2F; This is the second allowed switch since we stopped switches,
+            &#x2F;&#x2F; so now just generally allow switches.  Use case: user presses
+            &#x2F;&#x2F; home (switches disabled, switch to home, mDidAppSwitch now true);
+            &#x2F;&#x2F; user taps a home icon (coming from home so allowed, we hit here
+            &#x2F;&#x2F; and now allow anyone to switch again).
+            &#x2F;&#x2F;已经完成应用选择，可以随意切换应用了
+            mService.mAppSwitchesAllowedTime &#x3D; 0;
+        &#125; else &#123;
+            mService.mDidAppSwitch &#x3D; true;
+        &#125;
 
-        //启动挂起的应用
+		&#x2F;&#x2F;启动挂起的应用
         doPendingActivityLaunchesLocked(false);
 
-        //启动目标应用
-        err = startActivityUncheckedLocked(r, sourceRecord, voiceSession, voiceInteractor,
+		&#x2F;&#x2F;启动目标应用
+        err &#x3D; startActivityUncheckedLocked(r, sourceRecord, voiceSession, voiceInteractor,
                 startFlags, true, options, inTask);
 
-        if (err &lt; 0) {
-            // If someone asked to have the keyguard dismissed on the next
-            // activity start, but we are not actually doing an activity
-            // switch...  just dismiss the keyguard now, because we
-            // probably want to see whatever is behind it.
+        if (err &lt; 0) &#123;
+            &#x2F;&#x2F; If someone asked to have the keyguard dismissed on the next
+            &#x2F;&#x2F; activity start, but we are not actually doing an activity
+            &#x2F;&#x2F; switch...  just dismiss the keyguard now, because we
+            &#x2F;&#x2F; probably want to see whatever is behind it.
             notifyActivityDrawnForKeyguard();
-        }
+        &#125;
         return err;
-    }</code></pre>
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在<code>startActivityLocked</code>方法中最后调用了<code>startActivityUncheckedLocked</code>方法。<br><code>startActivityUncheckedLocked</code>方法内容太长，不方便完整贴出来，只贴部分代码</p>
-<pre><code class="Java"></code></pre>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在这个方法中主要做了：</p>
 <ul>
 <li>检查Intent是否设置Intent.FLAG_ACTIVITY_NO_USER_ACTION标志</li>
@@ -1331,197 +1334,197 @@ final int startActivityLocked(IApplicationThread caller,
 <li>方法接着调用了ActivityStack的startActivityLocked方法。</li>
 </ul>
 <p>接着就进入到<code>ActivityStack</code>的<code>startAcivityLocked</code>方法</p>
-<pre><code class="Java">//frameworks\base\services\core\java\com\android\server\am\ActivityStack.java
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">&#x2F;&#x2F;frameworks\base\services\core\java\com\android\server\am\ActivityStack.java
 
 final void startActivityLocked(ActivityRecord r, boolean newTask,
-            boolean doResume, boolean keepCurTransition, Bundle options) {
-        //目标task信息
-        TaskRecord rTask = r.task;
-        final int taskId = rTask.taskId;
-        // mLaunchTaskBehind tasks get placed at the back of the task stack.
-        if (!r.mLaunchTaskBehind &amp;&amp; (taskForIdLocked(taskId) == null || newTask)) {
-            // Last activity in task had been removed or ActivityManagerService is reusing task.
-            // Insert or replace.
-            // Might not even be in.
-            //如果原来不存在该task，则插入
+            boolean doResume, boolean keepCurTransition, Bundle options) &#123;
+        &#x2F;&#x2F;目标task信息
+        TaskRecord rTask &#x3D; r.task;
+        final int taskId &#x3D; rTask.taskId;
+        &#x2F;&#x2F; mLaunchTaskBehind tasks get placed at the back of the task stack.
+        if (!r.mLaunchTaskBehind &amp;&amp; (taskForIdLocked(taskId) &#x3D;&#x3D; null || newTask)) &#123;
+            &#x2F;&#x2F; Last activity in task had been removed or ActivityManagerService is reusing task.
+            &#x2F;&#x2F; Insert or replace.
+            &#x2F;&#x2F; Might not even be in.
+            &#x2F;&#x2F;如果原来不存在该task，则插入
             insertTaskAtTop(rTask, r);
-            //并且切换到前台
+			&#x2F;&#x2F;并且切换到前台
             mWindowManager.moveTaskToTop(taskId);
-        }
-        TaskRecord task = null;
-        //newTask为false表示当前栈中已有对应任务，不需要重新创建
-        if (!newTask) {
-            // If starting in an existing task, find where that is...
-            //这是一个已经存在的任务，在历史列表里查找它
-            boolean startIt = true;
-            for (int taskNdx = mTaskHistory.size() - 1; taskNdx &gt;= 0; --taskNdx) {
-                task = mTaskHistory.get(taskNdx);
-                if (task.getTopActivity() == null) {
-                    // All activities in task are finishing.
+        &#125;
+        TaskRecord task &#x3D; null;
+		&#x2F;&#x2F;newTask为false表示当前栈中已有对应任务，不需要重新创建
+        if (!newTask) &#123;
+            &#x2F;&#x2F; If starting in an existing task, find where that is...
+            &#x2F;&#x2F;这是一个已经存在的任务，在历史列表里查找它
+            boolean startIt &#x3D; true;
+            for (int taskNdx &#x3D; mTaskHistory.size() - 1; taskNdx &gt;&#x3D; 0; --taskNdx) &#123;
+                task &#x3D; mTaskHistory.get(taskNdx);
+                if (task.getTopActivity() &#x3D;&#x3D; null) &#123;
+                    &#x2F;&#x2F; All activities in task are finishing.
                     continue;
-                }
-                if (task == r.task) {
-                    // Here it is!  Now, if this is not yet visible to the
-                    // user, then just add it without starting; it will
-                    // get started when the user navigates back to it.
-                    // 找到对应的task, 如果当前对用户不可见则只是添加但不启动直到用户跳转到这里
-                    if (!startIt) {
+                &#125;
+                if (task &#x3D;&#x3D; r.task) &#123;
+                    &#x2F;&#x2F; Here it is!  Now, if this is not yet visible to the
+                    &#x2F;&#x2F; user, then just add it without starting; it will
+                    &#x2F;&#x2F; get started when the user navigates back to it.
+                    &#x2F;&#x2F; 找到对应的task, 如果当前对用户不可见则只是添加但不启动直到用户跳转到这里
+                    if (!startIt) &#123;
                         if (DEBUG_ADD_REMOVE) Slog.i(TAG, &quot;Adding activity &quot; + r + &quot; to task &quot;
                                 + task, new RuntimeException(&quot;here&quot;).fillInStackTrace());
-                        //task栈中添加r到顶部
+						&#x2F;&#x2F;task栈中添加r到顶部
                         task.addActivityToTop(r);
                         r.putInHistory();
-                        //如果WindowManagerService的mTokenMap中不包含对应的AppWindowToken的话就创建一个
+						&#x2F;&#x2F;如果WindowManagerService的mTokenMap中不包含对应的AppWindowToken的话就创建一个
                         mWindowManager.addAppToken(task.mActivities.indexOf(r), r.appToken,
                                 r.task.taskId, mStackId, r.info.screenOrientation, r.fullscreen,
-                                (r.info.flags &amp; ActivityInfo.FLAG_SHOW_FOR_ALL_USERS) != 0,
-                                r.userId, r.info.configChanges, task.voiceSession != null,
+                                (r.info.flags &amp; ActivityInfo.FLAG_SHOW_FOR_ALL_USERS) !&#x3D; 0,
+                                r.userId, r.info.configChanges, task.voiceSession !&#x3D; null,
                                 r.mLaunchTaskBehind);
-                        if (VALIDATE_TOKENS) {
+                        if (VALIDATE_TOKENS) &#123;
                             validateAppTokensLocked();
-                        }
+                        &#125;
                         ActivityOptions.abort(options);
                         return;
-                    }
+                    &#125;
                     break;
-                } else if (task.numFullscreen &gt; 0) {
-                    startIt = false;
-                }
-            }
-        }
+                &#125; else if (task.numFullscreen &gt; 0) &#123;
+                    startIt &#x3D; false;
+                &#125;
+            &#125;
+        &#125;
 
-        //替换栈顶的Activity，用户才可以交互
-        // Place a new activity at top of stack, so it is next to interact
-        // with the user.
+		&#x2F;&#x2F;替换栈顶的Activity，用户才可以交互
+        &#x2F;&#x2F; Place a new activity at top of stack, so it is next to interact
+        &#x2F;&#x2F; with the user.
 
-        // If we are not placing the new activity frontmost, we do not want
-        // to deliver the onUserLeaving callback to the actual frontmost
-        // activity
-        //如果没有把Activity放到前台，则不会分发onUserLeaving回调给实际的前台Activity
-        if (task == r.task &amp;&amp; mTaskHistory.indexOf(task) != (mTaskHistory.size() - 1)) {
-            //当前最上层的task不是启动的Activity所在的task
-            mStackSupervisor.mUserLeaving = false;
+        &#x2F;&#x2F; If we are not placing the new activity frontmost, we do not want
+        &#x2F;&#x2F; to deliver the onUserLeaving callback to the actual frontmost
+        &#x2F;&#x2F; activity
+        &#x2F;&#x2F;如果没有把Activity放到前台，则不会分发onUserLeaving回调给实际的前台Activity
+        if (task &#x3D;&#x3D; r.task &amp;&amp; mTaskHistory.indexOf(task) !&#x3D; (mTaskHistory.size() - 1)) &#123;
+			&#x2F;&#x2F;当前最上层的task不是启动的Activity所在的task
+            mStackSupervisor.mUserLeaving &#x3D; false;
             if (DEBUG_USER_LEAVING) Slog.v(TAG_USER_LEAVING,
-                    &quot;startActivity() behind front, mUserLeaving=false&quot;);
-        }
+                    &quot;startActivity() behind front, mUserLeaving&#x3D;false&quot;);
+        &#125;
 
-        task = r.task;
+        task &#x3D; r.task;
 
-        // Slot the activity into the history stack and proceed
+        &#x2F;&#x2F; Slot the activity into the history stack and proceed
         if (DEBUG_ADD_REMOVE) Slog.i(TAG, &quot;Adding activity &quot; + r + &quot; to stack to task &quot; + task,
                 new RuntimeException(&quot;here&quot;).fillInStackTrace());
-        //把ActivityRecord放到顶层
+		&#x2F;&#x2F;把ActivityRecord放到顶层
         task.addActivityToTop(r);
-        //设置ActivityRecord的frontOfTask为true
+		&#x2F;&#x2F;设置ActivityRecord的frontOfTask为true
         task.setFrontOfTask();
 
         r.putInHistory();
-        if (!isHomeStack() || numActivities() &gt; 0) {
-            //启动Activity的栈不在桌面应用栈中，并且当前已经有启动过的Activity
-            // We want to show the starting preview window if we are
-            // switching to a new task, or the next activity&#39;s process is
-            // not currently running.
-            //将启动一个预览窗口，如果这要跳转到一个新的task或者下一个Activity所在的进程不处于运行状态
-            boolean showStartingIcon = newTask;
-            ProcessRecord proc = r.app;
-            if (proc == null) {
-                proc = mService.mProcessNames.get(r.processName, r.info.applicationInfo.uid);
-            }
-            if (proc == null || proc.thread == null) {
-                showStartingIcon = true;
-            }
+        if (!isHomeStack() || numActivities() &gt; 0) &#123;
+			&#x2F;&#x2F;启动Activity的栈不在桌面应用栈中，并且当前已经有启动过的Activity
+            &#x2F;&#x2F; We want to show the starting preview window if we are
+            &#x2F;&#x2F; switching to a new task, or the next activity&#39;s process is
+            &#x2F;&#x2F; not currently running.
+            &#x2F;&#x2F;将启动一个预览窗口，如果这要跳转到一个新的task或者下一个Activity所在的进程不处于运行状态
+            boolean showStartingIcon &#x3D; newTask;
+            ProcessRecord proc &#x3D; r.app;
+            if (proc &#x3D;&#x3D; null) &#123;
+                proc &#x3D; mService.mProcessNames.get(r.processName, r.info.applicationInfo.uid);
+            &#125;
+            if (proc &#x3D;&#x3D; null || proc.thread &#x3D;&#x3D; null) &#123;
+                showStartingIcon &#x3D; true;
+            &#125;
             if (DEBUG_TRANSITION) Slog.v(TAG_TRANSITION,
                     &quot;Prepare open transition: starting &quot; + r);
-            if ((r.intent.getFlags() &amp; Intent.FLAG_ACTIVITY_NO_ANIMATION) != 0) {
-                //Intent配置了切换无效果
+            if ((r.intent.getFlags() &amp; Intent.FLAG_ACTIVITY_NO_ANIMATION) !&#x3D; 0) &#123;
+				&#x2F;&#x2F;Intent配置了切换无效果
                 mWindowManager.prepareAppTransition(AppTransition.TRANSIT_NONE, keepCurTransition);
                 mNoAnimActivities.add(r);
-            } else {
+            &#125; else &#123;
                 mWindowManager.prepareAppTransition(newTask
                         ? r.mLaunchTaskBehind
                                 ? AppTransition.TRANSIT_TASK_OPEN_BEHIND
                                 : AppTransition.TRANSIT_TASK_OPEN
                         : AppTransition.TRANSIT_ACTIVITY_OPEN, keepCurTransition);
                 mNoAnimActivities.remove(r);
-            }
+            &#125;
             mWindowManager.addAppToken(task.mActivities.indexOf(r),
                     r.appToken, r.task.taskId, mStackId, r.info.screenOrientation, r.fullscreen,
-                    (r.info.flags &amp; ActivityInfo.FLAG_SHOW_FOR_ALL_USERS) != 0, r.userId,
-                    r.info.configChanges, task.voiceSession != null, r.mLaunchTaskBehind);
-            boolean doShow = true;
-            if (newTask) {
-                // Even though this activity is starting fresh, we still need
-                // to reset it to make sure we apply affinities to move any
-                // existing activities from other tasks in to it.
-                // If the caller has requested that the target task be
-                // reset, then do so.
-                // 即使Activity已经启动了，仍然需要reset保证使用了affinity，在一个新的任务栈启动
-                if ((r.intent.getFlags() &amp; Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED) != 0) {
-                    //重置task
+                    (r.info.flags &amp; ActivityInfo.FLAG_SHOW_FOR_ALL_USERS) !&#x3D; 0, r.userId,
+                    r.info.configChanges, task.voiceSession !&#x3D; null, r.mLaunchTaskBehind);
+            boolean doShow &#x3D; true;
+            if (newTask) &#123;
+                &#x2F;&#x2F; Even though this activity is starting fresh, we still need
+                &#x2F;&#x2F; to reset it to make sure we apply affinities to move any
+                &#x2F;&#x2F; existing activities from other tasks in to it.
+                &#x2F;&#x2F; If the caller has requested that the target task be
+                &#x2F;&#x2F; reset, then do so.
+                &#x2F;&#x2F; 即使Activity已经启动了，仍然需要reset保证使用了affinity，在一个新的任务栈启动
+                if ((r.intent.getFlags() &amp; Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED) !&#x3D; 0) &#123;
+					&#x2F;&#x2F;重置task
                     resetTaskIfNeededLocked(r, r);
-                    //判断重置task后顶层Activity是否就是需要启动的Activity
-                    doShow = topRunningNonDelayedActivityLocked(null) == r;
-                }
-            } else if (options != null &amp;&amp; new ActivityOptions(options).getAnimationType()
-                    == ActivityOptions.ANIM_SCENE_TRANSITION) {
-                doShow = false;
-            }
-            if (r.mLaunchTaskBehind) {
-                //表示热启动，不需要启动界面，即使当前仍然处于栈下部还是告诉WindowManager已经可见了
-                // Don&#39;t do a starting window for mLaunchTaskBehind. More importantly make sure we
-                // tell WindowManager that r is visible even though it is at the back of the stack.
+					&#x2F;&#x2F;判断重置task后顶层Activity是否就是需要启动的Activity
+                    doShow &#x3D; topRunningNonDelayedActivityLocked(null) &#x3D;&#x3D; r;
+                &#125;
+            &#125; else if (options !&#x3D; null &amp;&amp; new ActivityOptions(options).getAnimationType()
+                    &#x3D;&#x3D; ActivityOptions.ANIM_SCENE_TRANSITION) &#123;
+                doShow &#x3D; false;
+            &#125;
+            if (r.mLaunchTaskBehind) &#123;
+				&#x2F;&#x2F;表示热启动，不需要启动界面，即使当前仍然处于栈下部还是告诉WindowManager已经可见了
+                &#x2F;&#x2F; Don&#39;t do a starting window for mLaunchTaskBehind. More importantly make sure we
+                &#x2F;&#x2F; tell WindowManager that r is visible even though it is at the back of the stack.
                 mWindowManager.setAppVisibility(r.appToken, true);
                 ensureActivitiesVisibleLocked(null, 0);
-            } else if (SHOW_APP_STARTING_PREVIEW &amp;&amp; doShow) {
-                // Figure out if we are transitioning from another activity that is
-                // &quot;has the same starting icon&quot; as the next one.  This allows the
-                // window manager to keep the previous window it had previously
-                // created, if it still had one.
-                ActivityRecord prev = mResumedActivity;
-                if (prev != null) {
-                    //在两种情况下不会复用之前的启动预览：
-                    //1. 当前Activity处在不同任务
-                    //2. 当前Activity已展示
-                    // We don&#39;t want to reuse the previous starting preview if:
-                    // (1) The current activity is in a different task.
-                    if (prev.task != r.task) {
-                        prev = null;
-                    }
-                    // (2) The current activity is already displayed.
-                    else if (prev.nowVisible) {
-                        prev = null;
-                    }
-                }
-                //为启动的Activity设置启动窗口
+            &#125; else if (SHOW_APP_STARTING_PREVIEW &amp;&amp; doShow) &#123;
+                &#x2F;&#x2F; Figure out if we are transitioning from another activity that is
+                &#x2F;&#x2F; &quot;has the same starting icon&quot; as the next one.  This allows the
+                &#x2F;&#x2F; window manager to keep the previous window it had previously
+                &#x2F;&#x2F; created, if it still had one.
+                ActivityRecord prev &#x3D; mResumedActivity;
+                if (prev !&#x3D; null) &#123;
+					&#x2F;&#x2F;在两种情况下不会复用之前的启动预览：
+					&#x2F;&#x2F;1. 当前Activity处在不同任务
+					&#x2F;&#x2F;2. 当前Activity已展示
+                    &#x2F;&#x2F; We don&#39;t want to reuse the previous starting preview if:
+                    &#x2F;&#x2F; (1) The current activity is in a different task.
+                    if (prev.task !&#x3D; r.task) &#123;
+                        prev &#x3D; null;
+                    &#125;
+                    &#x2F;&#x2F; (2) The current activity is already displayed.
+                    else if (prev.nowVisible) &#123;
+                        prev &#x3D; null;
+                    &#125;
+                &#125;
+				&#x2F;&#x2F;为启动的Activity设置启动窗口
                 mWindowManager.setAppStartingWindow(
                         r.appToken, r.packageName, r.theme,
                         mService.compatibilityInfoForPackageLocked(
                                 r.info.applicationInfo), r.nonLocalizedLabel,
                         r.labelRes, r.icon, r.logo, r.windowFlags,
-                        prev != null ? prev.appToken : null, showStartingIcon);
-                r.mStartingWindowShown = true;
-            }
-        } else {
-            // If this is the first activity, don&#39;t do any fancy animations,
-            // because there is nothing for it to animate on top of.
-            //如果这是第一个Activity，不需要任何动画
+                        prev !&#x3D; null ? prev.appToken : null, showStartingIcon);
+                r.mStartingWindowShown &#x3D; true;
+            &#125;
+        &#125; else &#123;
+            &#x2F;&#x2F; If this is the first activity, don&#39;t do any fancy animations,
+            &#x2F;&#x2F; because there is nothing for it to animate on top of.
+            &#x2F;&#x2F;如果这是第一个Activity，不需要任何动画
             mWindowManager.addAppToken(task.mActivities.indexOf(r), r.appToken,
                     r.task.taskId, mStackId, r.info.screenOrientation, r.fullscreen,
-                    (r.info.flags &amp; ActivityInfo.FLAG_SHOW_FOR_ALL_USERS) != 0, r.userId,
-                    r.info.configChanges, task.voiceSession != null, r.mLaunchTaskBehind);
+                    (r.info.flags &amp; ActivityInfo.FLAG_SHOW_FOR_ALL_USERS) !&#x3D; 0, r.userId,
+                    r.info.configChanges, task.voiceSession !&#x3D; null, r.mLaunchTaskBehind);
             ActivityOptions.abort(options);
-            options = null;
-        }
-        if (VALIDATE_TOKENS) {
+            options &#x3D; null;
+        &#125;
+        if (VALIDATE_TOKENS) &#123;
             validateAppTokensLocked();
-        }
+        &#125;
 
-        if (doResume) {
-            //再回到ActivityStackSupervisor中
+        if (doResume) &#123;
+			&#x2F;&#x2F;再回到ActivityStackSupervisor中
             mStackSupervisor.resumeTopActivitiesLocked(this, r, options);
-        }
-    }</code></pre>
-
+        &#125;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
             </div>
             <hr/>
 
@@ -1536,7 +1539,7 @@ final void startActivityLocked(ActivityRecord r, boolean newTask,
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                    <a href="../../../../../../about" rel="external nofollow noreferrer">suifeng</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -1559,7 +1562,7 @@ final void startActivityLocked(ActivityRecord r, boolean newTask,
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    <a href="../../../../../../about" target="_blank">suifeng</a>
                     !
                 </span>
             </div>
@@ -1596,13 +1599,12 @@ final void startActivityLocked(ActivityRecord r, boolean newTask,
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
+                    <link rel="stylesheet" type="text/css" href="../../../../../../libs/share/css/share.min.css">
 <div id="article-share">
-    
+
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <script src="../../../../../../libs/share/js/social-share.min.js"></script>
     
 
     
@@ -1720,10 +1722,10 @@ final void startActivityLocked(ActivityRecord r, boolean newTask,
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="../../../../../../medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="../../../../../../medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1736,9 +1738,14 @@ final void startActivityLocked(ActivityRecord r, boolean newTask,
         $('.tabs').tabs();
     });
 </script>
+
             
         </div>
     </div>
+
+    
+
+    
 
     
 
@@ -1763,7 +1770,7 @@ final void startActivityLocked(ActivityRecord r, boolean newTask,
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git常用命令">
+                        <img src="../../../../../../medias/featureimages/17.jpg" class="responsive-img" alt="git常用命令">
                         
                         <span class="card-title">git常用命令</span>
                     </div>
@@ -1771,10 +1778,7 @@ final void startActivityLocked(ActivityRecord r, boolean newTask,
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            git常用命令参考文档：git-book
-init初始化仓库git init
-clone克隆远端仓库的内容到本地git clone https://github.com/xxx/xxx.git
-add作用：把文件加入git跟踪或把文件修改添
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1823,7 +1827,7 @@ add作用：把文件加入git跟踪或把文件修改添
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Android AIDL的简单使用">
+                        <img src="../../../../../../medias/featureimages/23.jpg" class="responsive-img" alt="Android AIDL的简单使用">
                         
                         <span class="card-title">Android AIDL的简单使用</span>
                     </div>
@@ -1831,8 +1835,7 @@ add作用：把文件加入git跟踪或把文件修改添
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Android AIDL 的简单使用AIDL全称是Android Interface Definition Language，字面翻译成中文就是Android的接口定义语言。显而易见，这说明AIDL是一种语言。
-
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1877,72 +1880,28 @@ add作用：把文件加入git跟踪或把文件修改添
 </div>
 
 
-<script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
-
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
-
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
-
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
-
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: Suifeng Blog<br />'
-            + '文章作者: suifeng<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
-
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
-</script>
-
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeLang.js"></script>
 
-    
+
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeShrink.js"></script>
 
-
-<!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -1958,14 +1917,14 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="../../../../../../libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
+            collapseDepth: Number('0'),
             headingSelector: 'h1, h2, h3, h4'
         });
 
@@ -2033,24 +1992,30 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         
     });
 </script>
+
     
 
 </main>
 
 
 
+
     <footer class="page-footer bg-color">
-    <div class="container row center-align">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">年份</span>
-            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            
+                <span id="year">2019-2020</span>
+            
+            <span id="year">2019</span>
+            <a href="../../../../../../about" target="_blank">suifeng</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.2k</span>&nbsp;
+                class="white-color">41.4k</span>&nbsp;字
             
             
             
@@ -2071,16 +2036,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             <span id="sitetime">载入运行时间...</span>
-            <script src="/js/prettify.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    $('pre').addClass('prettyprint linenums');
-                    prettyPrint();
-                })
-            </script>
             <script>
                 function siteTime() {
-                    window.setTimeout("siteTime()", 1000);
                     var seconds = 1000;
                     var minutes = seconds * 60;
                     var hours = minutes * 60;
@@ -2167,12 +2124,98 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('../../../../../../search.xml', 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -2181,15 +2224,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <script src="../../../../../../libs/materialize/materialize.min.js"></script>
+    <script src="../../../../../../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../../../../../libs/aos/aos.js"></script>
+    <script src="../../../../../../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../../../../../../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../../../../../../js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -2211,7 +2251,14 @@ $(function () {
 
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="../../../../../../libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
     
 
     
@@ -2219,17 +2266,9 @@ $(function () {
     
 
     
-
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    <script src="../../../../../../libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+  MathJax.Hub.Config({{ JSON.stringify(config) }});
 </script>
 
 <script type="text/x-mathjax-config">
@@ -2241,7 +2280,7 @@ $(function () {
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/javascript" src="{{ src }}">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

@@ -2,12 +2,10 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="Linux安装配置zsh, Suifeng Blog">
-    <meta name="description" content="linux下安装zsh本文针对Ubuntu，wsl-Ubuntu
-安装zsh进入bash，输入sudo apt-get install zsh安装zsh
-查看系统已安装的shells安装完成后，输入cat /etc/shells，查看当前系">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,33 +13,35 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Linux安装配置zsh | Suifeng Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-	<style> 
-		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
-		{ list-style-type: decimal !important }
-	</style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</head>
+
+    <title>Linux安装配置zsh | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="../../../../../../favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/my.css">
+
+    <script src="../../../../../../libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
 
 
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="../../../../../../index.html" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="../../../../../../medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Suifeng Blog</span>
                 </a>
@@ -53,7 +53,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/" class="waves-effect waves-light">
+    <a href="../../../../../../index.html" class="waves-effect waves-light">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
@@ -64,7 +64,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
+    <a href="../../../../../../tags" class="waves-effect waves-light">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
@@ -75,7 +75,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/categories" class="waves-effect waves-light">
+    <a href="../../../../../../categories" class="waves-effect waves-light">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
@@ -86,7 +86,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/archives" class="waves-effect waves-light">
+    <a href="../../../../../../archives" class="waves-effect waves-light">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
@@ -97,7 +97,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
+    <a href="../../../../../../about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
@@ -108,7 +108,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
+    <a href="../../../../../../contact" class="waves-effect waves-light">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
@@ -124,11 +124,12 @@
   </li>
 </ul>
 
+
 <div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="../../../../../../medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Suifeng Blog</div>
         <div class="logo-desc">
@@ -144,7 +145,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/" class="waves-effect waves-light">
+		<a href="../../../../../../index.html" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
@@ -155,7 +156,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="../../../../../../tags" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
@@ -166,7 +167,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/categories" class="waves-effect waves-light">
+		<a href="../../../../../../categories" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
@@ -177,7 +178,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/archives" class="waves-effect waves-light">
+		<a href="../../../../../../archives" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
@@ -188,7 +189,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
+		<a href="../../../../../../about" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
@@ -199,11 +200,11 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/contact" class="waves-effect waves-light">
+		<a href="../../../../../../contact" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -218,6 +219,7 @@
         
     </ul>
 </div>
+
 
         </div>
 
@@ -286,14 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('../../../../../../medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="description center-align post-title">
-                        Linux安装配置zsh
-                    </div>
+                    <h1 class="description center-align post-title">Linux安装配置zsh</h1>
                 </div>
             </div>
         </div>
@@ -302,10 +302,11 @@
 
 
 
+
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="../../../../../../libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -330,12 +331,12 @@
     }
 
     .toc-widget {
+        width: 345px;
         padding-left: 20px;
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -344,6 +345,11 @@
     .toc-widget ol {
         padding: 0;
         list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
     }
 
     #toc-content ol {
@@ -363,14 +369,14 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
     }
 
     #toc-content .is-active-link {
         color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -459,34 +465,31 @@
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
-                </div>
+
                 
-				
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
-            
         </div>
         <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="../../../../../../libs/prism/prism.css">
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="linux下安装zsh"><a href="#linux下安装zsh" class="headerlink" title="linux下安装zsh"></a>linux下安装zsh</h1><p>本文针对Ubuntu，wsl-Ubuntu</p>
 <h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>进入bash，输入<code>sudo apt-get install zsh</code>安装zsh</p>
-<h2 id="查看系统已安装的shells"><a href="#查看系统已安装的shells" class="headerlink" title="查看系统已安装的shells"></a>查看系统已安装的shells</h2><p>安装完成后，输入<code>cat /etc/shells</code>，查看当前系统安装的shell。<br>可以看到zsh在列。<br><img src="/2020/03/15/Platform/Linux/zsh/catShells.png" alt="cat shells"></p>
+<h2 id="查看系统已安装的shells"><a href="#查看系统已安装的shells" class="headerlink" title="查看系统已安装的shells"></a>查看系统已安装的shells</h2><p>安装完成后，输入<code>cat /etc/shells</code>，查看当前系统安装的shell。<br>可以看到zsh在列。<br><img src="catShells.png" alt="cat shells"></p>
 <h2 id="设置zsh为默认shell"><a href="#设置zsh为默认shell" class="headerlink" title="设置zsh为默认shell"></a>设置zsh为默认shell</h2><p>输入<code>chsh -s /bin/zsh</code>设置zsh为默认shell</p>
-<p>在输入<code>echo $SHELL</code>查看当前shell，发现还是/bin/bash。<br>这时需要重启一下。<br>再次进入系统，输入<code>echo $SHELL</code>，zsh已经是默认shell了。<br><img src="/2020/03/15/Platform/Linux/zsh/echoshell.png" alt="echo SHELL"></p>
+<p>在输入<code>echo $SHELL</code>查看当前shell，发现还是/bin/bash。<br>这时需要重启一下。<br>再次进入系统，输入<code>echo $SHELL</code>，zsh已经是默认shell了。<br><img src="echoshell.png" alt="echo SHELL"></p>
 <h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><p>oh-my-zsh是zsh的一套配置，可以方便使用zsh。</p>
-<p>on-my-zsh提供了方便的安装方式，执行下面命令就能自动安装了。因为需要从GitHub下载，可能比较耗时，要等一等。<br><code>wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</code><br>执行完后如下图：<br><img src="/2020/03/15/Platform/Linux/zsh/ohmyzsh.png" alt="ohmyzsh"></p>
-<p>再执行<code>source ~/.zshrc</code>使配置生效。<br>这里可能出现autoload: command not found报错，如下：<br><img src="/2020/03/15/Platform/Linux/zsh/source_error.png" alt="autoload: command not found"><br>多番查找在ohmyzsh项目的这个<a href="https://github.com/ohmyzsh/ohmyzsh/issues/8177" target="_blank" rel="noopener">issue</a>中找到了答案，作者mcornella解释是因为在bash中执行的原因。<br><img src="/2020/03/15/Platform/Linux/zsh/source_answer.png" alt="source error answer"></p>
+<p>on-my-zsh提供了方便的安装方式，执行下面命令就能自动安装了。因为需要从GitHub下载，可能比较耗时，要等一等。<br><code>wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</code><br>执行完后如下图：<br><img src="ohmyzsh.png" alt="ohmyzsh"></p>
+<p>再执行<code>source ~/.zshrc</code>使配置生效。<br>这里可能出现autoload: command not found报错，如下：<br><img src="source_error.png" alt="autoload: command not found"><br>多番查找在ohmyzsh项目的这个<a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/issues/8177">issue</a>中找到了答案，作者mcornella解释是因为在bash中执行的原因。<br><img src="source_answer.png" alt="source error answer"></p>
 <p>所以先退出当前的wsl，然后用<code>wsl</code>命令而不是<code>bash</code>命令进入wsl。重新进入后zsh应该已经生效了，如果没有生效可以再执行一次<code>source ~/.zshrc</code>命令。</p>
-<h1 id="配置zsh插件"><a href="#配置zsh插件" class="headerlink" title="配置zsh插件"></a>配置zsh插件</h1><p>oh-my-zsh支持许多效率插件，可以增强终端功能。默认下oh-my-zsh只添加了git插件支持。使用<code>vim ~/.zshrc</code>查看配置可以看到plugins列表中只包含了git插件。<br><img src="/2020/03/15/Platform/Linux/zsh/only_git.png" alt="git plugin"></p>
+<h1 id="配置zsh插件"><a href="#配置zsh插件" class="headerlink" title="配置zsh插件"></a>配置zsh插件</h1><p>oh-my-zsh支持许多效率插件，可以增强终端功能。默认下oh-my-zsh只添加了git插件支持。使用<code>vim ~/.zshrc</code>查看配置可以看到plugins列表中只包含了git插件。<br><img src="only_git.png" alt="git plugin"></p>
 <p>zsh插件分为内置插件和非内置插件。</p>
 <ul>
 <li><p>内置插件路径在<code>~/.oh-my-zsh/plugins</code>。可以cd进去看，里面包含了许多插件。使用内置插件直接在oh-my-zsh的插件列表中添加就行了。<br>  例如要添加内置的adb插件，可以直接在.zshrc添加上<code>plugins=(adb git)</code>，然后保存退出，执行<code>source ~/.zshrc</code>生效。</p>
@@ -494,19 +497,20 @@
 <li><p>第三方插件需要自己去下载到指定目录下，然后再添加到oh-my-zsh插件列表中。最后执行<code>source ~/.zshrc</code>生效</p>
 </li>
 </ul>
-<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins" target="_blank" rel="noopener">官方的插件Wiki</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">官方的插件Wiki</a></p>
 <h2 id="添加zsh-autosuggestions插件"><a href="#添加zsh-autosuggestions插件" class="headerlink" title="添加zsh-autosuggestions插件"></a>添加zsh-autosuggestions插件</h2><p>zsh-autosuggestions是一款自动提示命令的插件。当你输入指令时，会根据历史命令推测可能要输入的命令。按下方向键右键→就可以补全命令。</p>
 <p>输入<code>git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions</code>把zsh-autosuggestions克隆到zsh的plugins目录下。</p>
-<p>然后<code>vim ~/.zshrc</code>进入zsh的配置文件再在plugins列表中添加插件。中间用空格隔开。<br><img src="/2020/03/15/Platform/Linux/zsh/two_plugin.png" alt="add plugin"></p>
+<p>然后<code>vim ~/.zshrc</code>进入zsh的配置文件再在plugins列表中添加插件。中间用空格隔开。<br><img src="two_plugin.png" alt="add plugin"></p>
 <p>最后执行<code>source ~/.zshrc</code>就能使配置生效。</p>
-<p>生效后，输入命令时就能看到提示了：<br><img src="/2020/03/15/Platform/Linux/zsh/autosuggestion.png" alt="auto suggest"></p>
+<p>生效后，输入命令时就能看到提示了：<br><img src="autosuggestion.png" alt="auto suggest"></p>
 <h2 id="添加zsh-syntax-highlighting插件"><a href="#添加zsh-syntax-highlighting插件" class="headerlink" title="添加zsh-syntax-highlighting插件"></a>添加zsh-syntax-highlighting插件</h2><p>zsh-syntax-highlighting是一款语法高亮插件，当输入错误命令时，命令是红色的，正常则是其他颜色。</p>
 <p>输入<code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting</code>把zsh-syntax-highlighting克隆到plugins目录下。</p>
-<p>接下来的步骤和上面一样。<br>执行<code>source ~/.zshrc</code>生效后就能看到效果了。<br><img src="/2020/03/15/Platform/Linux/zsh/zsh_highlight.png" alt="zsh syntax highlight"></p>
-<h1 id="配置zsh主题"><a href="#配置zsh主题" class="headerlink" title="配置zsh主题"></a>配置zsh主题</h1><p>oh-my-zsh内置了一些主题，路径为<code>~/.oh-my-zsh/themes</code>，可以cd进去查看主题，但是这里只列出了主题名称，不方便挑选。可以访问<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes" target="_blank" rel="noopener">官方主题Wiki</a>选择喜欢的主题。</p>
-<p>例如如果要更换为ys主题，可以<code>vim ~/.zshrc</code>进入配置文件，找到<code>ZSH_THEME=robbyrussell</code>这一行(默认主题是robbyrussell)，修改为<code>ZSH_THEME=ys</code>保存退出。再执行<code>source ~/.zshrc</code>生效。<br><img src="/2020/03/15/Platform/Linux/zsh/ys_theme.png" alt="ys theme"><br><img src="/2020/03/15/Platform/Linux/zsh/use_ys.png" alt="ys"></p>
+<p>接下来的步骤和上面一样。<br>执行<code>source ~/.zshrc</code>生效后就能看到效果了。<br><img src="zsh_highlight.png" alt="zsh syntax highlight"></p>
+<h1 id="配置zsh主题"><a href="#配置zsh主题" class="headerlink" title="配置zsh主题"></a>配置zsh主题</h1><p>oh-my-zsh内置了一些主题，路径为<code>~/.oh-my-zsh/themes</code>，可以cd进去查看主题，但是这里只列出了主题名称，不方便挑选。可以访问<a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">官方主题Wiki</a>选择喜欢的主题。</p>
+<p>例如如果要更换为ys主题，可以<code>vim ~/.zshrc</code>进入配置文件，找到<code>ZSH_THEME=robbyrussell</code>这一行(默认主题是robbyrussell)，修改为<code>ZSH_THEME=ys</code>保存退出。再执行<code>source ~/.zshrc</code>生效。<br><img src="ys_theme.png" alt="ys theme"><br><img src="use_ys.png" alt="ys"></p>
 <p>这里ZSH_THEME的注释信息里提到如果把主题设置为<code>random</code>则每次oh-my-zsh启动时都会随机挑选一个主题加载。要知道当前使用的主题，可以执行<code>echo $RANDOM_THEME</code>查看。</p>
 
+                
             </div>
             <hr/>
 
@@ -521,7 +525,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                    <a href="../../../../../../about" rel="external nofollow noreferrer">suifeng</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -544,7 +548,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    <a href="../../../../../../about" target="_blank">suifeng</a>
                     !
                 </span>
             </div>
@@ -589,13 +593,12 @@
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
+                    <link rel="stylesheet" type="text/css" href="../../../../../../libs/share/css/share.min.css">
 <div id="article-share">
-    
+
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <script src="../../../../../../libs/share/js/social-share.min.js"></script>
     
 
     
@@ -713,10 +716,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="../../../../../../medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="../../../../../../medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -729,9 +732,14 @@
         $('.tabs').tabs();
     });
 </script>
+
             
         </div>
     </div>
+
+    
+
+    
 
     
 
@@ -756,7 +764,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="VSCode markdownlint插件自定义生效规则">
+                        <img src="../../../../../../medias/featureimages/13.jpg" class="responsive-img" alt="VSCode markdownlint插件自定义生效规则">
                         
                         <span class="card-title">VSCode markdownlint插件自定义生效规则</span>
                     </div>
@@ -764,7 +772,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            VSCode markdownlint插件自定义生效规则markdownlint是一款VSCode下的markdown文件lint插件。可以格式化markdown文件。但是markdown默认的规则较多，查看markdownlint的商店介
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -817,7 +825,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="删除双系统启动项">
+                        <img src="../../../../../../medias/featureimages/4.jpg" class="responsive-img" alt="删除双系统启动项">
                         
                         <span class="card-title">删除双系统启动项</span>
                     </div>
@@ -825,13 +833,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            windows下删除双系统启动项
-win+X打开管理员PowerShell
-
-输入diskpart进入diskpart
-
-
-3. 输入list disk列出当前系统磁盘(只列出磁盘而非分区)4. 输入select disk 0选择启动盘5.
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -857,11 +859,11 @@ win+X打开管理员PowerShell
                         <span class="chip bg-color">Tips</span>
                     </a>
                     
-                    <a href="../../../../../../tags/双系统/">
+                    <a href="../../../../../../tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/">
                         <span class="chip bg-color">双系统</span>
                     </a>
                     
-                    <a href="../../../../../../tags/启动项/">
+                    <a href="../../../../../../tags/%E5%90%AF%E5%8A%A8%E9%A1%B9/">
                         <span class="chip bg-color">启动项</span>
                     </a>
                     
@@ -876,72 +878,28 @@ win+X打开管理员PowerShell
 </div>
 
 
-<script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
-
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
-
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
-
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
-
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: Suifeng Blog<br />'
-            + '文章作者: suifeng<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
-
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
-</script>
-
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeLang.js"></script>
 
-    
+
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeShrink.js"></script>
 
-
-<!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -957,14 +915,14 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="../../../../../../libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
+            collapseDepth: Number('0'),
             headingSelector: 'h1, h2, h3, h4'
         });
 
@@ -1032,24 +990,30 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         
     });
 </script>
+
     
 
 </main>
 
 
 
+
     <footer class="page-footer bg-color">
-    <div class="container row center-align">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">年份</span>
-            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            
+                <span id="year">2019-2020</span>
+            
+            <span id="year">2019</span>
+            <a href="../../../../../../about" target="_blank">suifeng</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.2k</span>&nbsp;
+                class="white-color">41.4k</span>&nbsp;字
             
             
             
@@ -1070,16 +1034,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             <span id="sitetime">载入运行时间...</span>
-            <script src="/js/prettify.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    $('pre').addClass('prettyprint linenums');
-                    prettyPrint();
-                })
-            </script>
             <script>
                 function siteTime() {
-                    window.setTimeout("siteTime()", 1000);
                     var seconds = 1000;
                     var minutes = seconds * 60;
                     var hours = minutes * 60;
@@ -1166,12 +1122,98 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('../../../../../../search.xml', 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1180,15 +1222,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <script src="../../../../../../libs/materialize/materialize.min.js"></script>
+    <script src="../../../../../../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../../../../../libs/aos/aos.js"></script>
+    <script src="../../../../../../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../../../../../../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../../../../../../js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1210,7 +1249,14 @@ $(function () {
 
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="../../../../../../libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
     
 
     
@@ -1218,17 +1264,9 @@ $(function () {
     
 
     
-
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    <script src="../../../../../../libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+  MathJax.Hub.Config({{ JSON.stringify(config) }});
 </script>
 
 <script type="text/x-mathjax-config">
@@ -1240,7 +1278,7 @@ $(function () {
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/javascript" src="{{ src }}">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

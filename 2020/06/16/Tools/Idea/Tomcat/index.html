@@ -2,19 +2,10 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="Idea社区版搭建JavaWeb开发环境, Suifeng Blog">
-    <meta name="description" content="Idea社区版搭建JavaWeb开发环境环境准备
-jdk
-Tomcat
-IDEA 社区版
-IDEA插件：Smart Tomcat
-
-
-创建项目选择创建一个新Java项目，项目构建选择Gradle，kotlin
-
-修改build.gradle">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,33 +13,35 @@ IDEA插件：Smart Tomcat
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Idea社区版搭建JavaWeb开发环境 | Suifeng Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-	<style> 
-		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
-		{ list-style-type: decimal !important }
-	</style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</head>
+
+    <title>Idea社区版搭建JavaWeb开发环境 | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="../../../../../../favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/my.css">
+
+    <script src="../../../../../../libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
 
 
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="../../../../../../index.html" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="../../../../../../medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Suifeng Blog</span>
                 </a>
@@ -60,7 +53,7 @@ IDEA插件：Smart Tomcat
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/" class="waves-effect waves-light">
+    <a href="../../../../../../index.html" class="waves-effect waves-light">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
@@ -71,7 +64,7 @@ IDEA插件：Smart Tomcat
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
+    <a href="../../../../../../tags" class="waves-effect waves-light">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
@@ -82,7 +75,7 @@ IDEA插件：Smart Tomcat
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/categories" class="waves-effect waves-light">
+    <a href="../../../../../../categories" class="waves-effect waves-light">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
@@ -93,7 +86,7 @@ IDEA插件：Smart Tomcat
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/archives" class="waves-effect waves-light">
+    <a href="../../../../../../archives" class="waves-effect waves-light">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
@@ -104,7 +97,7 @@ IDEA插件：Smart Tomcat
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
+    <a href="../../../../../../about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
@@ -115,7 +108,7 @@ IDEA插件：Smart Tomcat
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
+    <a href="../../../../../../contact" class="waves-effect waves-light">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
@@ -131,11 +124,12 @@ IDEA插件：Smart Tomcat
   </li>
 </ul>
 
+
 <div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="../../../../../../medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Suifeng Blog</div>
         <div class="logo-desc">
@@ -151,7 +145,7 @@ IDEA插件：Smart Tomcat
         
         <li class="m-nav-item">
 	  
-		<a href="/" class="waves-effect waves-light">
+		<a href="../../../../../../index.html" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
@@ -162,7 +156,7 @@ IDEA插件：Smart Tomcat
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="../../../../../../tags" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
@@ -173,7 +167,7 @@ IDEA插件：Smart Tomcat
         
         <li class="m-nav-item">
 	  
-		<a href="/categories" class="waves-effect waves-light">
+		<a href="../../../../../../categories" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
@@ -184,7 +178,7 @@ IDEA插件：Smart Tomcat
         
         <li class="m-nav-item">
 	  
-		<a href="/archives" class="waves-effect waves-light">
+		<a href="../../../../../../archives" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
@@ -195,7 +189,7 @@ IDEA插件：Smart Tomcat
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
+		<a href="../../../../../../about" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
@@ -206,11 +200,11 @@ IDEA插件：Smart Tomcat
         
         <li class="m-nav-item">
 	  
-		<a href="/contact" class="waves-effect waves-light">
+		<a href="../../../../../../contact" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -225,6 +219,7 @@ IDEA插件：Smart Tomcat
         
     </ul>
 </div>
+
 
         </div>
 
@@ -293,14 +288,12 @@ IDEA插件：Smart Tomcat
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('../../../../../../medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="description center-align post-title">
-                        Idea社区版搭建JavaWeb开发环境
-                    </div>
+                    <h1 class="description center-align post-title">Idea社区版搭建JavaWeb开发环境</h1>
                 </div>
             </div>
         </div>
@@ -309,10 +302,11 @@ IDEA插件：Smart Tomcat
 
 
 
+
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="../../../../../../libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -337,12 +331,12 @@ IDEA插件：Smart Tomcat
     }
 
     .toc-widget {
+        width: 345px;
         padding-left: 20px;
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -351,6 +345,11 @@ IDEA插件：Smart Tomcat
     .toc-widget ol {
         padding: 0;
         list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
     }
 
     #toc-content ol {
@@ -370,14 +369,14 @@ IDEA插件：Smart Tomcat
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
     }
 
     #toc-content .is-active-link {
         color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -457,95 +456,91 @@ IDEA插件：Smart Tomcat
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    359
+                    355
                 </div>
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
-                </div>
+
                 
-				
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
-            
         </div>
         <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="../../../../../../libs/prism/prism.css">
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Idea社区版搭建JavaWeb开发环境"><a href="#Idea社区版搭建JavaWeb开发环境" class="headerlink" title="Idea社区版搭建JavaWeb开发环境"></a>Idea社区版搭建JavaWeb开发环境</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
 <li>jdk</li>
 <li>Tomcat</li>
 <li>IDEA 社区版</li>
-<li>IDEA插件：Smart Tomcat<br><img src="/2020/06/16/Tools/Idea/Tomcat/SmartTomcat.png" alt="Smart Tomcat"></li>
+<li>IDEA插件：Smart Tomcat<br><img src="SmartTomcat.png" alt="Smart Tomcat"></li>
 </ul>
 <ol>
-<li><p>创建项目<br>选择创建一个新Java项目，项目构建选择Gradle，kotlin<br><img src="/2020/06/16/Tools/Idea/Tomcat/newProject.png" alt="new project"></p>
+<li><p>创建项目<br>选择创建一个新Java项目，项目构建选择Gradle，kotlin<br><img src="newProject.png" alt="new project"></p>
 </li>
 <li><p>修改build.gradle<br>在项目的build.gradle中添加<code>war</code>插件依赖并添加<code>javax</code>依赖<br>修改完的gradle文件如下</p>
-<pre><code class="kotlin">plugins {
-    kotlin(&quot;jvm&quot;) version &quot;1.3.72&quot;
-    war // 1.war插件
-}
+ <pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin">plugins <span class="token punctuation">&#123;</span>
+    <span class="token function">kotlin</span><span class="token punctuation">(</span><span class="token string">"jvm"</span><span class="token punctuation">)</span> version <span class="token string">"1.3.72"</span>
+    war <span class="token comment">// 1.war插件</span>
+<span class="token punctuation">&#125;</span>
 
-group = &quot;com.suifeng&quot;
-version = &quot;1.0-SNAPSHOT&quot;
+group <span class="token operator">=</span> <span class="token string">"com.suifeng"</span>
+version <span class="token operator">=</span> <span class="token string">"1.0-SNAPSHOT"</span>
 
-repositories {
-    mavenCentral()
-}
+repositories <span class="token punctuation">&#123;</span>
+    <span class="token function">mavenCentral</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
 
-dependencies {
-    implementation(kotlin(&quot;stdlib-jdk8&quot;))
-    implementation(&quot;javax:javaee-api:8.0&quot;) // 2.javax
-}
+dependencies <span class="token punctuation">&#123;</span>
+    <span class="token function">implementation</span><span class="token punctuation">(</span><span class="token function">kotlin</span><span class="token punctuation">(</span><span class="token string">"stdlib-jdk8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token function">implementation</span><span class="token punctuation">(</span><span class="token string">"javax:javaee-api:8.0"</span><span class="token punctuation">)</span> <span class="token comment">// 2.javax</span>
+<span class="token punctuation">&#125;</span>
 
-tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = &quot;1.8&quot;
-    }
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = &quot;1.8&quot;
-    }
-}</code></pre>
-</li>
+tasks <span class="token punctuation">&#123;</span>
+    compileKotlin <span class="token punctuation">&#123;</span>
+        kotlinOptions<span class="token punctuation">.</span>jvmTarget <span class="token operator">=</span> <span class="token string">"1.8"</span>
+    <span class="token punctuation">&#125;</span>
+    compileTestKotlin <span class="token punctuation">&#123;</span>
+        kotlinOptions<span class="token punctuation">.</span>jvmTarget <span class="token operator">=</span> <span class="token string">"1.8"</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>创建webapp<br>在main路径下创建一个<strong>webapp</strong>目录。</p>
 </li>
 <li><p>创建Servlet<br>在kotlin目录下创建一个Class，实现一个简单地Servlet</p>
-<pre><code class="kotlin">package com.suifeng.web
+ <pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">package</span> com<span class="token punctuation">.</span>suifeng<span class="token punctuation">.</span>web
 
-import javax.servlet.annotation.WebServlet
-import javax.servlet.http.HttpServlet
-import javax.servlet.http.HttpServletRequest
-import javax.servlet.http.HttpServletResponse
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebServlet
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServlet
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletResponse
 
-/**
+<span class="token comment">/**
  *@author suifengczc
  *@date 2020/6/21
- */
-@WebServlet(value = [&quot;/hello&quot;])
-class FirstServlet : HttpServlet() {
-    override fun doGet(req: HttpServletRequest?, resp: HttpServletResponse?) {
-        resp?.writer?.write(&quot;Hello, World!&quot;)
-    }
-}</code></pre>
-</li>
+ */</span>
+<span class="token annotation builtin">@WebServlet</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"/hello"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> FirstServlet <span class="token operator">:</span> <span class="token function">HttpServlet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">doGet</span><span class="token punctuation">(</span>req<span class="token operator">:</span> HttpServletRequest<span class="token operator">?</span><span class="token punctuation">,</span> resp<span class="token operator">:</span> HttpServletResponse<span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        resp<span class="token operator">?</span><span class="token punctuation">.</span>writer<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"Hello, World!"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>配置RunConfigurations</p>
 </li>
 </ol>
 <p>这里需要用到Smart Tomcat插件。</p>
-<p>创建一项新的配置，使用Smart Tomcat模板。<br><img src="/2020/06/16/Tools/Idea/Tomcat/config_st.png"></p>
-<p>填入对应的配置<br><img src="/2020/06/16/Tools/Idea/Tomcat/runconfig.png" alt="run config"><br>Tomcat Server：填入本地的Tomcat目录<br>Deployment Directory：部署路径，第二步创建的<strong>webapp</strong>目录的路径。<br>Context Path: 上下文路径，可以是<code>/</code>或者自行修改<br>其他的保持默认</p>
-<p>这样一个简单的基于IDEA社区版的web开发环境就配置好了。点击run按钮可以看到Tomcat服务正常启动了。<br><img src="/2020/06/16/Tools/Idea/Tomcat/runLog.png"></p>
-<p>在浏览器中可以正常访问到接口了<br><img src="/2020/06/16/Tools/Idea/Tomcat/runWeb.png"></p>
+<p>创建一项新的配置，使用Smart Tomcat模板。<br><img src="config_st.png"></p>
+<p>填入对应的配置<br><img src="runconfig.png" alt="run config"><br>Tomcat Server：填入本地的Tomcat目录<br>Deployment Directory：部署路径，第二步创建的<strong>webapp</strong>目录的路径。<br>Context Path: 上下文路径，可以是<code>/</code>或者自行修改<br>其他的保持默认</p>
+<p>这样一个简单的基于IDEA社区版的web开发环境就配置好了。点击run按钮可以看到Tomcat服务正常启动了。<br><img src="runLog.png"></p>
+<p>在浏览器中可以正常访问到接口了<br><img src="runWeb.png"></p>
 
+                
             </div>
             <hr/>
 
@@ -560,7 +555,7 @@ class FirstServlet : HttpServlet() {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                    <a href="../../../../../../about" rel="external nofollow noreferrer">suifeng</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -583,7 +578,7 @@ class FirstServlet : HttpServlet() {
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    <a href="../../../../../../about" target="_blank">suifeng</a>
                     !
                 </span>
             </div>
@@ -624,13 +619,12 @@ class FirstServlet : HttpServlet() {
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
+                    <link rel="stylesheet" type="text/css" href="../../../../../../libs/share/css/share.min.css">
 <div id="article-share">
-    
+
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <script src="../../../../../../libs/share/js/social-share.min.js"></script>
     
 
     
@@ -748,10 +742,10 @@ class FirstServlet : HttpServlet() {
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="../../../../../../medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="../../../../../../medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -764,9 +758,14 @@ class FirstServlet : HttpServlet() {
         $('.tabs').tabs();
     });
 </script>
+
             
         </div>
     </div>
+
+    
+
+    
 
     
 
@@ -791,7 +790,7 @@ class FirstServlet : HttpServlet() {
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Groovy 基础语法">
+                        <img src="../../../../../../medias/featureimages/8.jpg" class="responsive-img" alt="Groovy 基础语法">
                         
                         <span class="card-title">Groovy 基础语法</span>
                     </div>
@@ -799,10 +798,7 @@ class FirstServlet : HttpServlet() {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Groovy 基础语法翻译自官方文档:Syntax部分内容为了方便表述做了修改。
-1.注释1.1.单行注释单行注释以//开头，可以放在行中的任意位置。从//开始知道行尾的内容都算作是注释的部分。
-// 独立的单行注释
-println &qu
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -847,7 +843,7 @@ println &qu
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Class文件结构">
+                        <img src="../../../../../../medias/featureimages/0.jpg" class="responsive-img" alt="Class文件结构">
                         
                         <span class="card-title">Class文件结构</span>
                     </div>
@@ -855,9 +851,7 @@ println &qu
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            [TOC]
-Class文件介绍Class文件是Java源代码文件经Java编译器编译后得到的Java字节码文件。对比Linux、Windows上的可执行文件而言， Class文件可以看作是Java虚拟机的可执行文件。
-Class文件格式在J
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -902,72 +896,28 @@ Class文件格式在J
 </div>
 
 
-<script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
-
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
-
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
-
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
-
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: Suifeng Blog<br />'
-            + '文章作者: suifeng<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
-
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
-</script>
-
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeLang.js"></script>
 
-    
+
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeShrink.js"></script>
 
-
-<!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -983,14 +933,14 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="../../../../../../libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
+            collapseDepth: Number('0'),
             headingSelector: 'h1, h2, h3, h4'
         });
 
@@ -1058,24 +1008,30 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         
     });
 </script>
+
     
 
 </main>
 
 
 
+
     <footer class="page-footer bg-color">
-    <div class="container row center-align">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">年份</span>
-            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            
+                <span id="year">2019-2020</span>
+            
+            <span id="year">2019</span>
+            <a href="../../../../../../about" target="_blank">suifeng</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.2k</span>&nbsp;
+                class="white-color">41.4k</span>&nbsp;字
             
             
             
@@ -1096,16 +1052,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             <span id="sitetime">载入运行时间...</span>
-            <script src="/js/prettify.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    $('pre').addClass('prettyprint linenums');
-                    prettyPrint();
-                })
-            </script>
             <script>
                 function siteTime() {
-                    window.setTimeout("siteTime()", 1000);
                     var seconds = 1000;
                     var minutes = seconds * 60;
                     var hours = minutes * 60;
@@ -1192,12 +1140,98 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('../../../../../../search.xml', 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1206,15 +1240,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <script src="../../../../../../libs/materialize/materialize.min.js"></script>
+    <script src="../../../../../../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../../../../../libs/aos/aos.js"></script>
+    <script src="../../../../../../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../../../../../../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../../../../../../js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1236,7 +1267,14 @@ $(function () {
 
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="../../../../../../libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
     
 
     
@@ -1244,17 +1282,9 @@ $(function () {
     
 
     
-
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    <script src="../../../../../../libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+  MathJax.Hub.Config({{ JSON.stringify(config) }});
 </script>
 
 <script type="text/x-mathjax-config">
@@ -1266,7 +1296,7 @@ $(function () {
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/javascript" src="{{ src }}">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

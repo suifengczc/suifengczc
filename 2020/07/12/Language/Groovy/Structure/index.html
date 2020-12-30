@@ -2,15 +2,10 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="Groovy 程序结构, Suifeng Blog">
-    <meta name="description" content="Groovy 程序结构本篇是程序结构的阅读笔记。
-1.包名包名和Java相同
-2.Import2.1.默认导入Groovy默认导入了
-import java.lang.*
-import java.util.*
-import java.io.">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,33 +13,35 @@ import java.io.">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Groovy 程序结构 | Suifeng Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-	<link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-	<style> 
-		li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
-		{ list-style-type: decimal !important }
-	</style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <script src="/libs/jquery/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</head>
+
+    <title>Groovy 程序结构 | Suifeng Blog</title>
+    <link rel="icon" type="image/png" href="../../../../../../favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../css/my.css">
+
+    <script src="../../../../../../libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
 
 
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="../../../../../../index.html" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="../../../../../../medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Suifeng Blog</span>
                 </a>
@@ -56,7 +53,7 @@ import java.io.">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/" class="waves-effect waves-light">
+    <a href="../../../../../../index.html" class="waves-effect waves-light">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
@@ -67,7 +64,7 @@ import java.io.">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
+    <a href="../../../../../../tags" class="waves-effect waves-light">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
@@ -78,7 +75,7 @@ import java.io.">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/categories" class="waves-effect waves-light">
+    <a href="../../../../../../categories" class="waves-effect waves-light">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
@@ -89,7 +86,7 @@ import java.io.">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/archives" class="waves-effect waves-light">
+    <a href="../../../../../../archives" class="waves-effect waves-light">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
@@ -100,7 +97,7 @@ import java.io.">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
+    <a href="../../../../../../about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
@@ -111,7 +108,7 @@ import java.io.">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
+    <a href="../../../../../../contact" class="waves-effect waves-light">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
@@ -127,11 +124,12 @@ import java.io.">
   </li>
 </ul>
 
+
 <div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="../../../../../../medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Suifeng Blog</div>
         <div class="logo-desc">
@@ -147,7 +145,7 @@ import java.io.">
         
         <li class="m-nav-item">
 	  
-		<a href="/" class="waves-effect waves-light">
+		<a href="../../../../../../index.html" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
@@ -158,7 +156,7 @@ import java.io.">
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="../../../../../../tags" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
@@ -169,7 +167,7 @@ import java.io.">
         
         <li class="m-nav-item">
 	  
-		<a href="/categories" class="waves-effect waves-light">
+		<a href="../../../../../../categories" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
@@ -180,7 +178,7 @@ import java.io.">
         
         <li class="m-nav-item">
 	  
-		<a href="/archives" class="waves-effect waves-light">
+		<a href="../../../../../../archives" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
@@ -191,7 +189,7 @@ import java.io.">
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
+		<a href="../../../../../../about" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
@@ -202,11 +200,11 @@ import java.io.">
         
         <li class="m-nav-item">
 	  
-		<a href="/contact" class="waves-effect waves-light">
+		<a href="../../../../../../contact" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -221,6 +219,7 @@ import java.io.">
         
     </ul>
 </div>
+
 
         </div>
 
@@ -289,14 +288,12 @@ import java.io.">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('../../../../../../medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="description center-align post-title">
-                        Groovy 程序结构
-                    </div>
+                    <h1 class="description center-align post-title">Groovy 程序结构</h1>
                 </div>
             </div>
         </div>
@@ -305,10 +302,11 @@ import java.io.">
 
 
 
+
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="../../../../../../libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -333,12 +331,12 @@ import java.io.">
     }
 
     .toc-widget {
+        width: 345px;
         padding-left: 20px;
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -347,6 +345,11 @@ import java.io.">
     .toc-widget ol {
         padding: 0;
         list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
     }
 
     #toc-content ol {
@@ -366,14 +369,14 @@ import java.io.">
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
     }
 
     #toc-content .is-active-link {
         color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -449,130 +452,127 @@ import java.io.">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    605
+                    654
                 </div>
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
-                </div>
+
                 
-				
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
-            
         </div>
         <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="../../../../../../libs/prism/prism.css">
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Groovy-程序结构"><a href="#Groovy-程序结构" class="headerlink" title="Groovy 程序结构"></a>Groovy 程序结构</h1><p>本篇是<a href="http://www.groovy-lang.org/structure.html" target="_blank" rel="noopener">程序结构</a>的阅读笔记。</p>
+                <h1 id="Groovy-程序结构"><a href="#Groovy-程序结构" class="headerlink" title="Groovy 程序结构"></a>Groovy 程序结构</h1><p>本篇是<a target="_blank" rel="noopener" href="http://www.groovy-lang.org/structure.html">程序结构</a>的阅读笔记。</p>
 <h2 id="1-包名"><a href="#1-包名" class="headerlink" title="1.包名"></a>1.包名</h2><p>包名和Java相同</p>
 <h2 id="2-Import"><a href="#2-Import" class="headerlink" title="2.Import"></a>2.Import</h2><h3 id="2-1-默认导入"><a href="#2-1-默认导入" class="headerlink" title="2.1.默认导入"></a>2.1.默认导入</h3><p>Groovy默认导入了</p>
-<pre><code class="Groovy">import java.lang.*
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">import java.lang.*
 import java.util.*
 import java.io.*
 import java.net.*
 import groovy.lang.*
 import groovy.util.*
 import java.math.BigInteger
-import java.math.BigDecimal</code></pre>
+import java.math.BigDecimal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-2-简单导入"><a href="#2-2-简单导入" class="headerlink" title="2.2.简单导入"></a>2.2.简单导入</h3><p>全限定名导入类</p>
-<h3 id="2-3-星号导入"><a href="#2-3-星号导入" class="headerlink" title="2.3.星号导入"></a>2.3.星号导入</h3><pre><code class="Groovy">import groovy.xml.*
+<h3 id="2-3-星号导入"><a href="#2-3-星号导入" class="headerlink" title="2.3.星号导入"></a>2.3.星号导入</h3><pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">import groovy.xml.*
 
-def markupBuilder = new MarkupBuilder()
+def markupBuilder &#x3D; new MarkupBuilder()
 
-assert markupBuilder != null
+assert markupBuilder !&#x3D; null
 
-assert new StreamingMarkupBuilder() != null</code></pre>
+assert new StreamingMarkupBuilder() !&#x3D; null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-4-静态导入"><a href="#2-4-静态导入" class="headerlink" title="2.4.静态导入"></a>2.4.静态导入</h3><p>Groovy允许静态导入类并且与导入方法同名的方法，只要类型不同:</p>
-<pre><code class="Groovy">import static java.lang.String.format
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">import static java.lang.String.format
 
-class SomeClass {
+class SomeClass &#123;
 
-    String format(Integer i) {
+    String format(Integer i) &#123;
         i.toString()
-    }
+    &#125;
 
-    static void main(String[] args) {
-        assert format(&#39;String&#39;) == &#39;String&#39;
-        assert new SomeClass().format(Integer.valueOf(1)) == &#39;1&#39;
-    }
-}</code></pre>
+    static void main(String[] args) &#123;
+        assert format(&#39;String&#39;) &#x3D;&#x3D; &#39;String&#39;
+        assert new SomeClass().format(Integer.valueOf(1)) &#x3D;&#x3D; &#39;1&#39;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果具有相同的类型，以导入的类优先。</p>
-<h3 id="2-5-静态导入别名"><a href="#2-5-静态导入别名" class="headerlink" title="2.5.静态导入别名"></a>2.5.静态导入别名</h3><pre><code class="Groovy">import static Calendar.getInstance as now
+<h3 id="2-5-静态导入别名"><a href="#2-5-静态导入别名" class="headerlink" title="2.5.静态导入别名"></a>2.5.静态导入别名</h3><pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">import static Calendar.getInstance as now
 
-assert now().class == Calendar.getInstance().class</code></pre>
-<h3 id="2-6-静态星号导入"><a href="#2-6-静态星号导入" class="headerlink" title="2.6.静态星号导入"></a>2.6.静态星号导入</h3><pre><code class="Groovy">import static java.lang.Math.*
+assert now().class &#x3D;&#x3D; Calendar.getInstance().class<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-6-静态星号导入"><a href="#2-6-静态星号导入" class="headerlink" title="2.6.静态星号导入"></a>2.6.静态星号导入</h3><pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">import static java.lang.Math.*
 
-assert sin(0) == 0.0
-assert cos(0) == 1.0</code></pre>
-<h3 id="2-7-导入别名"><a href="#2-7-导入别名" class="headerlink" title="2.7.导入别名"></a>2.7.导入别名</h3><pre><code class="Groovy">import java.util.Date
+assert sin(0) &#x3D;&#x3D; 0.0
+assert cos(0) &#x3D;&#x3D; 1.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-7-导入别名"><a href="#2-7-导入别名" class="headerlink" title="2.7.导入别名"></a>2.7.导入别名</h3><pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">import java.util.Date
 import java.sql.Date as SQLDate
 
-Date utilDate = new Date(1000L)
-SQLDate sqlDate = new SQLDate(1000L)
+Date utilDate &#x3D; new Date(1000L)
+SQLDate sqlDate &#x3D; new SQLDate(1000L)
 
 assert utilDate instanceof java.util.Date
-assert sqlDate instanceof java.sql.Date</code></pre>
+assert sqlDate instanceof java.sql.Date<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-脚本与类"><a href="#3-脚本与类" class="headerlink" title="3.脚本与类"></a>3.脚本与类</h2><h3 id="3-1-public-static-void-main-和-脚本"><a href="#3-1-public-static-void-main-和-脚本" class="headerlink" title="3.1. public static void main 和 脚本"></a>3.1. public static void main 和 脚本</h3><p>Groovy的类形式:</p>
-<pre><code class="Groovy">class Main {
-    static void main(String... args) {
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">class Main &#123;
+    static void main(String... args) &#123;
         println &#39;Groovy world!&#39;
-    }
-}</code></pre>
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Groovy的脚本形式:</p>
-<pre><code class="Groovy">println &#39;Groovy world!&#39;</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">println &#39;Groovy world!&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>脚本无需定义一个类来执行</p>
-<h3 id="3-2-脚本类"><a href="#3-2-脚本类" class="headerlink" title="3.2.脚本类"></a>3.2.脚本类</h3><pre><code class="Groovy">import org.codehaus.groovy.runtime.InvokerHelper
-class Main extends Script {
-    def run() {
+<h3 id="3-2-脚本类"><a href="#3-2-脚本类" class="headerlink" title="3.2.脚本类"></a>3.2.脚本类</h3><pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">import org.codehaus.groovy.runtime.InvokerHelper
+class Main extends Script &#123;
+    def run() &#123;
         println &#39;Groovy world!&#39;
-    }
-    static void main(String[] args) {
+    &#125;
+    static void main(String[] args) &#123;
         InvokerHelper.runScript(Main, args)
-    }
-}</code></pre>
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-3-方法"><a href="#3-3-方法" class="headerlink" title="3.3.方法"></a>3.3.方法</h3><p>脚本中可以定义方法。</p>
 <h3 id="3-4-变量"><a href="#3-4-变量" class="headerlink" title="3.4.变量"></a>3.4.变量</h3><p>脚本中得变量不需要定义类型，因此:</p>
-<pre><code class="Groovy">int x = 1
-int y = 2
-assert x+y == 3</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">int x &#x3D; 1
+int y &#x3D; 2
+assert x+y &#x3D;&#x3D; 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>和</p>
-<pre><code class="Groovy">x = 1
-y = 2
-assert x+y == 3</code></pre>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">x &#x3D; 1
+y &#x3D; 2
+assert x+y &#x3D;&#x3D; 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>是一样的。</p>
 <p>但是两者直接还是存在一定得差异</p>
 <ul>
 <li><p>在第一种写法中，参数将被定义为局部变量，并且在run方法之外不可访问。</p>
-<pre><code class="Groovy">  public Object run() {
-      CallSite[] var1 = $getCallSiteArray();
-      int x = 1;
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">public Object run() &#123;
+    CallSite[] var1 &#x3D; $getCallSiteArray();
+    int x &#x3D; 1;
 
-      int y = 2;
-      return BytecodeInterface8.isOrigInt() &amp;&amp; !__$stMC &amp;&amp; !BytecodeInterface8.disabledStandardMetaClass() ? var1[3].callCurrent(this, x + y) : var1[1].callCurrent(this, var1[2].call(Integer.valueOf(x), Integer.valueOf(y)));
-  }</code></pre>
+    int y &#x3D; 2;
+    return BytecodeInterface8.isOrigInt() &amp;&amp; !__$stMC &amp;&amp; !BytecodeInterface8.disabledStandardMetaClass() ? var1[3].callCurrent(this, x + y) : var1[1].callCurrent(this, var1[2].call(Integer.valueOf(x), Integer.valueOf(y)));
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上是第一种写法的脚本中的<code>run</code>方法，可以看到<code>x</code>和<code>y</code>被定义成了方法中的变量。</p>
 </li>
 <li><p>在第二种写法中，参数被定义成脚本的属性，在脚本类中都可以访问到。</p>
-<pre><code class="Groovy">      public Object run() {
-      CallSite[] var1 = $getCallSiteArray();
-      byte var2 = 1;
-      ScriptBytecodeAdapter.setGroovyObjectProperty(Integer.valueOf(var2), Five.class, this, (String)&quot;x&quot;);
-      byte var3 = 2;
-      ScriptBytecodeAdapter.setGroovyObjectProperty(Integer.valueOf(var3), Five.class, this, (String)&quot;y&quot;);
-      return var1[1].callCurrent(this, var1[2].call(var1[3].callGroovyObjectGetProperty(this), var1[4].callGroovyObjectGetProperty(this)));
-  }</code></pre>
-</li>
+<pre class="line-numbers language-Groovy" data-language="Groovy"><code class="language-Groovy">    public Object run() &#123;
+    CallSite[] var1 &#x3D; $getCallSiteArray();
+    byte var2 &#x3D; 1;
+    ScriptBytecodeAdapter.setGroovyObjectProperty(Integer.valueOf(var2), Five.class, this, (String)&quot;x&quot;);
+    byte var3 &#x3D; 2;
+    ScriptBytecodeAdapter.setGroovyObjectProperty(Integer.valueOf(var3), Five.class, this, (String)&quot;y&quot;);
+    return var1[1].callCurrent(this, var1[2].call(var1[3].callGroovyObjectGetProperty(this), var1[4].callGroovyObjectGetProperty(this)));
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 
+                
             </div>
             <hr/>
 
@@ -587,7 +587,7 @@ assert x+y == 3</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://suifengczc.github.io" rel="external nofollow noreferrer">suifeng</a>
+                    <a href="../../../../../../about" rel="external nofollow noreferrer">suifeng</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -610,7 +610,7 @@ assert x+y == 3</code></pre>
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+                    <a href="../../../../../../about" target="_blank">suifeng</a>
                     !
                 </span>
             </div>
@@ -647,13 +647,12 @@ assert x+y == 3</code></pre>
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
+                    <link rel="stylesheet" type="text/css" href="../../../../../../libs/share/css/share.min.css">
 <div id="article-share">
-    
+
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <script src="../../../../../../libs/share/js/social-share.min.js"></script>
     
 
     
@@ -771,10 +770,10 @@ assert x+y == 3</code></pre>
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="../../../../../../medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="../../../../../../medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -787,9 +786,14 @@ assert x+y == 3</code></pre>
         $('.tabs').tabs();
     });
 </script>
+
             
         </div>
     </div>
+
+    
+
+    
 
     
 
@@ -814,7 +818,7 @@ assert x+y == 3</code></pre>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Groovy 面向对象">
+                        <img src="../../../../../../medias/featureimages/23.jpg" class="responsive-img" alt="Groovy 面向对象">
                         
                         <span class="card-title">Groovy 面向对象</span>
                     </div>
@@ -822,10 +826,7 @@ assert x+y == 3</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Groovy 面向对象面向对象阅读笔记。
-1.类型1.1.基础类型
-整型: byte(8bit), short(16bit), int(32bit), long(64bit)
-浮点型: float(32bit), double(64bit)
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -870,7 +871,7 @@ assert x+y == 3</code></pre>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Groovy运算符">
+                        <img src="../../../../../../medias/featureimages/1.jpg" class="responsive-img" alt="Groovy运算符">
                         
                         <span class="card-title">Groovy运算符</span>
                     </div>
@@ -878,24 +879,7 @@ assert x+y == 3</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Groovy运算符Groovy运算符阅读笔记，非全文翻译。
-1.算术运算符Groovy支持常见的算术运算符，和所有Java支持的运算符。
-1.1.普通算术运算符Groovy支持的二元运算符:
-
-
-
-运算符
-用途
-备注
-
-
-
-+
-加
-
-
-
--
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -936,72 +920,28 @@ assert x+y == 3</code></pre>
 </div>
 
 
-<script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
-
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
-
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        newdiv.style.whiteSpace = 'pre'; //增加这个属性，以防止空格缩进被去除
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
-
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
-
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: Suifeng Blog<br />'
-            + '文章作者: suifeng<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
-
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
-</script>
-
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeLang.js"></script>
 
-    
+
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="../../../../../../libs/codeBlock/codeShrink.js"></script>
 
-
-<!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -1017,14 +957,14 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="../../../../../../libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
+            collapseDepth: Number('0'),
             headingSelector: 'h1, h2, h3, h4'
         });
 
@@ -1092,24 +1032,30 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         
     });
 </script>
+
     
 
 </main>
 
 
 
+
     <footer class="page-footer bg-color">
-    <div class="container row center-align">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">年份</span>
-            <a href="https://suifengczc.github.io" target="_blank">suifeng</a>
+            
+                <span id="year">2019-2020</span>
+            
+            <span id="year">2019</span>
+            <a href="../../../../../../about" target="_blank">suifeng</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.2k</span>&nbsp;
+                class="white-color">41.4k</span>&nbsp;字
             
             
             
@@ -1130,16 +1076,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             <span id="sitetime">载入运行时间...</span>
-            <script src="/js/prettify.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    $('pre').addClass('prettyprint linenums');
-                    prettyPrint();
-                })
-            </script>
             <script>
                 function siteTime() {
-                    window.setTimeout("siteTime()", 1000);
                     var seconds = 1000;
                     var minutes = seconds * 60;
                     var hours = minutes * 60;
@@ -1226,12 +1164,98 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('../../../../../../search.xml', 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1240,15 +1264,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <script src="../../../../../../libs/materialize/materialize.min.js"></script>
+    <script src="../../../../../../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../../../../../libs/aos/aos.js"></script>
+    <script src="../../../../../../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../../../../../../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../../../../../../js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1270,7 +1291,14 @@ $(function () {
 
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="../../../../../../libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
     
 
     
@@ -1278,17 +1306,9 @@ $(function () {
     
 
     
-
-    
-
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    <script src="../../../../../../libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+  MathJax.Hub.Config({{ JSON.stringify(config) }});
 </script>
 
 <script type="text/x-mathjax-config">
@@ -1300,7 +1320,7 @@ $(function () {
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/javascript" src="{{ src }}">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
